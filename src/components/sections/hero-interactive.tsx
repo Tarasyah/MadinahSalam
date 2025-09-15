@@ -27,7 +27,7 @@ const HeroSection = () => {
     };
 
     return (
-        <section className="relative h-[95vh] min-h-[800px] w-full flex text-white overflow-hidden" id="home">
+        <section className="relative h-[80vh] min-h-[600px] w-full flex text-white overflow-hidden" id="home">
             <AnimatePresence initial={false}>
                 <motion.div
                     key={activeIndex}
