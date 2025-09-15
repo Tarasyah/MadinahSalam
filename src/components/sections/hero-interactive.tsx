@@ -50,7 +50,7 @@ const HeroSection = () => {
 
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
 
-            <div className="relative z-10 flex flex-col justify-between container py-12 md:py-20">
+            <div className="relative z-10 flex flex-col justify-between container pt-32 pb-12 md:pt-40 md:pb-20">
                 {/* Top Spacer */}
                 <div></div>
 

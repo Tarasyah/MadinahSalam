@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ThemeToggle } from './theme-toggle';
 
 const navLinks = [
@@ -19,10 +19,25 @@ const navLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [isSheetOpen, setSheetOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
+    <header className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled ? 'bg-background/95 shadow-md border-b border-border/40' : 'top-4'
+    )}>
+      <div className={cn(
+          "container flex h-16 items-center transition-all duration-300",
+          isScrolled ? 'max-w-none' : 'max-w-6xl mx-auto bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
+      )}>
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
             <Building2 className="h-6 w-6 text-primary" />
@@ -37,7 +52,7 @@ export default function Header() {
               href={link.href}
               className={cn(
                 'transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : 'text-foreground/60'
+                pathname === link.href ? 'text-primary' : isScrolled ? 'text-foreground/60' : 'text-foreground'
               )}
             >
               {link.label}
