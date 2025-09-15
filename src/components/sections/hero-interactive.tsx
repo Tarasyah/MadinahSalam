@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -12,6 +12,19 @@ import { heroDestinations } from '@/lib/data';
 const HeroSection = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const activeDestination = heroDestinations[activeIndex];
+
+    const nextSlide = useCallback(() => {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % heroDestinations.length);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(nextSlide, 4000);
+        return () => clearInterval(interval);
+    }, [activeIndex, nextSlide]);
+
+    const handleThumbnailClick = (index: number) => {
+        setActiveIndex(index);
+    };
 
     return (
         <section className="relative h-[95vh] min-h-[800px] w-full flex text-white overflow-hidden" id="home">
@@ -74,7 +87,7 @@ const HeroSection = () => {
                                     "relative h-40 w-32 md:h-48 md:w-36 rounded-xl overflow-hidden cursor-pointer border-2 transition-all duration-300",
                                     activeIndex === index ? 'border-primary' : 'border-transparent hover:border-white/50'
                                 )}
-                                onClick={() => setActiveIndex(index)}
+                                onClick={() => handleThumbnailClick(index)}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
