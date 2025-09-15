@@ -21,7 +21,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10 text-center p-4 mt-[-10vh]">
         <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter text-white/80 uppercase" style={{fontFamily: "'Anton', sans-serif"}}>
-          Japan
+          Umrah
         </h1>
       </div>
     </section>

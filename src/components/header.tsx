@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Globe } from 'lucide-react';
+import { Menu, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { usePathname } from 'next/navigation';
@@ -10,9 +10,9 @@ import { useState } from 'react';
 import { ThemeToggle } from './theme-toggle';
 
 const navLinks = [
-  { href: '/#about', label: 'About' },
-  { href: '/#included', label: 'Included' },
-  { href: '/#contact', label: 'Contacts' },
+  { href: '/#about', label: 'Tentang' },
+  { href: '/#included', label: 'Fasilitas' },
+  { href: '/#contact', label: 'Kontak' },
 ];
 
 export default function Header() {
@@ -24,8 +24,8 @@ export default function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
-            <Globe className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline text-lg">JAPAN TOURS</span>
+            <Building2 className="h-6 w-6 text-primary" />
+            <span className="font-bold font-headline text-lg">UMRAH JOURNEY</span>
           </Link>
         </div>
 
@@ -47,7 +47,7 @@ export default function Header() {
         <div className="flex items-center justify-end space-x-2">
           <ThemeToggle />
           <Button asChild className="hidden md:inline-flex rounded-full">
-            <Link href="/#contact">Book</Link>
+            <Link href="/#contact">Daftar</Link>
           </Button>
 
           <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
@@ -60,8 +60,8 @@ export default function Header() {
             <SheetContent side="left">
               <div className="flex flex-col h-full py-6">
                 <Link href="/" className="flex items-center space-x-2 mb-8">
-                  <Globe className="h-6 w-6 text-primary" />
-                  <span className="font-bold font-headline text-lg">JAPAN TOURS</span>
+                  <Building2 className="h-6 w-6 text-primary" />
+                  <span className="font-bold font-headline text-lg">UMRAH JOURNEY</span>
                 </Link>
                 <nav className="flex flex-col space-y-4">
                   {navLinks.map((link) => (
@@ -79,7 +79,7 @@ export default function Header() {
                   ))}
                 </nav>
                 <Button asChild className="mt-auto rounded-full" onClick={() => setSheetOpen(false)}>
-                  <Link href="/#contact">Book</Link>
+                  <Link href="/#contact">Daftar</Link>
                 </Button>
               </div>
             </SheetContent>

@@ -5,10 +5,13 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { ThemeProvider } from '@/components/theme-provider';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export const metadata: Metadata = {
-  title: 'Japan Tours',
-  description: 'Explore the beauty of Japan with our exclusive tours.',
+  title: 'Umrah Journey',
+  description: 'Paket perjalanan Umrah eksklusif.',
 };
 
 export default function RootLayout({
@@ -34,6 +37,13 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <div className="fixed bottom-4 left-4 z-50">
+            <Button asChild size="icon" className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600">
+              <Link href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp className="w-8 h-8" />
+              </Link>
+            </Button>
+          </div>
           <Toaster />
         </ThemeProvider>
       </body>

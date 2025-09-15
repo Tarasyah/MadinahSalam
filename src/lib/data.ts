@@ -1,5 +1,5 @@
 import { PlaceHolderImages, type ImagePlaceholder } from './placeholder-images';
-import { Plane, Hotel, Utensils, MapPin, CalendarDays, Star, CheckCircle2, Users, LifeBuoy, Earth, Car, Briefcase } from 'lucide-react';
+import { Plane, Hotel, Utensils, Users, Car, Briefcase } from 'lucide-react';
 
 const findImage = (id: string): ImagePlaceholder => {
     const image = PlaceHolderImages.find(img => img.id === id);
@@ -43,22 +43,21 @@ export type IncludedItem = {
 };
 
 export const infoCards: InfoCard[] = [
-    { id: 1, title: '3 cities in Japan', subtitle: '', image: findImage('card-1') },
-    { id: 2, title: '10 days', subtitle: '', image: findImage('card-2') },
-    { id: 3, title: 'gigabytes of photos', subtitle: '', image: findImage('card-3') },
-    { id: 4, title: 'eat ramen', subtitle: '', image: findImage('card-4') },
-    { id: 5, title: 'enjoy the vibe', subtitle: '', image: findImage('card-5') },
+    { id: 1, title: '2 Kota Suci', subtitle: '', image: findImage('card-1') },
+    { id: 2, title: '9 Hari Perjalanan', subtitle: '', image: findImage('card-2') },
+    { id: 3, title: 'Ibadah Khusyuk', subtitle: '', image: findImage('card-3') },
+    { id: 4, title: 'Ziarah Bersejarah', subtitle: '', image: findImage('card-4') },
+    { id: 5, title: 'Menjaga Spiritualitas', subtitle: '', image: findImage('card-5') },
 ];
 
 export const itinerary: ItineraryItem[] = [
-    { day: 'Days 1-3', title: 'Osaka', images: [findImage('osaka-1'), findImage('osaka-2')] },
-    { day: 'Days 4-6', title: 'Kyoto', images: [findImage('kyoto-1'), findImage('kyoto-2')] },
-    { day: 'Days 7-10', title: 'Tokyo', images: [findImage('tokyo-1'), findImage('tokyo-2')] },
+    { day: 'Hari 1-4', title: 'Madinah', images: [findImage('madinah-1'), findImage('madinah-2')] },
+    { day: 'Hari 5-9', title: 'Mekkah', images: [findImage('mekkah-1'), findImage('mekkah-2')] },
 ];
 
 export const included: IncludedItem[] = [
-    { title: 'Guides', description: '2 awesome guides who know everything about Japan!', icon: Users },
-    { title: 'Flights', description: 'Routes: Moscow - Osaka, Tokyo - Moscow', icon: Plane },
-    { title: 'Transfers', description: 'From the airport to the hotels', icon: Car },
-    { title: 'Hotels', description: 'Comfortable accommodation, 2 people per room (breakfasts included)', icon: Hotel },
+    { title: 'Pembimbing', description: '2 pembimbing berpengalaman yang akan mendampingi Anda.', icon: Users },
+    { title: 'Penerbangan', description: 'Penerbangan pulang-pergi kelas ekonomi.', icon: Plane },
+    { title: 'Transportasi', description: 'Transportasi dari bandara ke hotel dan antar kota.', icon: Car },
+    { title: 'Akomodasi', description: 'Hotel bintang 4 atau 5 (termasuk sarapan).', icon: Hotel },
 ];

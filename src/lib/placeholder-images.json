@@ -2,81 +2,69 @@
   "placeholderImages": [
     {
       "id": "hero-bg",
-      "description": "Woman in kimono looking at Mount Fuji",
-      "imageUrl": "https://picsum.photos/seed/jp-hero/1920/1080",
-      "imageHint": "fuji mountain"
+      "description": "Kaaba in Mecca",
+      "imageUrl": "https://picsum.photos/seed/umrah-hero/1920/1080",
+      "imageHint": "kaaba mecca"
     },
     {
       "id": "contact-bg",
-      "description": "Japanese pagoda with cherry blossoms and Mount Fuji in the background",
-      "imageUrl": "https://picsum.photos/seed/jp-contact/1920/1080",
-      "imageHint": "pagoda fuji"
+      "description": "Prophet's Mosque in Medina",
+      "imageUrl": "https://picsum.photos/seed/umrah-contact/1920/1080",
+      "imageHint": "prophet mosque"
     },
     {
       "id": "card-1",
-      "description": "Japanese city street with pagoda",
-      "imageUrl": "https://picsum.photos/seed/jp-card1/400/600",
-      "imageHint": "japan city"
+      "description": "Pilgrims walking around Kaaba",
+      "imageUrl": "https://picsum.photos/seed/umrah-card1/400/600",
+      "imageHint": "pilgrims kaaba"
     },
     {
       "id": "card-2",
-      "description": "Japanese landscape with mountains",
-      "imageUrl": "https://picsum.photos/seed/jp-card2/400/600",
-      "imageHint": "japan landscape"
+      "description": "Desert landscape with camels",
+      "imageUrl": "https://picsum.photos/seed/umrah-card2/400/600",
+      "imageHint": "desert camels"
     },
     {
       "id": "card-3",
-      "description": "Japanese shrine at night",
-      "imageUrl": "https://picsum.photos/seed/jp-card3/400/600",
-      "imageHint": "shrine night"
+      "description": "Person praying in a mosque",
+      "imageUrl": "https://picsum.photos/seed/umrah-card3/400/600",
+      "imageHint": "person praying"
     },
     {
       "id": "card-4",
-      "description": "Japanese street food stall",
-      "imageUrl": "https://picsum.photos/seed/jp-card4/400/600",
-      "imageHint": "ramen stall"
+      "description": "Date palms",
+      "imageUrl": "https://picsum.photos/seed/umrah-card4/400/600",
+      "imageHint": "date palm"
     },
     {
       "id": "card-5",
-      "description": "Busy street in Tokyo at night",
-      "imageUrl": "https://picsum.photos/seed/jp-card5/400/600",
-      "imageHint": "tokyo night"
+      "description": "View of Medina city",
+      "imageUrl": "https://picsum.photos/seed/umrah-card5/400/600",
+      "imageHint": "medina city"
     },
     {
-      "id": "osaka-1",
-      "description": "Osaka castle",
-      "imageUrl": "https://picsum.photos/seed/jp-osaka1/400/300",
-      "imageHint": "osaka castle"
+      "id": "madinah-1",
+      "description": "Green dome of Prophet's mosque",
+      "imageUrl": "https://picsum.photos/seed/umrah-madinah1/400/300",
+      "imageHint": "green dome"
     },
     {
-      "id": "osaka-2",
-      "description": "Dotonbori district in Osaka",
-      "imageUrl": "https://picsum.photos/seed/jp-osaka2/400/300",
-      "imageHint": "dotonbori osaka"
+      "id": "madinah-2",
+      "description": "Courtyard of Prophet's mosque",
+      "imageUrl": "https://picsum.photos/seed/umrah-madinah2/400/300",
+      "imageHint": "mosque courtyard"
     },
     {
-      "id": "kyoto-1",
-      "description": "Fushimi Inari shrine in Kyoto",
-      "imageUrl": "https://picsum.photos/seed/jp-kyoto1/400/300",
-      "imageHint": "fushimi inari"
+      "id": "mekkah-1",
+      "description": "Clock tower in Mecca",
+      "imageUrl": "https://picsum.photos/seed/umrah-mekkah1/400/300",
+      "imageHint": "mecca clock"
     },
     {
-      "id": "kyoto-2",
-      "description": "Arashiyama Bamboo Grove in Kyoto",
-      "imageUrl": "https://picsum.photos/seed/jp-kyoto2/400/300",
-      "imageHint": "bamboo forest"
-    },
-    {
-      "id": "tokyo-1",
-      "description": "Shibuya Crossing in Tokyo",
-      "imageUrl": "https://picsum.photos/seed/jp-tokyo1/400/300",
-      "imageHint": "shibuya crossing"
-    },
-    {
-      "id": "tokyo-2",
-      "description": "Senso-ji Temple in Tokyo",
-      "imageUrl": "https://picsum.photos/seed/jp-tokyo2/400/300",
-      "imageHint": "sensoji temple"
+      "id": "mekkah-2",
+      "description": "Pilgrims performing Tawaf",
+      "imageUrl": "https://picsum.photos/seed/umrah-mekkah2/400/300",
+      "imageHint": "tawaf kaaba"
     }
   ]
 }

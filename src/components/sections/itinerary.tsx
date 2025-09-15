@@ -7,16 +7,16 @@ const ItinerarySection = () => {
       <div className="container max-w-5xl mx-auto">
         <div className="text-left mb-12 relative">
            <div className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 w-16 bg-primary"></div>
-          <h2 className="font-headline text-3xl md:text-4xl font-bold ml-24">ABOUT THE TOUR</h2>
+          <h2 className="font-headline text-3xl md:text-4xl font-bold ml-24">TENTANG PERJALANAN</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           <div className="text-muted-foreground space-y-6">
             <p>
-              We've planned a simple and convenient 10-day itinerary for your trip to Japan. You'll visit three cities: <span className="text-primary">Osaka, Kyoto, and Tokyo.</span>
+            Kami telah merencanakan itinerary 9 hari yang simpel dan nyaman untuk perjalanan Umrah Anda. Anda akan mengunjungi dua kota suci: <span className="text-primary">Mekkah dan Madinah.</span>
             </p>
             <p>
-              No need to worry about routes, schedules, or finding places – everything is already organized. We'll show you where to go, what to see, and where to eat, so you can simply enjoy the journey.
+            Tidak perlu khawatir tentang rute, jadwal, atau mencari tempat - semuanya sudah terorganisir. Kami akan menunjukkan ke mana harus pergi, apa yang harus dilihat, dan di mana harus makan, sehingga Anda bisa menikmati perjalanan dengan tenang.
             </p>
           </div>
           

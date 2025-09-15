@@ -13,8 +13,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { useToast } from '@/hooks/use-toast';
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  phone: z.string().min(10, { message: "Please enter a valid phone number." }),
+  name: z.string().min(2, { message: "Nama harus minimal 2 karakter." }),
+  phone: z.string().min(10, { message: "Silakan masukkan nomor telepon yang valid." }),
   comment: z.string().optional(),
 });
 
@@ -34,8 +34,8 @@ const ContactSection = () => {
     function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values);
         toast({
-            title: "Request Sent!",
-            description: "Thank you for your interest. We will get back to you shortly.",
+            title: "Permintaan Terkirim!",
+            description: "Terima kasih atas minat Anda. Kami akan segera menghubungi Anda.",
         });
         form.reset();
     }
@@ -55,8 +55,8 @@ const ContactSection = () => {
 
             <div className="container relative z-10 max-w-2xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="font-headline text-3xl md:text-4xl font-bold text-white">Want to join us, but still have questions?</h2>
-                    <p className="text-white/80 mt-2">Leave a request</p>
+                    <h2 className="font-headline text-3xl md:text-4xl font-bold text-white">Ingin bergabung, tapi masih ada pertanyaan?</h2>
+                    <p className="text-white/80 mt-2">Tinggalkan permintaan</p>
                 </div>
                 
                 <Card className="bg-card/50 backdrop-blur-sm border-border/30">
@@ -68,7 +68,7 @@ const ContactSection = () => {
                                     name="name"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel className="text-white/80">Your name</FormLabel>
+                                            <FormLabel className="text-white/80">Nama Anda</FormLabel>
                                             <FormControl>
                                                 <Input placeholder="John Doe" {...field} className="bg-background/70 border-border/50 text-foreground" />
                                             </FormControl>
@@ -81,9 +81,9 @@ const ContactSection = () => {
                                     name="phone"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel className="text-white/80">Phone number</FormLabel>
+                                            <FormLabel className="text-white/80">Nomor Telepon</FormLabel>
                                             <FormControl>
-                                                <Input placeholder="+1 (555) 000-0000" {...field} className="bg-background/70 border-border/50 text-foreground"/>
+                                                <Input placeholder="+62 (812) 345-6789" {...field} className="bg-background/70 border-border/50 text-foreground"/>
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
@@ -94,15 +94,15 @@ const ContactSection = () => {
                                     name="comment"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel className="text-white/80">Comment</FormLabel>
+                                            <FormLabel className="text-white/80">Komentar</FormLabel>
                                             <FormControl>
-                                                <Textarea placeholder="Any questions or special requests?" {...field} className="bg-background/70 border-border/50 text-foreground" />
+                                                <Textarea placeholder="Ada pertanyaan atau permintaan khusus?" {...field} className="bg-background/70 border-border/50 text-foreground" />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
                                     )}
                                 />
-                                <Button type="submit" size="lg" className="w-full rounded-full">Send</Button>
+                                <Button type="submit" size="lg" className="w-full rounded-full">Kirim</Button>
                             </form>
                         </Form>
                     </CardContent>
