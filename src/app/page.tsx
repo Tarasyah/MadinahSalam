@@ -1,6 +1,6 @@
 import ContactSection from '@/components/sections/contact';
 import GallerySection from '@/components/sections/gallery';
-import HeroSection from '@/components/sections/hero';
+import HeroSection from '@/components/sections/hero-interactive';
 import IncludedSection from '@/components/sections/included';
 import ItinerarySection from '@/components/sections/itinerary';
 import PackagesSection from '@/components/sections/packages';

@@ -14,6 +14,13 @@ const findImage = (id: string): ImagePlaceholder => {
     return image;
 };
 
+export type HeroDestination = {
+    id: number;
+    title: string;
+    description: string;
+    image: ImagePlaceholder;
+}
+
 export type Package = {
   id: number;
   name: string;
@@ -42,6 +49,33 @@ export type Testimonial = {
     comment: string;
     image: ImagePlaceholder;
 };
+
+export const heroDestinations: HeroDestination[] = [
+    {
+        id: 1,
+        title: 'Mekkah',
+        description: 'Pusat spiritual Islam dan tujuan utama ibadah Umrah, tempat Ka\'bah berdiri.',
+        image: findImage('hero-mekkah')
+    },
+    {
+        id: 2,
+        title: 'Madinah',
+        description: 'Kota suci kedua, tempat Masjid Nabawi dan makam Nabi Muhammad SAW berada.',
+        image: findImage('hero-madinah')
+    },
+    {
+        id: 3,
+        title: 'Thaif',
+        description: 'Kota pegunungan yang sejuk dengan sejarah Islam yang kaya dan pemandangan indah.',
+        image: findImage('hero-thaif')
+    },
+    {
+        id: 4,
+        title: 'Universitas Islam Madinah',
+        description: 'Lembaga pendidikan Islam ternama di dunia, pusat ilmu dan peradaban.',
+        image: findImage('hero-uim')
+    }
+];
 
 export const packages: Package[] = [
     {
