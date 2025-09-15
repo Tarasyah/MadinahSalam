@@ -1,3 +1,94 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Background image for the hero section showing the Kaaba.",
+      "imageUrl": "https://picsum.photos/seed/100/1920/1080",
+      "imageHint": "Kaaba mecca"
+    },
+    {
+      "id": "package-1",
+      "description": "Image for the first Umrah package.",
+      "imageUrl": "https://picsum.photos/seed/101/600/400",
+      "imageHint": "islamic architecture"
+    },
+    {
+      "id": "package-2",
+      "description": "Image for the second Umrah package.",
+      "imageUrl": "https://picsum.photos/seed/102/600/400",
+      "imageHint": "prayer mat"
+    },
+    {
+      "id": "package-3",
+      "description": "Image for the third Umrah package.",
+      "imageUrl": "https://picsum.photos/seed/103/600/400",
+      "imageHint": "mosque interior"
+    },
+    {
+      "id": "avatar-1",
+      "description": "Avatar for the first testimonial.",
+      "imageUrl": "https://picsum.photos/seed/201/100/100",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "avatar-2",
+      "description": "Avatar for the second testimonial.",
+      "imageUrl": "https://picsum.photos/seed/202/100/100",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "avatar-3",
+      "description": "Avatar for the third testimonial.",
+      "imageUrl": "https://picsum.photos/seed/203/100/100",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "gallery-1",
+      "description": "Gallery image of Mecca during pilgrimage.",
+      "imageUrl": "https://picsum.photos/seed/301/600/400",
+      "imageHint": "mecca pilgrimage"
+    },
+    {
+      "id": "gallery-2",
+      "description": "Gallery image of the Prophet's Mosque in Medina.",
+      "imageUrl": "https://picsum.photos/seed/302/600/400",
+      "imageHint": "medina mosque"
+    },
+    {
+      "id": "gallery-3",
+      "description": "Gallery image of Islamic calligraphy.",
+      "imageUrl": "https://picsum.photos/seed/303/600/400",
+      "imageHint": "islamic calligraphy"
+    },
+    {
+      "id": "gallery-4",
+      "description": "Gallery image of a desert landscape near Mecca.",
+      "imageUrl": "https://picsum.photos/seed/304/600/400",
+      "imageHint": "desert landscape"
+    },
+    {
+      "id": "gallery-5",
+      "description": "Gallery image of pilgrims performing Umrah.",
+      "imageUrl": "https://picsum.photos/seed/305/600/400",
+      "imageHint": "umrah pilgrims"
+    },
+    {
+      "id": "gallery-6",
+      "description": "Gallery image of the Holy Quran.",
+      "imageUrl": "https://picsum.photos/seed/306/600/400",
+      "imageHint": "holy quran"
+    },
+    {
+      "id": "about-us-hero",
+      "description": "Hero image for the About Us page.",
+      "imageUrl": "https://picsum.photos/seed/401/1600/600",
+      "imageHint": "mosque architecture"
+    },
+    {
+      "id": "requirements-hero",
+      "description": "Hero image for the Requirements page.",
+      "imageUrl": "https://picsum.photos/seed/402/1600/600",
+      "imageHint": "passport travel"
+    }
+  ]
 }
