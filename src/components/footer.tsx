@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mosque, Mail, Phone, MapPin } from 'lucide-react';
+import { Building2, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const quickLinks = [
@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Mosque className="h-8 w-8 text-primary" />
+              <Building2 className="h-8 w-8 text-primary" />
               <span className="font-bold font-headline text-2xl">Umrah Journey</span>
             </Link>
             <p className="text-sm text-muted-foreground">

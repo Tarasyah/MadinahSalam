@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Mosque } from 'lucide-react';
+import { Menu, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { usePathname } from 'next/navigation';
@@ -23,7 +23,7 @@ export default function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
-            <Mosque className="h-6 w-6 text-primary" />
+            <Building2 className="h-6 w-6 text-primary" />
             <span className="font-bold font-headline text-lg">Umrah Journey</span>
           </Link>
         </div>
@@ -58,7 +58,7 @@ export default function Header() {
             <SheetContent side="left">
               <div className="flex flex-col h-full py-6">
                 <Link href="/" className="flex items-center space-x-2 mb-8">
-                  <Mosque className="h-6 w-6 text-primary" />
+                  <Building2 className="h-6 w-6 text-primary" />
                   <span className="font-bold font-headline text-lg">Umrah Journey</span>
                 </Link>
                 <nav className="flex flex-col space-y-4">
