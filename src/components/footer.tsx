@@ -1,84 +1,31 @@
 import Link from 'next/link';
-import { Building2, Mail, Phone, MapPin } from 'lucide-react';
+import { Globe } from 'lucide-react';
 
 const Footer = () => {
-  const quickLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
-    { href: '/requirements', label: 'Requirements' },
-    { href: '/#packages', label: 'Packages' },
-  ];
-
-  const legalLinks = [
-    { href: '/privacy-policy', label: 'Privacy Policy' },
-    { href: '/terms-of-service', label: 'Terms of Service' },
+  const navLinks = [
+    { href: '/#about', label: 'About' },
+    { href: '/#included', label: 'Included' },
+    { href: '/#contact', label: 'Contacts' },
   ];
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Building2 className="h-8 w-8 text-primary" />
-              <span className="font-bold font-headline text-2xl">Umrah Journey</span>
-            </Link>
-            <p className="text-sm text-muted-foreground">
-              Your trusted partner for a blessed and peaceful Umrah experience.
-            </p>
+      <div className="container py-6">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex items-center space-x-2 mb-4 md:mb-0">
+            <Globe className="h-6 w-6 text-primary" />
+            <span className="font-bold font-headline text-xl">JAPAN TOURS</span>
           </div>
 
-          <div>
-            <h3 className="font-semibold mb-4 text-lg">Quick Links</h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4 text-lg">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start text-sm">
-                <MapPin className="h-4 w-4 mr-2 mt-1 shrink-0" />
-                <span className="text-muted-foreground">123 Holy Street, Makkah, Saudi Arabia</span>
+          <nav className="flex items-center space-x-6 text-sm font-medium">
+            {navLinks.map((link) => (
+              <li key={link.href} className="list-none">
+                <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  {link.label}
+                </Link>
               </li>
-              <li className="flex items-center text-sm">
-                <Mail className="h-4 w-4 mr-2 shrink-0" />
-                <a href="mailto:info@umrahjourney.com" className="text-muted-foreground hover:text-primary transition-colors">
-                  info@umrahjourney.com
-                </a>
-              </li>
-              <li className="flex items-center text-sm">
-                <Phone className="h-4 w-4 mr-2 shrink-0" />
-                <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                  +1 (234) 567-890
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-semibold mb-4 text-lg">Legal</h3>
-            <ul className="space-y-2">
-              {legalLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Umrah Journey. All rights reserved.</p>
+            ))}
+          </nav>
         </div>
       </div>
     </footer>

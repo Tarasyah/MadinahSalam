@@ -2,93 +2,81 @@
   "placeholderImages": [
     {
       "id": "hero-bg",
-      "description": "Background image for the hero section showing the Kaaba.",
-      "imageUrl": "https://picsum.photos/seed/100/1920/1080",
-      "imageHint": "Kaaba mecca"
+      "description": "Woman in kimono looking at Mount Fuji",
+      "imageUrl": "https://picsum.photos/seed/jp-hero/1920/1080",
+      "imageHint": "fuji mountain"
     },
     {
-      "id": "package-1",
-      "description": "Image for the first Umrah package.",
-      "imageUrl": "https://picsum.photos/seed/101/600/400",
-      "imageHint": "islamic architecture"
+      "id": "contact-bg",
+      "description": "Japanese pagoda with cherry blossoms and Mount Fuji in the background",
+      "imageUrl": "https://picsum.photos/seed/jp-contact/1920/1080",
+      "imageHint": "pagoda fuji"
     },
     {
-      "id": "package-2",
-      "description": "Image for the second Umrah package.",
-      "imageUrl": "https://picsum.photos/seed/102/600/400",
-      "imageHint": "prayer mat"
+      "id": "card-1",
+      "description": "Japanese city street with pagoda",
+      "imageUrl": "https://picsum.photos/seed/jp-card1/400/600",
+      "imageHint": "japan city"
     },
     {
-      "id": "package-3",
-      "description": "Image for the third Umrah package.",
-      "imageUrl": "https://picsum.photos/seed/103/600/400",
-      "imageHint": "mosque interior"
+      "id": "card-2",
+      "description": "Japanese landscape with mountains",
+      "imageUrl": "https://picsum.photos/seed/jp-card2/400/600",
+      "imageHint": "japan landscape"
     },
     {
-      "id": "avatar-1",
-      "description": "Avatar for the first testimonial.",
-      "imageUrl": "https://picsum.photos/seed/201/100/100",
-      "imageHint": "man portrait"
+      "id": "card-3",
+      "description": "Japanese shrine at night",
+      "imageUrl": "https://picsum.photos/seed/jp-card3/400/600",
+      "imageHint": "shrine night"
     },
     {
-      "id": "avatar-2",
-      "description": "Avatar for the second testimonial.",
-      "imageUrl": "https://picsum.photos/seed/202/100/100",
-      "imageHint": "woman portrait"
+      "id": "card-4",
+      "description": "Japanese street food stall",
+      "imageUrl": "https://picsum.photos/seed/jp-card4/400/600",
+      "imageHint": "ramen stall"
     },
     {
-      "id": "avatar-3",
-      "description": "Avatar for the third testimonial.",
-      "imageUrl": "https://picsum.photos/seed/203/100/100",
-      "imageHint": "person smiling"
+      "id": "card-5",
+      "description": "Busy street in Tokyo at night",
+      "imageUrl": "https://picsum.photos/seed/jp-card5/400/600",
+      "imageHint": "tokyo night"
     },
     {
-      "id": "gallery-1",
-      "description": "Gallery image of Mecca during pilgrimage.",
-      "imageUrl": "https://picsum.photos/seed/301/600/400",
-      "imageHint": "mecca pilgrimage"
+      "id": "osaka-1",
+      "description": "Osaka castle",
+      "imageUrl": "https://picsum.photos/seed/jp-osaka1/400/300",
+      "imageHint": "osaka castle"
     },
     {
-      "id": "gallery-2",
-      "description": "Gallery image of the Prophet's Mosque in Medina.",
-      "imageUrl": "https://picsum.photos/seed/302/600/400",
-      "imageHint": "medina mosque"
+      "id": "osaka-2",
+      "description": "Dotonbori district in Osaka",
+      "imageUrl": "https://picsum.photos/seed/jp-osaka2/400/300",
+      "imageHint": "dotonbori osaka"
     },
     {
-      "id": "gallery-3",
-      "description": "Gallery image of Islamic calligraphy.",
-      "imageUrl": "https://picsum.photos/seed/303/600/400",
-      "imageHint": "islamic calligraphy"
+      "id": "kyoto-1",
+      "description": "Fushimi Inari shrine in Kyoto",
+      "imageUrl": "https://picsum.photos/seed/jp-kyoto1/400/300",
+      "imageHint": "fushimi inari"
     },
     {
-      "id": "gallery-4",
-      "description": "Gallery image of a desert landscape near Mecca.",
-      "imageUrl": "https://picsum.photos/seed/304/600/400",
-      "imageHint": "desert landscape"
+      "id": "kyoto-2",
+      "description": "Arashiyama Bamboo Grove in Kyoto",
+      "imageUrl": "https://picsum.photos/seed/jp-kyoto2/400/300",
+      "imageHint": "bamboo forest"
     },
     {
-      "id": "gallery-5",
-      "description": "Gallery image of pilgrims performing Umrah.",
-      "imageUrl": "https://picsum.photos/seed/305/600/400",
-      "imageHint": "umrah pilgrims"
+      "id": "tokyo-1",
+      "description": "Shibuya Crossing in Tokyo",
+      "imageUrl": "https://picsum.photos/seed/jp-tokyo1/400/300",
+      "imageHint": "shibuya crossing"
     },
     {
-      "id": "gallery-6",
-      "description": "Gallery image of the Holy Quran.",
-      "imageUrl": "https://picsum.photos/seed/306/600/400",
-      "imageHint": "holy quran"
-    },
-    {
-      "id": "about-us-hero",
-      "description": "Hero image for the About Us page.",
-      "imageUrl": "https://picsum.photos/seed/401/1600/600",
-      "imageHint": "mosque architecture"
-    },
-    {
-      "id": "requirements-hero",
-      "description": "Hero image for the Requirements page.",
-      "imageUrl": "https://picsum.photos/seed/402/1600/600",
-      "imageHint": "passport travel"
+      "id": "tokyo-2",
+      "description": "Senso-ji Temple in Tokyo",
+      "imageUrl": "https://picsum.photos/seed/jp-tokyo2/400/300",
+      "imageHint": "sensoji temple"
     }
   ]
 }

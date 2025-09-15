@@ -1,46 +1,53 @@
+import Image from 'next/image';
 import { itinerary } from '@/lib/data';
 
 const ItinerarySection = () => {
   return (
-    <section id="itinerary" className="py-16 lg:py-24">
-      <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold">A Glimpse of Your Journey</h2>
-          <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-            Follow a path of devotion with our thoughtfully planned itinerary.
-          </p>
+    <section id="about" className="py-16 lg:py-24 bg-background">
+      <div className="container max-w-5xl mx-auto">
+        <div className="text-left mb-12 relative">
+           <div className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 w-16 bg-primary"></div>
+          <h2 className="font-headline text-3xl md:text-4xl font-bold ml-24">ABOUT THE TOUR</h2>
         </div>
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
 
-          {itinerary.map((item, index) => (
-            <div key={index} className="relative mb-12 md:mb-8">
-              <div className="flex items-center md:justify-center">
-                {/* Desktop Icon & Day */}
-                <div className="hidden md:flex flex-col items-center">
-                  <div className="z-10 bg-primary text-primary-foreground rounded-full h-12 w-12 flex items-center justify-center">
-                    <item.icon className="h-6 w-6" />
-                  </div>
-                  <div className="mt-2 font-bold text-sm">DAY {item.day}</div>
-                </div>
-                
-                {/* Mobile Icon & Day */}
-                <div className="flex-shrink-0 md:hidden mr-4">
-                  <div className="z-10 bg-primary text-primary-foreground rounded-full h-12 w-12 flex items-center justify-center">
-                     <item.icon className="h-6 w-6" />
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <div className="text-muted-foreground space-y-6">
+            <p>
+              We've planned a simple and convenient 10-day itinerary for your trip to Japan. You'll visit three cities: <span className="text-primary">Osaka, Kyoto, and Tokyo.</span>
+            </p>
+            <p>
+              No need to worry about routes, schedules, or finding places – everything is already organized. We'll show you where to go, what to see, and where to eat, so you can simply enjoy the journey.
+            </p>
+          </div>
+          
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border -z-10" />
 
-                {/* Content */}
-                <div className="md:w-5/12 p-4 rounded-lg bg-card shadow-md border md:ml-8 flex-grow">
-                   <div className="font-bold text-sm md:hidden mb-2">DAY {item.day}</div>
-                  <h3 className="font-bold font-headline text-xl mb-2 text-primary">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
+            {itinerary.map((item, index) => (
+              <div key={index} className="relative pl-12 mb-8">
+                <div className="absolute left-4 top-1 -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                <div className="font-bold">{item.day}</div>
+                <h3 className="font-semibold text-lg text-foreground">{item.title}</h3>
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                    {item.images.map(img => {
+                        const image = img;
+                        return image ? (
+                            <div key={image.id} className="relative aspect-video rounded-md overflow-hidden">
+                                <Image
+                                    src={image.imageUrl}
+                                    alt={image.description}
+                                    data-ai-hint={image.imageHint}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                        ) : null;
+                    })}
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
