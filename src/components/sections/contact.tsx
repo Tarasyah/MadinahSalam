@@ -34,8 +34,8 @@ const ContactSection = () => {
     function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values);
         toast({
-            title: "Permintaan Terkirim!",
-            description: "Terima kasih atas minat Anda. Kami akan segera menghubungi Anda.",
+            title: "Pesan Terkirim!",
+            description: "Terima kasih telah menghubungi kami. Tim kami akan segera merespon Anda.",
         });
         form.reset();
     }
@@ -55,8 +55,8 @@ const ContactSection = () => {
 
             <div className="container relative z-10 max-w-2xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="font-headline text-3xl md:text-4xl font-bold text-white">Ingin bergabung, tapi masih ada pertanyaan?</h2>
-                    <p className="text-white/80 mt-2">Tinggalkan permintaan</p>
+                    <h2 className="font-headline text-3xl md:text-4xl font-bold text-white">Hubungi Kami</h2>
+                    <p className="text-white/80 mt-2">Ada pertanyaan? Jangan ragu untuk menghubungi kami.</p>
                 </div>
                 
                 <Card className="bg-card/50 backdrop-blur-sm border-border/30">
@@ -94,15 +94,15 @@ const ContactSection = () => {
                                     name="comment"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel className="text-white/80">Komentar</FormLabel>
+                                            <FormLabel className="text-white/80">Pesan Anda</FormLabel>
                                             <FormControl>
-                                                <Textarea placeholder="Ada pertanyaan atau permintaan khusus?" {...field} className="bg-background/70 border-border/50 text-foreground" />
+                                                <Textarea placeholder="Tuliskan pertanyaan atau permintaan khusus Anda di sini..." {...field} className="bg-background/70 border-border/50 text-foreground" />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
                                     )}
                                 />
-                                <Button type="submit" size="lg" className="w-full rounded-full">Kirim</Button>
+                                <Button type="submit" size="lg" className="w-full rounded-full">Kirim Pesan</Button>
                             </form>
                         </Form>
                     </CardContent>

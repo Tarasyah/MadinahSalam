@@ -2,69 +2,123 @@
   "placeholderImages": [
     {
       "id": "hero-bg",
-      "description": "Kaaba in Mecca",
-      "imageUrl": "https://picsum.photos/seed/umrah-hero/1920/1080",
-      "imageHint": "kaaba mecca"
+      "description": "Kaaba in Mecca at night with crowds of pilgrims",
+      "imageUrl": "https://picsum.photos/seed/msw-hero/1920/1080",
+      "imageHint": "kaaba night"
     },
     {
       "id": "contact-bg",
-      "description": "Prophet's Mosque in Medina",
-      "imageUrl": "https://picsum.photos/seed/umrah-contact/1920/1080",
+      "description": "Prophet's Mosque in Medina with beautiful lighting",
+      "imageUrl": "https://picsum.photos/seed/msw-contact/1920/1080",
       "imageHint": "prophet mosque"
     },
     {
-      "id": "card-1",
-      "description": "Pilgrims walking around Kaaba",
-      "imageUrl": "https://picsum.photos/seed/umrah-card1/400/600",
-      "imageHint": "pilgrims kaaba"
+      "id": "package-1",
+      "description": "Front view of a modern hotel in Medina",
+      "imageUrl": "https://picsum.photos/seed/msw-package1/600/400",
+      "imageHint": "medina hotel"
     },
     {
-      "id": "card-2",
-      "description": "Desert landscape with camels",
-      "imageUrl": "https://picsum.photos/seed/umrah-card2/400/600",
-      "imageHint": "desert camels"
+      "id": "package-2",
+      "description": "Luxurious hotel lobby with golden accents",
+      "imageUrl": "https://picsum.photos/seed/msw-package2/600/400",
+      "imageHint": "luxury hotel"
     },
     {
-      "id": "card-3",
-      "description": "Person praying in a mosque",
-      "imageUrl": "https://picsum.photos/seed/umrah-card3/400/600",
-      "imageHint": "person praying"
-    },
-    {
-      "id": "card-4",
-      "description": "Date palms",
-      "imageUrl": "https://picsum.photos/seed/umrah-card4/400/600",
-      "imageHint": "date palm"
-    },
-    {
-      "id": "card-5",
-      "description": "View of Medina city",
-      "imageUrl": "https://picsum.photos/seed/umrah-card5/400/600",
-      "imageHint": "medina city"
+      "id": "package-3",
+      "description": "Airplane business class interior",
+      "imageUrl": "https://picsum.photos/seed/msw-package3/600/400",
+      "imageHint": "business class"
     },
     {
       "id": "madinah-1",
-      "description": "Green dome of Prophet's mosque",
-      "imageUrl": "https://picsum.photos/seed/umrah-madinah1/400/300",
+      "description": "Green dome of Prophet's mosque against a clear blue sky",
+      "imageUrl": "https://picsum.photos/seed/msw-madinah1/400/300",
       "imageHint": "green dome"
     },
     {
       "id": "madinah-2",
-      "description": "Courtyard of Prophet's mosque",
-      "imageUrl": "https://picsum.photos/seed/umrah-madinah2/400/300",
+      "description": "Courtyard of Prophet's mosque with folded umbrellas",
+      "imageUrl": "https://picsum.photos/seed/msw-madinah2/400/300",
       "imageHint": "mosque courtyard"
     },
     {
       "id": "mekkah-1",
-      "description": "Clock tower in Mecca",
-      "imageUrl": "https://picsum.photos/seed/umrah-mekkah1/400/300",
+      "description": "Abraj Al-Bait clock tower in Mecca piercing the clouds",
+      "imageUrl": "https://picsum.photos/seed/msw-mekkah1/400/300",
       "imageHint": "mecca clock"
     },
     {
       "id": "mekkah-2",
-      "description": "Pilgrims performing Tawaf",
-      "imageUrl": "https://picsum.photos/seed/umrah-mekkah2/400/300",
+      "description": "Pilgrims performing Tawaf around the Kaaba from a high angle view",
+      "imageUrl": "https://picsum.photos/seed/msw-mekkah2/400/300",
       "imageHint": "tawaf kaaba"
+    },
+    {
+        "id": "testimonial-1",
+        "description": "Portrait of a smiling middle-aged Indonesian man",
+        "imageUrl": "https://picsum.photos/seed/msw-testi1/100/100",
+        "imageHint": "indonesian man"
+    },
+    {
+        "id": "testimonial-2",
+        "description": "Portrait of a smiling middle-aged Indonesian woman wearing a hijab",
+        "imageUrl": "https://picsum.photos/seed/msw-testi2/100/100",
+        "imageHint": "indonesian woman"
+    },
+    {
+        "id": "testimonial-3",
+        "description": "Portrait of a happy young Indonesian man",
+        "imageUrl": "https://picsum.photos/seed/msw-testi3/100/100",
+        "imageHint": "young man"
+    },
+    {
+      "id": "gallery-1",
+      "description": "Pilgrims praying inside the Grand Mosque",
+      "imageUrl": "https://picsum.photos/seed/msw-gallery1/600/400",
+      "imageHint": "pilgrims praying"
+    },
+    {
+      "id": "gallery-2",
+      "description": "Close up of the Kaaba's black and gold cloth (kiswah)",
+      "imageUrl": "https://picsum.photos/seed/msw-gallery2/600/400",
+      "imageHint": "kaaba kiswah"
+    },
+    {
+      "id": "gallery-3",
+      "description": "The expansive courtyard of the Prophet's Mosque in Medina",
+      "imageUrl": "https://picsum.photos/seed/msw-gallery3/600/400",
+      "imageHint": "medina courtyard"
+    },
+    {
+      "id": "gallery-4",
+      "description": "A group of pilgrims in white ihram clothing",
+      "imageUrl": "https://picsum.photos/seed/msw-gallery4/600/400",
+      "imageHint": "pilgrims ihram"
+    },
+    {
+      "id": "gallery-5",
+      "description": "Sunset over the desert mountains near Mecca",
+      "imageUrl": "https://picsum.photos/seed/msw-gallery5/600/400",
+      "imageHint": "desert sunset"
+    },
+    {
+      "id": "gallery-6",
+      "description": "Zamzam water being served",
+      "imageUrl": "https://picsum.photos/seed/msw-gallery6/600/400",
+      "imageHint": "zamzam water"
+    },
+    {
+      "id": "about-us-hero",
+      "description": "Team of Madinah Salam Wisata staff smiling",
+      "imageUrl": "https://picsum.photos/seed/msw-about-hero/1200/600",
+      "imageHint": "professional team"
+    },
+    {
+      "id": "requirements-hero",
+      "description": "Pile of passports and travel documents",
+      "imageUrl": "https://picsum.photos/seed/msw-req-hero/1200/500",
+      "imageHint": "travel documents"
     }
   ]
 }

@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { FaWhatsapp } from 'react-icons/fa';
 
 export const metadata: Metadata = {
-  title: 'Umrah Journey',
+  title: 'Madinah Salam Wisata',
   description: 'Paket perjalanan Umrah eksklusif.',
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className={cn('font-body antialiased')}>
         <ThemeProvider

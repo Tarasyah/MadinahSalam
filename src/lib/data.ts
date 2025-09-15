@@ -1,5 +1,5 @@
 import { PlaceHolderImages, type ImagePlaceholder } from './placeholder-images';
-import { Plane, Hotel, Utensils, Users, Car, Briefcase } from 'lucide-react';
+import { Plane, Hotel, Utensils, Users, Car, Briefcase, BookOpen, ShieldCheck, BaggageClaim, ShoppingCart, Cross } from 'lucide-react';
 
 const findImage = (id: string): ImagePlaceholder => {
     const image = PlaceHolderImages.find(img => img.id === id);
@@ -23,13 +23,6 @@ export type Package = {
   features: string[];
 };
 
-export type InfoCard = {
-  id: number;
-  title: string;
-  subtitle: string;
-  image: ImagePlaceholder;
-}
-
 export type ItineraryItem = {
     day: string;
     title: string;
@@ -42,22 +35,93 @@ export type IncludedItem = {
     icon: React.ComponentType<{ className?: string }>;
 };
 
-export const infoCards: InfoCard[] = [
-    { id: 1, title: '2 Kota Suci', subtitle: '', image: findImage('card-1') },
-    { id: 2, title: '9 Hari Perjalanan', subtitle: '', image: findImage('card-2') },
-    { id: 3, title: 'Ibadah Khusyuk', subtitle: '', image: findImage('card-3') },
-    { id: 4, title: 'Ziarah Bersejarah', subtitle: '', image: findImage('card-4') },
-    { id: 5, title: 'Menjaga Spiritualitas', subtitle: '', image: findImage('card-5') },
+export type Testimonial = {
+    id: number;
+    name: string;
+    location: string;
+    comment: string;
+    image: ImagePlaceholder;
+};
+
+export const packages: Package[] = [
+    {
+        id: 1,
+        name: 'Paket Umrah Silver',
+        duration: '9 Hari',
+        price: 'Rp 25.000.000',
+        image: findImage('package-1'),
+        features: ['Hotel Bintang 4', 'Pesawat Direct', 'Makan 3x Sehari', 'City Tour Mekkah & Madinah'],
+    },
+    {
+        id: 2,
+        name: 'Paket Umrah Gold',
+        duration: '9 Hari',
+        price: 'Rp 30.000.000',
+        image: findImage('package-2'),
+        features: ['Hotel Bintang 5', 'Pesawat Direct', 'Makan 3x Sehari (Menu Internasional)', 'Ziarah Eksklusif'],
+    },
+    {
+        id: 3,
+        name: 'Paket Umrah Platinum',
+        duration: '12 Hari',
+        price: 'Rp 40.000.000',
+        image: findImage('package-3'),
+        features: ['Hotel Bintang 5 (Dekat Masjid)', 'Business Class', 'Makan 3x Sehari (VIP)', 'Full Ziarah & City Tour'],
+    },
 ];
 
 export const itinerary: ItineraryItem[] = [
-    { day: 'Hari 1-4', title: 'Madinah', images: [findImage('madinah-1'), findImage('madinah-2')] },
-    { day: 'Hari 5-9', title: 'Mekkah', images: [findImage('mekkah-1'), findImage('mekkah-2')] },
+    { day: 'Hari 1-4', title: 'Madinah Al Munawwarah', images: [findImage('madinah-1'), findImage('madinah-2')] },
+    { day: 'Hari 5-9', title: 'Mekkah Al Mukarramah', images: [findImage('mekkah-1'), findImage('mekkah-2')] },
 ];
 
 export const included: IncludedItem[] = [
-    { title: 'Pembimbing', description: '2 pembimbing berpengalaman yang akan mendampingi Anda.', icon: Users },
-    { title: 'Penerbangan', description: 'Penerbangan pulang-pergi kelas ekonomi.', icon: Plane },
-    { title: 'Transportasi', description: 'Transportasi dari bandara ke hotel dan antar kota.', icon: Car },
-    { title: 'Akomodasi', description: 'Hotel bintang 4 atau 5 (termasuk sarapan).', icon: Hotel },
+    { title: 'Tiket Pesawat', description: 'Penerbangan pulang-pergi kelas ekonomi.', icon: Plane },
+    { title: 'Akomodasi', description: 'Hotel bintang 4 atau 5, termasuk sarapan.', icon: Hotel },
+    { title: 'Transportasi', description: 'Bus AC selama di Arab Saudi.', icon: Car },
+    { title: 'Muthawif', description: 'Pembimbing ibadah yang berpengalaman.', icon: Users },
+    { title: 'Visa Umrah', description: 'Pengurusan visa umrah.', icon: BookOpen },
+    { title: 'Asuransi', description: 'Asuransi perjalanan selama di tanah suci.', icon: ShieldCheck },
+];
+
+export const excluded: IncludedItem[] = [
+    { title: 'Paspor', description: 'Biaya pembuatan atau perpanjangan paspor.', icon: Briefcase },
+    { title: 'Kelebihan Bagasi', description: 'Biaya atas kelebihan berat bagasi.', icon: BaggageClaim },
+    { title: 'Pengeluaran Pribadi', description: 'Seperti laundry, telepon, dan oleh-oleh.', icon: ShoppingCart },
+    { title: 'Force Majeure', description: 'Biaya tambahan akibat kejadian luar biasa.', icon: Cross },
+];
+
+
+export const testimonials: Testimonial[] = [
+    {
+        id: 1,
+        name: 'Ahmad Subagja',
+        location: 'Jakarta',
+        comment: 'Pelayanan dari Madinah Salam Wisata sangat memuaskan. Pembimbingnya sabar dan hotelnya sangat nyaman. Insya Allah akan berangkat lagi bersama keluarga.',
+        image: findImage('testimonial-1'),
+    },
+    {
+        id: 2,
+        name: 'Siti Aminah',
+        location: 'Surabaya',
+        comment: 'Alhamdulillah, perjalanan umrah saya berjalan lancar. Semua fasilitas sesuai dengan yang dijanjikan. Terima kasih Madinah Salam Wisata.',
+        image: findImage('testimonial-2'),
+    },
+    {
+        id: 3,
+        name: 'Budi Santoso',
+        location: 'Bandung',
+        comment: 'Pengalaman spiritual yang luar biasa. Itinerarynya disusun dengan sangat baik sehingga kami bisa fokus beribadah. Sangat direkomendasikan!',
+        image: findImage('testimonial-3'),
+    },
+];
+
+
+export const galleryImages: ImagePlaceholder[] = [
+    findImage('gallery-1'),
+    findImage('gallery-2'),
+    findImage('gallery-3'),
+    findImage('gallery-4'),
+    findImage('gallery-5'),
+    findImage('gallery-6'),
 ];

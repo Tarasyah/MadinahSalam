@@ -1,53 +1,51 @@
 import Image from 'next/image';
 import { itinerary } from '@/lib/data';
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 
 const ItinerarySection = () => {
   return (
-    <section id="about" className="py-16 lg:py-24 bg-background">
-      <div className="container max-w-5xl mx-auto">
-        <div className="text-left mb-12 relative">
-           <div className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 w-16 bg-primary"></div>
-          <h2 className="font-headline text-3xl md:text-4xl font-bold ml-24">TENTANG PERJALANAN</h2>
+    <section id="itinerary" className="py-16 lg:py-24 bg-background">
+      <div className="container max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="font-headline text-3xl md:text-4xl font-bold">Rangkaian Perjalanan</h2>
+          <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+            Kami telah menyusun jadwal perjalanan 9 hari yang nyaman dan terperinci untuk memastikan pengalaman Umrah Anda berjalan lancar dan penuh makna.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          <div className="text-muted-foreground space-y-6">
-            <p>
-            Kami telah merencanakan itinerary 9 hari yang simpel dan nyaman untuk perjalanan Umrah Anda. Anda akan mengunjungi dua kota suci: <span className="text-primary">Mekkah dan Madinah.</span>
-            </p>
-            <p>
-            Tidak perlu khawatir tentang rute, jadwal, atau mencari tempat - semuanya sudah terorganisir. Kami akan menunjukkan ke mana harus pergi, apa yang harus dilihat, dan di mana harus makan, sehingga Anda bisa menikmati perjalanan dengan tenang.
-            </p>
-          </div>
-          
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border -z-10" />
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
 
-            {itinerary.map((item, index) => (
-              <div key={index} className="relative pl-12 mb-8">
-                <div className="absolute left-4 top-1 -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
-                <div className="font-bold">{item.day}</div>
-                <h3 className="font-semibold text-lg text-foreground">{item.title}</h3>
-                <div className="grid grid-cols-2 gap-2 mt-2">
-                    {item.images.map(img => {
-                        const image = img;
-                        return image ? (
-                            <div key={image.id} className="relative aspect-video rounded-md overflow-hidden">
+          {itinerary.map((item, index) => (
+            <div key={index} className={`relative flex items-start my-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+              <div className="absolute left-1/2 top-5 -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+              
+              <div className="w-[calc(50%-2rem)]">
+                <Card className="shadow-md hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="text-primary">{item.day}</CardTitle>
+                    <p className="text-xl font-semibold text-foreground">{item.title}</p>
+                  </CardHeader>
+                  <CardContent>
+                     <div className="grid grid-cols-2 gap-2">
+                        {item.images.map(img => (
+                            <div key={img.id} className="relative aspect-4/3 rounded-md overflow-hidden group">
                                 <Image
-                                    src={image.imageUrl}
-                                    alt={image.description}
-                                    data-ai-hint={image.imageHint}
+                                    src={img.imageUrl}
+                                    alt={img.description}
+                                    data-ai-hint={img.imageHint}
                                     fill
-                                    className="object-cover"
+                                    className="object-cover transform transition-transform duration-300 group-hover:scale-110"
                                 />
                             </div>
-                        ) : null;
-                    })}
-                </div>
+                        ))}
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
