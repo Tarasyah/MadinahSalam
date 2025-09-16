@@ -50,8 +50,8 @@ const HeroSection = () => {
 
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
 
-            <div className="relative z-10 container h-full flex flex-col justify-start pt-32 md:pt-48 pb-24 md:pb-32">
-                <div className="max-w-lg">
+            <div className="relative z-10 container h-full flex flex-col justify-start pt-32 md:pt-48 pb-24 md:pb-48">
+                <div className="w-1/2">
                     <motion.div
                         key={activeIndex}
                         initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ const HeroSection = () => {
                         <h1 className="font-headline text-5xl md:text-7xl font-bold text-white drop-shadow-lg leading-tight">
                             {activeDestination.title}
                         </h1>
-                        <p className="mt-4 max-w-lg text-lg md:text-xl text-white/90 drop-shadow-md">
+                        <p className="mt-4 text-lg md:text-xl text-white/90 drop-shadow-md">
                             {activeDestination.description}
                         </p>
                         <Button asChild size="lg" className="mt-8 rounded-full group">
@@ -96,6 +96,7 @@ const HeroSection = () => {
                                     alt={dest.image.description}
                                     fill
                                     className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 33vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                                 <div className="absolute bottom-0 left-0 p-3">
