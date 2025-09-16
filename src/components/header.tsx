@@ -31,12 +31,12 @@ export default function Header() {
 
   return (
     <header className={cn(
-        "fixed top-0 z-50 transition-all duration-300",
-        isScrolled ? 'left-0 right-0' : 'top-4 left-4 right-4'
+        "fixed top-0 z-50 transition-all duration-300 w-full",
+        isScrolled ? 'left-0 right-0' : 'top-4'
     )}>
       <div className={cn(
           "container flex h-14 items-center transition-all duration-300",
-          isScrolled ? 'max-w-none' : 'mx-auto bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
+          isScrolled ? 'max-w-none bg-background/80 backdrop-blur-lg' : 'max-w-6xl mx-auto bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
       )}>
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
@@ -52,7 +52,7 @@ export default function Header() {
               href={link.href}
               className={cn(
                 'transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : isScrolled ? 'text-foreground/60' : 'text-foreground'
+                pathname === link.href ? 'text-primary' : 'text-foreground/80'
               )}
             >
               {link.label}
