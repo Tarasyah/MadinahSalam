@@ -26,6 +26,8 @@ const HeroSection = () => {
         setActiveIndex(index);
     };
 
+    const isLongTitle = activeDestination.title === 'Universitas Islam Madinah';
+
     return (
         <section className="relative h-screen w-full text-white overflow-hidden" id="home">
             <AnimatePresence initial={false}>
@@ -50,7 +52,7 @@ const HeroSection = () => {
 
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
 
-            <div className="relative z-10 container h-full flex flex-col justify-center pt-28 md:pt-36 pb-32">
+            <div className="relative z-10 container h-full flex flex-col justify-center pt-28 md:pt-24 pb-32">
                 <div className="w-1/2">
                     <motion.div
                         key={activeIndex}
@@ -58,10 +60,13 @@ const HeroSection = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
                     >
-                        <h1 className="font-headline text-5xl md:text-6xl font-bold text-white drop-shadow-lg leading-tight">
+                        <h1 className={cn(
+                            "font-headline font-bold text-white drop-shadow-lg leading-tight",
+                            isLongTitle ? "text-4xl md:text-4xl" : "text-4xl md:text-5xl"
+                        )}>
                             {activeDestination.title}
                         </h1>
-                        <p className="mt-4 text-base md:text-lg text-white/90 drop-shadow-md max-w-lg">
+                        <p className="mt-4 text-sm md:text-base text-white/90 drop-shadow-md max-w-lg">
                             {activeDestination.description}
                         </p>
                         <Button asChild size="lg" className="mt-8 rounded-full group">
