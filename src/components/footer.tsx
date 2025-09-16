@@ -16,8 +16,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { href: 'https://www.facebook.com/Madinah-Salam', label: 'Madinah Salam', icon: Facebook },
-    { href: 'https://www.youtube.com/Madinah-Salam', label: 'Madinah Salam', icon: Youtube },
+    { href: 'https://www.facebook.com/Madinah-Salam', label: 'Facebook', icon: Facebook },
+    { href: 'https://www.youtube.com/Madinah-Salam', label: 'YouTube', icon: Youtube },
     { href: 'https://www.instagram.com/madinahsalam_wisata', label: '@madinahsalam_wisata', icon: Instagram },
   ];
 
