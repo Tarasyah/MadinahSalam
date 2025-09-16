@@ -7,9 +7,9 @@ const ItinerarySection = () => {
     <section id="itinerary" className="py-16 lg:py-24 bg-background">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold">Rangkaian Perjalanan</h2>
+          <h2 className="font-headline text-3xl md:text-4xl font-bold">Rangkaian Perjalanan (Contoh)</h2>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-            Kami telah menyusun jadwal perjalanan 9 hari yang nyaman dan terperinci untuk memastikan pengalaman Umrah Anda berjalan lancar dan penuh makna.
+            Kami telah menyusun jadwal perjalanan 12 hari yang nyaman dan terperinci untuk memastikan pengalaman Umrah Anda berjalan lancar dan penuh makna.
           </p>
         </div>
 

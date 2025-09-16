@@ -3,7 +3,13 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import Link from 'next/link';
-import { Check } from 'lucide-react';
+import { Check, Plane, Calendar, Info } from 'lucide-react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 const PackagesSection = () => {
   return (
@@ -13,9 +19,9 @@ const PackagesSection = () => {
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Paket Umrah Unggulan</h2>
             <p className="text-muted-foreground mt-2">Pilih paket yang paling sesuai dengan kebutuhan dan kenyamanan Anda.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-center">
           {packages.map((pkg) => (
-            <Card key={pkg.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card key={pkg.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-lg mx-auto">
               <div className="relative h-60 w-full">
                 <Image
                   src={pkg.image.imageUrl}
@@ -24,12 +30,25 @@ const PackagesSection = () => {
                   fill
                   className="object-cover"
                 />
+                 <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-2 rounded-bl-lg font-bold">
+                  {pkg.duration}
+                </div>
               </div>
               <CardHeader>
                 <CardTitle className="font-headline text-2xl text-primary">{pkg.name}</CardTitle>
-                <p className="text-muted-foreground">{pkg.duration}</p>
+                <div className="flex items-center text-muted-foreground text-sm space-x-4 pt-2">
+                    <div className="flex items-center gap-2">
+                        <Plane className="h-4 w-4" />
+                        <span>{pkg.airline}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <Calendar className="h-4 w-4" />
+                        <span>{pkg.departure}</span>
+                    </div>
+                </div>
               </CardHeader>
               <CardContent className="flex-grow">
+                <p className="font-semibold mb-3">Fasilitas Utama:</p>
                 <ul className="space-y-2 text-sm">
                     {pkg.features.map((feature, i) => (
                         <li key={i} className="flex items-center">
@@ -40,14 +59,43 @@ const PackagesSection = () => {
                 </ul>
               </CardContent>
               <CardFooter className="flex flex-col items-start bg-muted/50 p-6">
-                <p className="text-sm text-muted-foreground">Mulai dari</p>
-                <p className="text-3xl font-bold text-primary">{pkg.price}</p>
+                <div className="flex justify-between items-center w-full">
+                    <div>
+                        <p className="text-sm text-muted-foreground">Mulai dari (Quad)</p>
+                        <p className="text-3xl font-bold text-primary">{pkg.price}</p>
+                    </div>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div className="flex flex-col items-end space-y-1 text-right">
+                             {pkg.priceDetails.map(detail => (
+                                <div key={detail.type} className="flex items-center gap-2 text-sm text-muted-foreground">
+                                  <detail.icon className="h-4 w-4"/>
+                                  <span>{detail.type}: <span className="font-semibold text-foreground">{detail.price}</span></span>
+                                </div>
+                             ))}
+                             <div className="flex items-center gap-1 text-xs text-primary pt-1">
+                                <Info className="h-3 w-3" />
+                                <span>Hover untuk detail harga</span>
+                             </div>
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="text-xs text-muted-foreground">Harga per orang berdasarkan tipe kamar.</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                </div>
                 <Button asChild className="w-full mt-4 rounded-full">
                     <Link href="/#contact">Daftar Sekarang</Link>
                 </Button>
               </CardFooter>
             </Card>
           ))}
+        </div>
+        <div className="text-center mt-12">
+            <p className="text-muted-foreground text-sm">* Harga Infant (0-23 bulan): Rp 12.500.000,- (tanpa kursi, kasur, & bagasi).</p>
+            <p className="text-muted-foreground text-sm">** Diskon Anak (2-11 tahun): Rp 2.000.000,- (maksimal 4 anak per PNR).</p>
         </div>
       </div>
     </section>

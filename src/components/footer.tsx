@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Building2, Mail, Phone, MapPin, Facebook, Youtube, Instagram } from 'lucide-react';
+import { FaTelegram } from 'react-icons/fa';
 
 const Footer = () => {
   const quickLinks = [
@@ -16,9 +17,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { href: 'https://www.facebook.com/Madinah-Salam', label: 'Facebook', icon: Facebook },
-    { href: 'https://www.youtube.com/Madinah-Salam', label: 'YouTube', icon: Youtube },
-    { href: 'https://www.instagram.com/madinahsalam_wisata', label: '@madinahsalam_wisata', icon: Instagram },
+    { href: 'https://www.facebook.com/madinahsalam1', label: 'Facebook', icon: Facebook },
+    { href: 'https://www.youtube.com/@madinahsalam', label: 'YouTube', icon: Youtube },
+    { href: 'https://instagram.com/madinahsalam1', label: 'Instagram', icon: Instagram },
+    { href: 'https://t.me/madinahsalam', label: 'Telegram', icon: FaTelegram },
   ];
 
   return (
@@ -31,7 +33,7 @@ const Footer = () => {
               <span className="font-bold font-headline text-2xl">Madinah Salam</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Wisata perjalanan umrah yang amanah, nyaman, dan berkesan.
+              Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
             </p>
           </div>
 
@@ -53,7 +55,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start">
                 <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
-                <span>Madinah Salam Wisata Office | Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.</span>
+                <span>Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-4 w-4 mr-3" />
@@ -81,7 +83,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 pt-6 border-t border-border/50 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Madinah Salam Wisata. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} PT. Madinah Salam Wisata. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

@@ -8,7 +8,7 @@ const IncludedSection = () => {
       <div className="container mx-auto">
         <div className="text-center mb-12">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Fasilitas Paket</h2>
-            <p className="text-muted-foreground mt-2">Berikut adalah fasilitas yang termasuk dan tidak termasuk dalam paket kami.</p>
+            <p className="text-muted-foreground mt-2">Berikut adalah fasilitas yang termasuk dan tidak termasuk dalam paket umrah kami.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           <Card className="bg-card">
