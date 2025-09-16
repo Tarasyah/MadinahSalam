@@ -122,9 +122,13 @@ const ItinerarySection = () => {
 
         {/* Desktop Layout */}
         <div className="relative hidden lg:block h-[1517px]">
-            <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-10 dark:opacity-20 pointer-events-none">
-                <Image src="/timeline_rangkaianperjalanan.png" alt="Timeline Background" width={600} height={600} className="object-contain" />
-            </div>
+            <Image 
+                src="/timeline_rangkaianperjalanan.png" 
+                alt="Timeline Background" 
+                layout="fill" 
+                objectFit="contain"
+                className="absolute inset-0 -z-10 opacity-10 dark:opacity-20 pointer-events-none"
+            />
             <ItineraryTimelinePath />
             {itineraryData.map(item => (
                 <ItineraryItem key={item.id} item={item} align={item.id > 6 ? 'left' : 'right'} />
