@@ -14,7 +14,7 @@ const IncludedSection = () => {
           <Card className="bg-card">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
-                <CheckCircle className="h-7 w-7 text-green-500" />
+                <CheckCircle className="h-7 w-7 text-primary" />
                 <span className="text-2xl">Termasuk (Include)</span>
               </CardTitle>
             </CardHeader>

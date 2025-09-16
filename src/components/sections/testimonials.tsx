@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
                             height={80}
                             className="rounded-full mb-4 border-4 border-primary/20"
                         />
-                        <div className="flex text-primary mb-2">
+                        <div className="flex text-yellow-400 mb-2">
                             {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
                         </div>
                         <p className="text-muted-foreground italic mb-4">&quot;{testimonial.comment}&quot;</p>

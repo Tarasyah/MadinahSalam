@@ -16,7 +16,7 @@ const navLinks = [
   { href: '/#packages', label: 'Paket' },
 ];
 
-const menuVariants = {
+const menuBgVariants = {
   closed: {
     scaleX: 0,
     transformOrigin: 'center'
@@ -24,13 +24,13 @@ const menuVariants = {
   open: {
     scaleX: 1,
     transformOrigin: 'center',
-    transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] }
   }
 };
 
 const linkContainerVariants = {
   open: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+    transition: { staggerChildren: 0.1, delayChildren: 0.3 }
   },
   closed: {
     transition: { staggerChildren: 0.05, staggerDirection: -1 }
@@ -128,7 +128,7 @@ export default function Header() {
                 </Button>
 
               <div className="lg:hidden flex items-center">
-                <Button variant="ghost" size="icon" className="rounded-full hover:bg-green-hover" onClick={() => setIsMobileMenuOpen(true)}>
+                <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20" onClick={() => setIsMobileMenuOpen(true)}>
                   <Menu className={cn("h-5 w-5", !isScrolled && "text-white")} />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
@@ -140,20 +140,20 @@ export default function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background/95 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/50 backdrop-blur-sm"
             initial="closed"
             animate="open"
             exit="closed"
           >
-            <motion.div className="absolute inset-0 bg-background" variants={menuVariants} />
+            <motion.div className="absolute inset-0" style={{backgroundColor: 'hsl(var(--menu-background))'}} variants={menuBgVariants} />
             <motion.div className="absolute inset-x-0 mx-auto w-full h-full flex flex-col items-center justify-center">
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute top-6 right-6 z-10 rounded-full text-foreground hover:bg-green-hover"
+                className="absolute top-6 right-6 z-10 rounded-full text-foreground hover:bg-primary/20"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <X className="h-6 w-6" />
+                <X className="h-8 w-8" />
                 <span className="sr-only">Close Menu</span>
               </Button>
               <motion.div 
@@ -166,17 +166,17 @@ export default function Header() {
                             href={link.href}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className={cn(
-                            'text-3xl font-medium transition-colors hover:text-primary',
-                            pathname === link.href ? 'text-primary' : 'text-foreground'
+                            'text-3xl font-medium transition-colors hover:text-primary text-white',
+                            pathname === link.href && 'text-primary'
                             )}
                         >
                             {link.label}
                         </Link>
                         <motion.div
-                            className="mt-2 h-px w-full bg-border"
+                            className="mt-2 h-px w-full bg-border/20"
                             initial={{ scaleX: 0 }}
                             animate={{ scaleX: 1 }}
-                            transition={{ duration: 0.5, ease: 'circOut', delay: 0.4 }}
+                            transition={{ duration: 0.6, ease: 'circOut', delay: 0.5 }}
                         />
                     </motion.div>
                 ))}

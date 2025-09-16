@@ -33,7 +33,7 @@ const PackagesSection = () => {
                 <ul className="space-y-2 text-sm">
                     {pkg.features.map((feature, i) => (
                         <li key={i} className="flex items-center">
-                            <Check className="h-4 w-4 text-green-500 mr-2"/>
+                            <Check className="h-4 w-4 text-primary mr-2"/>
                             <span>{feature}</span>
                         </li>
                     ))}

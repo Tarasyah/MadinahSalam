@@ -53,7 +53,7 @@ const AboutPage = () => {
                                     <ul className="space-y-3">
                                         {values.map((value, index) => (
                                             <li key={index} className="flex items-center">
-                                                <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                                                <CheckCircle className="h-5 w-5 text-primary mr-3" />
                                                 <span>{value}</span>
                                             </li>
                                         ))}
