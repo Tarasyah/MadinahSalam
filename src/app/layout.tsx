@@ -44,6 +44,7 @@ export default function RootLayout({
                 alt="WhatsApp"
                 width={56}
                 height={56}
+                className="rounded-full"
               />
             </Link>
           </div>
