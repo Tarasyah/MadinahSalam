@@ -17,14 +17,14 @@ const navLinks = [
 ];
 
 const menuBgVariants = {
-  open: {
+  open: (i: number) => ({
     scaleX: 1,
-    transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1] }
-  },
-  closed: {
+    transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1], delay: i * 0.05 }
+  }),
+  closed: (i: number) => ({
     scaleX: 0,
-    transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1], delay: 0.5 }
-  }
+    transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1], delay: i * 0.05 }
+  })
 };
 
 const linkContainerVariants = {
@@ -40,15 +40,14 @@ const linkVariants = {
   open: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.35, ease: [0.34, 1.56, 0.64, 1] }
+    transition: { duration: 0.35, ease: 'easeOut' }
   },
   closed: {
     opacity: 0,
     y: 20,
-    transition: { duration: 0.25 }
+    transition: { duration: 0.25, ease: 'easeIn' }
   }
 };
-
 
 export default function Header() {
   const pathname = usePathname();
@@ -76,28 +75,26 @@ export default function Header() {
 
   return (
     <>
-      <header className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          isScrolled ? '' : 'pt-4'
-      )}>
+      <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300")}>
         <div className={cn(
-            "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300 pointer-events-none",
-            isScrolled ? "opacity-0" : "opacity-100"
+          "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300 pointer-events-none",
+          isScrolled ? "opacity-0" : "opacity-100"
         )} />
         
         <div className={cn(
-            "relative flex h-14 items-center transition-all duration-300 px-4",
-            "lg:container lg:max-w-5xl"
+          "relative mx-auto flex h-14 items-center transition-all duration-300 px-4",
+          "lg:container lg:max-w-5xl"
         )}>
-            <div className={cn(
-                "absolute inset-0 transition-all duration-300 -z-10",
-                isScrolled ? "dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-none lg:rounded-full" : ""
-            )}/>
+          <div className={cn(
+            "absolute inset-0 -z-10 transition-all duration-300",
+            isScrolled ? "dark:bg-background/80 bg-white/80 backdrop-blur-lg" : "",
+            isScrolled && "lg:rounded-full"
+          )} />
             
             <div className="flex-1 flex items-center">
               <Link href="/" className="flex items-center space-x-2">
                 <Building2 className="h-6 w-6 text-primary" />
-                <span className={cn("font-bold font-headline text-lg", !isScrolled && "text-white")}>Madinah Salam</span>
+                <span className={cn("font-bold font-headline text-lg", !isScrolled ? "text-white" : "text-foreground")}>Madinah Salam</span>
               </Link>
             </div>
 
@@ -124,7 +121,7 @@ export default function Header() {
                 </Button>
 
               <div className="lg:hidden flex items-center">
-                <Button variant="ghost" size="icon" className="rounded-full hover:bg-green-hover" onClick={() => setIsMobileMenuOpen(true)}>
+                <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20" onClick={() => setIsMobileMenuOpen(true)}>
                   <Menu className={cn("h-5 w-5", !isScrolled ? "text-white" : "text-foreground" )} />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
@@ -136,29 +133,32 @@ export default function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden"
             initial="closed"
             animate="open"
             exit="closed"
           >
             <motion.div 
-              className="absolute inset-0 origin-center" 
+              custom={0}
+              className="absolute inset-0 origin-right" 
               style={{backgroundColor: 'hsl(var(--menu-background))'}} 
               variants={menuBgVariants} 
             />
             <motion.div 
-              className="absolute inset-0 origin-center" 
-              style={{backgroundColor: 'hsl(var(--menu-background))', transformOrigin: 'center'}} 
+              custom={1}
+              className="absolute inset-0 origin-left" 
+              style={{backgroundColor: 'hsl(var(--menu-background))'}} 
               variants={menuBgVariants} 
             />
 
             <motion.div 
-                className="relative z-10 flex w-full max-w-sm flex-col items-center justify-center text-center gap-y-4"
+                className="relative z-10 flex w-full max-w-sm flex-col items-center justify-center text-center"
                 variants={linkContainerVariants}
             >
               <motion.div
-                className="absolute top-[-100px] right-[-30px] md:right-[-50px]"
+                className="absolute top-[-100px] right-[-15px] md:right-[-30px]"
                 variants={linkVariants}
+                exit={{ opacity: 0, transition: { duration: 0.2 } }}
               >
                 <Button
                   variant="ghost"
