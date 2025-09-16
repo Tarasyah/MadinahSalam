@@ -41,7 +41,7 @@ export default function Header() {
     )}>
       <div className={cn(
           "container flex h-14 items-center transition-all duration-300",
-          isScrolled ? 'max-w-none dark:bg-background/80 bg-white/80 backdrop-blur-lg' : 'max-w-5xl mx-auto bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
+          isScrolled ? 'max-w-none lg:max-w-5xl dark:bg-background/80 bg-white/80 backdrop-blur-lg lg:rounded-full' : 'max-w-5xl mx-auto bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
       )}>
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
