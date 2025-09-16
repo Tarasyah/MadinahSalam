@@ -27,7 +27,7 @@ const Footer = () => {
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <Building2 className="h-8 w-8 text-primary" />
               <span className="font-bold font-headline text-2xl">Madinah Salam</span>
@@ -37,7 +37,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div>
+          <div className="md:order-3 lg:order-none">
             <h3 className="font-semibold mb-4 text-foreground">Tautan Cepat</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
@@ -50,7 +50,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="md:order-2 lg:order-none">
             <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start">
@@ -68,7 +68,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="md:order-4 lg:order-none">
             <h3 className="font-semibold mb-4 text-foreground">Media Sosial</h3>
             <ul className="space-y-3">
               {socialLinks.map((link) => (
@@ -84,6 +84,13 @@ const Footer = () => {
         </div>
         <div className="mt-8 pt-6 border-t border-border/50 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} PT. Madinah Salam Wisata. All Rights Reserved.</p>
+           <div className="mt-2 space-x-4">
+            {legalLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                  {link.label}
+                </Link>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

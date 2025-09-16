@@ -57,7 +57,7 @@ const ItineraryItem = ({ item, align }: { item: typeof itineraryData[0], align: 
       item.id === 8 && "lg:top-[330px] lg:left-[calc(50%+40px)]",
       item.id === 9 && "lg:top-[590px] lg:left-[calc(50%+40px)]",
       item.id === 10 && "lg:top-[850px] lg:left-[calc(50%+40px)]",
-      itemid === 11 && "lg:top-[1110px] lg:left-[calc(50%+40px)]",
+      item.id === 11 && "lg:top-[1110px] lg:left-[calc(50%+40px)]",
       item.id === 12 && "lg:top-[1370px] lg:left-[calc(50%+40px)]",
     )}>
       <div className={cn("text-right", isLeft && 'lg:text-right', !isLeft && 'lg:text-left')}>
