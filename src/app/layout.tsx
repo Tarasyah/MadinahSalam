@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { ThemeProvider } from '@/components/theme-provider';
+import { CustomThemeProvider } from '@/components/custom-theme-provider';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -21,18 +21,14 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <meta name="view-transition" content="same-origin" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className={cn('font-body antialiased overflow-x-hidden')}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <CustomThemeProvider>
           <Header />
           <main>{children}</main>
           <Footer />
@@ -49,7 +45,7 @@ export default function RootLayout({
             </Link>
           </div>
           <Toaster />
-        </ThemeProvider>
+        </CustomThemeProvider>
       </body>
     </html>
   );

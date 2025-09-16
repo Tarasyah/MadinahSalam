@@ -132,3 +132,9 @@ html {
   background-color: hsl(var(--primary));
   border-radius: 0 4px 4px 0;
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
