@@ -78,7 +78,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Thumbnails */}
-                <div className="flex justify-start md:justify-end">
+                <div className="hidden md:flex justify-start md:justify-end">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                         {heroDestinations.map((dest, index) => (
                             <motion.div
