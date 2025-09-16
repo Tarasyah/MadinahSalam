@@ -81,24 +81,31 @@ export default function Header() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled ? '' : 'pt-4'
       )}>
+        {/* Gradient for non-scrolled state */}
         <div className={cn(
             "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300",
             isScrolled ? "opacity-0" : "opacity-100"
         )} />
-        <div className={cn("container relative mx-auto flex h-14 max-w-5xl items-center transition-all duration-300 px-4")}>
+        
+        {/* Inner container */}
+        <div className={cn(
+            "relative flex h-14 items-center transition-all duration-300 px-4",
+            "lg:container lg:max-w-5xl"
+        )}>
+            {/* Background for scrolled state */}
             <div className={cn(
-                "absolute inset-0 transition-all duration-300",
+                "absolute inset-0 transition-all duration-300 -z-10",
                 isScrolled ? "dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-none lg:rounded-full" : ""
             )}/>
             
-            <div className="relative flex-1 flex items-center">
+            <div className="flex-1 flex items-center">
               <Link href="/" className="flex items-center space-x-2">
                 <Building2 className="h-6 w-6 text-primary" />
                 <span className={cn("font-bold font-headline text-lg", !isScrolled && "text-white")}>Madinah Salam</span>
               </Link>
             </div>
 
-            <nav className="relative hidden items-center space-x-6 text-sm font-medium lg:flex flex-1 justify-center">
+            <nav className="hidden items-center space-x-6 text-sm font-medium lg:flex flex-1 justify-center">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -114,7 +121,7 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="relative flex flex-1 items-center justify-end space-x-2">
+            <div className="flex flex-1 items-center justify-end space-x-2">
                 <ThemeToggle />
                 <Button asChild className="hidden lg:inline-flex rounded-full">
                   <Link href="/#contact">Hubungi Kami</Link>
