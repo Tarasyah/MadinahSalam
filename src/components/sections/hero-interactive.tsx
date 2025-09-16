@@ -52,7 +52,7 @@ const HeroSection = () => {
 
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
 
-            <div className="relative z-10 container h-full flex flex-col justify-center pt-32 md:pt-28 pb-32">
+            <div className="relative z-10 container h-full flex flex-col justify-center pt-48 pb-32">
                 <div className="w-full lg:w-1/2">
                     <motion.div
                         key={activeIndex}
@@ -62,11 +62,12 @@ const HeroSection = () => {
                     >
                         <h1 className={cn(
                             "font-headline font-bold text-white drop-shadow-lg leading-tight",
-                            isLongTitle ? "text-3xl" : "text-4xl"
+                            "text-4xl md:text-5xl",
+                            isLongTitle && "text-3xl md:text-4xl"
                         )}>
                             {activeDestination.title}
                         </h1>
-                        <p className="mt-4 text-sm md:text-base text-white/90 drop-shadow-md max-w-lg">
+                        <p className="mt-4 text-base md:text-lg text-white/90 drop-shadow-md max-w-lg">
                             {activeDestination.description}
                         </p>
                         <Button asChild size="lg" className="mt-8 rounded-full group">
