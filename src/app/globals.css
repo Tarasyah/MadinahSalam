@@ -88,4 +88,5 @@
 
 html {
   background-color: hsl(var(--background));
+  overflow-x: hidden;
 }
