@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { galleryImages } from '@/lib/data';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 
 const GallerySection = () => {
     return (
@@ -20,10 +20,6 @@ const GallerySection = () => {
                                 fill
                                 className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <CardContent className="absolute bottom-0 left-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <h3 className="text-white font-semibold text-lg">{image.description}</h3>
-                            </CardContent>
                         </Card>
                     ))}
                 </div>
