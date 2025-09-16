@@ -17,14 +17,13 @@ const navLinks = [
 ];
 
 const menuBgVariants = {
-  closed: {
-    scaleX: 0,
-    transformOrigin: 'center'
-  },
   open: {
     scaleX: 1,
-    transformOrigin: 'center',
     transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] }
+  },
+  closed: {
+    scaleX: 0,
+    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: 0.8 }
   }
 };
 
@@ -33,7 +32,7 @@ const linkContainerVariants = {
     transition: { staggerChildren: 0.1, delayChildren: 0.3 }
   },
   closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 }
+    transition: { staggerChildren: 0.08, staggerDirection: -1 }
   }
 };
 
@@ -83,7 +82,7 @@ export default function Header() {
       )}>
         {/* Gradient for non-scrolled state */}
         <div className={cn(
-            "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300",
+            "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300 pointer-events-none",
             isScrolled ? "opacity-0" : "opacity-100"
         )} />
         
@@ -128,7 +127,7 @@ export default function Header() {
                 </Button>
 
               <div className="lg:hidden flex items-center">
-                <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20" onClick={() => setIsMobileMenuOpen(true)}>
+                <Button variant="ghost" size="icon" className="rounded-full hover:bg-green-hover" onClick={() => setIsMobileMenuOpen(true)}>
                   <Menu className={cn("h-5 w-5", !isScrolled && "text-white")} />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
@@ -140,22 +139,38 @@ export default function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
             initial="closed"
             animate="open"
             exit="closed"
           >
-            <motion.div className="absolute inset-0" style={{backgroundColor: 'hsl(var(--menu-background))'}} variants={menuBgVariants} />
+            <motion.div 
+              className="absolute inset-0 origin-center" 
+              style={{backgroundColor: 'hsl(var(--menu-background))'}} 
+              variants={menuBgVariants} 
+            />
+            <motion.div 
+              className="absolute inset-0 origin-center" 
+              style={{backgroundColor: 'hsl(var(--menu-background))', transformOrigin: 'center'}} 
+              variants={menuBgVariants} 
+            />
+
             <motion.div className="absolute inset-x-0 mx-auto w-full h-full flex flex-col items-center justify-center">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute top-6 right-6 z-10 rounded-full text-foreground hover:bg-primary/20"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <X className="h-8 w-8" />
-                <span className="sr-only">Close Menu</span>
-              </Button>
+               <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1, transition: { delay: 0.4, duration: 0.4 } }}
+                  exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.3 } }}
+                >
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute top-6 right-6 z-10 rounded-full text-foreground hover:bg-primary/20"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <X className="h-8 w-8" />
+                    <span className="sr-only">Close Menu</span>
+                  </Button>
+               </motion.div>
               <motion.div 
                   className="relative z-10 flex w-full max-w-sm flex-col items-center justify-center text-center gap-y-4"
                   variants={linkContainerVariants}
