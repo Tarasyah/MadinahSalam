@@ -85,13 +85,13 @@ export default function Header() {
             "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300",
             isScrolled ? "opacity-0" : "opacity-100"
         )} />
-        <div className="container relative mx-auto flex h-14 max-w-5xl items-center transition-all duration-300">
+        <div className={cn("container relative mx-auto flex h-14 max-w-5xl items-center transition-all duration-300 px-4")}>
             <div className={cn(
                 "absolute inset-0 transition-all duration-300",
                 isScrolled ? "dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-none lg:rounded-full" : ""
             )}/>
             
-            <div className="relative flex-1 flex items-center pl-4">
+            <div className="relative flex-1 flex items-center">
               <Link href="/" className="flex items-center space-x-2">
                 <Building2 className="h-6 w-6 text-primary" />
                 <span className={cn("font-bold font-headline text-lg", !isScrolled && "text-white")}>Madinah Salam</span>
@@ -114,7 +114,7 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="relative flex flex-1 items-center justify-end space-x-2 pr-2">
+            <div className="relative flex flex-1 items-center justify-end space-x-2">
                 <ThemeToggle />
                 <Button asChild className="hidden lg:inline-flex rounded-full">
                   <Link href="/#contact">Hubungi Kami</Link>
