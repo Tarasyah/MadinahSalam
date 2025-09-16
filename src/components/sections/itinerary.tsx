@@ -5,46 +5,28 @@ import Image from 'next/image';
 const ItineraryTimelinePath = () => (
   <>
     <svg width="608" height="1517" viewBox="0 0 608 1517" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-auto max-w-[608px] -z-10 hidden lg:block">
-        <path d="M568 40.0001C568 18.4315 550.569 1 529 1H204C137.653 1 83 55.6532 83 122V152C83 204.484 40.4837 247 -12 247H-13" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="2"/>
-        <path d="M40 1477C40 1498.57 57.4315 1516 79 1516H404C470.347 1516 525 1461.35 525 1395V1385C525 1332.52 567.516 1290 619 1290H620" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="2"/>
-        <path d="M-13.0001 247H-16C-71.3923 247 -126 301.608 -126 357V385C-126 451.347 -71.3468 506  -5 506H304C370.347 506 425 560.653 425 627V655C425 721.347 479.653 776 546 776H568" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="2"/>
-        <path d="M568 776H546C479.653 776 425 830.653 425 897V925C425 991.347 370.347 1046 304 1046H79C12.6532 1046 -42 1100.65 -42 1167V1290H-12" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="2"/>
-        <path d="M529 40.0001C529 18.4315 511.569 1 490 1H204C137.653 1 83 55.6532 83 122V152C83 204.484 40.4837 247 -12 247" stroke="url(#paint0_linear_3_341)" strokeWidth="10" strokeLinecap="round"/>
-        <path d="M525 1477C525 1498.57 507.569 1516 486 1516H404C470.347 1516 525 1461.35 525 1395V1385C525 1332.52 567.516 1290 619 1290" stroke="url(#paint1_linear_3_341)" strokeWidth="10" strokeLinecap="round"/>
-        <path d="M-12 247H-15C-70.3923 247 -125 301.608 -125 357V385C-125 451.347 -70.3468 506 -4 506H304C370.347 506 425 560.653 425 627V655C425 721.347 479.653 776 546 776" stroke="url(#paint2_linear_3_341)" strokeWidth="10" strokeLinecap="round"/>
-        <path d="M546 776H546C479.653 776 425 830.653 425 897V925C425 991.347 370.347 1046 304 1046H79C12.6532 1046 -42 1100.65 -42 1167V1290" stroke="url(#paint3_linear_3_341)" strokeWidth="10" strokeLinecap="round"/>
-        <defs>
-            <linearGradient id="paint0_linear_3_341" x1="-12" y1="247" x2="529" y2="40.0001" gradientUnits="userSpaceOnUse">
-                <stop stopColor="hsl(var(--primary))" stopOpacity="0"/>
-                <stop offset="1" stopColor="hsl(var(--primary))"/>
-            </linearGradient>
-            <linearGradient id="paint1_linear_3_341" x1="619" y1="1290" x2="486" y2="1516" gradientUnits="userSpaceOnUse">
-                <stop stopColor="hsl(var(--primary))" stopOpacity="0"/>
-                <stop offset="1" stopColor="hsl(var(--primary))"/>
-            </linearGradient>
-            <linearGradient id="paint2_linear_3_341" x1="-15" y1="247" x2="546" y2="776" gradientUnits="userSpaceOnUse">
-                <stop stopColor="hsl(var(--primary))" stopOpacity="0"/>
-                <stop offset="1" stopColor="hsl(var(--primary))"/>
-            </linearGradient>
-            <linearGradient id="paint3_linear_3_341" x1="-42" y1="1290" x2="546" y2="776" gradientUnits="userSpaceOnUse">
-                <stop stopColor="hsl(var(--primary))" stopOpacity="0"/>
-                <stop offset="1" stopColor="hsl(var(--primary))"/>
-            </linearGradient>
-            <style dangerouslySetInnerHTML={{ __html: `
-                    @keyframes draw-line {
-                        0% { stroke-dashoffset: 2000; }
-                        100% { stroke-dashoffset: 0; }
-                    }
-                    @keyframes glow {
-                        0%, 100% { filter: drop-shadow(0 0 5px hsl(var(--primary))); }
-                        50% { filter: drop-shadow(0 0 15px hsl(var(--primary))); }
-                    }
-                    svg path[stroke-linecap="round"] {
-                        stroke-dasharray: 2000;
-                        animation: draw-line 30s linear infinite, glow 3s ease-in-out infinite;
-                    }
-                `}} />
-        </defs>
+      {/* Static background path */}
+      <path d="M568 40.0001C568 18.4315 550.569 1 529 1H204C137.653 1 83 55.6532 83 122V152C83 204.484 40.4837 247 -12 247H-13M40 1477C40 1498.57 57.4315 1516 79 1516H404C470.347 1516 525 1461.35 525 1395V1385C525 1332.52 567.516 1290 619 1290H620M-13.0001 247H-16C-71.3923 247 -126 301.608 -126 357V385C-126 451.347 -71.3468 506 -5 506H304C370.347 506 425 560.653 425 627V655C425 721.347 479.653 776 546 776H568M568 776H546C479.653 776 425 830.653 425 897V925C425 991.347 370.347 1046 304 1046H79C12.6532 1046 -42 1100.65 -42 1167V1290H-12" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="2"/>
+      
+      {/* Animated glowing path */}
+      <path d="M568 40.0001C568 18.4315 550.569 1 529 1H204C137.653 1 83 55.6532 83 122V152C83 204.484 40.4837 247 -12 247H-13M40 1477C40 1498.57 57.4315 1516 79 1516H404C470.347 1516 525 1461.35 525 1395V1385C525 1332.52 567.516 1290 619 1290H620M-13.0001 247H-16C-71.3923 247 -126 301.608 -126 357V385C-126 451.347 -71.3468 506 -5 506H304C370.347 506 425 560.653 425 627V655C425 721.347 479.653 776 546 776H568M568 776H546C479.653 776 425 830.653 425 897V925C425 991.347 370.347 1046 304 1046H79C12.6532 1046 -42 1100.65 -42 1167V1290H-12" stroke="hsl(var(--primary))" strokeWidth="2" strokeLinecap="round" id="animated-path"/>
+
+      <defs>
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes draw-line {
+            0% { stroke-dashoffset: 4000; }
+            100% { stroke-dashoffset: 0; }
+          }
+          @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 2px hsl(var(--primary) / 0.8)); }
+            50% { filter: drop-shadow(0 0 8px hsl(var(--primary))); }
+          }
+          #animated-path {
+            stroke-dasharray: 4000;
+            animation: draw-line 20s linear infinite, glow 3s ease-in-out infinite;
+          }
+        `}} />
+      </defs>
     </svg>
   </>
 );
@@ -62,7 +44,7 @@ const ItineraryItem = ({ item, align }: { item: typeof itineraryData[0], align: 
       item.id === 3 && "lg:top-[420px] lg:right-[calc(50%+40px)]",
       item.id === 4 && "lg:top-[680px] lg:right-[calc(50%+40px)]",
       item.id === 5 && "lg:top-[940px] lg:right-[calc(50%+40px)]",
-      item.id === 6 && "lg:top-[1200px] lg-right-[calc(50%+40px)]",
+      item.id === 6 && "lg:top-[1200px] lg:right-[calc(50%+40px)]",
       item.id === 7 && "lg:top-[70px] lg:left-[calc(50%+40px)]",
       item.id === 8 && "lg:top-[330px] lg:left-[calc(50%+40px)]",
       item.id === 9 && "lg:top-[590px] lg:left-[calc(50%+40px)]",
