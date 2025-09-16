@@ -36,17 +36,6 @@ const menuContainerVariants = {
   }
 };
 
-const bgVariants = {
-  open: {
-    scaleX: 1,
-    transition: { duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }
-  },
-  closed: {
-    scaleX: 0,
-    transition: { duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9], delay: 0.2 }
-  }
-};
-
 const linkVariants = {
   open: {
     opacity: 1,
@@ -87,7 +76,8 @@ export default function Header() {
   return (
     <>
       <header className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled ? '' : 'pt-4'
       )}>
         <div className={cn(
           "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300 pointer-events-none",
@@ -95,8 +85,9 @@ export default function Header() {
         )} />
         
         <div className={cn(
-          "relative mx-auto flex h-14 items-center transition-all duration-300 px-4",
-          "lg:container lg:max-w-5xl"
+          "relative mx-auto flex h-14 items-center transition-all duration-300",
+          "lg:container lg:max-w-5xl",
+          "px-4" 
         )}>
           <div className={cn(
             "absolute inset-0 -z-10 transition-all duration-300",
@@ -157,8 +148,8 @@ export default function Header() {
               exit="closed"
             >
               <motion.div
-                className="absolute top-4 right-4 p-4"
-                variants={linkVariants}
+                className="absolute top-4 right-6 p-4 z-20"
+                variants={linkVariants} // Using same variants for simplicity, can be customized
               >
                 <Button
                   variant="ghost"
