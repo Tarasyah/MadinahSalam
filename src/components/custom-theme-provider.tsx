@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 const onThemeChange = (
   theme: string,
+  setTheme: (theme: string) => void,
   event?: React.MouseEvent<HTMLDivElement, MouseEvent>
 ) => {
   const x = event?.clientX ?? window.innerWidth / 2;
@@ -18,17 +19,13 @@ const onThemeChange = (
   
   // @ts-ignore
   if (!document.startViewTransition) {
-    const root = document.documentElement;
-    root.classList.remove("dark", "light");
-    root.classList.add(theme);
+    setTheme(theme);
     return;
   }
 
   // @ts-ignore
   const transition = document.startViewTransition(() => {
-    const root = document.documentElement;
-    root.classList.remove("dark", "light");
-    root.classList.add(theme);
+    setTheme(theme);
   });
 
   transition.ready.then(() => {
@@ -38,12 +35,12 @@ const onThemeChange = (
     ];
     document.documentElement.animate(
       {
-        clipPath: clipPath,
+        clipPath: theme === "dark" ? clipPath.reverse() : clipPath,
       },
       {
         duration: 500,
         easing: "ease-in-out",
-        pseudoElement: "::view-transition-new(root)",
+        pseudoElement: theme === 'dark' ? "::view-transition-old(root)" : "::view-transition-new(root)",
       }
     );
   });
@@ -52,19 +49,10 @@ const onThemeChange = (
 const ThemeContext = ({ children }: { children: ReactNode }) => {
   const { setTheme: originalSetTheme, theme: currentTheme } = useTheme();
 
-  const setTheme = (
-    theme: string,
-    event?: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
-    onThemeChange(theme, event);
-    originalSetTheme(theme);
-  };
-  
   useEffect(() => {
-    const root = document.documentElement;
     if (currentTheme) {
-        root.classList.remove("dark", "light");
-        root.classList.add(currentTheme);
+      document.documentElement.classList.remove("dark", "light");
+      document.documentElement.classList.add(currentTheme);
     }
   }, [currentTheme]);
 
@@ -75,7 +63,7 @@ const ThemeContext = ({ children }: { children: ReactNode }) => {
         const button = target.closest("[data-theme-toggle]");
         if (button) {
           const newTheme = currentTheme === "dark" ? "light" : "dark";
-          setTheme(newTheme, event);
+          onThemeChange(newTheme, originalSetTheme, event);
         }
       }}
     >
@@ -89,7 +77,7 @@ export const CustomThemeProvider = ({ children }: { children: ReactNode }) => {
     <NextThemesProvider
       attribute="class"
       defaultTheme="dark"
-      enableSystem
+      enableSystem={false}
       disableTransitionOnChange
     >
       <ThemeContext>{children}</ThemeContext>
