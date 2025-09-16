@@ -3,7 +3,13 @@
 import Link from 'next/link';
 import { Menu, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSeparator,
+} from '@/components/ui/dropdown-menu';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
@@ -18,7 +24,6 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
-  const [isSheetOpen, setSheetOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -66,40 +71,42 @@ export default function Header() {
             <Link href="/#contact">Hubungi Kami</Link>
           </Button>
 
-          <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left">
-              <div className="flex flex-col h-full py-6">
-                <Link href="/" className="flex items-center space-x-2 mb-8">
-                  <Building2 className="h-6 w-6 text-primary" />
-                  <span className="font-bold font-headline text-lg">Madinah Salam</span>
-                </Link>
-                <nav className="flex flex-col space-y-4">
-                  {navLinks.map((link) => (
+          <div className="lg:hidden">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle Menu</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                <div className="px-2 py-2">
+                    <Link href="/" className="flex items-center space-x-2 mb-4">
+                        <Building2 className="h-6 w-6 text-primary" />
+                        <span className="font-bold font-headline text-lg">Madinah Salam</span>
+                    </Link>
+                </div>
+                <DropdownMenuSeparator />
+                {navLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
                     <Link
-                      key={link.href}
                       href={link.href}
-                      onClick={() => setSheetOpen(false)}
                       className={cn(
-                        'text-lg transition-colors hover:text-primary',
+                        'w-full',
                         pathname === link.href ? 'text-primary' : 'text-foreground'
                       )}
                     >
                       {link.label}
                     </Link>
-                  ))}
-                </nav>
-                <Button asChild className="mt-auto rounded-full" onClick={() => setSheetOpen(false)}>
-                  <Link href="/#contact">Hubungi Kami</Link>
-                </Button>
-              </div>
-            </SheetContent>
-          </Sheet>
+                  </DropdownMenuItem>
+                ))}
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                   <Link href="/#contact" className="w-full">Hubungi Kami</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </div>
     </header>
