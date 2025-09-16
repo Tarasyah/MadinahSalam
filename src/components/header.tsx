@@ -110,9 +110,12 @@ export default function Header() {
                     <span className="sr-only">Toggle Menu</span>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuContent 
+                  align="end" 
+                  className="w-56 bg-card mr-2"
+                >
                   {[...navLinks, { href: '/#contact', label: 'Hubungi Kami' }].map((link) => (
-                    <DropdownMenuItem key={link.href} asChild>
+                    <DropdownMenuItem key={link.href} asChild className="p-2 text-base">
                       <Link href={link.href} className="w-full">
                         {link.label}
                       </Link>
