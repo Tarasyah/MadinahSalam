@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Building2, Home, Users, FileText, Package, Phone } from 'lucide-react';
+import { Menu, Building2, Home, Users, FileText, Package, Phone, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -114,7 +114,7 @@ export default function Header() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent 
                   align="end" 
-                  className="w-64 mr-2 shadow-xl border-border/20"
+                  className="mr-2 shadow-xl border-border/20"
                   data-mobile-menu-content
                   sideOffset={16}
                 >
