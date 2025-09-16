@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -143,11 +144,12 @@ export default function Header() {
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.2, duration: 0.2 }}
+                  className="absolute top-4 right-4"
                 >
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="absolute top-4 right-2 h-16 w-16 rounded-full text-white hover:bg-primary/20"
+                    className="h-16 w-16 rounded-full text-white hover:bg-primary/20"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <X className="h-8 w-8" />
