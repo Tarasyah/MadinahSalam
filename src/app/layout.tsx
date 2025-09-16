@@ -44,7 +44,6 @@ export default function RootLayout({
                 alt="WhatsApp"
                 width={56}
                 height={56}
-                className="rounded-full shadow-lg hover:shadow-xl"
               />
             </Link>
           </div>
