@@ -81,7 +81,7 @@ export default function Header() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled ? '' : 'pt-4'
       )}>
-        <div className="container max-w-5xl mx-auto px-4">
+        <div className="container max-w-5xl mx-auto px-4 md:px-0">
           <div className={cn(
               "relative flex h-14 items-center transition-all duration-300",
               isScrolled 
