@@ -95,7 +95,7 @@ export function HoverBorderGradient({
         }}
         transition={{ ease: "linear", duration: duration ?? 1 }}
       />
-      <div className="bg-black absolute z-1 flex-none inset-[2px] rounded-[inherit]" />
+      <div className="bg-background absolute z-1 flex-none inset-[2px] rounded-[inherit]" />
     </Tag>
   );
 }

@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { included, excluded } from '@/lib/data';
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CircleCheckBig, CircleX } from 'lucide-react';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 
 const IncludedSection = () => {
@@ -14,13 +14,13 @@ const IncludedSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           <HoverBorderGradient
             containerClassName="rounded-lg w-full"
-            className="bg-black/90 text-left p-0"
+            className="bg-card/95 text-left p-0"
             as="div"
           >
             <Card className="bg-transparent border-none transition-transform duration-300 ease-in-out">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
-                  <CheckCircle className="h-7 w-7 text-primary" />
+                  <CircleCheckBig className="h-7 w-7 text-primary" />
                   <span className="text-2xl">Termasuk (Include)</span>
                 </CardTitle>
               </CardHeader>
@@ -41,13 +41,13 @@ const IncludedSection = () => {
           </HoverBorderGradient>
           <HoverBorderGradient
             containerClassName="rounded-lg w-full"
-            className="bg-black/90 text-left p-0"
+            className="bg-card/95 text-left p-0"
             as="div"
           >
             <Card className="bg-transparent border-none transition-transform duration-300 ease-in-out">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
-                  <XCircle className="h-7 w-7 text-destructive" />
+                  <CircleX className="h-7 w-7 text-destructive" />
                   <span className="text-2xl">Tidak Termasuk (Exclude)</span>
                 </CardTitle>
               </CardHeader>

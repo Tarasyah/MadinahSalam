@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
                 <div className="p-1">
                   <HoverBorderGradient
                     containerClassName="rounded-lg w-full h-full"
-                    className="bg-black/90 p-0"
+                    className="bg-card/95 p-0"
                     as="div"
                   >
                     <Card className="h-full flex flex-col items-center text-center shadow-md bg-transparent border-none">
