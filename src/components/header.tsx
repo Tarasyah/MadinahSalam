@@ -45,7 +45,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <nav className="hidden items-center space-x-6 text-sm font-medium md:flex flex-1 justify-center">
+        <nav className="hidden items-center space-x-6 text-sm font-medium lg:flex flex-1 justify-center">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -60,15 +60,15 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center justify-end space-x-2">
+        <div className="flex flex-1 items-center justify-end space-x-2">
           <ThemeToggle />
-          <Button asChild className="hidden md:inline-flex rounded-full">
+          <Button asChild className="hidden lg:inline-flex rounded-full">
             <Link href="/#contact">Hubungi Kami</Link>
           </Button>
 
           <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button variant="ghost" size="icon" className="lg:hidden">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>

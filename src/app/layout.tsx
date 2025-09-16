@@ -38,12 +38,12 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <div className="fixed bottom-6 right-6 z-50">
-            <Link href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="block w-14 h-14 transition-transform hover:scale-110 drop-shadow-lg">
+            <Link href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="block w-12 h-12 transition-transform hover:scale-110 drop-shadow-lg">
                 <Image 
                   src="/icons8-whatsapp.gif" 
                   alt="WhatsApp" 
-                  width={56} 
-                  height={56} 
+                  width={48} 
+                  height={48} 
                   unoptimized 
                   className="rounded-full"
                 />

@@ -51,7 +51,7 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
 
             <div className="relative z-10 container h-full flex flex-col justify-center pt-32 md:pt-40 pb-24">
-                <div className="max-w-xl">
+                <div className="w-1/2">
                     <motion.div
                         key={activeIndex}
                         initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ const HeroSection = () => {
             </div>
 
             {/* Thumbnails */}
-            <div className="absolute bottom-12 right-0 z-20 w-full hidden md:block">
+            <div className="absolute bottom-12 right-0 z-20 w-full hidden lg:block">
                 <div className="container flex justify-end">
                      <div className="grid grid-cols-4 gap-3">
                         {heroDestinations.map((dest, index) => (
