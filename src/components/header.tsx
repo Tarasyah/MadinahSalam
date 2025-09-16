@@ -39,75 +39,80 @@ export default function Header() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled ? '' : 'top-4'
     )}>
-      <div className={cn(
-          "container flex h-14 items-center transition-all duration-300",
-          isScrolled 
-            ? 'max-w-5xl mx-auto dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-full' 
-            : 'max-w-5xl mx-auto bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
-      )}>
-        <div className="mr-4 flex items-center">
-          <Link href="/" className="flex items-center space-x-2">
-            <Building2 className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline text-lg">Madinah Salam</span>
-          </Link>
-        </div>
-
-        <nav className="hidden items-center space-x-6 text-sm font-medium lg:flex flex-1 justify-center">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : 'text-foreground/80'
-              )}
-            >
-              {link.label}
+      <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={cn(
+            "relative flex h-14 items-center transition-all duration-300",
+            isScrolled 
+              ? 'dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-full' 
+              : 'bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
+        )}>
+          <div className="mr-4 flex items-center pl-4">
+            <Link href="/" className="flex items-center space-x-2">
+              <Building2 className="h-6 w-6 text-primary" />
+              <span className="font-bold font-headline text-lg">Madinah Salam</span>
             </Link>
-          ))}
-        </nav>
+          </div>
 
-        <div className="flex flex-1 items-center justify-end space-x-2">
-          <ThemeToggle />
-          <Button asChild className="hidden lg:inline-flex rounded-full">
-            <Link href="/#contact">Hubungi Kami</Link>
-          </Button>
+          <nav className="hidden items-center space-x-6 text-sm font-medium lg:flex flex-1 justify-center">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  'transition-colors hover:text-primary',
+                  pathname === link.href ? 'text-primary' : 'text-foreground/80'
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-          <div className="lg:hidden">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-5 w-5" />
-                  <span className="sr-only">Toggle Menu</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
-                <div className="px-2 py-2">
-                    <Link href="/" className="flex items-center space-x-2 mb-4">
-                        <Building2 className="h-6 w-6 text-primary" />
-                        <span className="font-bold font-headline text-lg">Madinah Salam</span>
-                    </Link>
-                </div>
-                <DropdownMenuSeparator />
-                {navLinks.map((link) => (
-                  <DropdownMenuItem key={link.href} asChild>
-                    <Link
-                      href={link.href}
-                      className={cn(
-                        'w-full',
-                        pathname === link.href ? 'text-primary' : 'text-foreground'
-                      )}
-                    >
-                      {link.label}
-                    </Link>
+          <div className="flex flex-1 items-center justify-end space-x-2 pr-2">
+            <div className="hidden md:flex items-center space-x-2">
+              <ThemeToggle />
+              <Button asChild className="hidden lg:inline-flex rounded-full">
+                <Link href="/#contact">Hubungi Kami</Link>
+              </Button>
+            </div>
+
+            <div className="lg:hidden flex items-center">
+              <ThemeToggle />
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="h-5 w-5" />
+                    <span className="sr-only">Toggle Menu</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56">
+                  <div className="px-2 py-2">
+                      <Link href="/" className="flex items-center space-x-2 mb-4">
+                          <Building2 className="h-6 w-6 text-primary" />
+                          <span className="font-bold font-headline text-lg">Madinah Salam</span>
+                      </Link>
+                  </div>
+                  <DropdownMenuSeparator />
+                  {navLinks.map((link) => (
+                    <DropdownMenuItem key={link.href} asChild>
+                      <Link
+                        href={link.href}
+                        className={cn(
+                          'w-full',
+                          pathname === link.href ? 'text-primary' : 'text-foreground'
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem asChild>
+                    <Link href="/#contact" className="w-full">Hubungi Kami</Link>
                   </DropdownMenuItem>
-                ))}
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                   <Link href="/#contact" className="w-full">Hubungi Kami</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
           </div>
         </div>
       </div>
