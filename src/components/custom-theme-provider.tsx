@@ -35,12 +35,12 @@ const onThemeChange = (
     ];
     document.documentElement.animate(
       {
-        clipPath: theme === "dark" ? clipPath.reverse() : clipPath,
+        clipPath: clipPath,
       },
       {
         duration: 500,
         easing: "ease-in-out",
-        pseudoElement: theme === 'dark' ? "::view-transition-old(root)" : "::view-transition-new(root)",
+        pseudoElement: theme === 'light' ? "::view-transition-old(root)" : "::view-transition-new(root)",
       }
     );
   });
