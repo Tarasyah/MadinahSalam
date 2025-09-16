@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Building2 } from 'lucide-react';
+import { Menu, Building2, Home, Users, FileText, Package, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -12,13 +12,14 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator
 } from "@/components/ui/dropdown-menu"
 
 const navLinks = [
-  { href: '/', label: 'Beranda' },
-  { href: '/about', label: 'Tentang Kami' },
-  { href: '/requirements', label: 'Persyaratan' },
-  { href: '/#packages', label: 'Paket' },
+  { href: '/', label: 'Beranda', icon: Home },
+  { href: '/about', label: 'Tentang Kami', icon: Users },
+  { href: '/requirements', label: 'Persyaratan', icon: FileText },
+  { href: '/#packages', label: 'Paket', icon: Package },
 ];
 
 export default function Header() {
@@ -32,6 +33,8 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
+  const mobileNavLinks = [...navLinks, { href: '/#contact', label: 'Hubungi Kami', icon: Phone }];
 
   return (
     <>
@@ -111,14 +114,26 @@ export default function Header() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent 
                   align="end" 
-                  className="w-56 bg-card mr-2"
+                  className="w-64 mr-2 shadow-xl border-border/20"
+                  data-mobile-menu-content
+                  sideOffset={16}
                 >
-                  {[...navLinks, { href: '/#contact', label: 'Hubungi Kami' }].map((link) => (
-                    <DropdownMenuItem key={link.href} asChild className="p-2 text-base">
-                      <Link href={link.href} className="w-full">
-                        {link.label}
-                      </Link>
-                    </DropdownMenuItem>
+                  {mobileNavLinks.map((link, index) => (
+                    <div key={link.href}>
+                      <DropdownMenuItem asChild className="p-0">
+                        <Link href={link.href} className="w-full">
+                          <div 
+                            className="flex items-center w-full px-4 py-3 text-base text-foreground/80"
+                            data-mobile-menu-item
+                            data-active={pathname === link.href}
+                          >
+                            <link.icon className="h-5 w-5 mr-4 text-foreground/60" />
+                            <span>{link.label}</span>
+                          </div>
+                        </Link>
+                      </DropdownMenuItem>
+                      {index < mobileNavLinks.length - 1 && <DropdownMenuSeparator className="my-0" />}
+                    </div>
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>

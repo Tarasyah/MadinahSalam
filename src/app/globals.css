@@ -91,3 +91,44 @@ html {
   background-color: hsl(var(--background));
   overflow-x: hidden;
 }
+
+/* Custom styles for the mobile dropdown */
+[data-mobile-menu-content] {
+  /* This creates the pointer arrow at the top */
+  &::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid hsl(var(--card));
+  }
+}
+
+.dark [data-mobile-menu-content] {
+  /* This creates the pointer arrow for dark mode */
+  &::after {
+    border-bottom-color: hsl(var(--card));
+  }
+}
+
+/* This creates the active indicator bar on the left */
+[data-mobile-menu-item][data-active="true"] {
+  position: relative;
+  color: hsl(var(--primary));
+  font-weight: 600;
+}
+
+[data-mobile-menu-item][data-active="true"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 25%;
+  height: 50%;
+  width: 4px;
+  background-color: hsl(var(--primary));
+  border-radius: 0 4px 4px 0;
+}
