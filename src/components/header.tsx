@@ -47,10 +47,12 @@ export default function Header() {
           isScrolled ? '' : 'pt-4'
         )}
       >
-        <div className={cn(
+        <div
+          className={cn(
             "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300 pointer-events-none",
             (isScrolled || isMobileMenuOpen) ? "opacity-0" : "opacity-100"
-          )} />
+          )}
+        />
         <div
           className={cn(
             'relative mx-auto flex h-14 items-center transition-all duration-300 px-4',
@@ -116,43 +118,49 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile & Tablet Menu Overlay */}
       <div
         className={cn(
-          'fixed inset-0 z-[100] bg-menu-background transition-opacity duration-300',
+          'fixed inset-0 z-[100] bg-black/50 transition-opacity duration-500 lg:hidden',
           isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
+        onClick={() => setIsMobileMenuOpen(false)}
       >
         <div
-          className={cn(
-            'absolute inset-y-0 right-0 flex w-full max-w-sm flex-col items-center justify-center bg-menu-background text-center transition-transform duration-300 ease-in-out',
-            isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          )}
+            onClick={(e) => e.stopPropagation()}
+            className={cn(
+                'absolute inset-y-0 right-0 w-full max-w-sm bg-menu-background shadow-lg transition-transform duration-500 ease-in-out',
+                'md:max-w-sm', // On tablet, max-width is sm
+                'w-full', // On mobile, it's full width
+                isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            )}
         >
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute top-4 right-4 z-10 h-12 w-12 rounded-full text-white hover:bg-primary/20"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <X className="h-8 w-8" />
-              <span className="sr-only">Close Menu</span>
-            </Button>
-            
-            <div className="flex flex-col items-center justify-center space-y-4">
-              {[...navLinks, { href: '/#contact', label: 'Hubungi Kami' }].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={cn(
-                    'text-3xl font-medium transition-colors text-white hover:text-primary',
-                     pathname === link.href && 'text-primary'
-                  )}
+            <div className="relative w-full h-full flex flex-col items-center justify-center">
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute top-4 right-4 z-10 h-12 w-12 rounded-full text-white hover:bg-primary/20"
+                    onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {link.label}
-                </Link>
-              ))}
+                    <X className="h-8 w-8" />
+                    <span className="sr-only">Close Menu</span>
+                </Button>
+                
+                <div className="flex flex-col items-center justify-center space-y-4">
+                  {[...navLinks, { href: '/#contact', label: 'Hubungi Kami' }].map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={cn(
+                        'text-3xl font-medium transition-colors text-white hover:text-accent',
+                         pathname === link.href && 'text-accent font-bold'
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
             </div>
         </div>
       </div>
