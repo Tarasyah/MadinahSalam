@@ -155,47 +155,46 @@ export default function Header() {
               variants={menuBgVariants} 
             />
 
-            <motion.div className="absolute inset-x-0 mx-auto w-full h-full flex flex-col items-center justify-center">
-               <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1, transition: { delay: 0.4, duration: 0.4 } }}
-                  exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.3 } }}
-                >
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="absolute top-6 right-6 z-10 rounded-full text-foreground hover:bg-primary/20"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <X className="h-8 w-8" />
-                    <span className="sr-only">Close Menu</span>
-                  </Button>
-               </motion.div>
-              <motion.div 
-                  className="relative z-10 flex w-full max-w-sm flex-col items-center justify-center text-center gap-y-4"
-                  variants={linkContainerVariants}
+            <motion.div 
+                className="relative z-10 flex w-full max-w-sm flex-col items-center justify-center text-center gap-y-4"
+                variants={linkContainerVariants}
+            >
+              <motion.div
+                className="absolute top-[-100px] right-[-30px] md:right-[-50px]"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1, transition: { delay: 0.4, duration: 0.4 } }}
+                exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.3 } }}
               >
-                {[...navLinks, { href: '/#contact', label: 'Hubungi Kami' }].map((link) => (
-                    <motion.div key={link.href} className="w-full overflow-hidden py-2" variants={linkVariants}>
-                         <Link
-                            href={link.href}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className={cn(
-                            'text-3xl font-medium transition-colors hover:text-primary text-white',
-                            pathname === link.href && 'text-primary'
-                            )}
-                        >
-                            {link.label}
-                        </Link>
-                        <motion.div
-                            className="mt-2 h-px w-full bg-border/20"
-                            initial={{ scaleX: 0 }}
-                            animate={{ scaleX: 1 }}
-                            transition={{ duration: 0.6, ease: 'circOut', delay: 0.5 }}
-                        />
-                    </motion.div>
-                ))}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="z-10 rounded-full text-foreground hover:bg-primary/20"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <X className="h-8 w-8" />
+                  <span className="sr-only">Close Menu</span>
+                </Button>
               </motion.div>
+              {[...navLinks, { href: '/#contact', label: 'Hubungi Kami' }].map((link) => (
+                  <motion.div key={link.href} className="w-full overflow-hidden py-2" variants={linkVariants}>
+                       <Link
+                          href={link.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={cn(
+                          'text-3xl font-medium transition-colors hover:text-primary text-white',
+                          pathname === link.href && 'text-primary'
+                          )}
+                      >
+                          {link.label}
+                      </Link>
+                      <motion.div
+                          className="mt-2 h-px w-full bg-border/20"
+                          initial={{ scaleX: 0 }}
+                          animate={{ scaleX: 1 }}
+                          transition={{ duration: 0.6, ease: 'circOut', delay: 0.5 }}
+                      />
+                  </motion.div>
+              ))}
             </motion.div>
           </motion.div>
         )}
