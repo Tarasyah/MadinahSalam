@@ -31,12 +31,12 @@ export default function Header() {
 
   return (
     <header className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? 'bg-background/95 shadow-md border-b border-border/40' : 'top-4'
+        "fixed top-0 z-50 transition-all duration-300",
+        isScrolled ? 'left-0 right-0' : 'top-4 left-4 right-4'
     )}>
       <div className={cn(
-          "container flex h-16 items-center transition-all duration-300",
-          isScrolled ? 'max-w-none' : 'max-w-6xl mx-auto bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
+          "container flex h-14 items-center transition-all duration-300",
+          isScrolled ? 'max-w-none' : 'mx-auto bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
       )}>
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
