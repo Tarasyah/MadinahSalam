@@ -36,12 +36,14 @@ export default function Header() {
 
   return (
     <header className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-300",
-        isScrolled ? 'left-0 right-0' : 'top-4'
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled ? '' : 'top-4'
     )}>
       <div className={cn(
           "container flex h-14 items-center transition-all duration-300",
-          isScrolled ? 'max-w-none lg:max-w-5xl dark:bg-background/80 bg-white/80 backdrop-blur-lg lg:rounded-full' : 'max-w-5xl mx-auto bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
+          isScrolled 
+            ? 'max-w-5xl mx-auto dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-full' 
+            : 'max-w-5xl mx-auto bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
       )}>
         <div className="mr-4 flex items-center">
           <Link href="/" className="flex items-center space-x-2">
