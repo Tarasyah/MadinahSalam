@@ -40,12 +40,12 @@ const linkVariants = {
   open: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.35, ease: 'easeOut' }
+    transition: { duration: 0.3, ease: 'easeOut' }
   },
   closed: {
     opacity: 0,
     y: 20,
-    transition: { duration: 0.25, ease: 'easeIn' }
+    transition: { duration: 0.2, ease: 'easeIn' }
   }
 };
 
@@ -75,7 +75,10 @@ export default function Header() {
 
   return (
     <>
-      <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300")}>
+       <header className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled ? '' : 'pt-4'
+      )}>
         <div className={cn(
           "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300 pointer-events-none",
           isScrolled ? "opacity-0" : "opacity-100"
@@ -87,8 +90,7 @@ export default function Header() {
         )}>
           <div className={cn(
             "absolute inset-0 -z-10 transition-all duration-300",
-            isScrolled ? "dark:bg-background/80 bg-white/80 backdrop-blur-lg" : "",
-            isScrolled && "lg:rounded-full"
+            isScrolled ? "dark:bg-background/80 bg-white/80 backdrop-blur-lg lg:rounded-full" : ""
           )} />
             
             <div className="flex-1 flex items-center">
@@ -106,7 +108,7 @@ export default function Header() {
                   className={cn(
                     'transition-colors hover:text-primary',
                     !isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/80',
-                    pathname === link.href && (!isScrolled ? 'text-white' : 'text-primary')
+                    pathname === link.href && (!isScrolled ? 'text-white' : 'text-primary font-semibold')
                   )}
                 >
                   {link.label}
@@ -156,20 +158,21 @@ export default function Header() {
                 variants={linkContainerVariants}
             >
               <motion.div
-                className="absolute top-[-100px] right-[-15px] md:right-[-30px]"
+                className="absolute top-[-100px] right-4 md:right-0"
                 variants={linkVariants}
                 exit={{ opacity: 0, transition: { duration: 0.2 } }}
               >
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="z-10 rounded-full text-foreground hover:bg-primary/20 p-8"
+                  className="z-10 rounded-full text-white hover:bg-primary/20 p-8"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <X className="h-8 w-8" />
                   <span className="sr-only">Close Menu</span>
                 </Button>
               </motion.div>
+
               {[...navLinks, { href: '/#contact', label: 'Hubungi Kami' }].map((link) => (
                   <motion.div key={link.href} className="w-full overflow-hidden py-2" variants={linkVariants}>
                        <Link
@@ -177,7 +180,7 @@ export default function Header() {
                           onClick={() => setIsMobileMenuOpen(false)}
                           className={cn(
                           'text-3xl font-medium transition-colors hover:text-primary text-white',
-                          pathname === link.href && 'text-primary'
+                           pathname === link.href && 'text-primary'
                           )}
                       >
                           {link.label}
