@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -51,7 +50,7 @@ export default function Header() {
         <div
           className={cn(
             'relative mx-auto flex h-14 items-center transition-all duration-300 px-4',
-            'lg:container lg:w-7/12'
+            'lg:container lg:w-10/12'
           )}
         >
           <div
@@ -82,7 +81,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'transition-colors hover:text-primary',
+                  'transition-colors hover:text-primary whitespace-nowrap',
                   !isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/80',
                   pathname === link.href && (!isScrolled ? 'text-white' : 'text-primary font-semibold')
                 )}
