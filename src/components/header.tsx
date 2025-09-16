@@ -2,13 +2,18 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Building2, X } from 'lucide-react';
+import { Menu, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 import { ThemeToggle } from './theme-toggle';
-import { AnimatePresence, motion } from 'framer-motion';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const navLinks = [
   { href: '/', label: 'Beranda' },
@@ -20,7 +25,6 @@ const navLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,17 +33,6 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [isMobileMenuOpen]);
 
   return (
     <>
@@ -52,7 +45,7 @@ export default function Header() {
         <div
           className={cn(
             "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300 pointer-events-none",
-            (isScrolled || isMobileMenuOpen) ? "opacity-0" : "opacity-100"
+            (isScrolled) ? "opacity-0" : "opacity-100"
           )}
         />
         <div
@@ -65,7 +58,7 @@ export default function Header() {
             className={cn(
               'absolute inset-0 -z-10 transition-all duration-300',
               isScrolled ? 'dark:bg-background/80 bg-white/80 backdrop-blur-lg' : '',
-              isScrolled && !isMobileMenuOpen && 'lg:rounded-full'
+              isScrolled && 'lg:rounded-full'
             )}
           />
 
@@ -105,84 +98,32 @@ export default function Header() {
               <Link href="/#contact">Hubungi Kami</Link>
             </Button>
 
-            <div className="lg:hidden flex items-center">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full hover:bg-primary/20"
-                onClick={() => setIsMobileMenuOpen(true)}
-              >
-                <Menu className={cn('h-5 w-5', !isScrolled ? 'text-white' : 'text-foreground')} />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
+            <div className="lg:hidden">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="rounded-full hover:bg-primary/20"
+                  >
+                    <Menu className={cn('h-5 w-5', !isScrolled ? 'text-white' : 'text-foreground')} />
+                    <span className="sr-only">Toggle Menu</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56">
+                  {[...navLinks, { href: '/#contact', label: 'Hubungi Kami' }].map((link) => (
+                    <DropdownMenuItem key={link.href} asChild>
+                      <Link href={link.href} className="w-full">
+                        {link.label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </div>
       </header>
-
-      {/* Mobile & Tablet Menu Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] lg:hidden"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <motion.div
-              onClick={(e) => e.stopPropagation()}
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="absolute inset-y-0 right-0 shadow-lg w-full overflow-hidden bg-menu-background md:max-w-sm"
-            >
-              <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.2, duration: 0.2 }}
-                  className="absolute top-4 right-4"
-                >
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-16 w-16 rounded-full text-white hover:bg-primary/20"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <X className="h-8 w-8" />
-                    <span className="sr-only">Close Menu</span>
-                  </Button>
-                </motion.div>
-
-                <div className="flex flex-col items-center justify-center space-y-4">
-                  {[...navLinks, { href: '/#contact', label: 'Hubungi Kami' }].map((link, index) => (
-                     <motion.div
-                        key={link.href}
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.1 + index * 0.05, duration: 0.2 }}
-                      >
-                      <Link
-                        href={link.href}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className={cn(
-                            'text-3xl font-medium transition-colors text-white hover:text-accent',
-                            pathname === link.href && 'text-primary font-bold'
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 }
