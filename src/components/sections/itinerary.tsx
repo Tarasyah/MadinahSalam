@@ -1,4 +1,5 @@
 
+
 import { itineraryData } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -71,6 +72,7 @@ const ItineraryItem = ({ item, align }: { item: typeof itineraryData[0], align: 
          <HoverBorderGradient
             containerClassName="rounded-lg w-64"
             className="bg-card/95 p-4"
+            as="div"
           >
             <p className="font-bold text-primary">{item.title}</p>
             {item.subtitle && <p className="text-sm text-muted-foreground mt-1">{item.subtitle}</p>}
@@ -93,6 +95,7 @@ const ItineraryItem = ({ item, align }: { item: typeof itineraryData[0], align: 
           <HoverBorderGradient
             containerClassName="rounded-lg mt-2 w-full"
             className="bg-card/95 p-4"
+            as="div"
           >
             <p className="font-bold text-primary">{item.title}</p>
             {item.subtitle && <p className="text-sm text-muted-foreground mt-1">{item.subtitle}</p>}

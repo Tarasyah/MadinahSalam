@@ -30,11 +30,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="md:col-span-1 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="relative h-8 w-8">
+              <div className="relative h-12 w-12">
                 <Image src="/logo_darkmode.png" alt="Logo Dark" fill className="object-contain block dark:hidden" />
                 <Image src="/logo_lightmode.png" alt="Logo Light" fill className="object-contain hidden dark:block" />
               </div>
-              <span className="font-bold font-headline text-2xl">Madinah Salam</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.

@@ -20,11 +20,11 @@ const PackagesSection = () => {
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Paket Umrah Unggulan</h2>
             <p className="text-muted-foreground mt-2">Pilih paket yang paling sesuai dengan kebutuhan dan kenyamanan Anda.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-center">
+        <div className="flex justify-center">
           {packages.map((pkg) => (
             <HoverBorderGradient
               key={pkg.id}
-              containerClassName="rounded-lg max-w-lg mx-auto w-full"
+              containerClassName="rounded-lg max-w-lg w-full"
               className="w-full h-full bg-transparent"
               as="div"
             >
