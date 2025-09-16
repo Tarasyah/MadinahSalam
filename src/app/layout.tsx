@@ -39,7 +39,9 @@ export default function RootLayout({
           <Footer />
           <div className="fixed bottom-6 right-6 z-50">
             <Link href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="block w-14 h-14 transition-transform hover:scale-110">
-              <Image src="/icons8-whatsapp.gif" alt="WhatsApp" width={56} height={56} unoptimized />
+                 <div style={{ clipPath: 'path("M28 3C12.536 3 0 14.1921 0 28C0 41.8079 12.536 53 28 53C30.7954 53 33.4838 52.5699 36 51.7915C42.8333 54.8333 52.3333 56.3333 55 56C55.5 52 54.5 45.3333 52.5 39.5C54.1627 36.1012 55.2124 32.1818 56 28C56 14.1921 43.464 3 28 3Z")' }}>
+                    <Image src="/icons8-whatsapp.gif" alt="WhatsApp" width={56} height={56} unoptimized />
+                </div>
             </Link>
           </div>
           <Toaster />
