@@ -3,13 +3,7 @@
 import Link from 'next/link';
 import { Menu, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuSeparator,
-} from '@/components/ui/dropdown-menu';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
@@ -25,6 +19,7 @@ const navLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,16 +32,22 @@ export default function Header() {
   return (
     <header className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? '' : 'top-4'
+        isScrolled ? '' : 'lg:top-4'
     )}>
-      <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={cn(
+          "container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300",
+          !isScrolled && "lg:px-4"
+      )}>
         <div className={cn(
             "relative flex h-14 items-center transition-all duration-300",
             isScrolled 
-              ? 'dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-full' 
+              ? 'dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-none lg:rounded-full' 
               : 'bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
         )}>
-          <div className="mr-4 flex items-center pl-4">
+          {/* Background and Blur element */}
+          <div className="absolute inset-0 -z-10" />
+
+          <div className="flex-1 flex items-center pl-4">
             <Link href="/" className="flex items-center space-x-2">
               <Building2 className="h-6 w-6 text-primary" />
               <span className="font-bold font-headline text-lg">Madinah Salam</span>
@@ -78,40 +79,39 @@ export default function Header() {
 
             <div className="lg:hidden flex items-center">
               <ThemeToggle />
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon">
+              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="rounded-full hover:bg-green-hover">
                     <Menu className="h-5 w-5" />
                     <span className="sr-only">Toggle Menu</span>
                   </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56">
-                  <div className="px-2 py-2">
-                      <Link href="/" className="flex items-center space-x-2 mb-4">
-                          <Building2 className="h-6 w-6 text-primary" />
-                          <span className="font-bold font-headline text-lg">Madinah Salam</span>
-                      </Link>
-                  </div>
-                  <DropdownMenuSeparator />
-                  {navLinks.map((link) => (
-                    <DropdownMenuItem key={link.href} asChild>
-                      <Link
-                        href={link.href}
-                        className={cn(
-                          'w-full',
-                          pathname === link.href ? 'text-primary' : 'text-foreground'
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem asChild>
-                    <Link href="/#contact" className="w-full">Hubungi Kami</Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+                </SheetTrigger>
+                <SheetContent 
+                    side="top" 
+                    className="h-screen w-screen bg-background/95 backdrop-blur-sm border-none flex flex-col items-center justify-center p-0"
+                >
+                    <div className="flex flex-col items-center justify-center text-center gap-y-8">
+                        {navLinks.map((link) => (
+                            <SheetClose asChild key={link.href}>
+                                <Link
+                                    href={link.href}
+                                    className={cn(
+                                    'text-2xl font-medium transition-colors hover:text-primary',
+                                    pathname === link.href ? 'text-primary' : 'text-foreground'
+                                    )}
+                                >
+                                    {link.label}
+                                </Link>
+                            </SheetClose>
+                        ))}
+                         <SheetClose asChild>
+                            <Button asChild size="lg" className="rounded-full mt-4">
+                                <Link href="/#contact">Hubungi Kami</Link>
+                            </Button>
+                        </SheetClose>
+                    </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>
