@@ -40,7 +40,7 @@ const onThemeChange = (
       {
         duration: 500,
         easing: "ease-in-out",
-        pseudoElement: theme === 'dark' ? "::view-transition-new(root)" : "::view-transition-old(root)",
+        pseudoElement: "::view-transition-new(root)",
       }
     );
   });
