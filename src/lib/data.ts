@@ -86,8 +86,8 @@ export const heroDestinations: HeroDestination[] = [
     },
     {
         id: 3,
-        title: 'Perjalanan Penuh Makna',
-        description: 'Menghadirkan pengalaman berwisata yang edukatif, berkesan, dan memperkuat iman.',
+        title: 'Thaif',
+        description: 'Menikmati kesejukan alam pegunungan Thaif yang bersejarah dan penuh kenangan.',
         image: findImage('hero-thaif')
     },
     {
@@ -171,3 +171,4 @@ export const galleryImages: ImagePlaceholder[] = [
     findImage('gallery-5'),
     findImage('gallery-6'),
 ];
+
