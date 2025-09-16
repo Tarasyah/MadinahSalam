@@ -100,21 +100,6 @@ export const heroDestinations: HeroDestination[] = [
 
 export const packages: Package[] = [
     {
-        id: 1,
-        name: 'Paket Umrah Awal Hijriah 1447 H',
-        duration: '12 Hari',
-        price: 'Rp 28.9 jt',
-        priceDetails: [
-            { type: 'Quad', price: 'Rp 28.900.000', icon: Users2 },
-            { type: 'Triple', price: 'Rp 30.900.000', icon: Users },
-            { type: 'Double', price: 'Rp 33.500.000', icon: BedDouble },
-        ],
-        image: findImage('package-1'),
-        features: ['Hotel Makkah: Mo/Setaraf', 'Hotel Madinah: Rashed/Setaraf', 'Umrah On', 'Makan AlBaik', 'Full AC Bus'],
-        airline: 'Qatar Airways',
-        departure: '6 - 17 Juli 2025'
-    },
-    {
         id: 2,
         name: 'Paket Umrah + 2 Jumat + Thaif',
         duration: '12 Hari',
