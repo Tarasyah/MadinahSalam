@@ -14,10 +14,10 @@ const IncludedSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           <HoverBorderGradient
             containerClassName="rounded-lg w-full"
-            className="bg-card/95 text-left p-0"
+            className="w-full bg-transparent"
             as="div"
           >
-            <Card className="bg-transparent border-none transition-transform duration-300 ease-in-out">
+            <Card className="h-full bg-transparent border-none transition-transform duration-300 ease-in-out">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
                   <CircleCheckBig className="h-7 w-7 text-primary" />
@@ -41,10 +41,10 @@ const IncludedSection = () => {
           </HoverBorderGradient>
           <HoverBorderGradient
             containerClassName="rounded-lg w-full"
-            className="bg-card/95 text-left p-0"
+            className="w-full bg-transparent"
             as="div"
           >
-            <Card className="bg-transparent border-none transition-transform duration-300 ease-in-out">
+            <Card className="h-full bg-transparent border-none transition-transform duration-300 ease-in-out">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
                   <CircleX className="h-7 w-7 text-destructive" />

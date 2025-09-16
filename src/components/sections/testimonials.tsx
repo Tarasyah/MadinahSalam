@@ -37,10 +37,10 @@ const TestimonialsSection = () => {
           <CarouselContent>
             {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
+                <div className="p-1 h-full">
                   <HoverBorderGradient
                     containerClassName="rounded-lg w-full h-full"
-                    className="bg-card/95 p-0"
+                    className="w-full h-full bg-transparent"
                     as="div"
                   >
                     <Card className="h-full flex flex-col items-center text-center shadow-md bg-transparent border-none">

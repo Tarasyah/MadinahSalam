@@ -70,7 +70,7 @@ const ItineraryItem = ({ item, align }: { item: typeof itineraryData[0], align: 
         </div>
          <HoverBorderGradient
             containerClassName="rounded-lg w-64"
-            className="bg-card/95 text-left p-4"
+            className="bg-card/95 p-4"
           >
             <p className="font-bold text-primary">{item.title}</p>
             {item.subtitle && <p className="text-sm text-muted-foreground mt-1">{item.subtitle}</p>}
@@ -92,7 +92,7 @@ const ItineraryItem = ({ item, align }: { item: typeof itineraryData[0], align: 
           </div>
           <HoverBorderGradient
             containerClassName="rounded-lg mt-2 w-full"
-            className="bg-card/95 text-left p-4"
+            className="bg-card/95 p-4"
           >
             <p className="font-bold text-primary">{item.title}</p>
             {item.subtitle && <p className="text-sm text-muted-foreground mt-1">{item.subtitle}</p>}
@@ -129,15 +129,17 @@ const ItinerarySection = () => {
         </div>
         
         {/* Mobile & Tablet Layout */}
-        <div className="lg:hidden space-y-8">
-          <div className="grid grid-cols-1 gap-8">
-            <h3 className="font-headline text-2xl font-bold text-center text-primary border-b pb-2">Keberangkatan & Makkah</h3>
-            {makkahItinerary.map(item => (
+        <div className="lg:hidden space-y-0">
+          <div className="flex flex-col relative">
+             <div className="absolute top-0 left-4 -translate-x-1/2 w-0.5 h-full bg-border -z-10" />
+             <h3 className="font-headline text-2xl font-bold text-center text-primary border-b pb-2 mb-8">Keberangkatan & Makkah</h3>
+             {makkahItinerary.map(item => (
               <ItineraryItem key={item.id} item={item} align="left" />
             ))}
           </div>
-          <div className="grid grid-cols-1 gap-8 mt-12">
-             <h3 className="font-headline text-2xl font-bold text-center text-primary border-b pb-2">Madinah & Kepulangan</h3>
+          <div className="flex flex-col relative mt-8">
+             <div className="absolute top-0 left-4 -translate-x-1/2 w-0.5 h-full bg-border -z-10" />
+             <h3 className="font-headline text-2xl font-bold text-center text-primary border-b pb-2 mb-8">Madinah & Kepulangan</h3>
              {madinahItinerary.map(item => (
               <ItineraryItem key={item.id} item={item} align="left" />
             ))}
