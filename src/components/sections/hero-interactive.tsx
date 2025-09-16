@@ -27,7 +27,7 @@ const HeroSection = () => {
     };
 
     return (
-        <section className="relative h-[70vh] min-h-[500px] w-full flex text-white overflow-hidden" id="home">
+        <section className="relative h-[70vh] min-h-[500px] w-full text-white overflow-hidden" id="home">
             <AnimatePresence initial={false}>
                 <motion.div
                     key={activeIndex}
@@ -50,11 +50,7 @@ const HeroSection = () => {
 
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
 
-            <div className="relative z-10 flex flex-col justify-between container pt-32 pb-12 md:pt-40 md:pb-20">
-                {/* Top Spacer */}
-                <div></div>
-
-                {/* Main Content */}
+            <div className="relative z-10 container h-full flex flex-col justify-center pt-32 pb-12 md:pt-40 md:pb-20">
                 <div className="max-w-xl">
                     <motion.div
                         key={activeIndex}
@@ -76,15 +72,17 @@ const HeroSection = () => {
                         </Button>
                     </motion.div>
                 </div>
+            </div>
 
-                {/* Thumbnails */}
-                <div className="hidden md:flex justify-start md:justify-end">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {/* Thumbnails */}
+            <div className="absolute bottom-12 right-0 z-20 hidden md:block">
+                <div className="container">
+                     <div className="grid grid-cols-4 gap-3 justify-end">
                         {heroDestinations.map((dest, index) => (
                             <motion.div
                                 key={dest.id}
                                 className={cn(
-                                    "relative h-40 w-32 md:h-48 md:w-36 rounded-xl overflow-hidden cursor-pointer border-2 transition-all duration-300",
+                                    "relative h-48 w-36 rounded-xl overflow-hidden cursor-pointer border-2 transition-all duration-300",
                                     activeIndex === index ? 'border-primary' : 'border-transparent hover:border-white/50'
                                 )}
                                 onClick={() => handleThumbnailClick(index)}
