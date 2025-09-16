@@ -81,28 +81,30 @@ export default function Header() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled ? '' : 'pt-4'
       )}>
-        <div className="container max-w-5xl mx-auto px-4 md:px-0">
-          <div className={cn(
-              "relative flex h-14 items-center transition-all duration-300",
-              isScrolled 
-                ? 'dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-none lg:rounded-full' 
-                : 'bg-background/60 backdrop-blur-lg rounded-full border border-white/20'
+        <div className={cn(
+            "relative flex h-14 items-center transition-all duration-300 mx-auto",
+             isScrolled 
+                ? 'container max-w-5xl dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-none lg:rounded-full' 
+                : 'container max-w-5xl'
           )}>
-            <div className="flex-1 flex items-center pl-4">
+             {!isScrolled && <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent rounded-full opacity-70"></div>}
+            
+            <div className="relative flex-1 flex items-center pl-4">
               <Link href="/" className="flex items-center space-x-2">
                 <Building2 className="h-6 w-6 text-primary" />
-                <span className="font-bold font-headline text-lg">Madinah Salam</span>
+                <span className={cn("font-bold font-headline text-lg", !isScrolled && "text-white")}>Madinah Salam</span>
               </Link>
             </div>
 
-            <nav className="hidden items-center space-x-6 text-sm font-medium lg:flex flex-1 justify-center">
+            <nav className="relative hidden items-center space-x-6 text-sm font-medium lg:flex flex-1 justify-center">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={cn(
                     'transition-colors hover:text-primary',
-                    pathname === link.href ? 'text-primary' : 'text-foreground/80'
+                    !isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/80',
+                    pathname === link.href && (!isScrolled ? 'text-white' : 'text-primary')
                   )}
                 >
                   {link.label}
@@ -110,7 +112,7 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="flex flex-1 items-center justify-end space-x-2 pr-2">
+            <div className="relative flex flex-1 items-center justify-end space-x-2 pr-2">
                 <ThemeToggle />
                 <Button asChild className="hidden lg:inline-flex rounded-full">
                   <Link href="/#contact">Hubungi Kami</Link>
@@ -118,12 +120,11 @@ export default function Header() {
 
               <div className="lg:hidden flex items-center">
                 <Button variant="ghost" size="icon" className="rounded-full hover:bg-green-hover" onClick={() => setIsMobileMenuOpen(true)}>
-                  <Menu className="h-5 w-5" />
+                  <Menu className={cn("h-5 w-5", !isScrolled && "text-white")} />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </div>
             </div>
-          </div>
         </div>
       </header>
 
