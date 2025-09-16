@@ -50,7 +50,7 @@ const HeroSection = () => {
 
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
 
-            <div className="relative z-10 container h-full flex flex-col justify-center pt-32 md:pt-40 pb-24">
+            <div className="relative z-10 container h-full flex flex-col justify-center pt-28 md:pt-36 pb-32">
                 <div className="w-1/2">
                     <motion.div
                         key={activeIndex}
@@ -58,10 +58,10 @@ const HeroSection = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
                     >
-                        <h1 className="font-headline text-5xl md:text-7xl font-bold text-white drop-shadow-lg leading-tight">
+                        <h1 className="font-headline text-5xl md:text-6xl font-bold text-white drop-shadow-lg leading-tight">
                             {activeDestination.title}
                         </h1>
-                        <p className="mt-4 text-lg md:text-xl text-white/90 drop-shadow-md max-w-[calc(100%-5rem)]">
+                        <p className="mt-4 text-base md:text-lg text-white/90 drop-shadow-md max-w-lg">
                             {activeDestination.description}
                         </p>
                         <Button asChild size="lg" className="mt-8 rounded-full group">
