@@ -29,7 +29,7 @@ const HeroSection = () => {
     const isLongTitle = activeDestination.title === 'Universitas Islam Madinah';
 
     return (
-        <section className="relative h-screen w-full text-white overflow-hidden" id="home">
+        <section className="relative h-screen w-screen text-white overflow-hidden" id="home">
             <AnimatePresence initial={false}>
                 <motion.div
                     key={activeIndex}
@@ -62,8 +62,8 @@ const HeroSection = () => {
                     >
                         <h1 className={cn(
                             "font-headline font-bold text-white drop-shadow-lg leading-tight",
-                            "text-4xl md:text-5xl",
-                            isLongTitle && "text-3xl md:text-4xl"
+                            "text-4xl md:text-5xl lg:text-6xl",
+                            isLongTitle && "text-3xl md:text-4xl lg:text-5xl"
                         )}>
                             {activeDestination.title}
                         </h1>
