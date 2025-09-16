@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 import { ThemeToggle } from './theme-toggle';
+import { motion } from 'framer-motion';
 
 const navLinks = [
   { href: '/', label: 'Beranda' },
@@ -129,36 +130,48 @@ export default function Header() {
         <div
             onClick={(e) => e.stopPropagation()}
             className={cn(
-                'absolute inset-y-0 right-0 w-full max-w-sm bg-menu-background shadow-lg transition-transform duration-500 ease-in-out',
+                'absolute inset-y-0 right-0 bg-menu-background shadow-lg transition-transform duration-500 ease-in-out',
                 'md:max-w-sm', // On tablet, max-width is sm
                 'w-full', // On mobile, it's full width
                 isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
             )}
         >
-            <div className="relative w-full h-full flex flex-col items-center justify-center">
-                <Button
-                    variant="ghost"
-                    size="icon"
-                    className="absolute top-4 right-4 z-10 h-12 w-12 rounded-full text-white hover:bg-primary/20"
-                    onClick={() => setIsMobileMenuOpen(false)}
+            <div className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.2, delay: 0.2 }}
                 >
-                    <X className="h-8 w-8" />
-                    <span className="sr-only">Close Menu</span>
-                </Button>
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        className="absolute top-4 -right-1 z-10 h-16 w-16 rounded-full text-white hover:bg-primary/20"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                        <X className="h-8 w-8" />
+                        <span className="sr-only">Close Menu</span>
+                    </Button>
+                </motion.div>
                 
                 <div className="flex flex-col items-center justify-center space-y-4">
-                  {[...navLinks, { href: '/#contact', label: 'Hubungi Kami' }].map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={cn(
-                        'text-3xl font-medium transition-colors text-white hover:text-accent',
-                         pathname === link.href && 'text-accent font-bold'
-                      )}
+                  {[...navLinks, { href: '/#contact', label: 'Hubungi Kami' }].map((link, index) => (
+                    <motion.div
+                        key={link.href}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.2, delay: 0.2 + index * 0.05 }}
                     >
-                      {link.label}
-                    </Link>
+                        <Link
+                        href={link.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={cn(
+                            'text-3xl font-medium transition-colors text-white hover:text-accent',
+                            pathname === link.href ? 'text-primary font-bold' : 'text-white'
+                        )}
+                        >
+                        {link.label}
+                        </Link>
+                    </motion.div>
                   ))}
                 </div>
             </div>
