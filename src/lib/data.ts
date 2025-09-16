@@ -33,11 +33,29 @@ export type Package = {
   departure: string;
 };
 
-export type ItineraryItem = {
-    day: string;
+export type ItineraryDay = {
+    id: number;
     title: string;
-    images: ImagePlaceholder[];
+    subtitle?: string;
+    date: string;
+    time: string;
 }
+
+export const itineraryData: ItineraryDay[] = [
+    { id: 1, title: 'Take off—Landing', subtitle: 'CGK—JED SV819', date: '6/11/2025', time: '19.05-01.05 WIB' },
+    { id: 2, title: 'Pelaksanaan ibadah umrah', date: '7/11/2025', time: 'Sebelum/sesudah subuh' },
+    { id: 3, title: 'Mempelajari sirah Nabi sekitar Masjidil Haram', date: '8/11/2025', time: 'Pagi' },
+    { id: 4, title: 'City Tour Makkah', subtitle: 'Mempelajari sirah Nabi + Museum Wahyu', date: '9/11/2025', time: 'Pagi' },
+    { id: 5, title: 'City Tour Taif', subtitle: 'Mempelajari sirah Nabi, tafakkur alam, menikmati destinasi wisata', date: '10/11/2025', time: 'Pagi' },
+    { id: 6, title: 'Menuju Kota Madinah', date: '11/11/2025', time: 'Setelah zuhur' },
+    { id:7, title: "Mempelajari sirah Nabi sekitar Masjid Nabawi", date: "12/11/2025", time: "Sesuai jadwal masuk Raudhah" },
+    { id: 8, title: "City Tour Madinah", subtitle: "Mempelajari sirah Nabi & kunjungan UIM", date: "13/11/2025", time: "Pagi" },
+    { id: 9, title: "Ibadah & aktivitas bebas", date: "14/11/2025", time: "-" },
+    { id: 10, title: "Ibadah & aktivitas bebas", date: "15/11/2025", time: "-" },
+    { id: 11, title: "Take Off", subtitle: "Bandara Internasional Pangeran Muhammad bin Abdul Aziz - Madinah (SV820)", date: "16/11/2025", time: "16.25 WAS" },
+    { id: 12, title: "Landing", subtitle: "Bandara Internasional Soekarno-Hatta", date: "17/11/2025", time: "06.05 WIB" },
+];
+
 
 export type IncludedItem = {
     title: string;
@@ -113,27 +131,25 @@ export const packages: Package[] = [
     },
 ];
 
-export const itinerary: ItineraryItem[] = [
-    { day: 'Hari 1-4', title: 'Madinah Al Munawwarah', images: [findImage('madinah-1'), findImage('madinah-2')] },
-    { day: 'Hari 5-12', title: 'Mekkah Al Mukarramah & Ziarah', images: [findImage('mekkah-1'), findImage('mekkah-2')] },
-];
 
 export const included: IncludedItem[] = [
-    { title: 'Tiket Pesawat', description: 'Termasuk tiket pesawat pulang-pergi.', icon: Plane },
-    { title: 'Visa Umrah', description: 'Pengurusan visa umrah sudah termasuk.', icon: BookOpen },
-    { title: 'Hotel', description: 'Akomodasi sesuai paket yang dipilih.', icon: Hotel },
-    { title: 'Makan 3x Sehari', description: 'Menyediakan makanan selama di tanah suci.', icon: Utensils },
-    { title: 'Pembimbing & Muthawwif', description: 'Bimbingan ibadah oleh tenaga profesional.', icon: UserCheck },
-    { title: 'Transportasi', description: 'Bus AC selama di Arab Saudi.', icon: Car },
-    { title: 'Perlengkapan Premium', description: 'Koper, kain ihram, jilbab, dan lainnya.', icon: BaggageClaim },
-    { title: 'Air Zam-zam', description: 'Disediakan air Zam-zam (jika kondisi memungkinkan).', icon: Star },
+  { title: 'Tiket Pesawat', description: 'Termasuk tiket pesawat pulang-pergi (sesuai paket).', icon: Plane },
+  { title: 'Visa Umrah', description: 'Pengurusan visa umrah sudah termasuk.', icon: BookOpen },
+  { title: 'Akomodasi Hotel', description: 'Hotel di Makkah dan Madinah sesuai paket.', icon: Hotel },
+  { title: 'Makan 3x Sehari', description: 'Menu masakan Indonesia selama di tanah suci.', icon: Utensils },
+  { title: 'Pembimbing & Muthawwif', description: 'Bimbingan ibadah oleh ustadz dan muthawwif berpengalaman.', icon: UserCheck },
+  { title: 'Transportasi', description: 'Bus AC premium selama di Arab Saudi.', icon: Car },
+  { title: 'Perlengkapan Premium', description: 'Koper, kain ihram, jilbab, dan lainnya.', icon: BaggageClaim },
+  { title: 'Air Zam-zam', description: '5 liter per jamaah (jika diizinkan maskapai).', icon: Star },
+  { title: 'City Tour', description: 'Kunjungan ke tempat-tempat bersejarah di Makkah & Madinah.', icon: Calendar },
 ];
 
 export const excluded: IncludedItem[] = [
-    { title: 'Pembuatan Paspor', description: 'Biaya pembuatan atau perpanjangan paspor.', icon: XCircle },
-    { title: 'Vaksin Meningitis & Polio', description: 'Suntik vaksin tidak termasuk dalam paket.', icon: XCircle },
-    { title: 'Kelebihan Bagasi', description: 'Biaya tambahan atas kelebihan berat bagasi.', icon: XCircle },
-    { title: 'Pengeluaran Pribadi', description: 'Seperti laundry, telepon, dan oleh-oleh.', icon: XCircle },
+  { title: 'Pembuatan Paspor', description: 'Biaya pembuatan atau perpanjangan paspor.', icon: XCircle },
+  { title: 'Kebutuhan Pribadi', description: 'Seperti laundry, telepon, dan oleh-oleh.', icon: ShoppingCart },
+  { title: 'Kelebihan Bagasi', description: 'Biaya tambahan atas kelebihan berat bagasi.', icon: XCircle },
+  { title: 'Vaksin Meningitis & Polio', description: 'Suntik vaksin tidak termasuk dalam paket.', icon: XCircle },
+  { title: 'Akomodasi Domestik', description: 'Hotel atau transportasi dari/ke daerah asal.', icon: XCircle },
 ];
 
 
