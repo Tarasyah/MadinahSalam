@@ -3,32 +3,31 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 const ItineraryTimelinePath = () => (
-  <>
-    <svg width="608" height="1517" viewBox="0 0 608 1517" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-auto max-w-[608px] -z-10 hidden lg:block">
+  <svg width="608" height="1517" viewBox="0 0 608 1517" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-auto max-w-[608px] -z-10 hidden lg:block">
+      <defs>
+        <linearGradient id="glowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+          <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="1" />
+          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+          <animate attributeName="y1" from="-100%" to="100%" dur="10s" repeatCount="indefinite" />
+          <animate attributeName="y2" from="0%" to="200%" dur="10s" repeatCount="indefinite" />
+        </linearGradient>
+        <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+      </defs>
+      
       {/* Static background path */}
       <path d="M568 40.0001C568 18.4315 550.569 1 529 1H204C137.653 1 83 55.6532 83 122V152C83 204.484 40.4837 247 -12 247H-13M40 1477C40 1498.57 57.4315 1516 79 1516H404C470.347 1516 525 1461.35 525 1395V1385C525 1332.52 567.516 1290 619 1290H620M-13.0001 247H-16C-71.3923 247 -126 301.608 -126 357V385C-126 451.347 -71.3468 506 -5 506H304C370.347 506 425 560.653 425 627V655C425 721.347 479.653 776 546 776H568M568 776H546C479.653 776 425 830.653 425 897V925C425 991.347 370.347 1046 304 1046H79C12.6532 1046 -42 1100.65 -42 1167V1290H-12" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="2"/>
       
       {/* Animated glowing path */}
-      <path d="M568 40.0001C568 18.4315 550.569 1 529 1H204C137.653 1 83 55.6532 83 122V152C83 204.484 40.4837 247 -12 247H-13M40 1477C40 1498.57 57.4315 1516 79 1516H404C470.347 1516 525 1461.35 525 1395V1385C525 1332.52 567.516 1290 619 1290H620M-13.0001 247H-16C-71.3923 247 -126 301.608 -126 357V385C-126 451.347 -71.3468 506 -5 506H304C370.347 506 425 560.653 425 627V655C425 721.347 479.653 776 546 776H568M568 776H546C479.653 776 425 830.653 425 897V925C425 991.347 370.347 1046 304 1046H79C12.6532 1046 -42 1100.65 -42 1167V1290H-12" stroke="hsl(var(--primary))" strokeWidth="2" strokeLinecap="round" id="animated-path"/>
+      <path d="M568 40.0001C568 18.4315 550.569 1 529 1H204C137.653 1 83 55.6532 83 122V152C83 204.484 40.4837 247 -12 247H-13M40 1477C40 1498.57 57.4315 1516 79 1516H404C470.347 1516 525 1461.35 525 1395V1385C525 1332.52 567.516 1290 619 1290H620M-13.0001 247H-16C-71.3923 247 -126 301.608 -126 357V385C-126 451.347 -71.3468 506 -5 506H304C370.347 506 425 560.653 425 627V655C425 721.347 479.653 776 546 776H568M568 776H546C479.653 776 425 830.653 425 897V925C425 991.347 370.347 1046 304 1046H79C12.6532 1046 -42 1100.65 -42 1167V1290H-12" stroke="url(#glowGradient)" strokeWidth="2" strokeLinecap="round" filter="url(#glowFilter)"/>
+</svg>
 
-      <defs>
-        <style dangerouslySetInnerHTML={{ __html: `
-          @keyframes draw-line {
-            0% { stroke-dashoffset: 4000; }
-            100% { stroke-dashoffset: 0; }
-          }
-          @keyframes glow {
-            0%, 100% { filter: drop-shadow(0 0 2px hsl(var(--primary) / 0.8)); }
-            50% { filter: drop-shadow(0 0 8px hsl(var(--primary))); }
-          }
-          #animated-path {
-            stroke-dasharray: 4000;
-            animation: draw-line 20s linear infinite, glow 3s ease-in-out infinite;
-          }
-        `}} />
-      </defs>
-    </svg>
-  </>
 );
 
 
