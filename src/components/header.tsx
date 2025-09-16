@@ -82,12 +82,14 @@ export default function Header() {
           isScrolled ? '' : 'pt-4'
       )}>
         <div className={cn(
-            "relative flex h-14 items-center transition-all duration-300 mx-auto",
-             isScrolled 
-                ? 'container max-w-5xl dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-none lg:rounded-full' 
-                : 'container max-w-5xl'
-          )}>
-             {!isScrolled && <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent rounded-full opacity-70"></div>}
+            "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300",
+            isScrolled ? "opacity-0" : "opacity-100"
+        )} />
+        <div className="container relative mx-auto flex h-14 max-w-5xl items-center transition-all duration-300">
+            <div className={cn(
+                "absolute inset-0 transition-all duration-300",
+                isScrolled ? "dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-none lg:rounded-full" : ""
+            )}/>
             
             <div className="relative flex-1 flex items-center pl-4">
               <Link href="/" className="flex items-center space-x-2">
