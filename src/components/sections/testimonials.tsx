@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { Star } from 'lucide-react';
 import Autoplay from "embla-carousel-autoplay";
+import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 
 const TestimonialsSection = () => {
   const plugin = React.useRef(
@@ -37,24 +38,30 @@ const TestimonialsSection = () => {
             {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
-                  <Card className="h-full flex flex-col items-center text-center shadow-md transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
-                    <CardContent className="p-6 flex flex-col items-center">
-                        <Image
-                            src={testimonial.image.imageUrl}
-                            alt={testimonial.name}
-                            data-ai-hint={testimonial.image.imageHint}
-                            width={80}
-                            height={80}
-                            className="rounded-full mb-4 border-4 border-primary/20"
-                        />
-                        <div className="flex text-yellow-400 mb-2">
-                            {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-                        </div>
-                        <p className="text-muted-foreground italic mb-4">&quot;{testimonial.comment}&quot;</p>
-                        <div className="font-semibold text-foreground">{testimonial.name}</div>
-                        <div className="text-sm text-muted-foreground">{testimonial.location}</div>
-                    </CardContent>
-                  </Card>
+                  <HoverBorderGradient
+                    containerClassName="rounded-lg w-full h-full"
+                    className="bg-black/90 p-0"
+                    as="div"
+                  >
+                    <Card className="h-full flex flex-col items-center text-center shadow-md bg-transparent border-none">
+                      <CardContent className="p-6 flex flex-col items-center">
+                          <Image
+                              src={testimonial.image.imageUrl}
+                              alt={testimonial.name}
+                              data-ai-hint={testimonial.image.imageHint}
+                              width={80}
+                              height={80}
+                              className="rounded-full mb-4 border-4 border-primary/20"
+                          />
+                          <div className="flex text-yellow-400 mb-2">
+                              {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                          </div>
+                          <p className="text-muted-foreground italic mb-4">&quot;{testimonial.comment}&quot;</p>
+                          <div className="font-semibold text-foreground">{testimonial.name}</div>
+                          <div className="text-sm text-muted-foreground">{testimonial.location}</div>
+                      </CardContent>
+                    </Card>
+                  </HoverBorderGradient>
                 </div>
               </CarouselItem>
             ))}

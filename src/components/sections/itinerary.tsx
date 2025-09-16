@@ -2,6 +2,7 @@
 import { itineraryData } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 
 const ItineraryTimelinePath = () => (
     <svg width="608" height="1517" viewBox="0 0 608 1517" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-auto max-w-[608px] -z-10 hidden lg:block">
@@ -38,7 +39,8 @@ const ItineraryTimelinePath = () => (
     </svg>
 );
 
-const ItineraryItem = ({ item }: { item: typeof itineraryData[0] }) => {
+
+const ItineraryItem = ({ item, align }: { item: typeof itineraryData[0], align: 'left' | 'right' }) => {
   return (
     <>
       {/* Desktop Item */}
@@ -57,19 +59,22 @@ const ItineraryItem = ({ item }: { item: typeof itineraryData[0] }) => {
         item.id === 10 && "top-[850px] left-[calc(50%+40px)]",
         item.id === 11 && "top-[1110px] left-[calc(50%+40px)]",
         item.id === 12 && "top-[1370px] left-[calc(50%+40px)]",
-        item.id > 6 ? 'flex-row' : 'flex-row-reverse'
+        align === 'left' ? 'flex-row' : 'flex-row-reverse'
       )}>
-        <div className={cn("text-right", item.id > 6 ? 'lg:text-left' : 'lg:text-right')}>
+        <div className={cn("text-right", align === 'left' ? 'lg:text-left' : 'lg:text-right')}>
           <p className="font-semibold text-muted-foreground">{item.date}</p>
           <p className="text-sm text-muted-foreground">{item.time}</p>
         </div>
         <div className="flex-shrink-0 bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
           {item.id}
         </div>
-        <div className="p-4 rounded-lg bg-card/80 backdrop-blur-sm border shadow-lg w-64 text-left">
-          <p className="font-bold text-primary">{item.title}</p>
-          {item.subtitle && <p className="text-sm text-muted-foreground mt-1">{item.subtitle}</p>}
-        </div>
+         <HoverBorderGradient
+            containerClassName="rounded-lg w-64"
+            className="bg-black/80 text-left p-4"
+          >
+            <p className="font-bold text-primary">{item.title}</p>
+            {item.subtitle && <p className="text-sm text-muted-foreground mt-1">{item.subtitle}</p>}
+        </HoverBorderGradient>
       </div>
 
       {/* Mobile/Tablet Item */}
@@ -85,10 +90,13 @@ const ItineraryItem = ({ item }: { item: typeof itineraryData[0] }) => {
             <p className="font-semibold text-muted-foreground">{item.date}</p>
             <p className="text-sm text-muted-foreground">{item.time}</p>
           </div>
-          <div className="mt-2 p-4 rounded-lg bg-card/80 backdrop-blur-sm border shadow-lg w-full text-left transition-transform duration-300 ease-in-out hover:scale-105">
+          <HoverBorderGradient
+            containerClassName="rounded-lg mt-2 w-full"
+            className="bg-black/80 text-left p-4"
+          >
             <p className="font-bold text-primary">{item.title}</p>
             {item.subtitle && <p className="text-sm text-muted-foreground mt-1">{item.subtitle}</p>}
-          </div>
+          </HoverBorderGradient>
         </div>
       </div>
     </>
@@ -96,6 +104,9 @@ const ItineraryItem = ({ item }: { item: typeof itineraryData[0] }) => {
 }
 
 const ItinerarySection = () => {
+  const makkahItinerary = itineraryData.slice(0, 6);
+  const madinahItinerary = itineraryData.slice(6);
+
   return (
     <section id="itinerary" className="py-16 lg:py-24 bg-background overflow-hidden">
       <div className="container max-w-6xl mx-auto">
@@ -113,15 +124,22 @@ const ItinerarySection = () => {
             </div>
             <ItineraryTimelinePath />
             {itineraryData.map(item => (
-                <ItineraryItem key={item.id} item={item} />
+                <ItineraryItem key={item.id} item={item} align={item.id > 6 ? 'left' : 'right'} />
             ))}
         </div>
         
         {/* Mobile & Tablet Layout */}
-        <div className="lg:hidden space-y-0">
-          <div className="grid grid-cols-1 gap-0">
-            {itineraryData.map(item => (
-              <ItineraryItem key={item.id} item={item} />
+        <div className="lg:hidden space-y-8">
+          <div className="grid grid-cols-1 gap-8">
+            <h3 className="font-headline text-2xl font-bold text-center text-primary border-b pb-2">Keberangkatan & Makkah</h3>
+            {makkahItinerary.map(item => (
+              <ItineraryItem key={item.id} item={item} align="left" />
+            ))}
+          </div>
+          <div className="grid grid-cols-1 gap-8 mt-12">
+             <h3 className="font-headline text-2xl font-bold text-center text-primary border-b pb-2">Madinah & Kepulangan</h3>
+             {madinahItinerary.map(item => (
+              <ItineraryItem key={item.id} item={item} align="left" />
             ))}
           </div>
         </div>

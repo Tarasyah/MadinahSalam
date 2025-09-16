@@ -56,6 +56,7 @@ export default {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         'green-hover': 'hsl(var(--green-hover))',
+        'menu-background': 'hsl(var(--menu-background))',
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',
