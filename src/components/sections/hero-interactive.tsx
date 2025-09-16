@@ -52,7 +52,7 @@ const HeroSection = () => {
 
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
 
-            <div className="relative z-10 container h-full flex flex-col justify-center pt-20 md:pt-12 pb-32">
+            <div className="relative z-10 container h-full flex flex-col justify-center pt-24 md:pt-20 pb-32">
                 <div className="w-full lg:w-1/2">
                     <motion.div
                         key={activeIndex}
