@@ -21,7 +21,7 @@ const PackagesSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-center">
           {packages.map((pkg) => (
-            <Card key={pkg.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-lg mx-auto">
+            <Card key={pkg.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 max-w-lg mx-auto">
               <div className="relative h-60 w-full">
                 <Image
                   src={pkg.image.imageUrl}

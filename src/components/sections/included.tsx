@@ -11,7 +11,7 @@ const IncludedSection = () => {
             <p className="text-muted-foreground mt-2">Berikut adalah fasilitas yang termasuk dan tidak termasuk dalam paket umrah kami.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          <Card className="bg-card">
+          <Card className="bg-card transition-transform duration-300 ease-in-out hover:scale-105">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
                 <CheckCircle className="h-7 w-7 text-primary" />
@@ -32,7 +32,7 @@ const IncludedSection = () => {
               </ul>
             </CardContent>
           </Card>
-          <Card className="bg-card">
+          <Card className="bg-card transition-transform duration-300 ease-in-out hover:scale-105">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
                 <XCircle className="h-7 w-7 text-destructive" />

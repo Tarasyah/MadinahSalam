@@ -1,10 +1,18 @@
+"use client";
+
+import React from 'react';
 import Image from 'next/image';
 import { testimonials } from '@/lib/data';
 import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { Star } from 'lucide-react';
+import Autoplay from "embla-carousel-autoplay";
 
 const TestimonialsSection = () => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
   return (
     <section id="testimonials" className="py-16 lg:py-24 bg-background">
       <div className="container">
@@ -16,17 +24,20 @@ const TestimonialsSection = () => {
         </div>
         
         <Carousel
+          plugins={[plugin.current]}
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
           opts={{
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-4xl mx-auto"
+          className="w-full max-w-6xl mx-auto"
         >
           <CarouselContent>
             {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
-                  <Card className="h-full flex flex-col items-center text-center shadow-md">
+                  <Card className="h-full flex flex-col items-center text-center shadow-md transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
                     <CardContent className="p-6 flex flex-col items-center">
                         <Image
                             src={testimonial.image.imageUrl}
@@ -48,8 +59,6 @@ const TestimonialsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
         </Carousel>
       </div>
     </section>
