@@ -119,8 +119,8 @@ const ItinerarySection = () => {
 
         {/* Desktop Layout */}
         <div className="relative hidden lg:block h-[1517px]">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 opacity-30">
-                <Image src="/logo.png" alt="logo" width={400} height={400}/>
+            <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-10 dark:opacity-20 pointer-events-none">
+                <Image src="/timeline_rangkaianperjalanan.png" alt="Timeline Background" width={600} height={600} className="object-contain" />
             </div>
             <ItineraryTimelinePath />
             {itineraryData.map(item => (

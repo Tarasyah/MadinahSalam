@@ -3,13 +3,13 @@
     {
       "id": "hero-mekkah",
       "description": "Kaaba in Mecca at night with crowds of pilgrims",
-      "imageUrl": "https://picsum.photos/seed/msw-hero-mekkah/1920/1080",
+      "imageUrl": "/makkah_thumbnail.jpg",
       "imageHint": "kaaba night"
     },
      {
       "id": "hero-madinah",
       "description": "Prophet's Mosque in Medina with beautiful lighting",
-      "imageUrl": "https://picsum.photos/seed/msw-hero-madinah/1920/1080",
+      "imageUrl": "/madinah_thumbnail.jpg",
       "imageHint": "prophet mosque"
     },
     {
@@ -21,7 +21,7 @@
      {
       "id": "hero-uim",
       "description": "Islamic University of Madinah campus building",
-      "imageUrl": "https://picsum.photos/seed/msw-hero-uim/1920/1080",
+      "imageUrl": "/Universitymadinah_thumbnail.jpg",
       "imageHint": "university building"
     },
     {

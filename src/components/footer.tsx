@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { Building2, Mail, Phone, MapPin, Facebook, Youtube, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Youtube, Instagram } from 'lucide-react';
 import { FaTelegram } from 'react-icons/fa';
+import Image from 'next/image';
 
 const Footer = () => {
   const quickLinks = [
@@ -29,7 +30,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="md:col-span-1 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <Building2 className="h-8 w-8 text-primary" />
+              <div className="relative h-8 w-8">
+                <Image src="/logo_darkmode.png" alt="Logo Dark" fill className="object-contain block dark:hidden" />
+                <Image src="/logo_lightmode.png" alt="Logo Light" fill className="object-contain hidden dark:block" />
+              </div>
               <span className="font-bold font-headline text-2xl">Madinah Salam</span>
             </div>
             <p className="text-sm text-muted-foreground">
