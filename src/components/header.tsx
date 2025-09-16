@@ -19,20 +19,20 @@ const navLinks = [
 const menuBgVariants = {
   open: {
     scaleX: 1,
-    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1] }
   },
   closed: {
     scaleX: 0,
-    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: 0.8 }
+    transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1], delay: 0.5 }
   }
 };
 
 const linkContainerVariants = {
   open: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.3 }
+    transition: { staggerChildren: 0.08, delayChildren: 0.2 }
   },
   closed: {
-    transition: { staggerChildren: 0.08, staggerDirection: -1 }
+    transition: { staggerChildren: 0.05, staggerDirection: -1 }
   }
 };
 
@@ -40,12 +40,12 @@ const linkVariants = {
   open: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }
+    transition: { duration: 0.35, ease: [0.34, 1.56, 0.64, 1] }
   },
   closed: {
     opacity: 0,
     y: 20,
-    transition: { duration: 0.3 }
+    transition: { duration: 0.25 }
   }
 };
 
@@ -80,18 +80,15 @@ export default function Header() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled ? '' : 'pt-4'
       )}>
-        {/* Gradient for non-scrolled state */}
         <div className={cn(
             "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300 pointer-events-none",
             isScrolled ? "opacity-0" : "opacity-100"
         )} />
         
-        {/* Inner container */}
         <div className={cn(
             "relative flex h-14 items-center transition-all duration-300 px-4",
             "lg:container lg:max-w-5xl"
         )}>
-            {/* Background for scrolled state */}
             <div className={cn(
                 "absolute inset-0 transition-all duration-300 -z-10",
                 isScrolled ? "dark:bg-background/80 bg-white/80 backdrop-blur-lg rounded-none lg:rounded-full" : ""
@@ -128,7 +125,7 @@ export default function Header() {
 
               <div className="lg:hidden flex items-center">
                 <Button variant="ghost" size="icon" className="rounded-full hover:bg-green-hover" onClick={() => setIsMobileMenuOpen(true)}>
-                  <Menu className={cn("h-5 w-5", !isScrolled && "text-white")} />
+                  <Menu className={cn("h-5 w-5", !isScrolled ? "text-white" : "text-foreground" )} />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </div>
@@ -161,14 +158,12 @@ export default function Header() {
             >
               <motion.div
                 className="absolute top-[-100px] right-[-30px] md:right-[-50px]"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1, transition: { delay: 0.4, duration: 0.4 } }}
-                exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.3 } }}
+                variants={linkVariants}
               >
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="z-10 rounded-full text-foreground hover:bg-primary/20"
+                  className="z-10 rounded-full text-foreground hover:bg-primary/20 p-8"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <X className="h-8 w-8" />
@@ -191,7 +186,7 @@ export default function Header() {
                           className="mt-2 h-px w-full bg-border/20"
                           initial={{ scaleX: 0 }}
                           animate={{ scaleX: 1 }}
-                          transition={{ duration: 0.6, ease: 'circOut', delay: 0.5 }}
+                          transition={{ duration: 0.4, ease: 'circOut', delay: 0.3 }}
                       />
                   </motion.div>
               ))}
