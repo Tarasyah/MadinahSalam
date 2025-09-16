@@ -3,7 +3,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils"; // Pastikan path ini benar
+import { cn } from "@/lib/utils"; 
 
 type Direction = "TOP" | "LEFT" | "BOTTOM" | "RIGHT";
 
@@ -11,7 +11,7 @@ export function HoverBorderGradient({
   children,
   containerClassName,
   className,
-  as: Tag = "div", // Diubah menjadi 'div' sebagai default
+  as: Tag = "div", 
   duration = 1,
   clockwise = true,
   ...props
@@ -71,7 +71,7 @@ export function HoverBorderGradient({
     >
       <div
         className={cn(
-          "w-full h-full relative bg-background text-foreground z-10 rounded-[inherit]",
+          "w-full h-full relative bg-card text-foreground z-10 rounded-[inherit]",
           className
         )}
       >
@@ -93,7 +93,7 @@ export function HoverBorderGradient({
             ? [movingMap[direction], highlight]
             : movingMap[direction],
         }}
-        transition={{ ease: "linear", duration: duration ?? 1 }}
+        transition={{ ease: "linear", duration: duration }}
       />
       <div className="bg-card absolute z-1 flex-none inset-[2px] rounded-[inherit]" />
     </Tag>
