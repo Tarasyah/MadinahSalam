@@ -14,7 +14,7 @@ import { HoverBorderGradient } from '../ui/hover-border-gradient';
 
 const PackagesSection = () => {
   return (
-    <section id="packages" className="py-16 lg:py-24 bg-secondary">
+    <section id="packages" className="py-16 lg:py-24 bg-background">
       <div className="container">
         <div className="text-center mb-12">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Paket Umrah Unggulan</h2>
