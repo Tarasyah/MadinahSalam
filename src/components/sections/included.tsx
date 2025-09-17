@@ -8,12 +8,11 @@ const IncludedSection = () => {
       <div className="container mx-auto">
         <div className="text-center mb-12">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Fasilitas Paket</h2>
-            <p className="text-muted-foreground mt-2">Berikut adalah fasilitas yang termasuk dan tidak termasuk dalam paket umrah kami.</p>
         </div>
         
         {/* Included Section */}
         <div className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex justify-center items-center gap-4 mb-8">
             <CircleCheckBig className="h-8 w-8 text-primary" />
             <h3 className="font-headline text-2xl md:text-3xl font-bold">Termasuk (Include)</h3>
           </div>
@@ -38,7 +37,7 @@ const IncludedSection = () => {
 
         {/* Excluded Section */}
         <div>
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex justify-center items-center gap-4 mb-8">
             <CircleX className="h-8 w-8 text-muted-foreground" />
             <h3 className="font-headline text-2xl md:text-3xl font-bold">Tidak Termasuk (Exclude)</h3>
           </div>
