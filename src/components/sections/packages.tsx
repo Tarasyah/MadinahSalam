@@ -18,7 +18,6 @@ const PackagesSection = () => {
       <div className="container">
         <div className="text-center mb-12">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Paket Umrah Unggulan</h2>
-            <p className="text-muted-foreground mt-2">Pilih paket yang paling sesuai dengan kebutuhan dan kenyamanan Anda.</p>
         </div>
         <div className="flex justify-center">
           {packages.map((pkg) => (
