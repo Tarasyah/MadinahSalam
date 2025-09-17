@@ -125,18 +125,6 @@
       "description": "Zamzam water being served",
       "imageUrl": "https://picsum.photos/seed/msw-gallery6/600/400",
       "imageHint": "zamzam water"
-    },
-    {
-      "id": "about-us-hero",
-      "description": "Team of Madinah Salam Wisata staff smiling",
-      "imageUrl": "https://picsum.photos/seed/msw-about-hero/1200/600",
-      "imageHint": "professional team"
-    },
-    {
-      "id": "requirements-hero",
-      "description": "Pile of passports and travel documents",
-      "imageUrl": "https://picsum.photos/seed/msw-req-hero/1200/500",
-      "imageHint": "travel documents"
     }
   ]
 }

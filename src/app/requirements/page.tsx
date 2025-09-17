@@ -1,9 +1,7 @@
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const RequirementsPage = () => {
-    const requirementsHeroImage = PlaceHolderImages.find(img => img.id === 'requirements-hero');
 
     const requirementItems = [
         {
@@ -40,15 +38,12 @@ const RequirementsPage = () => {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center">
-                {requirementsHeroImage && (
-                    <Image
-                        src={requirementsHeroImage.imageUrl}
-                        alt={requirementsHeroImage.description}
-                        data-ai-hint={requirementsHeroImage.imageHint}
-                        fill
-                        className="object-cover"
-                    />
-                )}
+                <Image
+                    src="/background_tabpersyaratan.webp"
+                    alt="Persyaratan Hero Image"
+                    fill
+                    className="object-cover"
+                />
                 <div className="absolute inset-0 bg-black/60" />
                 <div className="relative z-10 text-center p-4">
                     <h1 className="font-headline text-5xl md:text-6xl font-bold text-white">Persyaratan & Prosedur</h1>

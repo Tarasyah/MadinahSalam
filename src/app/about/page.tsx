@@ -4,7 +4,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, Target, Flag } from 'lucide-react';
 
 const AboutPage = () => {
-    const aboutHeroImage = PlaceHolderImages.find(img => img.id === 'about-us-hero');
 
     const missions = [
         "Menyelenggarakan perjalanan ibadah Umrah dan Haji yang sesuai dengan tuntunan syariat dan sunnah.",
@@ -18,15 +17,12 @@ const AboutPage = () => {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center">
-                {aboutHeroImage && (
-                    <Image
-                        src={aboutHeroImage.imageUrl}
-                        alt={aboutHeroImage.description}
-                        data-ai-hint={aboutHeroImage.imageHint}
-                        fill
-                        className="object-cover"
-                    />
-                )}
+                <Image
+                    src="/background_tabtentangkami.webp"
+                    alt="Tentang Kami Hero Image"
+                    fill
+                    className="object-cover"
+                />
                 <div className="absolute inset-0 bg-black/60" />
                 <div className="relative z-10 text-center p-4">
                     <h1 className="font-headline text-5xl md:text-6xl font-bold text-white">Tentang PT. Madinah Salam Wisata</h1>
@@ -51,17 +47,6 @@ const AboutPage = () => {
                                     </p>
                                 </CardContent>
                             </Card>
-                            <div className="mt-8 rounded-lg overflow-hidden border">
-                                <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.46279932646!2d106.88371307481119!3d-6.332822861962381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed26a457c13b%3A0x6d5f76da15558121!2sMadinah%20salam%20wisata!5e0!3m2!1sen!2sid!4v1721893361545!5m2!1sen!2sid" 
-                                    width="100%" 
-                                    height="300" 
-                                    style={{ border: 0 }}
-                                    allowFullScreen={false} 
-                                    loading="lazy" 
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                ></iframe>
-                            </div>
                         </div>
                         <div>
                             <Card>
@@ -78,6 +63,17 @@ const AboutPage = () => {
                                 </CardContent>
                             </Card>
                         </div>
+                    </div>
+                     <div className="mt-16 rounded-lg overflow-hidden border">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.46279932646!2d106.88371307481119!3d-6.332822861962381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed26a457c13b%3A0x6d5f76da15558121!2sMadinah%20salam%20wisata!5e0!3m2!1sen!2sid!4v1721893361545!5m2!1sen!2sid" 
+                            width="100%" 
+                            height="450" 
+                            style={{ border: 0 }}
+                            allowFullScreen={false} 
+                            loading="lazy" 
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
                     </div>
                 </div>
             </section>
