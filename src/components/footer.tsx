@@ -27,67 +27,69 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+          {/* Logo and Description */}
+          <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="relative h-56 w-56">
+              <div className="relative h-32 w-48">
                 <Image src="/logo_lightmode.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
                 <Image src="/logo_darkmode.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
               </div>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground">
               Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2 gap-8">
-              <div>
-                <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
-                <ul className="space-y-3 text-sm text-muted-foreground">
-                  <li className="flex items-start">
-                    <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
-                    <span>Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Mail className="h-4 w-4 mr-3" />
-                    <a href="mailto:madinahsalamwisata@gmail.com" className="hover:text-primary">madinahsalamwisata@gmail.com</a>
-                  </li>
-                  <li className="flex items-center">
-                    <Phone className="h-4 w-4 mr-3" />
-                    <a href="tel:+6282210004644" className="hover:text-primary">(+62) 822 1000 4644</a>
-                  </li>
-                </ul>
-              </div>
-              
-              <div>
-                <h3 className="font-semibold mb-4 text-foreground">Media Sosial & Tautan</h3>
-                <div className="flex space-x-4 mb-4">
-                    {socialLinks.map((link) => (
-                        <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-                            <link.icon className="h-5 w-5" />
-                            <span className="sr-only">{link.label}</span>
-                        </a>
-                    ))}
-                </div>
-                <ul className="space-y-2">
-                {quickLinks.map((link) => (
-                    <li key={link.href}>
-                    <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                        {link.label}
-                    </Link>
-                    </li>
-                ))}
-                </ul>
-              </div>
+          {/* Contact Info */}
+          <div>
+            <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
+            <ul className="space-y-3 text-muted-foreground">
+              <li className="flex items-start">
+                <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
+                <span>Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.</span>
+              </li>
+              <li className="flex items-center">
+                <Mail className="h-4 w-4 mr-3" />
+                <a href="mailto:madinahsalamwisata@gmail.com" className="hover:text-primary">madinahsalamwisata@gmail.com</a>
+              </li>
+              <li className="flex items-center">
+                <Phone className="h-4 w-4 mr-3" />
+                <a href="tel:+6282210004644" className="hover:text-primary">(+62) 822 1000 4644</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social and Quick Links */}
+          <div>
+            <h3 className="font-semibold mb-4 text-foreground">Media Sosial & Tautan</h3>
+            <div className="flex space-x-4 mb-4">
+              {socialLinks.map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                  <link.icon className="h-5 w-5" />
+                  <span className="sr-only">{link.label}</span>
+                </a>
+              ))}
+            </div>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
+
         <div className="mt-8 pt-6 border-t border-border/50 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} PT. Madinah Salam Wisata. All Rights Reserved.</p>
-           <div className="mt-2 space-x-4">
+          <div className="mt-2 space-x-4">
             {legalLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="text-xs text-muted-foreground hover:text-primary transition-colors">
-                  {link.label}
-                </Link>
+              <Link key={link.href} href={link.href} className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                {link.label}
+              </Link>
             ))}
           </div>
         </div>
