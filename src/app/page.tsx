@@ -1,4 +1,3 @@
-import ContactSection from '@/components/sections/contact';
 import GallerySection from '@/components/sections/gallery';
 import HeroSection from '@/components/sections/hero-interactive';
 import IncludedSection from '@/components/sections/included';
@@ -16,7 +15,6 @@ export default function Home() {
       <GallerySection />
       <TestimonialsSection />
       <PackagesSection />
-      <ContactSection />
     </div>
   );
 }
