@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
 
         {/* Social Links for Desktop */}
-        <div className="hidden md:flex justify-center mt-8 pt-8 border-t border-border/50">
+        <div className="hidden md:flex justify-center mt-8 pt-8">
            <div className="flex space-x-4">
               {socialLinks.map((link) => (
                 <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
