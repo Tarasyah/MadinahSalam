@@ -19,7 +19,7 @@ const Footer = () => {
 
   const socialLinks = [
     { href: 'https://www.facebook.com/madinahsalam1', label: 'Facebook', icon: Facebook },
-    { href: 'https://www.youtube.com/@madinahsalam', label: 'YouTube', icon: Youtube },
+    { href: 'https://youtube.com/@madinahsalamwisata?feature=shared', label: 'YouTube', icon: Youtube },
     { href: 'https://instagram.com/madinahsalam1', label: 'Instagram', icon: Instagram },
     { href: 'https://t.me/madinahsalam', label: 'Telegram', icon: FaTelegram },
   ];
