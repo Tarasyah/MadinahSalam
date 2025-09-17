@@ -67,9 +67,9 @@ export default function Header() {
 
           <div className="flex-1 flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-               <div className="relative h-12 w-12">
-                  <Image src="/logo_lightmode.png" alt="Logo Light" fill className={cn("object-contain", !isScrolled ? "hidden" : "block dark:hidden")} />
-                  <Image src="/logo_darkmode.png" alt="Logo Dark" fill className={cn("object-contain", !isScrolled ? "block" : "hidden dark:block")} />
+               <div className="relative h-16 w-16">
+                  <Image src="/logo_lightmode.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
+                  <Image src="/logo_darkmode.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
               </div>
             </Link>
           </div>
