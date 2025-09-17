@@ -30,7 +30,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="md:col-span-1 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="relative h-48 w-48">
+              <div className="relative h-56 w-56">
                 <Image src="/logo_lightmode.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
                 <Image src="/logo_darkmode.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
               </div>

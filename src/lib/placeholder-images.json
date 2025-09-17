@@ -3,25 +3,25 @@
     {
       "id": "hero-mekkah",
       "description": "Kaaba in Mecca at night with crowds of pilgrims",
-      "imageUrl": "/makkah_thumbnail.jpg",
+      "imageUrl": "/makkah_thumbnail.webp",
       "imageHint": "kaaba night"
     },
      {
       "id": "hero-madinah",
       "description": "Prophet's Mosque in Medina with beautiful lighting",
-      "imageUrl": "/madinah_thumbnail.jpg",
+      "imageUrl": "/madinah_thumbnail.webp",
       "imageHint": "prophet mosque"
     },
     {
       "id": "hero-thaif",
       "description": "Mountain range in Thaif, Saudi Arabia",
-      "imageUrl": "https://picsum.photos/seed/msw-hero-thaif/1920/1080",
+      "imageUrl": "/Thaif_thumbnail.webp",
       "imageHint": "thaif mountain"
     },
      {
       "id": "hero-uim",
       "description": "Islamic University of Madinah campus building",
-      "imageUrl": "/Universitymadinah_thumbnail.jpg",
+      "imageUrl": "/Universitymadinah_thumbnail.webp",
       "imageHint": "university building"
     },
     {

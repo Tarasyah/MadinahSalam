@@ -67,7 +67,7 @@ export default function Header() {
 
           <div className="flex-1 flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-               <div className="relative h-24 w-24">
+               <div className="relative h-32 w-32">
                   <Image src="/logo_lightmode.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
                   <Image src="/logo_darkmode.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
               </div>
