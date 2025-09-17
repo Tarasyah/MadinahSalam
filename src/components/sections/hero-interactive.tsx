@@ -71,7 +71,7 @@ const HeroSection = () => {
                         <p className="mt-4 text-base md:text-lg text-white/90 drop-shadow-md max-w-lg">
                             {activeDestination.description}
                         </p>
-                        <Button asChild className="mt-8 rounded-full group">
+                        <Button asChild size="sm" className="mt-8 rounded-full group">
                             <Link href="/#packages">
                                 Jelajahi Paket
                                 <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
