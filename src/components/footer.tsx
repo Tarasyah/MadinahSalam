@@ -29,10 +29,10 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
-          {/* Logo and Description */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+          {/* Logo, Description, and Social */}
           <div className="md:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
+            <div className="flex items-center space-x-2 mb-4 -mt-4">
               <div className="relative h-32 w-48">
                 <Image src="/logo_lightmode.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
                 <Image src="/logo_darkmode.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
@@ -41,8 +41,30 @@ const Footer = () => {
             <p className="text-muted-foreground">
               Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
             </p>
+             <div className="flex space-x-4 mt-6">
+              {socialLinks.map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                  <link.icon className="h-5 w-5" />
+                  <span className="sr-only">{link.label}</span>
+                </a>
+              ))}
+            </div>
           </div>
 
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold mb-4 text-foreground">Tautan</h3>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
           {/* Contact Info */}
           <div>
             <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
@@ -64,32 +86,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold mb-4 text-foreground">Tautan</h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social Links */}
-          <div>
-            <h3 className="font-semibold mb-4 text-foreground">Media Sosial</h3>
-            <div className="flex space-x-4">
-              {socialLinks.map((link) => (
-                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-                  <link.icon className="h-5 w-5" />
-                  <span className="sr-only">{link.label}</span>
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
 
         <div className="mt-8 pt-6 border-t border-border/50 text-center text-sm text-muted-foreground">

@@ -66,7 +66,7 @@ const RequirementsPage = () => {
                     <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
                         {requirementItems.map((item, index) => (
                             <AccordionItem key={index} value={`item-${index + 1}`}>
-                                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+                                <AccordionTrigger className="text-xl font-semibold hover:no-underline text-left">
                                     {item.title}
                                 </AccordionTrigger>
                                 <AccordionContent>
