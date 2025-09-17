@@ -26,20 +26,6 @@ const Footer = () => {
 
   const whatsappLink = "https://wa.me/6282210004644";
 
-  const SocialLinksComponent = ({ className }: { className?: string }) => (
-    <div className={className}>
-      <h3 className="font-semibold mb-4 text-foreground text-center md:text-left">Media Sosial</h3>
-      <div className="flex space-x-4 justify-center">
-        {socialLinks.map((link) => (
-          <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-            <link.icon className="h-5 w-5" />
-            <span className="sr-only">{link.label}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  );
-
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container py-12">
