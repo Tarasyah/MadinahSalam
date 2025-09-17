@@ -43,7 +43,7 @@ const GallerySection = () => {
             return getScrollTween(diffToTarget) * 1;
         })
         setOpacity(newOpacity)
-    }, [emblaApi]);
+    }, []);
 
     const tweenScale = useCallback((emblaApi: any, eventName: any) => {
         const engine = emblaApi.internalEngine();
@@ -66,12 +66,12 @@ const GallerySection = () => {
             return getScrollTween(diffToTarget) * tweenValue
         })
         setScale(newScale)
-    }, [emblaApi]);
+    }, []);
 
     useEffect(() => {
         if (!emblaApi) return;
-        tweenOpacity(emblaApi);
-        tweenScale(emblaApi);
+        tweenOpacity(emblaApi, 'reInit');
+        tweenScale(emblaApi, 'reInit');
         emblaApi.on('scroll', (emblaApi, eventName) => {
             tweenOpacity(emblaApi, eventName);
             tweenScale(emblaApi, eventName);
