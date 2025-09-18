@@ -34,8 +34,8 @@ const Footer = () => {
           <div className="md:col-span-1 text-center md:text-left">
              <div className="flex justify-center md:justify-start items-center space-x-2 mb-4 -mt-4">
               <div className="relative h-32 w-48">
-                <Image src="/logo_lightmode.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
-                <Image src="/logo_darkmode.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
+                <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
+                <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
               </div>
             </div>
             <p className="text-muted-foreground">
