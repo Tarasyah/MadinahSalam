@@ -29,7 +29,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm md:items-start">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-sm md:items-start">
           
           {/* Logo and Description */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left md:col-span-2">
             <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-center justify-center md:justify-start">
@@ -65,6 +65,19 @@ const Footer = () => {
             </ul>
           </div>
           
+          {/* Social Links for Desktop */}
+          <div className="hidden md:flex flex-col items-start justify-start text-left">
+              <h3 className="font-semibold mb-4 text-foreground">Media Sosial</h3>
+              <div className="flex flex-col space-y-3">
+                {socialLinks.map((link) => (
+                  <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+                    <link.icon className="h-5 w-5" />
+                    <span>{link.label}</span>
+                  </a>
+                ))}
+              </div>
+          </div>
+
           {/* Quick Links */}
           <div className="text-center md:text-left">
             <h3 className="font-semibold mb-4 text-foreground">Tautan</h3>
@@ -77,19 +90,6 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Social Links for Desktop */}
-          <div className="hidden md:flex flex-col items-start justify-start text-left">
-              <h3 className="font-semibold mb-4 text-foreground">Media Sosial</h3>
-              <div className="flex flex-col space-y-3">
-                {socialLinks.map((link) => (
-                  <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
-                    <link.icon className="h-5 w-5" />
-                    <span>{link.label}</span>
-                  </a>
-                ))}
-              </div>
           </div>
         </div>
         
