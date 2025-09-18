@@ -30,8 +30,7 @@ const Footer = () => {
       <div className="container pt-8">
         {/* Desktop Layout */}
         <div className="hidden md:flex flex-col">
-            <div className="border-t border-border/50"></div>
-            <div className="pt-8">
+            <div className="pt-4">
                 {/* Top Section: Logo + Description */}
                 <div className="flex flex-col items-start mb-8">
                     <div className="relative h-20 w-auto flex-shrink-0 mb-4">
