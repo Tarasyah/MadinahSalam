@@ -33,15 +33,15 @@ const Footer = () => {
           
           {/* Logo and Description */}
           <div className="text-left flex flex-col items-center md:items-start justify-start order-first md:order-none">
-             <div className="flex justify-center md:justify-start items-center space-x-2 -mt-4">
-              <div className="relative h-32 w-72">
-                <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
-                <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
-              </div>
+             <div className="w-72">
+                <div className="relative h-32 w-72">
+                  <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
+                  <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
+                </div>
+              <p className="text-muted-foreground mt-2 text-left">
+                Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
+              </p>
             </div>
-            <p className="text-muted-foreground mt-2 max-w-sm text-left">
-              Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
-            </p>
           </div>
 
           {/* Quick Links */}
