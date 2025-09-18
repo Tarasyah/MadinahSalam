@@ -27,16 +27,16 @@ const Footer = () => {
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      <div className="container py-12">
+      <div className="container pt-12">
         {/* Desktop Layout */}
-        <div className="hidden md:flex flex-col gap-8">
+        <div className="hidden md:flex flex-col">
             {/* Top Section: Logo + Description */}
-            <div className="flex flex-col items-start gap-2">
+            <div className="flex flex-col items-start mb-8">
                 <div className="relative h-20 w-auto flex-shrink-0">
                   <Image src="/logo_lightmodebottombar.png" alt="Logo Light" width={200} height={80} className="object-contain block dark:hidden" />
                   <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" width={200} height={80} className="object-contain hidden dark:block" />
                 </div>
-                <p className="text-muted-foreground text-sm max-w-md">
+                <p className="text-muted-foreground text-sm mt-2">
                     Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah, profesional, dan sesuai dengan tuntunan syariat Islam, berkomitmen memberikan pelayanan terbaik untuk pengalaman spiritual Anda.
                 </p>
             </div>
@@ -45,7 +45,7 @@ const Footer = () => {
             <div className="border-t border-border/50"></div>
 
             {/* Bottom Section: Contact, Social, Links */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm mt-8">
                  <div className="md:col-span-2">
                     <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
                     <ul className="space-y-3 text-muted-foreground">
@@ -92,7 +92,7 @@ const Footer = () => {
         </div>
 
         {/* Mobile Layout */}
-        <div className="flex flex-col items-center justify-center text-center gap-8 text-sm md:hidden">
+        <div className="flex flex-col items-center justify-center text-center gap-8 text-sm md:hidden py-12">
           <div className="flex flex-col items-center">
              <div className="relative w-64 h-auto">
                 <Image src="/logo_lightmodebottombar.png" alt="Logo Light" width={256} height={102} className="object-contain block dark:hidden" />
@@ -137,7 +137,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-8 pt-6 border-t border-border/50 text-center text-sm text-muted-foreground">
+        <div className="mt-8 pt-6 pb-8 border-t border-border/50 text-center text-sm text-muted-foreground">
           <div className="flex justify-center space-x-6 mb-4 md:hidden">
             {socialLinks.map((link) => (
               <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
