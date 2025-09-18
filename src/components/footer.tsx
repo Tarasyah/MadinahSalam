@@ -29,20 +29,8 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-          {/* Logo and Description */}
-          <div className="md:col-span-1 text-center md:text-left">
-             <div className="flex justify-center md:justify-start items-center space-x-2 mb-4 -mt-4">
-              <div className="relative h-24 w-56">
-                <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
-                <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
-              </div>
-            </div>
-            <p className="text-muted-foreground">
-              Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
-            </p>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+          
           {/* Quick Links */}
           <div className="text-center md:text-left">
             <h3 className="font-semibold mb-4 text-foreground">Tautan</h3>
@@ -57,38 +45,53 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Contact Info */}
-          <div className="text-center md:text-left">
-            <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
-            <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start justify-center md:justify-start">
-                <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
-                  Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.
-                </a>
-              </li>
-              <li className="flex items-center justify-center md:justify-start">
-                <Mail className="h-4 w-4 mr-3" />
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">madinahsalamwisata@gmail.com</a>
-              </li>
-              <li className="flex items-center justify-center md:justify-start">
-                <Phone className="h-4 w-4 mr-3" />
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">(+62) 822 1000 4644</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Social Links for Desktop */}
-        <div className="hidden md:flex justify-center mt-8 pt-8">
-           <div className="flex space-x-4">
-              {socialLinks.map((link) => (
-                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-                  <link.icon className="h-5 w-5" />
-                  <span className="sr-only">{link.label}</span>
-                </a>
-              ))}
+          {/* Logo and Description */}
+          <div className="md:col-span-2 text-center flex flex-col items-center justify-start order-first md:order-none">
+             <div className="flex justify-center md:justify-center items-center space-x-2 -mt-4">
+              <div className="relative h-24 w-56">
+                <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
+                <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
+              </div>
             </div>
+            <p className="text-muted-foreground mt-2 max-w-sm">
+              Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
+            </p>
+          </div>
+
+          {/* Contact Info & Socials */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Contact Info */}
+              <div className="text-center md:text-left">
+                <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start justify-center md:justify-start">
+                    <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
+                    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                      Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.
+                    </a>
+                  </li>
+                  <li className="flex items-center justify-center md:justify-start">
+                    <Mail className="h-4 w-4 mr-3" />
+                    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">madinahsalamwisata@gmail.com</a>
+                  </li>
+                  <li className="flex items-center justify-center md:justify-start">
+                    <Phone className="h-4 w-4 mr-3" />
+                    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">(+62) 822 1000 4644</a>
+                  </li>
+                </ul>
+              </div>
+
+               {/* Social Links for Desktop */}
+              <div className="hidden md:flex flex-col items-center justify-start space-y-4 pt-10">
+                  {socialLinks.map((link) => (
+                    <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                      <link.icon className="h-5 w-5" />
+                      <span className="sr-only">{link.label}</span>
+                    </a>
+                  ))}
+              </div>
+          </div>
+
         </div>
         
         <div className="mt-8 pt-6 border-t border-border/50 text-center text-sm text-muted-foreground">
