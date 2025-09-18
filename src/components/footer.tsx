@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="hidden md:flex flex-col gap-8">
             {/* Top Section: Logo + Description */}
             <div className="flex items-center gap-8">
-                <div className="relative h-[50px] w-56 flex-shrink-0">
+                <div className="relative h-[60px] w-56 flex-shrink-0">
                   <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
                   <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
                 </div>
@@ -107,7 +107,7 @@ const Footer = () => {
           <div className="text-center">
             <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
             <ul className="space-y-3 text-muted-foreground flex flex-col items-center">
-              <li className="flex items-start">
+              <li className="flex items-start justify-center">
                 <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
                 <a href="https://goo.gl/maps/iBGCTeDk4dSvmdqj8" target="_blank" rel="noopener noreferrer" className="hover:text-primary text-center">
                   Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.
