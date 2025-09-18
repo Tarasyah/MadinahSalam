@@ -93,14 +93,14 @@ const Footer = () => {
         </div>
 
         {/* Mobile Layout */}
-        <div className="flex flex-col gap-8 text-sm md:hidden">
-          <div className="flex flex-col items-center text-center">
-             <div className="w-72">
-                <div className="relative h-32 w-72">
+        <div className="flex flex-col gap-8 text-sm md:hidden text-center">
+          <div className="flex flex-col items-center">
+             <div className="w-auto">
+                <div className="relative h-[120px] w-56">
                   <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
                   <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
                 </div>
-              <p className="text-muted-foreground mt-2 text-left">
+              <p className="text-muted-foreground mt-2 max-w-sm">
                 Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
               </p>
             </div>
@@ -108,18 +108,18 @@ const Footer = () => {
 
           <div className="text-center">
             <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
-            <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-center justify-center">
+            <ul className="space-y-3 text-muted-foreground flex flex-col items-center">
+              <li className="flex items-start">
                 <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
-                <a href="https://goo.gl/maps/iBGCTeDk4dSvmdqj8" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
-                  Jl. Radar Auri No. 9, RT 13 RW 05...
+                <a href="https://goo.gl/maps/iBGCTeDk4dSvmdqj8" target="_blank" rel="noopener noreferrer" className="hover:text-primary text-left">
+                  Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.
                 </a>
               </li>
-              <li className="flex items-center justify-center">
+              <li className="flex items-center">
                 <Mail className="h-4 w-4 mr-3" />
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">madinahsalamwisata@gmail.com</a>
               </li>
-              <li className="flex items-center justify-center">
+              <li className="flex items-center">
                 <Phone className="h-4 w-4 mr-3" />
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">(+62) 822 1000 4644</a>
               </li>

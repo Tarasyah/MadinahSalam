@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, Target, Flag } from 'lucide-react';
+import { CheckCircle, Target, Flag, MapPin } from 'lucide-react';
 
 const AboutPage = () => {
 
@@ -12,6 +12,8 @@ const AboutPage = () => {
         "Menghadirkan pengalaman berwisata yang edukatif, berkesan, dan memperkuat iman.",
         "Menjalin kemitraan yang transparan dan berkelanjutan dengan stakeholder lokal dan internasional."
     ];
+    const fullAddress = "Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.";
+
 
     return (
         <div className="bg-background text-foreground">
@@ -64,16 +66,23 @@ const AboutPage = () => {
                             </CardContent>
                         </Card>
                     </div>
-                     <div className="mt-12 rounded-lg overflow-hidden border">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.46279932646!2d106.88371307481119!3d-6.332822861962381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed26a457c13b%3A0x6d5f76da15558121!2sMadinah%20salam%20wisata!5e0!3m2!1sen!2sid!4v1721893361545!5m2!1sen!2sid" 
-                            width="100%" 
-                            height="450" 
-                            style={{ border: 0 }}
-                            allowFullScreen={false} 
-                            loading="lazy" 
-                            referrerPolicy="no-referrer-when-downgrade"
-                        ></iframe>
+                     <div className="mt-12 text-center">
+                        <div className="inline-flex items-center gap-2 text-lg font-semibold mb-4">
+                            <MapPin className="h-5 w-5 text-primary" />
+                            Alamat Kantor Kami
+                        </div>
+                        <p className="text-muted-foreground mb-4">{fullAddress}</p>
+                        <div className="rounded-lg overflow-hidden border">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.46279932646!2d106.88371307481119!3d-6.332822861962381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed26a457c13b%3A0x6d5f76da15558121!2sMadinah%20salam%20wisata!5e0!3m2!1sen!2sid!4v1721893361545!5m2!1sen!2sid" 
+                                width="100%" 
+                                height="450" 
+                                style={{ border: 0 }}
+                                allowFullScreen={false} 
+                                loading="lazy" 
+                                referrerPolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
             </section>
