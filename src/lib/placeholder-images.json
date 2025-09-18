@@ -93,38 +93,92 @@
     {
       "id": "gallery-1",
       "description": "Pilgrims praying inside the Grand Mosque",
-      "imageUrl": "https://picsum.photos/seed/msw-gallery1/600/400",
+      "imageUrl": "/gallery/1.webp",
       "imageHint": "pilgrims praying"
     },
     {
       "id": "gallery-2",
       "description": "Close up of the Kaaba's black and gold cloth (kiswah)",
-      "imageUrl": "https://picsum.photos/seed/msw-gallery2/600/400",
+      "imageUrl": "/gallery/3.webp",
       "imageHint": "kaaba kiswah"
     },
     {
       "id": "gallery-3",
       "description": "The expansive courtyard of the Prophet's Mosque in Medina",
-      "imageUrl": "https://picsum.photos/seed/msw-gallery3/600/400",
+      "imageUrl": "/gallery/5.webp",
       "imageHint": "medina courtyard"
     },
     {
       "id": "gallery-4",
       "description": "A group of pilgrims in white ihram clothing",
-      "imageUrl": "https://picsum.photos/seed/msw-gallery4/600/400",
+      "imageUrl": "/gallery/6.webp",
       "imageHint": "pilgrims ihram"
     },
     {
       "id": "gallery-5",
       "description": "Sunset over the desert mountains near Mecca",
-      "imageUrl": "https://picsum.photos/seed/msw-gallery5/600/400",
+      "imageUrl": "/gallery/10.webp",
       "imageHint": "desert sunset"
     },
     {
       "id": "gallery-6",
       "description": "Zamzam water being served",
-      "imageUrl": "https://picsum.photos/seed/msw-gallery6/600/400",
+      "imageUrl": "/gallery/11.webp",
       "imageHint": "zamzam water"
+    },
+    {
+      "id": "gallery-7",
+      "description": "Pilgrims walking together",
+      "imageUrl": "/gallery/16.webp",
+      "imageHint": "pilgrims walking"
+    },
+    {
+      "id": "gallery-8",
+      "description": "A view of the city from a mountain",
+      "imageUrl": "/gallery/19.webp",
+      "imageHint": "city view"
+    },
+    {
+      "id": "gallery-9",
+      "description": "A detail of Islamic architecture",
+      "imageUrl": "/gallery/21.webp",
+      "imageHint": "islamic architecture"
+    },
+    {
+      "id": "gallery-10",
+      "description": "A quiet moment of reflection",
+      "imageUrl": "/gallery/29.webp",
+      "imageHint": "reflection moment"
+    },
+    {
+      "id": "gallery-11",
+      "description": "A bustling market street",
+      "imageUrl": "/gallery/30.webp",
+      "imageHint": "market street"
+    },
+    {
+      "id": "gallery-12",
+      "description": "A family enjoying their journey",
+      "imageUrl": "/gallery/31.webp",
+      "imageHint": "family journey"
+    },
+    {
+      "id": "gallery-13",
+      "description": "A beautiful mosque interior",
+      "imageUrl": "/gallery/34.webp",
+      "imageHint": "mosque interior"
+    },
+    {
+      "id": "gallery-14",
+      "description": "A guide explaining historical sites",
+      "imageUrl": "/gallery/36.webp",
+      "imageHint": "tour guide"
+    },
+    {
+      "id": "gallery-15",
+      "description": "Pilgrims gathered for a prayer",
+      "imageUrl": "/gallery/39.webp",
+      "imageHint": "group prayer"
     }
   ]
 }
