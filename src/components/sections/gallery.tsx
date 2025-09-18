@@ -89,7 +89,7 @@ const GallerySection = () => {
                 </div>
                 <div className="relative">
                     <div className="overflow-hidden" ref={emblaRef}>
-                        <div className="flex -ml-4" style={{ perspective: '1000px' }}>
+                        <div className="flex md:-ml-4" style={{ perspective: '1000px' }}>
                             {galleryImages.map((image, index) => (
                                 <div key={image.id} className="flex-grow-0 flex-shrink-0 basis-5/6 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 pl-4">
                                      <div className="transition-transform duration-300 ease-out" style={{ transform: `scale(${scale[index] || 0})`, opacity: opacity[index] || 0 }}>
