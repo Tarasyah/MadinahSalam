@@ -27,11 +27,11 @@ const Footer = () => {
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      <div className="container pt-0">
+      <div className="container pt-8">
         {/* Desktop Layout */}
         <div className="hidden md:flex flex-col">
             {/* Top Section: Logo + Description */}
-            <div className="flex flex-col items-start mt-8 mb-8">
+            <div className="flex flex-col items-start mt-0 mb-8">
                 <div className="relative h-20 w-auto flex-shrink-0">
                   <Image src="/logo_lightmodebottombar.png" alt="Logo Light" width={200} height={80} className="object-contain block dark:hidden" />
                   <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" width={200} height={80} className="object-contain hidden dark:block" />
