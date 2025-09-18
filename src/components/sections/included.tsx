@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { included, excluded } from '@/lib/data';
 import { CircleCheckBig, CircleX } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const IncludedSection = () => {
   return (
@@ -18,7 +19,15 @@ const IncludedSection = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {included.map((item, index) => (
-              <Card key={index} className="h-full bg-card hover:border-primary transition-colors duration-300 transform hover:-translate-y-1">
+              <Card 
+                key={index} 
+                className={cn(
+                  "h-full bg-card hover:border-primary transition-colors duration-300 transform hover:-translate-y-1",
+                  index === included.length - 1 && included.length % 2 !== 0 && 'sm:col-span-2 lg:col-span-1',
+                  index === included.length - 1 && included.length % 3 !== 0 && 'lg:col-span-1',
+                  index === included.length - 1 && included.length % 4 !== 0 && 'xl:col-auto xl:last:col-start-2'
+                )}
+              >
                 <CardHeader>
                   <CardTitle className="flex items-start gap-3">
                     <item.icon className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
@@ -43,7 +52,15 @@ const IncludedSection = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {excluded.map((item, index) => (
-              <Card key={index} className="h-full bg-card hover:border-border transition-colors duration-300">
+              <Card 
+                key={index}
+                className={cn(
+                  "h-full bg-card hover:border-border transition-colors duration-300",
+                  index === excluded.length - 1 && excluded.length % 2 !== 0 && 'sm:col-span-2 lg:col-span-1',
+                   index === excluded.length - 1 && excluded.length % 3 !== 0 && 'lg:col-span-1',
+                  index === excluded.length - 1 && excluded.length % 4 !== 0 && 'xl:col-auto'
+                )}
+              >
                 <CardHeader>
                   <CardTitle className="flex items-start gap-3">
                     <item.icon className="h-6 w-6 text-muted-foreground flex-shrink-0 mt-1" />
