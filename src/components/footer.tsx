@@ -109,7 +109,7 @@ const Footer = () => {
             <ul className="space-y-3 text-muted-foreground flex flex-col items-center">
               <li className="flex items-start">
                 <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
-                <a href="https://goo.gl/maps/iBGCTeDk4dSvmdqj8" target="_blank" rel="noopener noreferrer" className="hover:text-primary text-left">
+                <a href="https://goo.gl/maps/iBGCTeDk4dSvmdqj8" target="_blank" rel="noopener noreferrer" className="hover:text-primary text-center">
                   Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.
                 </a>
               </li>
