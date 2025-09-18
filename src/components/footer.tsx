@@ -11,7 +11,6 @@ const Footer = () => {
     { href: '/about', label: 'Tentang Kami', target: '_self' },
     { href: '/requirements', label: 'Persyaratan', target: '_self' },
     { href: '/#packages', label: 'Paket', target: '_self' },
-    { href: whatsappLink, label: 'Kontak', target: '_blank' },
   ];
 
   const legalLinks = [
