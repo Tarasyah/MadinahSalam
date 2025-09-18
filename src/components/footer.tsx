@@ -26,8 +26,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground pt-12">
-      <div className="container">
+    <footer className="bg-secondary text-secondary-foreground">
+      <div className="container pt-12">
         {/* Desktop Layout */}
         <div className="hidden md:flex flex-col">
             <div className="pt-4">
