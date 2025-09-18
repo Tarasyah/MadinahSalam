@@ -31,9 +31,9 @@ const Footer = () => {
         {/* Desktop Layout */}
         <div className="hidden md:flex flex-col">
             <div className="border-t border-border/50"></div>
-            <div className="pt-4">
+            <div className="pt-8">
                 {/* Top Section: Logo + Description */}
-                <div className="flex flex-col items-start mb-8 pt-4">
+                <div className="flex flex-col items-start mb-8">
                     <div className="relative h-20 w-auto flex-shrink-0 mb-4">
                       <Image src="/logo_lightmodebottombar.png" alt="Logo Light" width={200} height={80} className="object-contain block dark:hidden" />
                       <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" width={200} height={80} className="object-contain hidden dark:block" />
