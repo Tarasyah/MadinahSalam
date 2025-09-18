@@ -4,12 +4,14 @@ import { FaTelegram } from 'react-icons/fa';
 import Image from 'next/image';
 
 const Footer = () => {
+  const whatsappLink = "https://wa.me/6282210004644";
+
   const quickLinks = [
-    { href: '/', label: 'Beranda' },
-    { href: '/about', label: 'Tentang Kami' },
-    { href: '/requirements', label: 'Persyaratan' },
-    { href: '/#packages', label: 'Paket' },
-    { href: '/#contact', label: 'Kontak' },
+    { href: '/', label: 'Beranda', target: '_self' },
+    { href: '/about', label: 'Tentang Kami', target: '_self' },
+    { href: '/requirements', label: 'Persyaratan', target: '_self' },
+    { href: '/#packages', label: 'Paket', target: '_self' },
+    { href: whatsappLink, label: 'Kontak', target: '_blank' },
   ];
 
   const legalLinks = [
@@ -23,8 +25,6 @@ const Footer = () => {
     { href: 'https://instagram.com/madinahsalam1', label: 'Instagram', icon: Instagram },
     { href: 'https://t.me/madinahsalam', label: 'Telegram', icon: FaTelegram },
   ];
-
-  const whatsappLink = "https://wa.me/6282210004644";
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
@@ -49,7 +49,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={link.href} target={link.target} rel={link.target === '_blank' ? 'noopener noreferrer' : ''} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
                   </Link>
                 </li>

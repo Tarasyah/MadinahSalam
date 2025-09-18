@@ -23,6 +23,8 @@ const navLinks = [
   { href: '/#packages', label: 'Paket', icon: Package },
 ];
 
+const whatsappLink = "https://wa.me/6282210004644";
+
 export default function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,7 +37,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  const mobileNavLinks = [...navLinks, { href: '/#contact', label: 'Hubungi Kami', icon: Phone }];
+  const mobileNavLinks = [...navLinks, { href: whatsappLink, label: 'Hubungi Kami', icon: Phone }];
 
   return (
     <>
@@ -93,7 +95,7 @@ export default function Header() {
           <div className="flex flex-1 items-center justify-end space-x-2">
             <ThemeToggle />
             <Button asChild className="hidden lg:inline-flex rounded-full">
-              <Link href="/#contact">Hubungi Kami</Link>
+              <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">Hubungi Kami</Link>
             </Button>
 
             <div className="lg:hidden">
@@ -117,7 +119,7 @@ export default function Header() {
                   {mobileNavLinks.map((link, index) => (
                     <div key={link.href}>
                       <DropdownMenuItem asChild className="p-0">
-                        <Link href={link.href} className="w-full">
+                        <Link href={link.href} className="w-full" target={link.href.startsWith('http') ? '_blank' : '_self'} rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}>
                           <div 
                             className="flex items-center w-full px-4 py-3 text-base text-foreground/80"
                             data-mobile-menu-item
