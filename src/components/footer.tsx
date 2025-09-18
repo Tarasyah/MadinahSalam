@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="hidden md:flex flex-col gap-8">
             {/* Top Section: Logo + Description */}
             <div className="flex items-center gap-8">
-                <div className="relative h-24 w-72 flex-shrink-0">
+                <div className="relative h-[50px] w-56 flex-shrink-0">
                   <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
                   <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
                 </div>
@@ -46,8 +46,8 @@ const Footer = () => {
             <div className="border-t border-border/50"></div>
 
             {/* Bottom Section: Contact, Social, Links */}
-            <div className="grid grid-cols-3 gap-8 text-sm">
-                 <div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+                 <div className="md:col-span-2">
                     <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
                     <ul className="space-y-3 text-muted-foreground">
                       <li className="flex items-start">
@@ -67,17 +67,6 @@ const Footer = () => {
                     </ul>
                  </div>
                  <div>
-                    <h3 className="font-semibold mb-4 text-foreground">Media Sosial</h3>
-                    <div className="flex flex-col space-y-3">
-                        {socialLinks.map((link) => (
-                        <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
-                            <link.icon className="h-5 w-5" />
-                            <span>{link.label}</span>
-                        </a>
-                        ))}
-                    </div>
-                 </div>
-                 <div>
                     <h3 className="font-semibold mb-4 text-foreground">Tautan</h3>
                     <ul className="space-y-2">
                     {quickLinks.map((link) => (
@@ -89,11 +78,22 @@ const Footer = () => {
                     ))}
                     </ul>
                  </div>
+                 <div>
+                    <h3 className="font-semibold mb-4 text-foreground">Media Sosial</h3>
+                    <div className="flex flex-col space-y-3">
+                        {socialLinks.map((link) => (
+                        <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+                            <link.icon className="h-5 w-5" />
+                            <span>{link.label}</span>
+                        </a>
+                        ))}
+                    </div>
+                 </div>
             </div>
         </div>
 
         {/* Mobile Layout */}
-        <div className="grid grid-cols-1 gap-8 text-sm md:hidden">
+        <div className="flex flex-col gap-8 text-sm md:hidden">
           <div className="flex flex-col items-center text-center">
              <div className="w-72">
                 <div className="relative h-32 w-72">
