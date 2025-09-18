@@ -74,7 +74,7 @@ const AboutPage = () => {
                         <p className="text-muted-foreground mb-4">{fullAddress}</p>
                         <div className="rounded-lg overflow-hidden border">
                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.46279932646!2d106.88371307481119!3d-6.332822861962381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed26a457c13b%3A0x6d5f76da15558121!2sMadinah%20salam%20wisata!5e0!3m2!1sen!2sid!4v1721893361545!5m2!1sen!2sid" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.185908999579!2d106.8836164!3d-6.369982299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed003c4265dd%3A0xc3a2a28ec84ffaa4!2sMadinah%20Salam%20Wisata!5e0!3m2!1sen!2sid!4v1758170793086!5m2!1sen!2sid" 
                                 width="100%" 
                                 height="450" 
                                 style={{ border: 0 }}
