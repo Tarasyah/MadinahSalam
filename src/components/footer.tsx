@@ -32,11 +32,11 @@ const Footer = () => {
         <div className="hidden md:flex flex-col">
             {/* Top Section: Logo + Description */}
             <div className="flex flex-col items-start mt-0 mb-8">
-                <div className="relative h-20 w-auto flex-shrink-0">
+                <div className="relative h-20 w-auto flex-shrink-0 mb-4">
                   <Image src="/logo_lightmodebottombar.png" alt="Logo Light" width={200} height={80} className="object-contain block dark:hidden" />
                   <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" width={200} height={80} className="object-contain hidden dark:block" />
                 </div>
-                <p className="text-muted-foreground text-sm mt-2">
+                <p className="text-muted-foreground text-sm">
                     Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah, profesional, dan sesuai dengan tuntunan syariat Islam, berkomitmen memberikan pelayanan terbaik untuk pengalaman spiritual Anda.
                 </p>
             </div>
@@ -45,7 +45,7 @@ const Footer = () => {
             <div className="border-t border-border/50"></div>
 
             {/* Bottom Section: Contact, Social, Links */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm pt-4">
                  <div className="md:col-span-2">
                     <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
                     <ul className="space-y-3 text-muted-foreground">
@@ -118,7 +118,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone className="h-4 w-4 mr-3" />
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">(+62) 822 1000 4644</a>
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hovertext-primary">(+62) 822 1000 4644</a>
               </li>
             </ul>
           </div>
