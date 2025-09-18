@@ -30,64 +30,64 @@ const Footer = () => {
       <div className="container pt-8">
         {/* Desktop Layout */}
         <div className="hidden md:flex flex-col">
-            {/* Top Section: Logo + Description */}
-            <div className="flex flex-col items-start mt-0 mb-8">
-                <div className="relative h-20 w-auto flex-shrink-0 mb-4">
-                  <Image src="/logo_lightmodebottombar.png" alt="Logo Light" width={200} height={80} className="object-contain block dark:hidden" />
-                  <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" width={200} height={80} className="object-contain hidden dark:block" />
-                </div>
-                <p className="text-muted-foreground text-sm">
-                    Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah, profesional, dan sesuai dengan tuntunan syariat Islam, berkomitmen memberikan pelayanan terbaik untuk pengalaman spiritual Anda.
-                </p>
-            </div>
-            
-            {/* Divider */}
             <div className="border-t border-border/50"></div>
-
-            {/* Bottom Section: Contact, Social, Links */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm pt-4">
-                 <div className="md:col-span-2">
-                    <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
-                    <ul className="space-y-3 text-muted-foreground">
-                      <li className="flex items-start">
-                        <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
-                        <a href="https://goo.gl/maps/iBGCTeDk4dSvmdqj8" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
-                          Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.
-                        </a>
-                      </li>
-                      <li className="flex items-center">
-                        <Mail className="h-4 w-4 mr-3" />
-                        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">madinahsalamwisata@gmail.com</a>
-                      </li>
-                      <li className="flex items-center">
-                        <Phone className="h-4 w-4 mr-3" />
-                        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">(+62) 822 1000 4644</a>
-                      </li>
-                    </ul>
-                 </div>
-                 <div>
-                    <h3 className="font-semibold mb-4 text-foreground">Tautan</h3>
-                    <ul className="space-y-2">
-                    {quickLinks.map((link) => (
-                        <li key={link.href}>
-                        <Link href={link.href} target={link.target} rel={link.target === '_blank' ? 'noopener noreferrer' : ''} className="text-muted-foreground hover:text-primary transition-colors">
-                            {link.label}
-                        </Link>
-                        </li>
-                    ))}
-                    </ul>
-                 </div>
-                 <div>
-                    <h3 className="font-semibold mb-4 text-foreground">Media Sosial</h3>
-                    <div className="flex flex-col space-y-3">
-                        {socialLinks.map((link) => (
-                        <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
-                            <link.icon className="h-5 w-5" />
-                            <span>{link.label}</span>
-                        </a>
-                        ))}
+            <div className="pt-4">
+                {/* Top Section: Logo + Description */}
+                <div className="flex flex-col items-start mb-8 pt-4">
+                    <div className="relative h-20 w-auto flex-shrink-0 mb-4">
+                      <Image src="/logo_lightmodebottombar.png" alt="Logo Light" width={200} height={80} className="object-contain block dark:hidden" />
+                      <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" width={200} height={80} className="object-contain hidden dark:block" />
                     </div>
-                 </div>
+                    <p className="text-muted-foreground text-sm">
+                        Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah, profesional, dan sesuai dengan tuntunan syariat Islam, berkomitmen memberikan pelayanan terbaik untuk pengalaman spiritual Anda.
+                    </p>
+                </div>
+
+                {/* Bottom Section: Contact, Social, Links */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+                     <div className="md:col-span-2">
+                        <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
+                        <ul className="space-y-3 text-muted-foreground">
+                          <li className="flex items-start">
+                            <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
+                            <a href="https://goo.gl/maps/iBGCTeDk4dSvmdqj8" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                              Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.
+                            </a>
+                          </li>
+                          <li className="flex items-center">
+                            <Mail className="h-4 w-4 mr-3" />
+                            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">madinahsalamwisata@gmail.com</a>
+                          </li>
+                          <li className="flex items-center">
+                            <Phone className="h-4 w-4 mr-3" />
+                            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">(+62) 822 1000 4644</a>
+                          </li>
+                        </ul>
+                     </div>
+                     <div>
+                        <h3 className="font-semibold mb-4 text-foreground">Tautan</h3>
+                        <ul className="space-y-2">
+                        {quickLinks.map((link) => (
+                            <li key={link.href}>
+                            <Link href={link.href} target={link.target} rel={link.target === '_blank' ? 'noopener noreferrer' : ''} className="text-muted-foreground hover:text-primary transition-colors">
+                                {link.label}
+                            </Link>
+                            </li>
+                        ))}
+                        </ul>
+                     </div>
+                     <div>
+                        <h3 className="font-semibold mb-4 text-foreground">Media Sosial</h3>
+                        <div className="flex flex-col space-y-3">
+                            {socialLinks.map((link) => (
+                            <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+                                <link.icon className="h-5 w-5" />
+                                <span>{link.label}</span>
+                            </a>
+                            ))}
+                        </div>
+                     </div>
+                </div>
             </div>
         </div>
 
