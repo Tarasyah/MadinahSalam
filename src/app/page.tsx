@@ -1,10 +1,11 @@
-import GallerySection from '@/components/sections/gallery';
+import dynamic from 'next/dynamic';
 import HeroSection from '@/components/sections/hero-interactive';
-import IncludedSection from '@/components/sections/included';
-import ItinerarySection from '@/components/sections/itinerary';
-import PackagesSection from '@/components/sections/packages';
-import TestimonialsSection from '@/components/sections/testimonials';
 
+const ItinerarySection = dynamic(() => import('@/components/sections/itinerary'));
+const IncludedSection = dynamic(() => import('@/components/sections/included'));
+const GallerySection = dynamic(() => import('@/components/sections/gallery'));
+const TestimonialsSection = dynamic(() => import('@/components/sections/testimonials'));
+const PackagesSection = dynamic(() => import('@/components/sections/packages'));
 
 export default function Home() {
   return (
