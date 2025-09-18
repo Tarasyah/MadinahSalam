@@ -32,20 +32,20 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
           
           {/* Logo and Description */}
-          <div className="text-center md:text-left flex flex-col items-center md:items-start justify-start order-first md:order-none">
+          <div className="text-left flex flex-col items-center md:items-start justify-start order-first md:order-none">
              <div className="flex justify-center md:justify-start items-center space-x-2 -mt-4">
               <div className="relative h-24 w-56">
                 <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
                 <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
               </div>
             </div>
-            <p className="text-muted-foreground mt-2 max-w-sm text-center md:text-left">
+            <p className="text-muted-foreground mt-2 max-w-sm text-left">
               Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="text-center md:text-left">
+          <div className="text-left">
             <h3 className="font-semibold mb-4 text-foreground">Tautan</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
@@ -59,20 +59,20 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="text-center md:text-left">
+          <div className="text-left">
             <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
             <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start justify-center md:justify-start">
+              <li className="flex items-start justify-start">
                 <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
                   Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.
                 </a>
               </li>
-              <li className="flex items-center justify-center md:justify-start">
+              <li className="flex items-center justify-start">
                 <Mail className="h-4 w-4 mr-3" />
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">madinahsalamwisata@gmail.com</a>
               </li>
-              <li className="flex items-center justify-center md:justify-start">
+              <li className="flex items-center justify-start">
                 <Phone className="h-4 w-4 mr-3" />
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">(+62) 822 1000 4644</a>
               </li>
