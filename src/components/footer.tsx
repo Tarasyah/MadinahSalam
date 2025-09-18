@@ -33,7 +33,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="md:col-span-1 text-center md:text-left">
              <div className="flex justify-center md:justify-start items-center space-x-2 mb-4 -mt-4">
-              <div className="relative h-32 w-48">
+              <div className="relative h-24 w-56">
                 <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
                 <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
               </div>
