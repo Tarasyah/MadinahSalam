@@ -34,7 +34,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="text-left flex flex-col items-center md:items-start justify-start order-first md:order-none">
              <div className="flex justify-center md:justify-start items-center space-x-2 -mt-4">
-              <div className="relative h-24 w-56">
+              <div className="relative h-32 w-72">
                 <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
                 <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
               </div>
@@ -64,7 +64,7 @@ const Footer = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start justify-start">
                 <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                <a href="https://goo.gl/maps/iBGCTeDk4dSvmdqj8" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
                   Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.
                 </a>
               </li>
