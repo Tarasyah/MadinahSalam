@@ -21,13 +21,13 @@ const Footer = () => {
   const socialLinks = [
     { href: 'https://www.facebook.com/madinahsalam1', label: 'Facebook', icon: Facebook },
     { href: 'https://youtube.com/@madinahsalamwisata?feature=shared', label: 'YouTube', icon: Youtube },
-    { href: 'https://instagram.com/madinahsalam1', label: 'Instagram', icon: Instagram },
+    { href: 'https://www.instagram.com/madinahsalam_wisata?igsh=MTVtY2wzZm5zYzRrNw==', label: 'Instagram', icon: Instagram },
     { href: 'https://t.me/madinahsalam', label: 'Telegram', icon: FaTelegram },
   ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
-      <div className="container pt-8">
+    <footer className="bg-secondary text-secondary-foreground pt-12">
+      <div className="container">
         {/* Desktop Layout */}
         <div className="hidden md:flex flex-col">
             <div className="pt-4">
