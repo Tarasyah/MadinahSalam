@@ -170,6 +170,15 @@ export const galleryImages: ImagePlaceholder[] = [
     findImage('gallery-4'),
     findImage('gallery-5'),
     findImage('gallery-6'),
+    findImage('gallery-7'),
+    findImage('gallery-8'),
+    findImage('gallery-9'),
+    findImage('gallery-10'),
+    findImage('gallery-11'),
+    findImage('gallery-12'),
+    findImage('gallery-13'),
+    findImage('gallery-14'),
+    findImage('gallery-15'),
 ];
 
 export const infoCards: {id: number, title: string, image: ImagePlaceholder}[] = [];
