@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="hidden md:flex flex-col gap-8">
             {/* Top Section: Logo + Description */}
             <div className="flex items-center gap-8">
-                <div className="relative h-[60px] w-56 flex-shrink-0">
+                <div className="relative h-20 w-auto flex-shrink-0">
                   <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
                   <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
                 </div>
@@ -95,7 +95,7 @@ const Footer = () => {
         {/* Mobile Layout */}
         <div className="flex flex-col items-center justify-center text-center gap-8 text-sm md:hidden">
           <div className="flex flex-col items-center">
-             <div className="relative h-56 w-56">
+             <div className="relative w-64 h-auto">
                 <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
                 <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
              </div>
