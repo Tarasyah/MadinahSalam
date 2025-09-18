@@ -29,10 +29,10 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm md:items-start">
           
           {/* Logo and Description */}
-          <div className="text-left flex flex-col items-center md:items-start justify-start order-first md:order-none">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
              <div className="w-72">
                 <div className="relative h-32 w-72">
                   <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
@@ -44,8 +44,29 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Contact Info */}
+          <div className="text-center md:text-left">
+            <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
+            <ul className="space-y-3 text-muted-foreground">
+              <li className="flex items-center justify-center md:justify-start">
+                <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
+                <a href="https://goo.gl/maps/iBGCTeDk4dSvmdqj8" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                  Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.
+                </a>
+              </li>
+              <li className="flex items-center justify-center md:justify-start">
+                <Mail className="h-4 w-4 mr-3" />
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">madinahsalamwisata@gmail.com</a>
+              </li>
+              <li className="flex items-center justify-center md:justify-start">
+                <Phone className="h-4 w-4 mr-3" />
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">(+62) 822 1000 4644</a>
+              </li>
+            </ul>
+          </div>
+          
           {/* Quick Links */}
-          <div className="text-left">
+          <div className="text-center md:text-left">
             <h3 className="font-semibold mb-4 text-foreground">Tautan</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
@@ -58,29 +79,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="text-left">
-            <h3 className="font-semibold mb-4 text-foreground">Hubungi Kami</h3>
-            <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start justify-start">
-                <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
-                <a href="https://goo.gl/maps/iBGCTeDk4dSvmdqj8" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
-                  Jl. Radar Auri No. 9, RT 13 RW 05, Kel. Cibubur, Kec. Ciracas, Jakarta Timur.
-                </a>
-              </li>
-              <li className="flex items-center justify-start">
-                <Mail className="h-4 w-4 mr-3" />
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">madinahsalamwisata@gmail.com</a>
-              </li>
-              <li className="flex items-center justify-start">
-                <Phone className="h-4 w-4 mr-3" />
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary">(+62) 822 1000 4644</a>
-              </li>
-            </ul>
-          </div>
-          
           {/* Social Links for Desktop */}
-          <div className="hidden md:flex flex-col items-start justify-start">
+          <div className="hidden md:flex flex-col items-start justify-start text-left">
               <h3 className="font-semibold mb-4 text-foreground">Media Sosial</h3>
               <div className="flex flex-col space-y-3">
                 {socialLinks.map((link) => (
