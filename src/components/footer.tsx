@@ -80,7 +80,7 @@ const Footer = () => {
           </div>
           
           {/* Social Links for Desktop */}
-          <div className="hidden md:flex flex-col items-center md:items-start justify-start">
+          <div className="hidden md:flex flex-col items-start justify-start">
               <h3 className="font-semibold mb-4 text-foreground">Media Sosial</h3>
               <div className="flex flex-col space-y-3">
                 {socialLinks.map((link) => (
