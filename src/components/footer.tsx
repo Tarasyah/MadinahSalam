@@ -31,12 +31,12 @@ const Footer = () => {
         {/* Desktop Layout */}
         <div className="hidden md:flex flex-col gap-8">
             {/* Top Section: Logo + Description */}
-            <div className="flex items-start gap-8">
+            <div className="flex flex-col items-start gap-2">
                 <div className="relative h-20 w-auto flex-shrink-0">
                   <Image src="/logo_lightmodebottombar.png" alt="Logo Light" width={200} height={80} className="object-contain block dark:hidden" />
                   <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" width={200} height={80} className="object-contain hidden dark:block" />
                 </div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm max-w-md">
                     Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah, profesional, dan sesuai dengan tuntunan syariat Islam, berkomitmen memberikan pelayanan terbaik untuk pengalaman spiritual Anda.
                 </p>
             </div>
