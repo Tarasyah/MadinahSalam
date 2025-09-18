@@ -95,15 +95,13 @@ const Footer = () => {
         {/* Mobile Layout */}
         <div className="flex flex-col items-center justify-center text-center gap-8 text-sm md:hidden">
           <div className="flex flex-col items-center">
-             <div className="w-auto">
-                <div className="relative h-auto w-auto">
-                  <Image src="/logo_lightmodebottombar.png" alt="Logo Light" width={120} height={120} className="object-contain block dark:hidden" />
-                  <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" width={120} height={120} className="object-contain hidden dark:block" />
-                </div>
-              <p className="text-muted-foreground mt-2 max-w-sm">
+             <div className="relative h-56 w-56">
+                <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
+                <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
+             </div>
+             <p className="text-muted-foreground mt-2 max-w-sm">
                 Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
-              </p>
-            </div>
+             </p>
           </div>
 
           <div className="text-center">
