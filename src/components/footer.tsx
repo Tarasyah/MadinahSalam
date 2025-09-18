@@ -29,8 +29,21 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
           
+          {/* Logo and Description */}
+          <div className="md:col-span-1 text-center md:text-left flex flex-col items-center md:items-start justify-start order-first md:order-none">
+             <div className="flex justify-center md:justify-start items-center space-x-2 -mt-4">
+              <div className="relative h-24 w-56">
+                <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
+                <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
+              </div>
+            </div>
+            <p className="text-muted-foreground mt-2 max-w-sm text-center md:text-left">
+              Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
+            </p>
+          </div>
+
           {/* Quick Links */}
           <div className="text-center md:text-left">
             <h3 className="font-semibold mb-4 text-foreground">Tautan</h3>
@@ -43,19 +56,6 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          
-          {/* Logo and Description */}
-          <div className="md:col-span-2 text-center flex flex-col items-center justify-start order-first md:order-none">
-             <div className="flex justify-center md:justify-center items-center space-x-2 -mt-4">
-              <div className="relative h-24 w-56">
-                <Image src="/logo_lightmodebottombar.png" alt="Logo Light" fill className="object-contain block dark:hidden" />
-                <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" fill className="object-contain hidden dark:block" />
-              </div>
-            </div>
-            <p className="text-muted-foreground mt-2 max-w-sm">
-              Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
-            </p>
           </div>
 
           {/* Contact Info & Socials */}
@@ -82,7 +82,7 @@ const Footer = () => {
               </div>
 
                {/* Social Links for Desktop */}
-              <div className="hidden md:flex flex-col items-center justify-start space-y-4 pt-10">
+              <div className="hidden md:flex flex-col items-center md:items-start justify-start space-y-4 pt-10">
                   {socialLinks.map((link) => (
                     <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                       <link.icon className="h-5 w-5" />
