@@ -13,6 +13,7 @@ Berikut adalah file-file konfigurasi utama yang ada di direktori root:
 -   `tsconfig.json`: File konfigurasi untuk TypeScript. Ini mengatur bagaimana kode TypeScript dikompilasi dan diperiksa tipenya.
 -   `apphosting.yaml`: File konfigurasi untuk Firebase App Hosting, digunakan untuk mengatur perilaku backend saat di-deploy.
 -   `.gitignore`: Berisi daftar file dan folder yang harus diabaikan oleh sistem kontrol versi Git (misalnya, `node_modules`).
+-   `PROJECT_STRUCTURE.md`: File ini, yang berisi penjelasan struktur proyek.
 
 ---
 
@@ -72,3 +73,67 @@ Folder ini digunakan untuk menyimpan aset statis yang dapat diakses langsung mel
 
 -   **`/gallery`**: Berisi semua file gambar (`.webp`) yang ditampilkan di galeri.
 -   File gambar lainnya seperti logo (`logo_lightmode.png`, `logo_darkmode.png`), ikon, dan gambar latar belakang. Aset di sini dapat diakses langsung dari root URL (misalnya, `/logo_lightmode.png`).
+
+---
+
+## Panduan Mengedit Konten Situs
+
+Sebagian besar konten di situs ini dipisahkan dari kode tampilan untuk memudahkan pengeditan. Berikut adalah panduan untuk mengubah konten di berbagai bagian.
+
+### 1. Mengganti Gambar & Teks di Hero Section
+
+Konten pada *Hero Section* (slider gambar di halaman utama) diatur dalam dua file:
+-   **Teks (Judul & Deskripsi)**: Buka file `src/lib/data.ts`. Cari variabel `heroDestinations`. Anda bisa mengubah `title` dan `description` untuk setiap slide.
+-   **Gambar**:
+    1.  Buka file `src/lib/placeholder-images.json`.
+    2.  Cari objek dengan `id` yang sesuai (misalnya, `"hero-mekkah"`, `"hero-madinah"`).
+    3.  Ganti nilai `imageUrl` dengan URL gambar baru Anda. Gambar bisa berasal dari folder `public` (misalnya, `/gambar-baru.webp`) atau dari URL eksternal.
+
+### 2. Mengedit Rangkaian Perjalanan (Itinerary)
+
+Jadwal perjalanan ditampilkan di halaman utama. Untuk mengeditnya:
+1.  Buka file `src/lib/data.ts`.
+2.  Cari variabel `itineraryData`.
+3.  Ini adalah sebuah array, di mana setiap objek mewakili satu hari atau satu kegiatan dalam jadwal.
+4.  Anda bisa mengubah `title`, `subtitle` (opsional), `date`, dan `time` untuk setiap item. Tambah atau hapus objek dari array ini untuk mengubah jumlah item jadwal.
+
+### 3. Mengedit Fasilitas Paket (Include & Exclude)
+
+Daftar fasilitas yang termasuk dan tidak termasuk dalam paket umrah juga diatur secara terpusat.
+1.  Buka file `src/lib/data.ts`.
+2.  Cari variabel `included` untuk fasilitas yang termasuk, atau `excluded` untuk fasilitas yang tidak termasuk.
+3.  Anda bisa mengubah `title` dan `description` dari setiap item. Ikon (`icon`) juga bisa diganti dengan ikon lain dari pustaka `lucide-react`.
+
+### 4. Mengedit Galeri Perjalanan
+
+Gambar-gambar di galeri diatur dari file data dan folder `public`.
+1.  **Menambah/Mengganti Gambar**:
+    -   Letakkan file gambar baru Anda (disarankan format `.webp`) di dalam folder `public/gallery`.
+    -   Buka file `src/lib/placeholder-images.json`. Tambahkan objek baru atau edit yang sudah ada di dalam array `placeholderImages`. Pastikan `id`-nya unik dan `imageUrl` menunjuk ke path gambar yang benar (misal: `/gallery/nama-gambar-baru.webp`).
+2.  **Menampilkan Gambar di Galeri**:
+    -   Buka file `src/lib/data.ts`.
+    -   Cari variabel `galleryImages`.
+    -   Tambahkan atau hapus item dari array ini menggunakan fungsi `findImage('id-gambar-anda')`, di mana `id-gambar-anda` adalah `id` yang Anda definisikan di `placeholder-images.json`. Urutan gambar di galeri ditentukan oleh urutan di array ini.
+
+### 5. Mengedit Testimoni
+
+Testimoni dari jamaah dapat diubah dengan cara berikut:
+1.  Buka file `src/lib/data.ts`.
+2.  Cari variabel `testimonials`.
+3.  Edit properti `name`, `location`, dan `comment` untuk setiap testimoni.
+4.  Untuk mengganti foto, ikuti langkah yang sama seperti mengganti gambar Hero Section: edit `id` gambar di `data.ts` dan perbarui `imageUrl` di `placeholder-images.json`.
+
+### 6. Mengedit Paket Umrah
+
+Detail paket umrah yang ditampilkan di halaman utama dapat diubah di:
+1.  Buka file `src/lib/data.ts`.
+2.  Cari variabel `packages`.
+3.  Anda dapat mengubah semua detail di sini, termasuk `name`, `duration`, `price`, `priceDetails` (harga quad, triple, double), `features` (fasilitas utama), `airline`, dan `departure`.
+
+### 7. Mengedit Halaman Persyaratan
+
+Tidak seperti konten lainnya, halaman "Persyaratan" datanya ditulis langsung di dalam komponen React.
+1.  Buka file `src/app/requirements/page.tsx`.
+2.  Cari variabel `requirementItems`.
+3.  Ini adalah sebuah array di mana setiap objek memiliki `title` (judul akordion) dan `content` (daftar poin-poin di dalamnya).
+4.  Edit teks langsung di dalam array ini untuk mengubah konten halaman.
