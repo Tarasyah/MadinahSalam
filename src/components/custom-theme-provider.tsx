@@ -38,7 +38,7 @@ const onThemeChange = (
         clipPath: clipPath,
       },
       {
-        duration: 500,
+        duration: 800,
         easing: "ease-in-out",
         pseudoElement: "::view-transition-new(root)",
       }
