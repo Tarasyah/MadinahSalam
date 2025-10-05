@@ -47,7 +47,7 @@ const AboutPage = () => {
                             <CardContent className="p-6">
                                 <h3 className="font-headline text-2xl font-bold mb-4 flex items-center"><Target className="h-6 w-6 mr-3 text-primary"/> Visi Kami</h3>
                                 <p className="text-muted-foreground">
-                                    Menjadi penyelenggara perjalanan ibadah Umrah, Haji, dan wisata terpercaya yang berkomitmen menghadirkan layanan sesuai tuntunan sunnah Rasulullah.
+                                    Menjadi penyelenggara perjalanan ibadah Umrah, Haji, dan wisata terpercaya yang berkomitmen menghadirkan layanan sesuai tuntunan sunnah Rasulullah ﷺ.
                                 </p>
                             </CardContent>
                         </Card>

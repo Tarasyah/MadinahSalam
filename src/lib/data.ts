@@ -81,7 +81,7 @@ export const heroDestinations: HeroDestination[] = [
     {
         id: 2,
         title: 'Madinah Al-Munawwarah',
-        description: 'Kota suci kedua, tempat Masjid Nabawi dan makam Nabi Muhammad SAW berada, penuh ketenangan.',
+        description: 'Kota suci kedua, tempat Masjid Nabawi dan makam Nabi Muhammad ﷺ berada, penuh ketenangan.',
         image: findImage('hero-madinah')
     },
     {
