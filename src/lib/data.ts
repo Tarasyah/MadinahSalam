@@ -1,5 +1,5 @@
 import { PlaceHolderImages, type ImagePlaceholder } from './placeholder-images';
-import { Plane, Hotel, Car, Users, BookOpen, ShieldCheck, BaggageClaim, ShoppingCart, UserCheck, XCircle, Utensils, Star, Calendar, Clock, BedDouble, BedSingle, Users2 } from 'lucide-react';
+import { Plane, Hotel, Car, Users, BookOpen, ShieldCheck, BaggageClaim, ShoppingCart, UserCheck, XCircle, Utensils, Star, Calendar, Clock, BedDouble, BedSingle, Users2, Ticket, Award, UtensilsCrossed } from 'lucide-react';
 
 const findImage = (id: string): ImagePlaceholder => {
     const image = PlaceHolderImages.find(img => img.id === id);
@@ -100,41 +100,43 @@ export const heroDestinations: HeroDestination[] = [
 
 export const packages: Package[] = [
     {
-        id: 2,
-        name: 'Paket Umrah + 2 Jumat + Thaif',
-        duration: '12 Hari',
-        price: 'Rp 28.9 jt',
+        id: 1,
+        name: 'Umrah Liburan Akhir Tahun (High Season) + Thaif',
+        duration: '9 Hari',
+        price: 'Rp 27.9 jt',
         priceDetails: [
-            { type: 'Quad', price: 'Rp 28.900.000', icon: Users2 },
-            { type: 'Triple', price: 'Rp 30.900.000', icon: Users },
-            { type: 'Double', price: 'Rp 33.500.000', icon: BedDouble },
+            { type: 'Quad', price: 'Rp 27.990.000', icon: Users2 },
+            { type: 'Triple', price: 'Rp 29.890.000', icon: Users },
+            { type: 'Double', price: 'Rp 33.489.000', icon: BedDouble },
         ],
-        image: findImage('package-2'),
-        features: ['Hotel Makkah: Maysan Al Maqam/Setaraf', 'Hotel Madinah: Jawharah Al Rasheed/Setaraf', 'Kunjungan ke UIM', 'Nasi Mandhi di Thaif', 'Perlengkapan Premium'],
-        airline: 'Saudia (Tanpa Transit)',
-        departure: '6 November 2025'
+        image: findImage('package-high-season'),
+        features: ['Hotel Makkah: Snood Ajyad/Setaraf', 'Hotel Madinah: Hayah Al Huda/Setaraf', 'City Tour Thaif & Museum Wahyu', 'Gratis AlBaik & Nasi Mandhi', 'Perlengkapan Premium'],
+        airline: 'Saudi Airlines (Tanpa Transit)',
+        departure: '15 Desember 2025'
     },
 ];
 
 
 export const included: IncludedItem[] = [
-  { title: 'Tiket Pesawat', description: 'Termasuk tiket pesawat pulang-pergi (sesuai paket).', icon: Plane },
-  { title: 'Visa Umrah', description: 'Pengurusan visa umrah sudah termasuk.', icon: BookOpen },
-  { title: 'Akomodasi Hotel', description: 'Hotel di Makkah dan Madinah sesuai paket.', icon: Hotel },
+  { title: 'Tiket Pesawat', description: 'Termasuk tiket Saudi Airlines pulang-pergi (tanpa transit).', icon: Plane },
+  { title: 'Visa Umrah', description: 'Pengurusan visa umrah sudah termasuk.', icon: Ticket },
+  { title: 'Hotel', description: 'Akomodasi di Makkah & Madinah (jalan kaki, tanpa shuttle).', icon: Hotel },
   { title: 'Makan 3x Sehari', description: 'Menu masakan Indonesia selama di tanah suci.', icon: Utensils },
   { title: 'Pembimbing & Muthawwif', description: 'Bimbingan ibadah oleh ustadz dan muthawwif berpengalaman.', icon: UserCheck },
-  { title: 'Transportasi', description: 'Bus AC premium selama di Arab Saudi.', icon: Car },
+  { title: 'Transportasi', description: 'Bus AC premium selama city tour dan antar kota.', icon: Car },
+  { title: 'City Tour Lengkap', description: 'Makkah, Madinah, Kunjungan Museum Wahyu, UIM, dan City Tour Thaif.', icon: Calendar },
   { title: 'Perlengkapan Premium', description: 'Koper, kain ihram, jilbab, dan lainnya.', icon: BaggageClaim },
-  { title: 'Air Zam-zam', description: '5 liter per jamaah (jika diizinkan maskapai).', icon: Star },
-  { title: 'City Tour', description: 'Kunjungan ke tempat-tempat bersejarah di Makkah & Madinah.', icon: Calendar },
+  { title: 'Manasik & Handling', description: 'Manasik umrah sebelum berangkat dan airport handling.', icon: BookOpen },
+  { title: 'Air Zam-zam & AlBaik', description: '5 liter Zamzam (jika diizinkan) & gratis AlBaik.', icon: Star },
 ];
 
 export const excluded: IncludedItem[] = [
   { title: 'Pembuatan Paspor', description: 'Biaya pembuatan atau perpanjangan paspor.', icon: XCircle },
   { title: 'Kebutuhan Pribadi', description: 'Seperti laundry, telepon, dan oleh-oleh.', icon: ShoppingCart },
-  { title: 'Kelebihan Bagasi', description: 'Biaya tambahan atas kelebihan berat bagasi.', icon: XCircle },
-  { title: 'Vaksin Meningitis & Polio', description: 'Suntik vaksin tidak termasuk dalam paket.', icon: XCircle },
-  { title: 'Akomodasi Domestik', description: 'Hotel atau transportasi dari/ke daerah asal.', icon: XCircle },
+  { title: 'Kelebihan Bagasi', description: 'Biaya tambahan atas kelebihan berat bagasi.', icon: BaggageClaim },
+  { title: 'Vaksin', description: 'Vaksin Meningitis dan Polio.', icon: ShieldCheck },
+  { title: 'Akomodasi Domestik', description: 'Hotel atau transportasi dari/ke daerah asal.', icon: Hotel },
+  { title: 'Layanan Kursi Roda', description: 'Penyediaan kursi roda dan jasa pendorongnya.', icon: Users },
 ];
 
 

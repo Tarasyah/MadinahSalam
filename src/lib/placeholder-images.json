@@ -6,7 +6,7 @@
       "imageUrl": "/makkah_thumbnail.webp",
       "imageHint": "kaaba night"
     },
-     {
+    {
       "id": "hero-madinah",
       "description": "Prophet's Mosque in Medina with beautiful lighting",
       "imageUrl": "/madinah_thumbnail.webp",
@@ -18,7 +18,7 @@
       "imageUrl": "/Thaif_thumbnail.webp",
       "imageHint": "thaif mountain"
     },
-     {
+    {
       "id": "hero-uim",
       "description": "Islamic University of Madinah campus building",
       "imageUrl": "/Universitymadinah_thumbnail.webp",
@@ -31,10 +31,10 @@
       "imageHint": "prophet mosque"
     },
     {
-      "id": "package-1",
-      "description": "Front view of a modern hotel in Medina",
-      "imageUrl": "https://picsum.photos/seed/msw-package1/600/400",
-      "imageHint": "medina hotel"
+      "id": "package-high-season",
+      "description": "Kaaba at sunset with beautiful colors",
+      "imageUrl": "https://picsum.photos/seed/msw-package-hs/600/400",
+      "imageHint": "kaaba sunset"
     },
     {
       "id": "package-2",
@@ -73,22 +73,22 @@
       "imageHint": "tawaf kaaba"
     },
     {
-        "id": "testimonial-1",
-        "description": "Portrait of a smiling middle-aged Indonesian man",
-        "imageUrl": "https://picsum.photos/seed/msw-testi1/100/100",
-        "imageHint": "indonesian man"
+      "id": "testimonial-1",
+      "description": "Portrait of a smiling middle-aged Indonesian man",
+      "imageUrl": "https://picsum.photos/seed/msw-testi1/100/100",
+      "imageHint": "indonesian man"
     },
     {
-        "id": "testimonial-2",
-        "description": "Portrait of a smiling middle-aged Indonesian woman wearing a hijab",
-        "imageUrl": "https://picsum.photos/seed/msw-testi2/100/100",
-        "imageHint": "indonesian woman"
+      "id": "testimonial-2",
+      "description": "Portrait of a smiling middle-aged Indonesian woman wearing a hijab",
+      "imageUrl": "https://picsum.photos/seed/msw-testi2/100/100",
+      "imageHint": "indonesian woman"
     },
     {
-        "id": "testimonial-3",
-        "description": "Portrait of a happy young Indonesian man",
-        "imageUrl": "https://picsum.photos/seed/msw-testi3/100/100",
-        "imageHint": "young man"
+      "id": "testimonial-3",
+      "description": "Portrait of a happy young Indonesian man",
+      "imageUrl": "https://picsum.photos/seed/msw-testi3/100/100",
+      "imageHint": "young man"
     },
     {
       "id": "gallery-1",
