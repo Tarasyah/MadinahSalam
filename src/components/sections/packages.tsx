@@ -3,7 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import Link from 'next/link';
-import { Check, Plane, Calendar, Users2, Users, BedDouble } from 'lucide-react';
+import { Check, Plane, Calendar, Users } from 'lucide-react';
 import {
   Tooltip,
   TooltipContent,
@@ -11,7 +11,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { HoverBorderGradient } from '../ui/hover-border-gradient';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
 const PackagesSection = () => {
   return (
@@ -22,27 +21,25 @@ const PackagesSection = () => {
         </div>
         <div className="flex justify-center">
           {packages.map((pkg) => (
-             <Dialog key={pkg.id}>
               <HoverBorderGradient
+                key={pkg.id}
                 containerClassName="rounded-lg max-w-lg w-full"
                 className="w-full h-full bg-transparent"
                 as="div"
               >
                 <Card className="flex flex-col overflow-hidden h-full bg-transparent border-none">
-                  <DialogTrigger asChild>
-                    <div className="relative h-60 w-full cursor-pointer">
-                      <Image
-                        src={pkg.image.imageUrl}
-                        alt={pkg.name}
-                        data-ai-hint={pkg.image.imageHint}
-                        fill
-                        className="object-cover"
-                      />
-                      <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-2 rounded-bl-lg font-bold">
-                        {pkg.duration}
-                      </div>
+                  <Link href={pkg.image.imageUrl} target="_blank" rel="noopener noreferrer" className="block relative h-60 w-full cursor-pointer">
+                    <Image
+                      src={pkg.image.imageUrl}
+                      alt={pkg.name}
+                      data-ai-hint={pkg.image.imageHint}
+                      fill
+                      className="object-cover object-top"
+                    />
+                    <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-2 rounded-bl-lg font-bold">
+                      {pkg.duration}
                     </div>
-                  </DialogTrigger>
+                  </Link>
                   <CardHeader>
                     <CardTitle className="font-headline text-2xl text-primary">{pkg.name}</CardTitle>
                     <div className="flex items-center text-muted-foreground text-sm space-x-4 pt-2">
@@ -97,16 +94,6 @@ const PackagesSection = () => {
                   </CardFooter>
                 </Card>
               </HoverBorderGradient>
-              <DialogContent className="p-0 border-0 max-w-4xl">
-                  <Image
-                    src={pkg.image.imageUrl}
-                    alt={pkg.name}
-                    width={1200}
-                    height={800}
-                    className="rounded-lg object-contain"
-                  />
-              </DialogContent>
-            </Dialog>
           ))}
         </div>
         <div className="text-center mt-12">
