@@ -32,9 +32,9 @@
     },
     {
       "id": "package-high-season",
-      "description": "Kaaba at sunset with beautiful colors",
-      "imageUrl": "https://picsum.photos/seed/msw-package-hs/600/400",
-      "imageHint": "kaaba sunset"
+      "description": "Promotional banner for the Umrah package",
+      "imageUrl": "/paket.jpeg",
+      "imageHint": "umrah package"
     },
     {
       "id": "package-2",
