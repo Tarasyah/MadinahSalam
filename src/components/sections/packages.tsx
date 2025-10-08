@@ -28,12 +28,13 @@ const PackagesSection = () => {
                 as="div"
               >
                 <Card className="flex flex-col overflow-hidden h-full bg-transparent border-none">
-                  <Link href={pkg.image.imageUrl} target="_blank" rel="noopener noreferrer" className="block relative h-60 w-full cursor-pointer">
+                  <Link href="/paket.jpeg" target="_blank" rel="noopener noreferrer" className="block relative h-60 w-full cursor-pointer">
                     <Image
                       src={pkg.image.imageUrl}
                       alt={pkg.name}
                       data-ai-hint={pkg.image.imageHint}
                       fill
+                      unoptimized
                       className="object-cover object-top"
                     />
                     <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-2 rounded-bl-lg font-bold">
