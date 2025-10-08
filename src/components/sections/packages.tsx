@@ -80,10 +80,6 @@ const PackagesSection = () => {
                                     <span>{detail.type}: <span className="font-semibold text-foreground">{detail.price}</span></span>
                                   </div>
                               ))}
-                              <div className="flex items-center gap-1 text-xs text-primary pt-1">
-                                  <Info className="h-3 w-3" />
-                                  <span>Hover untuk detail harga</span>
-                              </div>
                             </div>
                           </TooltipTrigger>
                           <TooltipContent>
