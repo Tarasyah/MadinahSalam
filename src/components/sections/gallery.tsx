@@ -1,6 +1,7 @@
+
 "use client";
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import { galleryImages } from '@/lib/data';
 import { Card } from '@/components/ui/card';
@@ -10,8 +11,12 @@ import { cn } from '@/lib/utils';
 import { DotButton, useDotButton } from '../ui/carousel-dots';
 
 const GallerySection = () => {
+    const autoplay = useRef(
+      Autoplay({ delay: 2000, stopOnInteraction: true })
+    );
+
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' }, [
-        Autoplay({ delay: 2000, stopOnInteraction: true })
+        autoplay.current
     ]);
     const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
     const [scale, setScale] = useState<number[]>([]);
