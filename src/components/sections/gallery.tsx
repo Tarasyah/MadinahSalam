@@ -12,7 +12,7 @@ import { DotButton, useDotButton } from '../ui/carousel-dots';
 
 const GallerySection = () => {
     const autoplay = useRef(
-      Autoplay({ delay: 2000, stopOnInteraction: true })
+      Autoplay({ delay: 2000, stopOnInteraction: false })
     );
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' }, [
