@@ -13,6 +13,8 @@ import {
 import { HoverBorderGradient } from '../ui/hover-border-gradient';
 
 const PackagesSection = () => {
+  const whatsappLink = "https://wa.me/6282210004644";
+
   return (
     <section id="packages" className="py-16 lg:py-24 bg-background">
       <div className="container">
@@ -90,7 +92,7 @@ const PackagesSection = () => {
                         </TooltipProvider>
                     </div>
                     <Button asChild className="w-full mt-4 rounded-full">
-                        <Link href="/#contact">Daftar Sekarang</Link>
+                        <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">Daftar Sekarang</Link>
                     </Button>
                   </CardFooter>
                 </Card>

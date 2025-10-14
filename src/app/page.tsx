@@ -14,7 +14,7 @@ export default function Home() {
       <ItinerarySection />
       <IncludedSection />
       <GallerySection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <PackagesSection />
     </div>
   );
