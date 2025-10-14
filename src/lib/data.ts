@@ -74,28 +74,28 @@ export type Testimonial = {
 export const heroDestinations: HeroDestination[] = [
     {
         id: 1,
+        title: 'Paket Umrah Liburan',
+        description: 'Umrah Liburan Akhir Tahun (High Season) + Thaif. Keberangkatan 15 Desember 2025.',
+        image: findImage('package-high-season')
+    },
+    {
+        id: 2,
         title: 'Mekkah Al-Mukarramah',
         description: 'Pusat spiritual Islam dan tujuan utama ibadah Umrah, tempat Ka\'bah berdiri megah.',
         image: findImage('hero-mekkah')
     },
     {
-        id: 2,
+        id: 3,
         title: 'Madinah Al-Munawwarah',
         description: 'Kota suci kedua, tempat Masjid Nabawi dan makam Nabi Muhammad ﷺ berada, penuh ketenangan.',
         image: findImage('hero-madinah')
     },
     {
-        id: 3,
+        id: 4,
         title: 'Thaif',
         description: 'Menikmati kesejukan alam pegunungan Thaif yang bersejarah dan penuh kenangan.',
         image: findImage('hero-thaif')
     },
-    {
-        id: 4,
-        title: 'Universitas Islam Madinah',
-        description: 'Salah satu destinasi ziarah, lembaga pendidikan Islam ternama di dunia, pusat ilmu dan peradaban.',
-        image: findImage('hero-uim')
-    }
 ];
 
 export const packages: Package[] = [
@@ -118,7 +118,7 @@ export const packages: Package[] = [
 
 
 export const included: IncludedItem[] = [
-  { title: 'Tiket Pesawat', description: 'Termasuk tiket Saudi Airlines pulang-pergi (tanpa transit).', icon: Plane },
+  { title: 'Pesawat Saudia', description: 'Termasuk tiket Saudi Airlines pulang-pergi (tanpa transit).', icon: Plane },
   { title: 'Visa Umrah', description: 'Pengurusan visa umrah sudah termasuk.', icon: Ticket },
   { title: 'Hotel', description: 'Akomodasi di Makkah & Madinah (jalan kaki, tanpa shuttle).', icon: Hotel },
   { title: 'Makan 3x Sehari', description: 'Menu masakan Indonesia selama di tanah suci.', icon: Utensils },
@@ -127,16 +127,19 @@ export const included: IncludedItem[] = [
   { title: 'City Tour Lengkap', description: 'Makkah, Madinah, Kunjungan Museum Wahyu, UIM, dan City Tour Thaif.', icon: Calendar },
   { title: 'Perlengkapan Premium', description: 'Koper, kain ihram, jilbab, dan lainnya.', icon: BaggageClaim },
   { title: 'Manasik & Handling', description: 'Manasik umrah sebelum berangkat dan airport handling.', icon: BookOpen },
-  { title: 'Air Zam-zam & AlBaik', description: '5 liter Zamzam (jika diizinkan) & gratis AlBaik.', icon: Star },
+  { title: 'Gratis Zamzam & AlBaik', description: '5 liter Zamzam (jika diizinkan) & gratis AlBaik.', icon: Star },
+  { title: 'Bus nyaman full AC', description: 'Transportasi bus yang nyaman selama perjalanan.', icon: Car },
+  { title: 'Gratis Nasi Mandhi di Thaif', description: 'Menikmati hidangan khas Nasi Mandhi saat di Thaif.', icon: Utensils },
 ];
 
 export const excluded: IncludedItem[] = [
-  { title: 'Pembuatan Paspor', description: 'Biaya pembuatan atau perpanjangan paspor.', icon: XCircle },
-  { title: 'Kebutuhan Pribadi', description: 'Seperti laundry, telepon, dan oleh-oleh.', icon: ShoppingCart },
-  { title: 'Kelebihan Bagasi', description: 'Biaya tambahan atas kelebihan berat bagasi.', icon: BaggageClaim },
-  { title: 'Vaksin', description: 'Vaksin Meningitis dan Polio.', icon: ShieldCheck },
-  { title: 'Akomodasi Domestik', description: 'Hotel atau transportasi dari/ke daerah asal.', icon: Hotel },
-  { title: 'Layanan Kursi Roda', description: 'Penyediaan kursi roda dan jasa pendorongnya.', icon: Users },
+  { title: 'Pembuatan paspor', description: 'Biaya pembuatan atau perpanjangan paspor.', icon: XCircle },
+  { title: 'Kebutuhan pribadi', description: 'Seperti laundry, telepon, dan oleh-oleh.', icon: ShoppingCart },
+  { title: 'Akomodasi dari daerah asal', description: 'Hotel atau transportasi dari/ke daerah asal.', icon: Hotel },
+  { title: 'Kelebihan bagasi', description: 'Biaya tambahan atas kelebihan berat bagasi.', icon: BaggageClaim },
+  { title: 'Vaksin Meningitis', description: 'Biaya untuk vaksin meningitis.', icon: ShieldCheck },
+  { title: 'Vaksin Polio', description: 'Biaya untuk vaksin polio.', icon: ShieldCheck },
+  { title: 'Kursi roda & jasa pendorong', description: 'Penyediaan kursi roda dan jasa pendorongnya.', icon: Users },
 ];
 
 
