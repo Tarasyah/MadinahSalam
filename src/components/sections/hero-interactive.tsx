@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect, useCallback } from 'react';
@@ -51,8 +50,9 @@ const HeroSection = () => {
 
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
 
-            <div className="relative container h-full flex flex-col justify-center lg:pb-24">
-                <div className="w-full lg:w-1/2 pr-4">
+            {/* Wadah untuk Teks */}
+            <div className="relative container h-full flex flex-col justify-center lg:pb-8"> 
+                <div className="w-full lg:w-3/5 pr-4">
                     <motion.div
                         key={activeIndex}
                         initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,8 @@ const HeroSection = () => {
                     >
                         <h1 className={cn(
                             "font-headline font-bold text-white drop-shadow-lg leading-tight",
-                            "text-4xl md:text-5xl lg:text-6xl"
+                            "text-4xl md:text-5xl lg:text-6xl",
+                            "whitespace-nowrap" // Perubahan 2: Judul jadi 1 baris
                         )}>
                             {activeDestination.title}
                         </h1>
@@ -78,8 +79,8 @@ const HeroSection = () => {
                 </div>
             </div>
             
-            {/* Thumbnails */}
-            <div className="absolute bottom-12 right-0 pr-4 lg:pr-8 xl:pr-16 hidden lg:flex justify-end">
+            {/* Wadah untuk Thumbnails (Tidak berubah) */}
+            <div className="absolute bottom-12 right-0 pr-4 lg:pr-8 xl:pr-16 hidden lg:flex">
                 <div className="grid grid-cols-4 gap-3">
                     {heroDestinations.map((dest, index) => (
                         <motion.div
