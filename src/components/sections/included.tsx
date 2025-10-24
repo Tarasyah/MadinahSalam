@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { included, excluded } from '@/lib/data';
 import { CircleCheckBig, CircleX } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { HoverBorderGradient } from '../ui/hover-border-gradient';
 
 const IncludedSection = () => {
   return (
@@ -20,33 +19,27 @@ const IncludedSection = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {included.map((item, index) => (
-              <HoverBorderGradient
+              <Card 
                 key={index}
-                containerClassName="rounded-lg h-full"
-                as="div"
-                className="h-full bg-card/95"
+                className={cn(
+                  "h-full bg-card transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_hsl(var(--primary))]",
+                  index === included.length - 1 && included.length % 2 !== 0 && 'sm:col-span-2 lg:col-span-1',
+                  index === included.length - 1 && included.length % 3 !== 0 && 'lg:col-span-1',
+                  index === included.length - 1 && included.length % 4 !== 0 && 'xl:col-auto xl:last:col-start-2'
+                )}
               >
-                <Card 
-                  className={cn(
-                    "h-full bg-transparent border-none",
-                    index === included.length - 1 && included.length % 2 !== 0 && 'sm:col-span-2 lg:col-span-1',
-                    index === included.length - 1 && included.length % 3 !== 0 && 'lg:col-span-1',
-                    index === included.length - 1 && included.length % 4 !== 0 && 'xl:col-auto xl:last:col-start-2'
-                  )}
-                >
-                  <CardHeader>
-                    <CardTitle className="flex items-start gap-3">
-                      <item.icon className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                      <div>
-                        <h4 className="font-semibold text-lg">{item.title}</h4>
-                      </div>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground text-sm -mt-4 ml-[36px]">{item.description}</p>
-                  </CardContent>
-                </Card>
-              </HoverBorderGradient>
+                <CardHeader>
+                  <CardTitle className="flex items-start gap-3">
+                    <item.icon className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-lg">{item.title}</h4>
+                    </div>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-sm -mt-4 ml-[36px]">{item.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -59,33 +52,27 @@ const IncludedSection = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {excluded.map((item, index) => (
-               <HoverBorderGradient
+              <Card 
                 key={index}
-                containerClassName="rounded-lg h-full"
-                as="div"
-                className="h-full bg-card/95"
+                className={cn(
+                  "h-full bg-card transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_hsl(var(--primary))]",
+                  index === excluded.length - 1 && excluded.length % 2 !== 0 && 'sm:col-span-2 lg:col-span-1',
+                  index === excluded.length - 1 && excluded.length % 3 !== 0 && 'lg:col-span-1',
+                  index === excluded.length - 1 && excluded.length % 4 !== 0 && 'xl:col-auto'
+                )}
               >
-                <Card 
-                  className={cn(
-                    "h-full bg-transparent border-none",
-                    index === excluded.length - 1 && excluded.length % 2 !== 0 && 'sm:col-span-2 lg:col-span-1',
-                    index === excluded.length - 1 && excluded.length % 3 !== 0 && 'lg:col-span-1',
-                    index === excluded.length - 1 && excluded.length % 4 !== 0 && 'xl:col-auto'
-                  )}
-                >
-                  <CardHeader>
-                    <CardTitle className="flex items-start gap-3">
-                      <item.icon className="h-6 w-6 text-muted-foreground flex-shrink-0 mt-1" />
-                      <div>
-                        <h4 className="font-semibold text-lg">{item.title}</h4>
-                      </div>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground text-sm -mt-4 ml-[36px]">{item.description}</p>
-                  </CardContent>
-                </Card>
-              </HoverBorderGradient>
+                <CardHeader>
+                  <CardTitle className="flex items-start gap-3">
+                    <item.icon className="h-6 w-6 text-muted-foreground flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-lg">{item.title}</h4>
+                    </div>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-sm -mt-4 ml-[36px]">{item.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
