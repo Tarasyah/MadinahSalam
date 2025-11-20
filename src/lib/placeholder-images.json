@@ -19,15 +19,9 @@
       "imageHint": "thaif mountain"
     },
     {
-      "id": "hero-uim",
-      "description": "Islamic University of Madinah campus building",
-      "imageUrl": "/Universitymadinah_thumbnail.webp",
-      "imageHint": "university building"
-    },
-    {
       "id": "contact-bg",
       "description": "Prophet's Mosque in Medina with beautiful lighting",
-      "imageUrl": "https://picsum.photos/seed/msw-contact/1920/1080",
+      "imageUrl": "https://images.unsplash.com/photo-1712249236913-dad423f9e00d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9waGV0JTIwbW9zcXVlfGVufDB8fHx8MTc2MzYxMDIyMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "prophet mosque"
     },
     {
@@ -39,55 +33,55 @@
     {
       "id": "package-2",
       "description": "Luxurious hotel lobby with golden accents",
-      "imageUrl": "https://picsum.photos/seed/msw-package2/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBob3RlbHxlbnwwfHx8fDE3NjM1MDkyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "luxury hotel"
     },
     {
       "id": "package-3",
       "description": "Airplane business class interior",
-      "imageUrl": "https://picsum.photos/seed/msw-package3/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1661954864180-e61dea14208a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMGNsYXNzfGVufDB8fHx8MTc2MzYxMDIyMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "business class"
     },
     {
       "id": "madinah-1",
       "description": "Green dome of Prophet's mosque against a clear blue sky",
-      "imageUrl": "https://picsum.photos/seed/msw-madinah1/400/300",
+      "imageUrl": "https://images.unsplash.com/photo-1719044253484-ed1e6a457da5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxncmVlbiUyMGRvbWV8ZW58MHx8fHwxNzYzNjEwMjIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "green dome"
     },
     {
       "id": "madinah-2",
       "description": "Courtyard of Prophet's mosque with folded umbrellas",
-      "imageUrl": "https://picsum.photos/seed/msw-madinah2/400/300",
+      "imageUrl": "https://images.unsplash.com/photo-1719151396578-211f3bd85fa3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb3NxdWUlMjBjb3VydHlhcmR8ZW58MHx8fHwxNzYzNjEwMjIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "mosque courtyard"
     },
     {
       "id": "mekkah-1",
       "description": "Abraj Al-Bait clock tower in Mecca piercing the clouds",
-      "imageUrl": "https://picsum.photos/seed/msw-mekkah1/400/300",
+      "imageUrl": "https://images.unsplash.com/photo-1692272202349-2ad4c8f44276?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtZWNjYSUyMGNsb2NrfGVufDB8fHx8MTc2MzYxMDIyMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "mecca clock"
     },
     {
       "id": "mekkah-2",
       "description": "Pilgrims performing Tawaf around the Kaaba from a high angle view",
-      "imageUrl": "https://picsum.photos/seed/msw-mekkah2/400/300",
+      "imageUrl": "https://images.unsplash.com/photo-1657548492734-59cbb0d32d7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0YXdhZiUyMGthYWJhfGVufDB8fHx8MTc2MzYxMDIyMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tawaf kaaba"
     },
     {
       "id": "testimonial-1",
       "description": "Portrait of a smiling middle-aged Indonesian man",
-      "imageUrl": "https://picsum.photos/seed/msw-testi1/100/100",
+      "imageUrl": "https://images.unsplash.com/photo-1710488140847-c076d4e80cc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxpbmRvbmVzaWFuJTIwbWFufGVufDB8fHx8MTc2MzYxMDIyMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "indonesian man"
     },
     {
       "id": "testimonial-2",
       "description": "Portrait of a smiling middle-aged Indonesian woman wearing a hijab",
-      "imageUrl": "https://picsum.photos/seed/msw-testi2/100/100",
+      "imageUrl": "https://images.unsplash.com/photo-1630758664435-72a78888fb9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRvbmVzaWFuJTIwd29tYW58ZW58MHx8fHwxNzYzNjEwMjIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "indonesian woman"
     },
     {
       "id": "testimonial-3",
       "description": "Portrait of a happy young Indonesian man",
-      "imageUrl": "https://picsum.photos/seed/msw-testi3/100/100",
+      "imageUrl": "https://images.unsplash.com/photo-1608389769338-3d5ceb3c1bc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx5b3VuZyUyMG1hbnxlbnwwfHx8fDE3NjM1MjIxNTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "young man"
     },
     {
