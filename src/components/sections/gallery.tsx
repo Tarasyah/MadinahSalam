@@ -86,7 +86,7 @@ const GallerySection = () => {
     }, [emblaApi, tweenOpacity, tweenScale]);
 
     return (
-        <section id="gallery" className="py-16 lg:py-24 bg-background">
+        <section id="gallery" className="py-16 lg:py-24 bg-secondary">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">Galeri Perjalanan</h2>

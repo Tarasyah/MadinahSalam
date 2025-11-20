@@ -29,7 +29,7 @@ const PackagesSection = () => {
                 className="w-full h-full bg-transparent"
                 as="div"
               >
-                <Card className="flex flex-col overflow-hidden h-full bg-transparent border-none">
+                <Card className="flex flex-col overflow-hidden h-full bg-card border-none">
                   <Link href="/paket.jpeg" target="_blank" rel="noopener noreferrer" className="block relative h-60 w-full cursor-pointer">
                     <Image
                       src={pkg.image.imageUrl}

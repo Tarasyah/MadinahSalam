@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 const IncludedSection = () => {
   return (
-    <section id="included" className="py-16 lg:py-24 bg-secondary">
+    <section id="included" className="py-16 lg:py-24 bg-background">
       <div className="container mx-auto">
         <div className="text-center mb-12">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Fasilitas Paket</h2>
@@ -22,10 +22,7 @@ const IncludedSection = () => {
               <Card 
                 key={index}
                 className={cn(
-                  "h-full bg-card transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_hsl(var(--primary))]",
-                  index === included.length - 1 && included.length % 2 !== 0 && 'sm:col-span-2 lg:col-span-1',
-                  index === included.length - 1 && included.length % 3 !== 0 && 'lg:col-span-1',
-                  index === included.length - 1 && included.length % 4 !== 0 && 'xl:col-auto xl:last:col-start-2'
+                  "h-full bg-card transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_hsl(var(--primary))]"
                 )}
               >
                 <CardHeader>
@@ -55,10 +52,7 @@ const IncludedSection = () => {
               <Card 
                 key={index}
                 className={cn(
-                  "h-full bg-card transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_hsl(var(--primary))]",
-                  index === excluded.length - 1 && excluded.length % 2 !== 0 && 'sm:col-span-2 lg:col-span-1',
-                  index === excluded.length - 1 && excluded.length % 3 !== 0 && 'lg:col-span-1',
-                  index === excluded.length - 1 && excluded.length % 4 !== 0 && 'xl:col-auto'
+                  "h-full bg-card transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_hsl(var(--primary))]"
                 )}
               >
                 <CardHeader>
