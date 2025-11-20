@@ -23,7 +23,7 @@ const SoldOutSection = () => {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="font-headline text-3xl md:text-4xl font-bold">
-            Paket Perjalanan Terdahulu
+            Perjalanan Terdahulu
           </h2>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
             Beberapa perjalanan yang telah kami selenggarakan dengan sukses. Nantikan paket menarik kami selanjutnya!
@@ -47,7 +47,7 @@ const SoldOutSection = () => {
                     "-rotate-12 transform"
                   )}
                 >
-                  Sold Out
+                 Habis
                 </div>
               </div>
             </Card>
