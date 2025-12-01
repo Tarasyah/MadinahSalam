@@ -42,18 +42,15 @@ export type ItineraryDay = {
 }
 
 export const itineraryData: ItineraryDay[] = [
-    { id: 1, title: 'Take off—Landing', subtitle: 'CGK—JED SV819', date: '6/11/2025', time: '19.05-01.05 WIB' },
-    { id: 2, title: 'Pelaksanaan ibadah umrah', date: '7/11/2025', time: 'Sebelum/sesudah subuh' },
-    { id: 3, title: 'Mempelajari sirah Nabi sekitar Masjidil Haram', date: '8/11/2025', time: 'Pagi' },
-    { id: 4, title: 'City Tour Makkah', subtitle: 'Mempelajari sirah Nabi + Museum Wahyu', date: '9/11/2025', time: 'Pagi' },
-    { id: 5, title: 'City Tour Taif', subtitle: 'Mempelajari sirah Nabi, tafakkur alam, menikmati destinasi wisata', date: '10/11/2025', time: 'Pagi' },
-    { id: 6, title: 'Menuju Kota Madinah', date: '11/11/2025', time: 'Setelah zuhur' },
-    { id:7, title: "Mempelajari sirah Nabi sekitar Masjid Nabawi", date: "12/11/2025", time: "Sesuai jadwal masuk Raudhah" },
-    { id: 8, title: "City Tour Madinah", subtitle: "Mempelajari sirah Nabi & kunjungan UIM", date: "13/11/2025", time: "Pagi" },
-    { id: 9, title: "Ibadah & aktivitas bebas", date: "14/11/2025", time: "-" },
-    { id: 10, title: "Ibadah & aktivitas bebas", date: "15/11/2025", time: "-" },
-    { id: 11, title: "Take Off", subtitle: "Bandara Internasional Pangeran Muhammad bin Abdul Aziz - Madinah (SV820)", date: "16/11/2025", time: "16.25 WAS" },
-    { id: 12, title: "Landing", subtitle: "Bandara Internasional Soekarno-Hatta", date: "17/11/2025", time: "06.05 WIB" },
+    { id: 1, title: 'Take off—Landing', subtitle: 'CGK—JED SV819', date: '15/12/2025', time: '19.05-01.00 WIB' },
+    { id: 2, title: 'Pelaksanaan ibadah umrah', date: '16/12/2025', time: 'Sebelum/sesudah subuh' },
+    { id: 3, title: 'City Tour Makkah', subtitle: 'Mempelajari Sirah Nabi + Museum Wahyu', date: '17/12/2025', time: 'Pagi' },
+    { id: 4, title: 'City Tour Taif', subtitle: 'Mempelajari Sirah Nabi, tafakkur alam, menikmati destinasi wisata', date: '18/12/2025', time: 'Pagi-Sore' },
+    { id: 5, title: 'Menuju Kota Madinah', date: '19/12/2025', time: 'Ba\'da Dzuhur' },
+    { id: 6, title: 'Mempelajari sirah Nabi sekitar Masjid Nabawi', date: '20/12/2025', time: 'Sesuai jadwal masuk Raudhah' },
+    { id: 7, title: 'City Tour Madinah', subtitle: 'Mempelajari sirah Nabi & kunjungan UIM', date: '21/12/2025', time: 'Pagi' },
+    { id: 8, title: 'Ibadah & aktivitas bebas, serta persiapan check out menuju Jeddah', date: '22/12/2025', time: 'Malam' },
+    { id: 9, title: 'Take Off: Bandara Jeddah (SV826) & Landing: Bandara Internasional Soekarno-Hatta', date: '23/12/2025', time: '09.00-22.45 WAS' },
 ];
 
 

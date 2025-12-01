@@ -3,12 +3,12 @@ import { itineraryData } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 
-const ItineraryItem = ({ item }: { item: typeof itineraryData[0] }) => {
+const ItineraryItem = ({ item, isLast }: { item: typeof itineraryData[0], isLast: boolean }) => {
   return (
     <div className="flex gap-4 w-full">
-      <div className="relative flex-shrink-0">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 h-full bg-border -z-10" />
-        <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm z-10">
+      <div className="relative flex-shrink-0 flex flex-col items-center">
+        {!isLast && <div className="absolute top-8 left-1/2 -translate-x-1/2 w-0.5 h-full bg-border -z-10" />}
+        <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm z-10 flex-shrink-0">
           {item.id}
         </div>
       </div>
@@ -31,37 +31,21 @@ const ItineraryItem = ({ item }: { item: typeof itineraryData[0] }) => {
 }
 
 const ItinerarySection = () => {
-  const makkahItinerary = itineraryData.slice(0, 6);
-  const madinahItinerary = itineraryData.slice(6);
 
   return (
     <section id="itinerary" className="py-16 lg:py-24 bg-secondary overflow-hidden">
-      <div className="container max-w-6xl mx-auto">
+      <div className="container max-w-3xl mx-auto">
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="font-headline text-3xl md:text-4xl font-bold">Rangkaian Perjalanan</h2>
            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-            Jadwal perjalanan 12 hari yang terperinci untuk memastikan pengalaman Umrah Anda penuh makna.
+            Jadwal perjalanan 9 hari yang terperinci untuk memastikan pengalaman Umrah Anda penuh makna.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-12">
-          {/* Kolom Makkah */}
-          <div className="flex flex-col relative">
-             <div className="absolute top-0 left-4 -translate-x-1/2 w-0.5 h-full bg-border -z-10" />
-             <h3 className="font-headline text-2xl font-bold text-center text-primary border-b pb-2 mb-8">Keberangkatan & Makkah</h3>
-             {makkahItinerary.map(item => (
-              <ItineraryItem key={item.id} item={item} />
+        <div className="flex flex-col relative">
+             {itineraryData.map((item, index) => (
+              <ItineraryItem key={item.id} item={item} isLast={index === itineraryData.length - 1} />
             ))}
-          </div>
-          
-          {/* Kolom Madinah */}
-          <div className="flex flex-col relative mt-8 lg:mt-0">
-             <div className="absolute top-0 left-4 -translate-x-1/2 w-0.5 h-full bg-border -z-10" />
-             <h3 className="font-headline text-2xl font-bold text-center text-primary border-b pb-2 mb-8">Madinah & Kepulangan</h3>
-             {madinahItinerary.map(item => (
-              <ItineraryItem key={item.id} item={item} />
-            ))}
-          </div>
         </div>
 
       </div>
