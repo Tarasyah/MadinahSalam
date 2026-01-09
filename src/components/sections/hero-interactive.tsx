@@ -63,7 +63,6 @@ const HeroSection = () => {
                         <h1 className={cn(
                             "font-headline font-bold text-white drop-shadow-lg leading-tight",
                             "text-4xl md:text-5xl lg:text-6xl",
-                            "whitespace-nowrap" // Perubahan 2: Judul jadi 1 baris
                         )}>
                             {activeDestination.title}
                         </h1>
@@ -102,6 +101,7 @@ const HeroSection = () => {
                                 fill
                                 className="object-cover"
                                 sizes="(max-width: 768px) 100vw, 33vw"
+                                unoptimized={dest.image.imageUrl.endsWith('.jpeg')}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                             <div className="absolute bottom-0 left-0 p-3">
