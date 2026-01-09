@@ -52,7 +52,7 @@ const IncludedSection = () => {
               <Card 
                 key={index}
                 className={cn(
-                  "h-full bg-card transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_hsl(var(--primary))]"
+                  "h-full bg-card transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 )}
               >
                 <CardHeader>

@@ -3,14 +3,13 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import Link from 'next/link';
-import { Check, Plane, Calendar, Users } from 'lucide-react';
+import { Check, Plane, Calendar, Users, BadgePercent } from 'lucide-react';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { HoverBorderGradient } from '../ui/hover-border-gradient';
 
 const PackagesSection = () => {
   const whatsappLink = "https://wa.me/6282210004644";
@@ -23,26 +22,28 @@ const PackagesSection = () => {
         </div>
         <div className="flex justify-center">
           {packages.map((pkg) => (
-              <HoverBorderGradient
-                key={pkg.id}
-                containerClassName="rounded-lg max-w-lg w-full"
-                className="w-full h-full bg-transparent"
-                as="div"
-              >
-                <Card className="flex flex-col overflow-hidden h-full bg-card border-none">
-                  <Link href="/paket.jpeg" target="_blank" rel="noopener noreferrer" className="block relative h-60 w-full cursor-pointer">
-                    <Image
-                      src={pkg.image.imageUrl}
-                      alt={pkg.name}
-                      data-ai-hint={pkg.image.imageHint}
-                      fill
-                      unoptimized
-                      className="object-cover object-top"
-                    />
-                    <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-2 rounded-bl-lg font-bold">
-                      {pkg.duration}
-                    </div>
-                  </Link>
+                <Card key={pkg.id} className="flex flex-col overflow-hidden h-full bg-card border-border max-w-lg w-full shadow-lg">
+                   <div className="relative">
+                        <Link href="/paket.jpeg" target="_blank" rel="noopener noreferrer" className="block relative h-60 w-full cursor-pointer">
+                            <Image
+                            src={pkg.image.imageUrl}
+                            alt={pkg.name}
+                            data-ai-hint={pkg.image.imageHint}
+                            fill
+                            unoptimized
+                            className="object-cover object-top"
+                            />
+                        </Link>
+                        <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-2 rounded-bl-lg font-bold">
+                            {pkg.duration}
+                        </div>
+                        {pkg.discount && (
+                            <div className="absolute top-0 left-0 bg-destructive text-destructive-foreground px-3 py-1.5 rounded-br-lg font-semibold text-sm flex items-center gap-2">
+                                <BadgePercent className="h-4 w-4" />
+                                <span>{pkg.discount}</span>
+                            </div>
+                        )}
+                   </div>
                   <CardHeader>
                     <CardTitle className="font-headline text-2xl text-primary">{pkg.name}</CardTitle>
                     <div className="flex items-center text-muted-foreground text-sm space-x-4 pt-2">
@@ -71,7 +72,10 @@ const PackagesSection = () => {
                     <div className="flex justify-between items-center w-full">
                         <div>
                             <p className="text-sm text-muted-foreground">Mulai dari (Quad)</p>
-                            <p className="text-3xl font-bold text-primary">{pkg.price}</p>
+                            <div className="flex items-baseline gap-2">
+                                <p className="text-3xl font-bold text-primary">{pkg.price}</p>
+                                <p className="text-md font-medium text-muted-foreground line-through">{pkg.originalPrice}</p>
+                            </div>
                         </div>
                         <TooltipProvider>
                           <Tooltip>
@@ -81,6 +85,7 @@ const PackagesSection = () => {
                                     <div key={detail.type} className="flex items-center gap-2 text-sm text-muted-foreground">
                                       <detail.icon className="h-4 w-4"/>
                                       <span>{detail.type}: <span className="font-semibold text-foreground">{detail.price}</span></span>
+                                      <span className="text-xs line-through">{detail.originalPrice}</span>
                                     </div>
                                 ))}
                               </div>
@@ -96,7 +101,6 @@ const PackagesSection = () => {
                     </Button>
                   </CardFooter>
                 </Card>
-              </HoverBorderGradient>
           ))}
         </div>
         <div className="text-center mt-12">
