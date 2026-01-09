@@ -107,14 +107,20 @@ export const packages: Package[] = [
         duration: '12 Hari',
         price: 'Rp 29.9 jt',
         originalPrice: 'Rp 30.990.000',
-        discount: 'Diskon Rp 1.000.000',
+        discount: 'Hemat Rp 1.000.000',
         priceDetails: [
             { type: 'Quad', price: 'Rp 29.990.000', originalPrice: '30.990.000', icon: Users2 },
             { type: 'Triple', price: 'Rp 31.490.000', originalPrice: '32.490.000', icon: Users },
             { type: 'Double', price: 'Rp 33.590.000', originalPrice: '34.590.000', icon: BedDouble },
         ],
         image: findImage('package-high-season'),
-        features: ['Hotel Makkah: Maysan Al Maqam/Setaraf', 'Hotel Madinah: Hayah Golden/Setaraf', '2 Kali Shalat Jumat', 'City Tour Thaif', 'Dibimbing oleh Ustadz S3 Univ. Madinah'],
+        features: [
+            'Hotel Makkah: Maysan Al Maqam/Setaraf', 
+            'Hotel Madinah: Hayah Golden/Setaraf', 
+            '2 Kali Shalat Jumat', 
+            'City Tour Thaif', 
+            'Dibimbing oleh Ustadz S3 Univ. Madinah'
+        ],
         airline: 'Saudi Airlines (Tanpa Transit)',
         departure: '25 Maret 2026'
     },
@@ -124,9 +130,9 @@ export const packages: Package[] = [
 export const included: IncludedItem[] = [
   { title: 'Pesawat Saudia', description: 'Termasuk tiket Saudi Airlines pulang-pergi (tanpa transit).', icon: Plane },
   { title: 'Visa Umrah', description: 'Pengurusan visa umrah sudah termasuk dalam paket.', icon: Ticket },
+  { title: 'Program 12 hari & 2x Jumat', description: 'Program perjalanan lengkap selama 12 hari termasuk 2 kali Shalat Jumat.', icon: Calendar },
   { title: 'Hotel Dekat', description: 'Akomodasi di Makkah & Madinah (jalan kaki, tanpa shuttle).', icon: Hotel },
-  { title: 'Program 12 Hari', description: 'Termasuk 2 kali Shalat Jumat dan City Tour lengkap.', icon: Calendar },
-  { title: 'City Tour', description: 'Makkah, Madinah, Museum Wahyu, Univ. Islam Madinah, dan Thaif.', icon: Car },
+  { title: 'City Tour Lengkap', description: 'Makkah, Madinah, Museum Wahyu, Universitas Islam Madinah, dan Thaif.', icon: Car },
   { title: 'Makan 3x Sehari', description: 'Menu masakan Indonesia selama di tanah suci.', icon: Utensils },
   { title: 'Pembimbing & Muthawwif', description: 'Bimbingan ibadah oleh ustadz dan muthawwif berpengalaman.', icon: UserCheck },
   { title: 'Perlengkapan Premium', description: 'Koper, kain ihram, jilbab, dan perlengkapan lainnya.', icon: Gift },
@@ -141,8 +147,7 @@ export const excluded: IncludedItem[] = [
   { title: 'Kebutuhan Pribadi', description: 'Seperti laundry, telepon, dan oleh-oleh.', icon: ShoppingCart },
   { title: 'Akomodasi Domestik', description: 'Hotel atau transportasi dari/ke daerah asal menuju bandara.', icon: Hotel },
   { title: 'Kelebihan Bagasi', description: 'Biaya tambahan atas kelebihan berat bagasi dari maskapai.', icon: BaggageClaim },
-  { title: 'Vaksin Meningitis', description: 'Biaya untuk suntik vaksin meningitis.', icon: ShieldCheck },
-  { title: 'Vaksin Polio', description: 'Biaya untuk suntik vaksin polio.', icon: ShieldCheck },
+  { title: 'Vaksin Meningitis & Polio', description: 'Biaya untuk suntik vaksin meningitis dan polio.', icon: ShieldCheck },
   { title: 'Kursi Roda & Jasa Pendorong', description: 'Penyediaan kursi roda dan jasa pendorongnya bila diperlukan.', icon: Users },
   { title: 'Kegiatan di Luar Paket', description: 'Biaya untuk tur atau aktivitas di luar jadwal yang ditentukan.', icon: UtensilsCrossed },
 ];
