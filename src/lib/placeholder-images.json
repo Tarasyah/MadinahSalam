@@ -3,7 +3,7 @@
     {
       "id": "hero-mekkah",
       "description": "Kaaba in Mecca at night with crowds of pilgrims",
-      "imageUrl": "/makkah_thumbnail.webp",
+      "imageUrl": "https://images.unsplash.com/photo-1644972308250-8476805bbc36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxrYWFiYSUyMG5pZ2h0fGVufDB8fHx8MTc2NzkyMDYzOXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "kaaba night"
     },
     {
@@ -27,8 +27,14 @@
     {
       "id": "package-high-season",
       "description": "Promotional banner for the Umrah package",
-      "imageUrl": "/paket.jpeg",
+      "imageUrl": "https://images.unsplash.com/photo-1641853258387-3082f3a7379a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx1bXJhaCUyMHBhY2thZ2V8ZW58MHx8fHwxNzY3OTIwNjM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "umrah package"
+    },
+    {
+      "id": "hero-paket",
+      "description": "paket umrah",
+      "imageUrl": "/paket.jpeg",
+      "imageHint": "paket umrah"
     },
     {
       "id": "package-2",
@@ -69,19 +75,19 @@
     {
       "id": "testimonial-1",
       "description": "Portrait of a smiling middle-aged Indonesian man",
-      "imageUrl": "https://images.unsplash.com/photo-1710488140847-c076d4e80cc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxpbmRvbmVzaWFuJTIwbWFufGVufDB8fHx8MTc2MzYxMDIyMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1710488140847-c076d4e80cc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxpbmRvbmVzaWFuJTIwbWFufGVufDB8fHx8MTc2MzYxMDIyMHww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "indonesian man"
     },
     {
       "id": "testimonial-2",
       "description": "Portrait of a smiling middle-aged Indonesian woman wearing a hijab",
-      "imageUrl": "https://images.unsplash.com/photo-1630758664435-72a78888fb9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRvbmVzaWFuJTIwd29tYW58ZW58MHx8fHwxNzYzNjEwMjIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1630758664435-72a78888fb9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRvbmVzaWFuJTIwd29tYW58ZW58MHx8fHwxNzYzNjEwMjIwfDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "indonesian woman"
     },
     {
       "id": "testimonial-3",
       "description": "Portrait of a happy young Indonesian man",
-      "imageUrl": "https://images.unsplash.com/photo-1608389769338-3d5ceb3c1bc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx5b3VuZyUyMG1hbnxlbnwwfHx8fDE3NjM1MjIxNTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1608389769338-3d5ceb3c1bc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx5b3VuZyUyMG1hbnxlbnwwfHx8fDE3NjM1MjIxNTZ8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "young man"
     },
     {

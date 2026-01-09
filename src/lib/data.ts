@@ -76,27 +76,27 @@ export type Testimonial = {
 export const heroDestinations: HeroDestination[] = [
     {
         id: 1,
-        title: 'Umrah Spesial Bulan Syawwal',
-        description: 'Program 12 Hari dengan 2 kali Shalat Jumat dan City Tour Thaif. Keberangkatan 25 Maret 2026.',
-        image: findImage('package-high-season')
-    },
-    {
-        id: 2,
         title: 'Mekkah Al-Mukarramah',
         description: 'Pusat spiritual Islam dan tujuan utama ibadah Umrah, tempat Ka\'bah berdiri megah.',
         image: findImage('hero-mekkah')
     },
     {
-        id: 3,
+        id: 2,
         title: 'Madinah Al-Munawwarah',
         description: 'Kota suci kedua, tempat Masjid Nabawi dan makam Nabi Muhammad ﷺ berada, penuh ketenangan.',
         image: findImage('hero-madinah')
     },
     {
-        id: 4,
+        id: 3,
         title: 'Thaif',
         description: 'Menikmati kesejukan alam pegunungan Thaif yang bersejarah dan penuh kenangan.',
         image: findImage('hero-thaif')
+    },
+    {
+        id: 4,
+        title: 'Umrah Spesial Bulan Syawwal',
+        description: 'Program 12 Hari dengan 2 kali Shalat Jumat dan City Tour Thaif. Keberangkatan 25 Maret 2026.',
+        image: findImage('hero-paket')
     },
 ];
 
@@ -113,7 +113,7 @@ export const packages: Package[] = [
             { type: 'Triple', price: 'Rp 31.490.000', originalPrice: '32.490.000', icon: Users },
             { type: 'Double', price: 'Rp 33.590.000', originalPrice: '34.590.000', icon: BedDouble },
         ],
-        image: findImage('package-high-season'),
+        image: findImage('hero-paket'),
         features: [
             'Hotel Makkah: Maysan Al Maqam/Setaraf', 
             'Hotel Madinah: Hayah Golden/Setaraf', 
@@ -197,3 +197,5 @@ export const galleryImages: ImagePlaceholder[] = [
 ];
 
 export const infoCards: {id: number, title: string, image: ImagePlaceholder}[] = [];
+
+    
