@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="id" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <meta name="view-transition" content="same-origin" />
-        <link rel="icon" href="/logo_lightmode.png" sizes="any" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/logo_lightmode.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
