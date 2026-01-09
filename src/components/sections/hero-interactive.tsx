@@ -44,6 +44,7 @@ const HeroSection = () => {
                         fill
                         className="object-cover"
                         priority={heroDestinations.indexOf(activeDestination) === 0}
+                        unoptimized={activeDestination.image.imageUrl.endsWith('.jpeg')}
                     />
                 </motion.div>
             </AnimatePresence>
