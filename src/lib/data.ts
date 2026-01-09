@@ -131,14 +131,14 @@ export const included: IncludedItem[] = [
   { title: 'Pesawat Saudia', description: 'Termasuk tiket Saudi Airlines pulang-pergi (tanpa transit).', icon: Plane },
   { title: 'Visa Umrah', description: 'Pengurusan visa umrah sudah termasuk dalam paket.', icon: Ticket },
   { title: 'Program 12 hari & 2x Jumat', description: 'Program perjalanan lengkap selama 12 hari termasuk 2 kali Shalat Jumat.', icon: Calendar },
-  { title: 'Hotel Dekat', description: 'Akomodasi di Makkah & Madinah (jalan kaki, tanpa shuttle).', icon: Hotel },
   { title: 'City Tour Lengkap', description: 'Makkah, Madinah, Museum Wahyu, Universitas Islam Madinah, dan Thaif.', icon: Car },
+  { title: 'Gratis Nasi Mandhi di Thaif', description: 'Menikmati hidangan khas Nasi Mandhi saat di Thaif.', icon: Utensils },
+  { title: 'Hotel Dekat', description: 'Akomodasi di Makkah & Madinah (jalan kaki, tanpa shuttle).', icon: Hotel },
   { title: 'Makan 3x Sehari', description: 'Menu masakan Indonesia selama di tanah suci.', icon: Utensils },
   { title: 'Pembimbing & Muthawwif', description: 'Bimbingan ibadah oleh ustadz dan muthawwif berpengalaman.', icon: UserCheck },
   { title: 'Perlengkapan Premium', description: 'Koper, kain ihram, jilbab, dan perlengkapan lainnya.', icon: Gift },
   { title: 'Manasik & Handling', description: 'Manasik umrah online dan airport handling.', icon: BookOpen },
   { title: 'Gratis Zamzam & AlBaik', description: '5 liter Zamzam (jika diizinkan) & gratis AlBaik.', icon: Star },
-  { title: 'Nasi Mandhi di Thaif', description: 'Menikmati hidangan khas Nasi Mandhi saat di Thaif.', icon: Utensils },
   { title: 'Bus Nyaman', description: 'Transportasi bus AC premium selama perjalanan.', icon: Car },
 ];
 
