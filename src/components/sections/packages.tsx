@@ -105,7 +105,7 @@ const PackagesSection = () => {
         </div>
         <div className="text-center mt-12">
             <p className="text-muted-foreground text-sm">* Harga Infant (0-23 bulan): Rp 12.500.000,- (tanpa kursi, kasur, & bagasi).</p>
-            <p className="text-muted-foreground text-sm">** Diskon Anak (2-11 tahun): Rp 2.000.000,- (maksimal 4 anak per PNR).</p>
+            <p className="text-muted-foreground text-sm">** Diskon Anak: Rp 1.000.000 - Rp 1.500.000.</p>
         </div>
       </div>
     </section>
