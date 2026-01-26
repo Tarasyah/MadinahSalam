@@ -30,7 +30,7 @@ const PackagesSection = () => {
                             alt={pkg.name}
                             data-ai-hint={pkg.image.imageHint}
                             fill
-                            unoptimized
+                            unoptimized={pkg.image.imageUrl.endsWith('.jpeg')}
                             className="object-cover object-top"
                             />
                         </Link>
@@ -69,7 +69,7 @@ const PackagesSection = () => {
                     </ul>
                   </CardContent>
                   <CardFooter className="flex flex-col items-start bg-muted/50 p-6">
-                    <div className="flex justify-between items-center w-full">
+                    <div className="flex flex-col md:flex-row md:justify-between w-full md:items-center gap-4 md:gap-2">
                         <div>
                             <p className="text-sm text-muted-foreground">Mulai dari (Quad)</p>
                             <div className="flex items-baseline gap-2">
@@ -80,7 +80,7 @@ const PackagesSection = () => {
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger asChild>
-                              <div className="flex flex-col items-end space-y-1 text-right">
+                              <div className="flex flex-col md:items-end space-y-1 text-left md:text-right">
                                 {pkg.priceDetails.map(detail => (
                                     <div key={detail.type} className="flex items-center gap-2 text-sm text-muted-foreground">
                                       <detail.icon className="h-4 w-4"/>
