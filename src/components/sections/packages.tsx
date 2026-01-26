@@ -68,11 +68,11 @@ const PackagesSection = () => {
                         ))}
                     </ul>
                   </CardContent>
-                  <CardFooter className="flex flex-col items-start bg-muted/50 p-6">
-                    <div className="flex flex-col md:flex-row md:justify-between w-full md:items-center gap-4 md:gap-2">
+                  <CardFooter className="flex flex-col items-center md:items-start bg-muted/50 p-6">
+                    <div className="flex flex-col items-center text-center md:text-left md:flex-row md:justify-between w-full md:items-center gap-4 md:gap-2">
                         <div>
                             <p className="text-sm text-muted-foreground">Mulai dari (Quad)</p>
-                            <div className="flex items-baseline gap-2">
+                            <div className="flex items-baseline justify-center md:justify-start gap-2 whitespace-nowrap">
                                 <p className="text-3xl font-bold text-primary">{pkg.price}</p>
                                 <p className="text-md font-medium text-muted-foreground line-through">{pkg.originalPrice}</p>
                             </div>
@@ -80,9 +80,9 @@ const PackagesSection = () => {
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger asChild>
-                              <div className="flex flex-col md:items-end space-y-1 text-left md:text-right">
+                              <div className="flex flex-col items-center md:items-end space-y-1 text-center md:text-right">
                                 {pkg.priceDetails.map(detail => (
-                                    <div key={detail.type} className="flex items-center gap-2 text-sm text-muted-foreground">
+                                    <div key={detail.type} className="flex items-center justify-center md:justify-end gap-2 text-sm text-muted-foreground whitespace-nowrap">
                                       <detail.icon className="h-4 w-4"/>
                                       <span>{detail.type}: <span className="font-semibold text-foreground">{detail.price}</span></span>
                                       <span className="text-xs line-through">{detail.originalPrice}</span>
