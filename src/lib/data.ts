@@ -115,7 +115,7 @@ export const packages: Package[] = [
         ],
         image: findImage('hero-paket'),
         features: [
-            'Hotel Makkah: Maysan Al Maqam/Setaraf', 
+            'Hotel Makkah: Zuwar Al Bait/Setaraf', 
             'Hotel Madinah: Hayah Golden/Setaraf', 
             '2 Kali Shalat Jumat', 
             'City Tour Thaif', 
