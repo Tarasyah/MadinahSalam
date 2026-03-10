@@ -1,4 +1,3 @@
-
 import { itineraryData } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
@@ -14,8 +13,8 @@ const ItineraryItem = ({ item, isLast }: { item: typeof itineraryData[0], isLast
       </div>
       <div className="w-full pb-8">
         <div className="text-left">
-          <p className="font-semibold text-muted-foreground">{item.date}</p>
-          <p className="text-sm text-muted-foreground">{item.time}</p>
+          {item.date && <p className="font-semibold text-muted-foreground">{item.date}</p>}
+          {item.time && <p className="text-sm text-muted-foreground">{item.time}</p>}
         </div>
         <Card
           className="mt-2 w-full bg-card/95 p-4 border transition-shadow hover:shadow-md"
@@ -36,7 +35,7 @@ const ItinerarySection = () => {
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="font-headline text-3xl md:text-4xl font-bold">Rangkaian Perjalanan</h2>
            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-            Jadwal perjalanan 12 hari yang terperinci untuk memastikan pengalaman Umrah Anda penuh makna.
+            Jadwal perjalanan yang terperinci untuk memastikan pengalaman Umrah Anda penuh makna.
           </p>
         </div>
 

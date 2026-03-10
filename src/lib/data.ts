@@ -44,18 +44,18 @@ export type ItineraryDay = {
 }
 
 export const itineraryData: ItineraryDay[] = [
-    { id: 1, title: 'Keberangkatan Menuju Jeddah & Melaksanakan Umrah', subtitle: 'Penerbangan dari CGK menuju JED dengan Saudi Airlines, dilanjutkan perjalanan ke Makkah untuk umrah.', date: '28/06/2026', time: 'Malam' },
-    { id: 2, title: 'Ibadah & Acara Bebas di Makkah', subtitle: 'Memperbanyak ibadah di Masjidil Haram.', date: '29/06/2026', time: 'Sehari Penuh' },
-    { id: 3, title: 'Ibadah & Thawaf Sunnah', subtitle: 'Melaksanakan ibadah harian di Masjidil Haram.', date: '30/06/2026', time: 'Pagi - Malam' },
-    { id: 4, title: 'City Tour Makkah', subtitle: 'Mengunjungi tempat bersejarah di sekitar Makkah.', date: '01/07/2026', time: 'Pagi' },
-    { id: 5, title: 'City Tour Thaif', subtitle: 'Perjalanan ke Thaif, menikmati wisata alam dan sirah Nabi.', date: '02/07/2026', time: 'Pagi - Sore' },
-    { id: 6, title: 'Perjalanan Menuju Madinah', subtitle: 'Check-out dari hotel Makkah dan berangkat menuju Madinah.', date: '03/07/2026', time: 'Ba\'da Dzuhur' },
-    { id: 7, title: 'Ziarah & Mengenal Area Masjid Nabawi', subtitle: 'Mengunjungi Raudhah dan Museum Ash-Shafiya.', date: '04/07/2026', time: 'Sesuai Jadwal' },
-    { id: 8, title: 'City Tour Madinah', subtitle: 'Mengunjungi tempat-tempat bersejarah dan Universitas Islam Madinah.', date: '05/07/2026', time: 'Pagi' },
-    { id: 9, title: 'Ibadah & Acara Bebas di Madinah', subtitle: 'Memperbanyak ibadah di Masjid Nabawi.', date: '06/07/2026', time: 'Sehari Penuh' },
-    { id: 10, title: 'Persiapan Pulang & Belanja Oleh-oleh', subtitle: 'Ibadah di Masjid Nabawi dan persiapan koper.', date: '07/07/2026', time: 'Pagi - Sore' },
-    { id: 11, title: 'Check-out dan Menuju Bandara', subtitle: 'Berangkat dari Madinah menuju bandara Jeddah.', date: '08/07/2026', time: 'Malam' },
-    { id: 12, title: 'Tiba di Tanah Air', subtitle: 'Tiba kembali di Jakarta (CGK) dengan selamat.', date: '09/07/2026', time: 'Pagi' },
+    { id: 1, title: 'Take Off - Landing: CGK - JED SV819', date: '', time: '19.05 - 01.05' },
+    { id: 2, title: 'Pelaksanaan Ibadah Umrah', date: '', time: 'Sebelum/Setelah Shubuh' },
+    { id: 3, title: 'Mempelajari Sirah Nabi Sekitar Masjidil Haram', date: '', time: 'Pagi' },
+    { id: 4, title: 'City Tour Kota Makkah : Mempelajari Sirah Nabi + Museum Wahyu', date: '', time: 'Pagi' },
+    { id: 5, title: 'City Tour Kota Thaif : Mempelajari Sirah Nabi - Tafakkur \'Alam - Menikmati Destinasi Wisata', date: '', time: 'Pagi' },
+    { id: 6, title: 'Menuju Kota Madinah', date: '', time: 'Ba\'da Dzuhur' },
+    { id: 7, title: 'Mempelajari Sirah Nabi Sekitar Masjid Nabawi', date: '', time: 'Pagi/Menyesuaikan Jadwal Raudhah' },
+    { id: 8, title: 'City Tour Kota Madinah : Mempelajari Sirah Nabi + Kunjungan UIM', date: '', time: 'Pagi' },
+    { id: 9, title: 'Ibadah & Bebas', date: '', time: '' },
+    { id: 10, title: 'Ibadah & Bebas', date: '', time: '' },
+    { id: 11, title: 'Ibadah - Packing Barang - Check Out', date: '', time: 'Ba\'da Zhuhur' },
+    { id: 12, title: 'Take Off : Bandara Udara Internasional King Abdul Aziz - JEDDAH SV818 - Landing : Bandara Udara Internasional Soekarno-Hatta', date: '', time: '01.50 - 16.00' },
 ];
 
 
