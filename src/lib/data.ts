@@ -119,10 +119,10 @@ export const packages: Package[] = [
             'Hotel Madinah: Hayah Golden/Setaraf', 
             'Museum Ash - Shafiya', 
             'City Tour Thaif & Nasi Mandhi', 
-            'Dibimbing oleh Ustadz S3 Univ. Madinah'
+            'Dibimbing oleh Ustadz Arbi & Ustadz Wahab'
         ],
         airline: 'Saudi Airlines (Tanpa Transit)',
-        departure: '28 Juni 2026'
+        departure: '28 Juni - 9 Juli 2026'
     },
 ];
 
