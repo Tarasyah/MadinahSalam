@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Home, Users, FileText, Package, Phone } from 'lucide-react';
+import { Menu, Home, Users, FileText, Package, Phone, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -18,9 +18,10 @@ import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Beranda', icon: Home },
+  { href: '/#packages', label: 'Paket', icon: Package },
+  { href: '/itinerary', label: 'Itinerari', icon: Clock },
   { href: '/about', label: 'Tentang Kami', icon: Users },
   { href: '/requirements', label: 'Persyaratan', icon: FileText },
-  { href: '/#packages', label: 'Paket', icon: Package },
 ];
 
 const whatsappLink = "https://wa.me/6282210004644";

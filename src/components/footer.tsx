@@ -8,9 +8,10 @@ const Footer = () => {
 
   const quickLinks = [
     { href: '/', label: 'Beranda', target: '_self' },
+    { href: '/#packages', label: 'Paket', target: '_self' },
+    { href: '/itinerary', label: 'Itinerari', target: '_self' },
     { href: '/about', label: 'Tentang Kami', target: '_self' },
     { href: '/requirements', label: 'Persyaratan', target: '_self' },
-    { href: '/#packages', label: 'Paket', target: '_self' },
   ];
 
   const legalLinks = [
