@@ -34,9 +34,12 @@ const SoldOutSection = () => {
             Beberapa perjalanan yang telah kami selenggarakan dengan sukses. Nantikan paket menarik kami selanjutnya!
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
           {soldOutPackages.map((pkg) => (
-            <Card key={pkg.id} className="relative overflow-hidden rounded-lg group border-none shadow-lg">
+            <Card 
+              key={pkg.id} 
+              className="relative overflow-hidden rounded-lg group border-none shadow-lg w-full md:w-[calc(50%-1rem)]"
+            >
               <Image
                 src={pkg.imageUrl}
                 alt={pkg.alt}
