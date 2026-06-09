@@ -45,7 +45,7 @@ const PackagesSection = () => {
                         )}
                    </div>
                   <CardHeader>
-                    <CardTitle className="font-headline text-2xl text-primary">{pkg.name}</CardTitle>
+                    <CardTitle className="font-sans font-bold text-2xl text-primary">{pkg.name}</CardTitle>
                     <div className="flex items-center text-muted-foreground text-sm space-x-4 pt-2">
                         <div className="flex items-center gap-2">
                             <Plane className="h-4 w-4" />

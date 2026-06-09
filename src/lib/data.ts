@@ -44,18 +44,18 @@ export type ItineraryDay = {
 }
 
 export const itineraryData: ItineraryDay[] = [
-    { id: 1, title: 'Take Off - Landing : CGK - JED SV819', date: '28/06/2026', time: '17:30 - 23:00' },
-    { id: 2, title: 'Pelaksanaan Ibadah Umrah', date: '29/06/2026', time: 'Sebelum / Setelah Shubuh' },
-    { id: 3, title: 'Mempelajari Sirah Nabi ﷺ Sekitar Masjidil Haram', date: '30/06/2026', time: 'Pagi' },
-    { id: 4, title: 'City Tour Kota Makkah: Mempelajari Sirah Nabi ﷺ', date: '01/07/2026', time: 'Pagi' },
-    { id: 5, title: 'City Tour Kota Thaif: Mempelajari Sirah Nabi ﷺ - Tafakkur \'Alam - Menikmati Destinasi Wisata', date: '02/07/2026', time: 'Pagi' },
-    { id: 6, title: 'Menuju Kota Madinah', date: '03/07/2026', time: 'Ba\'da Zhuhur' },
-    { id: 7, title: 'Mempelajari Sirah Nabi ﷺ Sekitar Masjid Nabawi', date: '04/07/2026', time: 'Pagi / Menyesuaikan Jadwal Raudhah' },
-    { id: 8, title: 'City Tour Kota Madinah: Mempelajari Sirah Nabi ﷺ + Kunjungan UIM', date: '05/07/2026', time: 'Pagi' },
-    { id: 9, title: 'Museum Ash-Shafiyyah', date: '06/07/2026', time: 'Pagi' },
-    { id: 10, title: 'Ibadah & Bebas', date: '07/07/2026', time: '' },
-    { id: 11, title: 'Ibadah - Packing Barang - Check Out', date: '08/07/2026', time: 'Ba\'da Zhuhur' },
-    { id: 12, title: 'Take Off: Bandara Udara Internasional King Abdul Aziz - JEDDAH SV818 - Landing: Bandara Udara Internasional Soekarno-Hatta', date: '09/07/2026', time: '01:55 - 16:00' },
+    { id: 1, title: 'Take Off - Landing : CGK - JED SV819', date: '26/09/2026', time: '17:30 - 23:00' },
+    { id: 2, title: 'Pelaksanaan Ibadah Umrah', date: '27/09/2026', time: 'Sebelum/Setelah Shubuh' },
+    { id: 3, title: 'Mempelajari Sirah Nabi Sekitar Masjidil Haram', date: '28/09/2026', time: 'Pagi' },
+    { id: 4, title: 'City Tour Kota Makkah: Mempelajari Sirah Nabi', date: '29/09/2026', time: 'Pagi' },
+    { id: 5, title: 'City Tour Kota Thaif: Mempelajari Sirah Nabi - Tafakkur \'Alam - Menikmati Destinasi Wisata', date: '30/09/2026', time: 'Pagi' },
+    { id: 6, title: 'Menuju Kota Madinah', date: '01/10/2026', time: 'Ba\'da Zhuhur' },
+    { id: 7, title: 'Mempelajari Sirah Nabi Sekitar Masjid Nabawi', date: '02/10/2026', time: 'Pagi/Menyesuaikan Jadwal Raudhah' },
+    { id: 8, title: 'City Tour Kota Madinah: Mempelajari Sirah Nabi + Kunjungan UIM', date: '03/10/2026', time: 'Pagi' },
+    { id: 9, title: 'Museum Ash-Shafiyyah', date: '04/10/2026', time: 'Pagi' },
+    { id: 10, title: 'Ibadah & Bebas', date: '05/10/2026', time: '' },
+    { id: 11, title: 'Ibadah - Check Out Pagi - Take Off: Bandara Udara Internasional King Abdul Aziz - JEDDAH SV820', date: '06/10/2026', time: '20:20' },
+    { id: 12, title: 'Landing: Bandara Udara Internasional Soekarno-Hatta', date: '07/10/2026', time: '10:25' },
 ];
 
 

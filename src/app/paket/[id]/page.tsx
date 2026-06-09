@@ -71,9 +71,18 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
               <p className="text-xs font-medium mb-1 text-white/80 uppercase tracking-widest">Mulai Dari</p>
               <p className="text-3xl font-bold mb-1 text-white" style={{ fontFamily: 'system-ui, sans-serif' }}>{pkg.price}</p>
               <p className="text-[10px] text-white/75 mb-3">Per Pax Jamaah</p>
-              <Button variant="secondary" className="w-full rounded-lg font-bold flex items-center justify-center gap-2 h-10 hover:scale-105 transition-transform text-sm">
-                <Download className="h-4 w-4" /> Unduh Paket
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <Button asChild variant="secondary" className="flex-1 rounded-lg font-bold flex items-center justify-center gap-2 h-10 hover:scale-105 transition-transform text-xs sm:text-sm">
+                  <a href={pkg.image.imageUrl} download target="_blank" rel="noopener noreferrer">
+                    <Download className="h-4 w-4" /> Unduh Poster
+                  </a>
+                </Button>
+                <Button asChild variant="secondary" className="flex-1 rounded-lg font-bold flex items-center justify-center gap-2 h-10 hover:scale-105 transition-transform text-xs sm:text-sm">
+                  <a href="/brosur-umrah.pdf" download target="_blank" rel="noopener noreferrer">
+                    <Download className="h-4 w-4" /> Unduh Paket
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -239,7 +248,7 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
                       </div>
                       <div>
                         <p className="text-[10px] text-muted-foreground font-bold uppercase">Total Kuota</p>
-                        <p className="text-sm font-bold" style={{ fontFamily: 'system-ui, sans-serif' }}>30 <span className="text-[10px] font-normal text-muted-foreground">Pax</span></p>
+                        <p className="text-sm font-bold" style={{ fontFamily: 'system-ui, sans-serif' }}>35 <span className="text-[10px] font-normal text-muted-foreground">Pax</span></p>
                       </div>
                    </div>
                    <div className="flex items-center gap-3 p-2 bg-amber-500/10 rounded-lg border border-amber-500/20">
@@ -248,7 +257,7 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
                       </div>
                       <div>
                         <p className="text-[10px] text-amber-700 dark:text-amber-400 font-bold uppercase">Sisa Kuota</p>
-                        <p className="text-sm font-bold text-amber-700 dark:text-amber-400">Terbatas!</p>
+                        <p className="text-sm font-bold text-amber-700 dark:text-amber-400">31 Pax</p>
                       </div>
                    </div>
                 </div>
