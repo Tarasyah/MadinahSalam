@@ -73,6 +73,85 @@ export type Testimonial = {
     comment: string;
 };
 
+export const heroDestinations: HeroDestination[] = [
+    {
+        id: 1,
+        title: 'Mekkah Al-Mukarramah',
+        description: 'Pusat spiritual Islam dan tujuan utama ibadah Umrah, tempat Ka\'bah berdiri megah.',
+        image: findImage('hero-mekkah')
+    },
+    {
+        id: 2,
+        title: 'Madinah Al-Munawwarah',
+        description: 'Kota suci kedua, tempat Masjid Nabawi dan makam Nabi Muhammad ﷺ berada, penuh ketenangan.',
+        image: findImage('hero-madinah')
+    },
+    {
+        id: 3,
+        title: 'Thaif',
+        description: 'Menikmati kesejukan alam pegunungan Thaif yang bersejarah dan penuh kenangan.',
+        image: findImage('hero-thaif')
+    },
+    {
+        id: 4,
+        title: 'UMRAH RABIUL AKHIR 1448 H',
+        description: 'Program 12 Hari + Thaif + Museum Ash-Shafiyyah. Keberangkatan 26 Sept - 7 Okt 2026.',
+        image: findImage('hero-paket')
+    },
+];
+
+export const packages: Package[] = [
+    {
+        id: 1,
+        name: 'Umrah Rabiul Akhir 1448 H (Program 12 Hari)',
+        duration: '12 Hari',
+        price: 'Rp 29.5 jt',
+        originalPrice: 'Rp 30.500.000',
+        discount: 'Diskon Rp 1.000.000',
+        priceDetails: [
+            { type: 'Quad', price: 'Rp 29.500.000', originalPrice: '30.500.000', icon: Users2 },
+            { type: 'Triple', price: 'Rp 31.500.000', originalPrice: '32.500.000', icon: Users },
+            { type: 'Double', price: 'Rp 34.650.000', originalPrice: '35.650.000', icon: BedDouble },
+        ],
+        image: findImage('hero-paket'),
+        features: [
+            'Hotel Makkah: Maysan Al Maqam/Setaraf', 
+            'Hotel Madinah: Hayah Golden/Setaraf', 
+            'Museum Ash-Shafiyyah & Kampus UIM', 
+            'City Tour Thaif & Nasi Mandhi', 
+            'Dibimbing oleh Ustadz Arbi & Ustadz Wahab'
+        ],
+        airline: 'Saudi Airlines (Tanpa Transit)',
+        departure: '26 Sept - 7 Okt 2026'
+    },
+];
+
+
+export const included: IncludedItem[] = [
+  { title: 'Pesawat Saudia', description: 'Tiket Saudi Airlines pulang-pergi (tanpa transit/direct flight).', icon: Plane },
+  { title: 'Visa Umrah', description: 'Pengurusan visa umrah resmi sudah termasuk.', icon: Ticket },
+  { title: 'Program 12 Hari', description: 'Program perjalanan lengkap selama 12 hari penuh.', icon: Calendar },
+  { title: 'Museum Ash-Shafiya', description: 'Gratis kunjungan ke Museum Ash-Shafiya di Madinah.', icon: Landmark },
+  { title: 'City Tour Lengkap', description: 'Tur di Makkah, Madinah, dan Universitas Islam Madinah.', icon: Car },
+  { title: 'City Tour Thaif', description: 'Kunjungan ke kota sejuk Thaif termasuk Nasi Mandhi.', icon: Utensils },
+  { title: 'Hotel Tanpa Bus', description: 'Akomodasi Makkah & Madinah jarak dekat (jalan kaki).', icon: Hotel },
+  { title: 'Makan 3x Sehari', description: 'Menu masakan Indonesia selama di tanah suci.', icon: Utensils },
+  { title: 'Perlengkapan Premium', description: 'Koper dan perlengkapan ibadah premium Madinah Salam.', icon: Gift },
+  { title: 'Zamzam & AlBaik', description: 'Gratis Zamzam 5lt (bila diizinkan) & ayam AlBaik.', icon: Star },
+  { title: 'Pembimbing Berpengalaman', description: 'Bimbingan ibadah sesuai sunnah oleh ustadz lulusan Madinah.', icon: UserCheck },
+  { title: 'Manasik & Bus AC', description: 'Manasik umrah dan transportasi bus AC yang nyaman.', icon: BookOpen },
+];
+
+export const excluded: IncludedItem[] = [
+  { title: 'Pembuatan Paspor', description: 'Biaya pembuatan atau perpanjangan paspor jamaah.', icon: XCircle },
+  { title: 'Kebutuhan Pribadi', description: 'Seperti laundry, pulsa, dan pengeluaran pribadi lainnya.', icon: ShoppingCart },
+  { title: 'Akomodasi Asal', description: 'Transportasi dari daerah asal ke bandara keberangkatan.', icon: Car },
+  { title: 'Kelebihan Bagasi', description: 'Biaya tambahan atas kelebihan berat bagasi pesawat.', icon: BaggageClaim },
+  { title: 'Vaksinasi', description: 'Biaya suntik vaksin meningitis dan polio.', icon: ShieldCheck },
+  { title: 'Jasa Pendorong', description: 'Penyediaan kursi roda dan jasa pendorong bila diperlukan.', icon: Users },
+  { title: 'Kegiatan Luar Paket', description: 'Biaya tur atau agenda tambahan di luar jadwal resmi.', icon: UtensilsCrossed },
+];
+
 export const testimonials: Testimonial[] = [
     {
         id: 1,
