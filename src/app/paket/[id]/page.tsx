@@ -35,7 +35,6 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
           style={{ backgroundImage: `url(${pkg.image.imageUrl})` }}
         ></div>
         <div className="absolute inset-0 bg-emerald-950/80 mix-blend-multiply pointer-events-none"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent lg:hidden pointer-events-none"></div>
         
         <div className="container relative z-10">
           <Link href="/#packages" className="inline-flex items-center text-sm font-medium hover:underline text-white/90 mb-8 transition-colors hover:text-white bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-md w-fit">
