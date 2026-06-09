@@ -167,9 +167,14 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
                       </div>
                       <div className="pb-4 pt-1 w-full">
                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 mb-1">
-                          <h4 className="font-bold text-sm text-foreground leading-tight">{day.title}</h4>
+                          <div>
+                            <h4 className="font-bold text-sm text-foreground leading-tight">{day.title}</h4>
+                            {day.date && (
+                              <p className="text-[11px] text-primary font-bold mt-0.5" style={{ fontFamily: 'system-ui, sans-serif' }}>{day.date}</p>
+                            )}
+                          </div>
                           {day.time && (
-                            <span className="text-[10px] font-bold px-2 py-0.5 bg-muted rounded border border-border text-muted-foreground whitespace-nowrap">
+                            <span className="text-[10px] font-bold px-2 py-0.5 bg-muted rounded border border-border text-muted-foreground whitespace-nowrap mt-1 sm:mt-0">
                               {day.time}
                             </span>
                           )}
