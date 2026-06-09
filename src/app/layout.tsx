@@ -36,7 +36,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
-          <div className="fixed bottom-4 right-4 z-50">
+          <div id="floating-wa" className="fixed bottom-4 right-4 z-50">
             <Link href="https://wa.me/6282210004644" target="_blank" rel="noopener noreferrer" className="block w-10 h-10 transition-transform hover:scale-110 drop-shadow-lg">
                 <Image 
                   src="/icons8-whatsapp.gif" 

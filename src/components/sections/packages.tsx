@@ -97,7 +97,7 @@ const PackagesSection = () => {
                         </TooltipProvider>
                     </div>
                     <Button asChild className="w-full mt-4 rounded-full">
-                        <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">Daftar Sekarang</Link>
+                        <Link href={`/paket/${pkg.id}`}>Lihat Detail</Link>
                     </Button>
                   </CardFooter>
                 </Card>
