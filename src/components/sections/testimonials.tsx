@@ -1,10 +1,9 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
 import { testimonials } from '@/lib/data';
 import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Star } from 'lucide-react';
 import Autoplay from "embla-carousel-autoplay";
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
@@ -36,7 +35,7 @@ const TestimonialsSection = () => {
         >
           <CarouselContent>
             {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2">
                 <div className="p-1 h-full">
                   <HoverBorderGradient
                     containerClassName="rounded-xl w-full h-full"
@@ -45,10 +44,7 @@ const TestimonialsSection = () => {
                   >
                     <Card className="h-full flex flex-col text-center shadow-md bg-transparent border-none">
                       <CardContent className="p-6 flex flex-col justify-between h-full">
-                        <div className="flex flex-col items-center">
-                          <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center text-emerald-700 dark:text-emerald-400 font-bold text-2xl mb-4 border-2 border-emerald-500/20">
-                            {testimonial.name.charAt(0).toUpperCase()}
-                          </div>
+                        <div className="flex flex-col items-center pt-2">
                           <div className="flex text-amber-500 mb-4 gap-1">
                               {[...Array(5)].map((_, i) => (
                                 <Star key={i} className={`w-4 h-4 ${i < testimonial.rating ? 'fill-current' : 'text-gray-300 dark:text-gray-700'}`} />
@@ -69,6 +65,8 @@ const TestimonialsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-12 lg:-left-16 bg-background hover:bg-secondary text-foreground border-border border shadow-sm" />
+          <CarouselNext className="hidden md:flex -right-12 lg:-right-16 bg-background hover:bg-secondary text-foreground border-border border shadow-sm" />
         </Carousel>
       </div>
     </section>
