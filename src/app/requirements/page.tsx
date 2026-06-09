@@ -6,31 +6,89 @@ const RequirementsPage = () => {
     const requirementItems = [
         {
             title: "Syarat & Ketentuan Pendaftaran",
-            content: [
-                "Paspor berlaku minimal satu tahun dengan nama minimal 2 suku kata.",
-                "Soft copy KTP, pas foto 3x6, dan Kartu Keluarga (untuk anak di bawah umur).",
-                "Sertifikat vaksin meningitis dan polio.",
-                "DP (Down Payment) sebesar Rp6.000.000,-.",
-                "Pelunasan maksimal 1 bulan sebelum keberangkatan."
-            ]
+            content: (
+                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                    <li>Paspor minimal berlaku satu tahun dan nama minimal 2 suku kata.</li>
+                    <li>Soft copy KTP (PDF, PNG, atau JPG).</li>
+                    <li>Soft copy pas foto 4x6 (JPG atau PNG).</li>
+                    <li>Soft copy KK bagi anak di bawah umur. (PDF, PNG, atau JPG).</li>
+                    <li>Soft copy buku kuning vaksin/sertifikat vaksin meningitis dan polio asli (PDF, PNG, atau JPG).</li>
+                    <li>DP Rp6.000.000.</li>
+                    <li>Pelunasan maksimal 1 bulan sebelum keberangkatan.</li>
+                </ul>
+            )
+        },
+        {
+            title: "Syarat & Ketentuan Pembatalan",
+            content: (
+                <div className="space-y-4 text-muted-foreground">
+                    <div>
+                        <span className="font-semibold text-foreground">A. DP yang telah diserahkan oleh calon jamaah umroh tidak bisa dikembalikan</span>
+                    </div>
+                    <div>
+                        <span className="font-semibold text-foreground">B. Pelunasan:</span>
+                        <ul className="list-disc pl-6 mt-1 space-y-1">
+                            <li>Calon jamaah umroh wajib melakukan pelunasan selambat-lambatnya H - 30 sebelum keberangkatan</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span className="font-semibold text-foreground">C. Pembatalan:</span>
+                        <ul className="list-disc pl-6 mt-1 space-y-1">
+                            <li>Pembatalan diatas 30 hari sebelum keberangkatan maka dikenakan pemotongan biaya administrasi sebesar Rp. 6.000.000 (enam juta rupiah)</li>
+                            <li>Pembatalan 30 hari sebelum keberangkatan maka dikenakan pemotongan sebesar 50% dari harga paket</li>
+                            <li>Pembatalan 15 hari sebelum keberangkatan maka dikenakan pemotongan sebesar 100% dari harga paket.</li>
+                            <li>Pembatalan secara otomatis : Apabila calon jamaah tidak melakukan pelunasan H-25 sebelum keberangkatan setelah dilakukan konfirmasi oleh pihak travel maka calon jamaah dianggap mengundurkan diri.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span className="font-semibold text-foreground">D. Pengembalian dana:</span>
+                        <ul className="list-disc pl-6 mt-1 space-y-1">
+                            <li>Pengembalian Dana Jamaah yang mengundurkan diri atau membatalkan pendaftaran paling cepat adalah 7 hari setelah jamaah mengajukan surat pembatalan dan disetujui pihak travel</li>
+                        </ul>
+                    </div>
+                </div>
+            )
+        },
+        {
+            title: "Ketentuan Khusus",
+            content: (
+                <div className="space-y-4 text-muted-foreground">
+                    <div>
+                        <span className="font-semibold text-foreground">1. Klausul Force Majeure</span>
+                        <p className="mt-1">
+                            Dalam hal terjadi keadaan kahar (force majeure) yang berada di luar kemampuan dan kendali Para Pihak, termasuk namun tidak terbatas pada bencana alam, perang, kebijakan pemerintah, wabah penyakit, gangguan transportasi, serta keadaan lain yang sejenis, maka Pihak Travel dibebaskan dari segala tuntutan dan tanggung jawab atas kerugian, keterlambatan, maupun kegagalan pelaksanaan layanan yang timbul akibat keadaan tersebut. Segala bentuk penyelesaian lebih lanjut akan diselesaikan secara musyawarah untuk mencapai mufakat oleh Para Pihak.
+                        </p>
+                    </div>
+                    <div>
+                        <span className="font-semibold text-foreground">2. Klausul Penyesuaian Harga</span>
+                        <p className="mt-1">
+                            Pihak Travel berhak melakukan penyesuaian harga paket perjalanan sewaktu-waktu apabila terjadi kenaikan biaya dari pihak ketiga, termasuk namun tidak terbatas pada kenaikan harga tiket penerbangan yang ditetapkan oleh maskapai penerbangan maupun perubahan biaya operasional lainnya yang berkaitan dengan pelaksanaan perjalanan.
+                        </p>
+                    </div>
+                </div>
+            )
         },
         {
             title: "Alur Pembayaran",
-            content: [
-                "Semua transaksi ditransfer ke rekening Bank Syariah Indonesia (BSI).",
-                "Nomor Rekening: 727 889 1326.",
-                "Atas Nama: PT Madinah Salam Wisata.",
-                "Bukti transaksi wajib dikonfirmasi ke admin di nomor (+62) 822 1000 4644."
-            ]
+            content: (
+                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                    <li>Semua transaksi ditransfer ke rekening Bank Syariah Indonesia (BSI).</li>
+                    <li>Nomor Rekening: 727 889 1326.</li>
+                    <li>Atas Nama: PT Madinah Salam Wisata.</li>
+                    <li>Bukti transaksi wajib dikonfirmasi ke admin di nomor (+62) 822 1000 4644.</li>
+                </ul>
+            )
         },
         {
             title: "Perlengkapan Umrah yang Disediakan",
-            content: [
-                "Koper Bagasi 24 Inci & Koper Kabin 18 Inci.",
-                "Kain Ihram Premium & Sabuk (untuk laki-laki).",
-                "Jilbab Premium (untuk perempuan).",
-                "Tas Selempang, Tas Serut untuk Sendal, Buku Doa, Buku Dzikir, Parfum, dan ID Card."
-            ]
+            content: (
+                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                    <li>Koper Bagasi 24 Inci & Koper Kabin 18 Inci.</li>
+                    <li>Kain Ihram Premium & Sabuk (untuk laki-laki).</li>
+                    <li>Jilbab Premium (untuk perempuan).</li>
+                    <li>Tas Selempang, Tas Serut untuk Sendal, Buku Doa, Buku Dzikir, Parfum, dan ID Card.</li>
+                </ul>
+            )
         }
     ];
 
@@ -65,11 +123,7 @@ const RequirementsPage = () => {
                                     {item.title}
                                 </AccordionTrigger>
                                 <AccordionContent>
-                                    <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                                        {item.content.map((point, i) => (
-                                            <li key={i}>{point}</li>
-                                        ))}
-                                    </ul>
+                                    {item.content}
                                 </AccordionContent>
                             </AccordionItem>
                         ))}
