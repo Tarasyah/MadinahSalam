@@ -26,13 +26,19 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
   const whatsappLink = "https://wa.me/6282210004644";
 
   return (
-    <main className="min-h-screen bg-background pb-16">
+    <main className="min-h-screen bg-background pb-16 pt-20">
       {/* 1. Header Section */}
-      <section className="bg-primary text-primary-foreground py-10 relative overflow-hidden">
-        {/* Decorative background element */}
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none"></div>
+      <section className="relative text-white py-12 lg:py-16 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${pkg.image.imageUrl})` }}
+        ></div>
+        <div className="absolute inset-0 bg-emerald-950/80 mix-blend-multiply pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent lg:hidden pointer-events-none"></div>
+        
         <div className="container relative z-10">
-          <Link href="/#packages" className="inline-flex items-center text-sm font-medium hover:underline text-primary-foreground/80 mb-6 transition-colors hover:text-white">
+          <Link href="/#packages" className="inline-flex items-center text-sm font-medium hover:underline text-white/90 mb-8 transition-colors hover:text-white bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-md w-fit">
             <ArrowLeft className="mr-2 h-4 w-4" /> Kembali ke Daftar Paket
           </Link>
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
