@@ -39,26 +39,29 @@ const TestimonialsSection = () => {
               <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1 h-full">
                   <HoverBorderGradient
-                    containerClassName="rounded-lg w-full h-full"
-                    className="w-full h-full bg-transparent"
+                    containerClassName="rounded-xl w-full h-full"
+                    className="w-full h-full bg-background dark:bg-zinc-900"
                     as="div"
                   >
-                    <Card className="h-full flex flex-col items-center text-center shadow-md bg-transparent border-none">
-                      <CardContent className="p-6 flex flex-col items-center">
-                          <Image
-                              src={testimonial.image.imageUrl}
-                              alt={testimonial.name}
-                              data-ai-hint={testimonial.image.imageHint}
-                              width={80}
-                              height={80}
-                              className="rounded-full mb-4 border-4 border-primary/20"
-                          />
-                          <div className="flex text-yellow-400 mb-2">
-                              {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                    <Card className="h-full flex flex-col text-center shadow-md bg-transparent border-none">
+                      <CardContent className="p-6 flex flex-col justify-between h-full">
+                        <div className="flex flex-col items-center">
+                          <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center text-emerald-700 dark:text-emerald-400 font-bold text-2xl mb-4 border-2 border-emerald-500/20">
+                            {testimonial.name.charAt(0).toUpperCase()}
                           </div>
-                          <p className="text-muted-foreground italic mb-4">&quot;{testimonial.comment}&quot;</p>
-                          <div className="font-semibold text-foreground">{testimonial.name}</div>
-                          <div className="text-sm text-muted-foreground">{testimonial.location}</div>
+                          <div className="flex text-amber-500 mb-4 gap-1">
+                              {[...Array(5)].map((_, i) => (
+                                <Star key={i} className={`w-4 h-4 ${i < testimonial.rating ? 'fill-current' : 'text-gray-300 dark:text-gray-700'}`} />
+                              ))}
+                          </div>
+                          <p className="text-foreground/90 dark:text-gray-200 italic mb-6 text-sm leading-relaxed whitespace-pre-wrap">&quot;{testimonial.comment}&quot;</p>
+                        </div>
+                        <div className="text-center mt-auto">
+                          <div className="font-bold text-foreground">{testimonial.name}</div>
+                          <div className="text-[11px] text-muted-foreground mt-2 bg-secondary/80 dark:bg-secondary py-1 px-3 rounded-full inline-block">
+                            {testimonial.packageInfo}
+                          </div>
+                        </div>
                       </CardContent>
                     </Card>
                   </HoverBorderGradient>

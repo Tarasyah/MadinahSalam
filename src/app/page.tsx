@@ -13,9 +13,9 @@ export default function Home() {
       <HeroSection />
       <PackagesSection />
       <IncludedSection />
+      <TestimonialsSection />
       <GallerySection />
       <SoldOutSection />
-      {/* <TestimonialsSection /> */}
     </div>
   );
 }
