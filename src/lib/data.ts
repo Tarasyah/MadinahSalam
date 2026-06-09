@@ -94,8 +94,8 @@ export const heroDestinations: HeroDestination[] = [
     },
     {
         id: 4,
-        title: 'UMRAH AWAL MUSIM 1448 H',
-        description: 'Program 12 Hari + Thaif + Museum Ash-Shafiya. Keberangkatan 28 Juni - 9 Juli 2026.',
+        title: 'UMRAH RABIUL AKHIR 1448 H',
+        description: 'Program 12 Hari + Thaif + Museum Ash-Shafiyyah. Keberangkatan 26 Sept - 7 Okt 2026.',
         image: findImage('hero-paket')
     },
 ];
@@ -103,26 +103,26 @@ export const heroDestinations: HeroDestination[] = [
 export const packages: Package[] = [
     {
         id: 1,
-        name: 'Umrah Awal Musim 1448 H (Program 12 Hari)',
+        name: 'Umrah Rabiul Akhir 1448 H (Program 12 Hari)',
         duration: '12 Hari',
-        price: 'Rp 30.9 jt',
-        originalPrice: 'Rp 31.990.000',
-        discount: 'Hemat Rp 1.000.000',
+        price: 'Rp 29.5 jt',
+        originalPrice: 'Rp 30.500.000',
+        discount: 'Diskon Rp 1.000.000',
         priceDetails: [
-            { type: 'Quad', price: 'Rp 30.990.000', originalPrice: '31.990.000', icon: Users2 },
-            { type: 'Triple', price: 'Rp 32.990.000', originalPrice: '33.990.000', icon: Users },
-            { type: 'Double', price: 'Rp 34.990.000', originalPrice: '35.990.000', icon: BedDouble },
+            { type: 'Quad', price: 'Rp 29.500.000', originalPrice: '30.500.000', icon: Users2 },
+            { type: 'Triple', price: 'Rp 31.500.000', originalPrice: '32.500.000', icon: Users },
+            { type: 'Double', price: 'Rp 34.650.000', originalPrice: '35.650.000', icon: BedDouble },
         ],
         image: findImage('hero-paket'),
         features: [
-            'Hotel Makkah: Maysan Al Maqam/Zuwwar Al Bait', 
+            'Hotel Makkah: Maysan Al Maqam/Setaraf', 
             'Hotel Madinah: Hayah Golden/Setaraf', 
-            'Museum Ash - Shafiya', 
+            'Museum Ash-Shafiyyah & Kampus UIM', 
             'City Tour Thaif & Nasi Mandhi', 
             'Dibimbing oleh Ustadz Arbi & Ustadz Wahab'
         ],
         airline: 'Saudi Airlines (Tanpa Transit)',
-        departure: '28 Juni - 9 Juli 2026'
+        departure: '26 Sept - 7 Okt 2026'
     },
 ];
 
