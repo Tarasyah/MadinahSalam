@@ -71,18 +71,11 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
               <p className="text-xs font-medium mb-1 text-white/80 uppercase tracking-widest">Mulai Dari</p>
               <p className="text-3xl font-bold mb-1 text-white" style={{ fontFamily: 'system-ui, sans-serif' }}>{pkg.price}</p>
               <p className="text-[10px] text-white/75 mb-3">Per Pax Jamaah</p>
-              <div className="flex flex-col sm:flex-row gap-2">
-                <Button asChild variant="secondary" className="flex-1 rounded-lg font-bold flex items-center justify-center gap-2 h-10 hover:scale-105 transition-transform text-xs sm:text-sm">
-                  <a href={pkg.image.imageUrl} download target="_blank" rel="noopener noreferrer">
-                    <Download className="h-4 w-4" /> Unduh Poster
-                  </a>
-                </Button>
-                <Button asChild variant="secondary" className="flex-1 rounded-lg font-bold flex items-center justify-center gap-2 h-10 hover:scale-105 transition-transform text-xs sm:text-sm">
-                  <a href="/brosur-umrah.pdf" download target="_blank" rel="noopener noreferrer">
-                    <Download className="h-4 w-4" /> Unduh Paket
-                  </a>
-                </Button>
-              </div>
+              <Button asChild variant="secondary" className="w-full rounded-lg font-bold flex items-center justify-center gap-2 h-10 hover:scale-105 transition-transform text-sm">
+                <a href={pkg.image.imageUrl} download target="_blank" rel="noopener noreferrer">
+                  <Download className="h-4 w-4" /> Unduh Poster
+                </a>
+              </Button>
             </div>
           </div>
         </div>
