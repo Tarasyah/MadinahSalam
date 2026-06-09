@@ -35,8 +35,8 @@ const Footer = () => {
                 {/* Top Section: Logo + Description */}
                 <div className="flex flex-col items-start mb-8">
                     <div className="relative h-20 w-auto flex-shrink-0 mb-4">
-                      <Image src="/logo_lightmodebottombar.png" alt="Logo Light" width={200} height={80} className="object-contain block dark:hidden" />
-                      <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" width={200} height={80} className="object-contain hidden dark:block" />
+                      <Image src="/logo_lightmode.png" alt="Logo Light" width={200} height={80} className="object-contain block dark:hidden" />
+                      <Image src="/logo_darkmode.png" alt="Logo Dark" width={200} height={80} className="object-contain hidden dark:block" />
                     </div>
                     <p className="text-muted-foreground text-sm">
                         Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah, profesional, dan sesuai dengan tuntunan syariat Islam, berkomitmen memberikan pelayanan terbaik untuk pengalaman spiritual Anda.
@@ -95,8 +95,8 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-center text-center gap-8 text-sm md:hidden py-12">
           <div className="flex flex-col items-center">
              <div className="relative w-64 h-auto">
-                <Image src="/logo_lightmodebottombar.png" alt="Logo Light" width={256} height={102} className="object-contain block dark:hidden" />
-                <Image src="/logo_darkmodebottombar.png" alt="Logo Dark" width={256} height={102} className="object-contain hidden dark:block" />
+                <Image src="/logo_lightmode.png" alt="Logo Light" width={256} height={102} className="object-contain block dark:hidden" />
+                <Image src="/logo_darkmode.png" alt="Logo Dark" width={256} height={102} className="object-contain hidden dark:block" />
              </div>
              <p className="text-muted-foreground mt-2">
                 Your Journey Our Priority. Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah dan profesional.
