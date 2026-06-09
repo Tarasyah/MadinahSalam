@@ -62,12 +62,7 @@ export default function Header() {
           isScrolled ? '' : 'pt-4'
         )}
       >
-        <div
-          className={cn(
-            "absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent transition-opacity duration-300 pointer-events-none",
-            (isScrolled) ? "opacity-0" : "opacity-100"
-          )}
-        />
+
         <div
           className={cn(
             'relative mx-auto flex h-14 items-center transition-all duration-300 px-4',
