@@ -27,8 +27,8 @@ const navLinks = [
     ]
   },
   { href: '/galeri', label: 'Galeri', icon: ImageIcon },
-  { href: '/about', label: 'Tentang Kami', icon: Users },
   { href: '/requirements', label: 'Persyaratan', icon: FileText },
+  { href: '/about', label: 'Tentang Kami', icon: Users },
 ];
 
 const whatsappLink = "https://wa.me/6282210004644";
