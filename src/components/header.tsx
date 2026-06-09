@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Home, Users, FileText, Package, Phone, Clock } from 'lucide-react';
+import { Menu, Home, Users, FileText, Package, Phone, Image as ImageIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -18,8 +18,15 @@ import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Beranda', icon: Home },
-  { href: '/#packages', label: 'Paket', icon: Package },
-  { href: '/itinerary', label: 'Itinerari', icon: Clock },
+  { 
+    label: 'Paket', 
+    icon: Package,
+    dropdown: [
+      { href: '/paket-umrah', label: 'Paket Umrah' },
+      { href: '/paket-haji', label: 'Paket Haji (TBA)' },
+    ]
+  },
+  { href: '/galeri', label: 'Galeri', icon: ImageIcon },
   { href: '/about', label: 'Tentang Kami', icon: Users },
   { href: '/requirements', label: 'Persyaratan', icon: FileText },
 ];
@@ -38,7 +45,14 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  const mobileNavLinks = [...navLinks, { href: whatsappLink, label: 'Hubungi Kami', icon: Phone }];
+  const flatMobileNavLinks = navLinks.flatMap(link => {
+    if (link.dropdown) {
+      return link.dropdown.map(d => ({ ...d, icon: link.icon }));
+    }
+    return link as any;
+  });
+  
+  const mobileNavLinks = [...flatMobileNavLinks, { href: whatsappLink, label: 'Hubungi Kami', icon: Phone }];
 
   return (
     <>
@@ -79,17 +93,37 @@ export default function Header() {
 
           <nav className="hidden items-center space-x-6 text-sm font-medium lg:flex flex-1 justify-center">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  'transition-colors hover:text-primary whitespace-nowrap',
-                  !isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/80',
-                  pathname === link.href && (!isScrolled ? 'text-white' : 'text-primary font-semibold')
-                )}
-              >
-                {link.label}
-              </Link>
+              link.dropdown ? (
+                <DropdownMenu key={link.label}>
+                  <DropdownMenuTrigger className={cn(
+                    'transition-colors hover:text-primary whitespace-nowrap outline-none flex items-center gap-1',
+                    !isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/80',
+                    (pathname.startsWith('/paket-')) && (!isScrolled ? 'text-white' : 'text-primary font-semibold')
+                  )}>
+                    {link.label}
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-[2px]"><path d="M4.18179 6.18181C4.35753 6.00608 4.64245 6.00608 4.81819 6.18181L7.49999 8.86362L10.1818 6.18181C10.3575 6.00608 10.6424 6.00608 10.8182 6.18181C10.9939 6.35755 10.9939 6.64247 10.8182 6.81821L7.81819 9.81821C7.73379 9.9026 7.61934 9.95001 7.49999 9.95001C7.38064 9.95001 7.26618 9.9026 7.18179 9.81821L4.18179 6.81821C4.00605 6.64247 4.00605 6.35755 4.18179 6.18181Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="center" className="mt-2 bg-background/95 backdrop-blur-md border-border/50">
+                    {link.dropdown.map(drop => (
+                      <DropdownMenuItem key={drop.href} asChild>
+                        <Link href={drop.href} className="w-full cursor-pointer">{drop.label}</Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href!}
+                  className={cn(
+                    'transition-colors hover:text-primary whitespace-nowrap',
+                    !isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/80',
+                    pathname === link.href && (!isScrolled ? 'text-white' : 'text-primary font-semibold')
+                  )}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
           </nav>
 
