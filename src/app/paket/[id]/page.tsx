@@ -43,35 +43,35 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
           </Link>
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             <div className="max-w-2xl">
-              <h1 className="text-2xl md:text-4xl font-headline font-bold mb-4 uppercase tracking-wider leading-tight">{pkg.name}</h1>
-              <div className="flex flex-wrap gap-6 text-xs md:text-sm font-medium opacity-90">
+              <h1 className="text-2xl md:text-4xl font-sans font-black mb-4 uppercase tracking-tight leading-tight">{pkg.name}</h1>
+              <div className="flex flex-wrap gap-6 text-xs md:text-sm font-medium text-white/90">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 bg-white/20 rounded-full"><Plane className="h-4 w-4" /></div>
                   <div>
-                    <p className="text-[10px] opacity-75 uppercase">Maskapai</p>
+                    <p className="text-[10px] text-white/70 uppercase">Maskapai</p>
                     <p className="font-bold">{pkg.airline}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 bg-white/20 rounded-full"><Clock className="h-4 w-4" /></div>
                   <div>
-                    <p className="text-[10px] opacity-75 uppercase">Durasi</p>
+                    <p className="text-[10px] text-white/70 uppercase">Durasi</p>
                     <p className="font-bold">{pkg.duration}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 bg-white/20 rounded-full"><Calendar className="h-4 w-4" /></div>
                   <div>
-                    <p className="text-[10px] opacity-75 uppercase">Keberangkatan</p>
+                    <p className="text-[10px] text-white/70 uppercase">Keberangkatan</p>
                     <p className="font-bold">{pkg.departure}</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="bg-background/10 p-5 rounded-xl backdrop-blur-sm border border-white/20 min-w-[240px] w-full lg:w-auto text-center lg:text-right">
-              <p className="text-xs font-medium mb-1 opacity-80 uppercase tracking-widest">Mulai Dari</p>
+              <p className="text-xs font-medium mb-1 text-white/80 uppercase tracking-widest">Mulai Dari</p>
               <p className="text-3xl font-bold mb-1 text-white" style={{ fontFamily: 'system-ui, sans-serif' }}>{pkg.price}</p>
-              <p className="text-[10px] opacity-75 mb-3">Per Pax Jamaah</p>
+              <p className="text-[10px] text-white/75 mb-3">Per Pax Jamaah</p>
               <Button variant="secondary" className="w-full rounded-lg font-bold flex items-center justify-center gap-2 h-10 hover:scale-105 transition-transform text-sm">
                 <Download className="h-4 w-4" /> Unduh Paket
               </Button>
@@ -130,13 +130,13 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
                    </ul>
                  </div>
 
-                 <p>✈️🛄 <strong>Flight by:</strong><br/>Saudi Airlines (direct flight tanpa transit)</p>
+                 <p>✈️🛄 <span className="font-bold">Flight by:</span><br/>Saudi Airlines (direct flight tanpa transit)</p>
 
                  <div>
                    <p className="font-bold mb-1">HOTEL</p>
                    <ul className="list-none space-y-1">
-                     <li>🏨 <strong>Makkah:</strong> Maysan Al Maqam/Setaraf (Tanpa Shuttle Bus, Jalan Kaki).</li>
-                     <li>🏨 <strong>Madinah:</strong> Hayah Golden/Setaraf (Tanpa Shuttle Bus, Jalan Kaki).</li>
+                     <li>🏨 <span className="font-bold">Makkah:</span> Maysan Al Maqam/Setaraf (Tanpa Shuttle Bus, Jalan Kaki).</li>
+                     <li>🏨 <span className="font-bold">Madinah:</span> Hayah Golden/Setaraf (Tanpa Shuttle Bus, Jalan Kaki).</li>
                    </ul>
                  </div>
                  
@@ -178,7 +178,7 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
                         {day.subtitle ? (
                            <p className="text-xs text-muted-foreground">{day.subtitle}</p>
                         ) : (
-                           <p className="text-xs text-muted-foreground italic opacity-70">Detail aktivitas menyesuaikan kondisi.</p>
+                           <p className="text-xs text-muted-foreground italic">Detail aktivitas menyesuaikan kondisi.</p>
                         )}
                       </div>
                     </div>
@@ -197,7 +197,7 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
               </div>
               <div className="p-5 space-y-3">
                 {pkg.priceDetails.map((detail, idx) => (
-                  <div key={idx} className={`p-3 rounded-xl border transition-all ${idx === 0 ? 'border-primary bg-primary/5' : 'border-border'}`}>
+                  <div key={idx} className={`p-3 rounded-xl border transition-all ${idx === 0 ? 'border-primary bg-primary/10 dark:bg-primary/20' : 'border-border'}`}>
                     <div className="flex justify-between items-center mb-1">
                       <span className="font-bold text-sm text-foreground">{detail.type}</span>
                       <detail.icon className={`h-4 w-4 ${idx === 0 ? 'text-primary' : 'text-muted-foreground'}`} />
@@ -235,7 +235,7 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
                       </div>
                       <div>
                         <p className="text-[10px] text-muted-foreground font-bold uppercase">Total Kuota</p>
-                        <p className="text-sm font-bold" style={{ fontFamily: 'system-ui, sans-serif' }}>45 <span className="text-[10px] font-normal opacity-70">Pax</span></p>
+                        <p className="text-sm font-bold" style={{ fontFamily: 'system-ui, sans-serif' }}>30 <span className="text-[10px] font-normal text-muted-foreground">Pax</span></p>
                       </div>
                    </div>
                    <div className="flex items-center gap-3 p-2 bg-amber-500/10 rounded-lg border border-amber-500/20">
@@ -265,7 +265,7 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
                     </h5>
                     <ul className="space-y-1.5 px-1">
                       {included.slice(0, 8).map((item, i) => (
-                        <li key={i} className="text-[11px] text-foreground/80 flex items-start gap-2">
+                        <li key={i} className="text-[11px] text-muted-foreground flex items-start gap-2">
                           <span className="mt-0.5 text-emerald-500 text-[8px]">●</span>
                           <span className="font-medium leading-tight">{item.title}</span>
                         </li>
@@ -279,7 +279,7 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
                     </h5>
                     <ul className="space-y-1.5 px-1">
                       {excluded.slice(0, 5).map((item, i) => (
-                        <li key={i} className="text-[11px] text-foreground/80 flex items-start gap-2">
+                        <li key={i} className="text-[11px] text-muted-foreground flex items-start gap-2">
                           <span className="mt-0.5 text-red-500 text-[8px]">●</span>
                           <span className="font-medium leading-tight">{item.title}</span>
                         </li>
