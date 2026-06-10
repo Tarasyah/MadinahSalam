@@ -9,10 +9,10 @@ import { cn } from '@/lib/utils';
 import { DotButton, useDotButton } from '../ui/carousel-dots';
 
 const galleryImagesLocal = [
-  { id: 1, imageUrl: '/gallery/galeri1.jpeg', title: 'Program Umrah 12 Hari Keberangkatan 6 Juli 2025' },
-  { id: 2, imageUrl: '/gallery/galeri2.jpeg', title: 'Program Umrah November 12 Hari Keberangkatan 06 November 2025' },
-  { id: 3, imageUrl: '/gallery/galeri3.jpeg', title: 'Program Umrah Liburan Akhir Tahun Keberangkatan 15 Desember 2025' },
-  { id: 4, imageUrl: '/gallery/galeri4.jpeg', title: 'Program Umrah Syawal 1447 H Keberangkatan 25 Maret 2025' },
+  { id: 1, imageUrl: '/gallery/galeri1.jpg', title: 'Program Umrah 12 Hari Keberangkatan 6 Juli 2025' },
+  { id: 2, imageUrl: '/gallery/galeri2.jpg', title: 'Program Umrah November 12 Hari Keberangkatan 06 November 2025' },
+  { id: 3, imageUrl: '/gallery/galeri3.jpg', title: 'Program Umrah Liburan Akhir Tahun Keberangkatan 15 Desember 2025' },
+  { id: 4, imageUrl: '/gallery/galeri4.jpg', title: 'Program Umrah Syawal 1447 H Keberangkatan 25 Maret 2025' },
 ];
 
 const GallerySection = () => {

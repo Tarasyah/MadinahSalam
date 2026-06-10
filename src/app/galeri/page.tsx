@@ -3,10 +3,10 @@
 import Image from 'next/image';
 
 const galleryImages = [
-  { src: '/gallery/galeri1.jpeg', title: 'Program Umrah 12 Hari Keberangkatan 6 Juli 2025' },
-  { src: '/gallery/galeri2.jpeg', title: 'Program Umrah November 12 Hari Keberangkatan 06 November 2025' },
-  { src: '/gallery/galeri3.jpeg', title: 'Program Umrah Liburan Akhir Tahun Keberangkatan 15 Desember 2025' },
-  { src: '/gallery/galeri4.jpeg', title: 'Program Umrah Syawal 1447 H Keberangkatan 25 Maret 2025' },
+  { src: '/gallery/galeri1.jpg', title: 'Program Umrah 12 Hari Keberangkatan 6 Juli 2025' },
+  { src: '/gallery/galeri2.jpg', title: 'Program Umrah November 12 Hari Keberangkatan 06 November 2025' },
+  { src: '/gallery/galeri3.jpg', title: 'Program Umrah Liburan Akhir Tahun Keberangkatan 15 Desember 2025' },
+  { src: '/gallery/galeri4.jpg', title: 'Program Umrah Syawal 1447 H Keberangkatan 25 Maret 2025' },
 ];
 
 export default function GaleriPage() {
@@ -21,7 +21,7 @@ export default function GaleriPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {galleryImages.map((img, idx) => (
             <div 
               key={idx} 
