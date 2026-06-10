@@ -110,6 +110,7 @@ const GallerySection = () => {
                                                 src={image.imageUrl}
                                                 alt={image.title}
                                                 fill
+                                                unoptimized={true}
                                                 className="object-cover w-full h-full"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end">
