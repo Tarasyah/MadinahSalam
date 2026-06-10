@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const galleryImages = [
   { src: '/gallery/galeri1.jpg', title: 'Program Umrah 12 Hari Keberangkatan 6 Juli 2025' },
@@ -10,6 +11,8 @@ const galleryImages = [
 ];
 
 export default function GaleriPage() {
+  const router = useRouter();
+
   return (
     <main className="min-h-screen bg-background pt-24 pb-16">
       <div className="container py-8">
@@ -25,7 +28,7 @@ export default function GaleriPage() {
           {galleryImages.map((img, idx) => (
             <div 
               key={idx} 
-              onClick={() => alert('Upload in Progress')}
+              onClick={() => router.push('/galeri/upload-progress')}
               className="relative rounded-xl overflow-hidden group cursor-pointer border border-border shadow-sm aspect-video"
             >
               <Image 

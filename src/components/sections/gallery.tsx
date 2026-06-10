@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { Card } from '@/components/ui/card';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -16,6 +17,7 @@ const galleryImagesLocal = [
 ];
 
 const GallerySection = () => {
+    const router = useRouter();
     const autoplay = useRef(
       Autoplay({ delay: 3000, stopOnInteraction: false })
     );
@@ -103,7 +105,7 @@ const GallerySection = () => {
                                 <div key={image.id} className="flex-grow-0 flex-shrink-0 basis-5/6 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 pl-4">
                                      <div className="transition-transform duration-300 ease-out" style={{ transform: `scale(${scale[index] || 0})`, opacity: opacity[index] || 0 }}>
                                         <Card 
-                                            onClick={() => alert('Upload in Progress')}
+                                            onClick={() => router.push('/galeri/upload-progress')}
                                             className="relative aspect-[4/3] overflow-hidden rounded-lg group border-none shadow-lg cursor-pointer"
                                         >
                                             <Image
