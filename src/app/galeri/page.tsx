@@ -1,14 +1,12 @@
+"use client";
+
 import Image from 'next/image';
 
 const galleryImages = [
-  { src: '/haji1.jpeg', alt: 'Dokumentasi Perjalanan 1' },
-  { src: '/1.png', alt: 'Dokumentasi Perjalanan 2' },
-  { src: '/2.png', alt: 'Dokumentasi Perjalanan 3' },
-  { src: '/3.png', alt: 'Dokumentasi Perjalanan 4' },
-  { src: '/4.png', alt: 'Dokumentasi Perjalanan 5' },
-  { src: '/5.png', alt: 'Dokumentasi Perjalanan 6' },
-  { src: '/6.png', alt: 'Dokumentasi Perjalanan 7' },
-  { src: '/slide1.jpeg', alt: 'Dokumentasi Perjalanan 8' },
+  { src: '/gallery/galeri1.jpeg', title: 'Program Umrah 12 Hari Keberangkatan 6 Juli 2025' },
+  { src: '/gallery/galeri2.jpeg', title: 'Program Umrah November 12 Hari Keberangkatan 06 November 2025' },
+  { src: '/gallery/galeri3.jpeg', title: 'Program Umrah Liburan Akhir Tahun Keberangkatan 15 Desember 2025' },
+  { src: '/gallery/galeri4.jpeg', title: 'Program Umrah Syawal 1447 H Keberangkatan 25 Maret 2025' },
 ];
 
 export default function GaleriPage() {
@@ -23,19 +21,29 @@ export default function GaleriPage() {
           </p>
         </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {galleryImages.map((img, idx) => (
-            <div key={idx} className="break-inside-avoid relative rounded-xl overflow-hidden group cursor-pointer border border-border shadow-sm">
+            <div 
+              key={idx} 
+              onClick={() => alert('Upload in Progress')}
+              className="relative rounded-xl overflow-hidden group cursor-pointer border border-border shadow-sm aspect-video"
+            >
               <Image 
                 src={img.src} 
-                alt={img.alt} 
-                width={800} 
-                height={600} 
-                className="w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                alt={img.title} 
+                fill 
+                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end">
+                <div className="p-4 md:p-6 w-full">
+                  <h3 className="text-white font-bold text-lg md:text-xl drop-shadow-md">
+                    {img.title}
+                  </h3>
+                </div>
+              </div>
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-medium px-4 py-2 bg-black/50 backdrop-blur-sm rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                  Lihat Foto
+                <span className="text-white font-medium px-6 py-2 bg-black/60 backdrop-blur-sm rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  Lihat Foto Lainnya
                 </span>
               </div>
             </div>

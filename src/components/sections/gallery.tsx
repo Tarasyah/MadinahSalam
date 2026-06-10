@@ -1,18 +1,23 @@
-
 "use client";
 
 import React, { useCallback, useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import { galleryImages } from '@/lib/data';
 import { Card } from '@/components/ui/card';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { cn } from '@/lib/utils';
 import { DotButton, useDotButton } from '../ui/carousel-dots';
 
+const galleryImagesLocal = [
+  { id: 1, imageUrl: '/gallery/galeri1.jpeg', title: 'Program Umrah 12 Hari Keberangkatan 6 Juli 2025' },
+  { id: 2, imageUrl: '/gallery/galeri2.jpeg', title: 'Program Umrah November 12 Hari Keberangkatan 06 November 2025' },
+  { id: 3, imageUrl: '/gallery/galeri3.jpeg', title: 'Program Umrah Liburan Akhir Tahun Keberangkatan 15 Desember 2025' },
+  { id: 4, imageUrl: '/gallery/galeri4.jpeg', title: 'Program Umrah Syawal 1447 H Keberangkatan 25 Maret 2025' },
+];
+
 const GallerySection = () => {
     const autoplay = useRef(
-      Autoplay({ delay: 2000, stopOnInteraction: false })
+      Autoplay({ delay: 3000, stopOnInteraction: false })
     );
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' }, [
@@ -37,7 +42,6 @@ const GallerySection = () => {
         
         const newOpacity = emblaApi.scrollSnapList().map((scrollSnap: any, index: any) => {
             let diffToTarget = scrollSnap - scrollProgress;
-            const slidesInView = emblaApi.slidesInView()
 
             if (engine.options.loop && Math.abs(diffToTarget) > 0.5) {
                 const wrap = Math.ceil(Math.abs(diffToTarget) / 1)
@@ -95,17 +99,31 @@ const GallerySection = () => {
                 <div className="relative">
                     <div className="overflow-hidden" ref={emblaRef}>
                         <div className="flex md:-ml-4" style={{ perspective: '1000px' }}>
-                            {galleryImages.map((image, index) => (
+                            {galleryImagesLocal.map((image, index) => (
                                 <div key={image.id} className="flex-grow-0 flex-shrink-0 basis-5/6 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 pl-4">
                                      <div className="transition-transform duration-300 ease-out" style={{ transform: `scale(${scale[index] || 0})`, opacity: opacity[index] || 0 }}>
-                                        <Card className="relative aspect-[4/3] overflow-hidden rounded-lg group border-none shadow-lg">
+                                        <Card 
+                                            onClick={() => alert('Upload in Progress')}
+                                            className="relative aspect-[4/3] overflow-hidden rounded-lg group border-none shadow-lg cursor-pointer"
+                                        >
                                             <Image
                                                 src={image.imageUrl}
-                                                alt={image.description}
-                                                data-ai-hint={image.imageHint}
+                                                alt={image.title}
                                                 fill
                                                 className="object-cover w-full h-full"
                                             />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end">
+                                              <div className="p-4 w-full">
+                                                <h3 className="text-white font-bold text-sm md:text-base drop-shadow-md text-center leading-tight">
+                                                  {image.title}
+                                                </h3>
+                                              </div>
+                                            </div>
+                                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                              <span className="text-white font-medium px-4 py-2 bg-black/60 backdrop-blur-sm rounded-full text-sm transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                                Lihat Foto
+                                              </span>
+                                            </div>
                                         </Card>
                                      </div>
                                 </div>
