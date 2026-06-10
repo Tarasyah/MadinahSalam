@@ -37,7 +37,7 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
         <div className="absolute inset-0 bg-emerald-950/80 mix-blend-multiply pointer-events-none"></div>
         
         <div className="container relative z-10">
-          <Link href="/#packages" className="inline-flex items-center text-sm font-medium hover:underline text-white/90 mb-8 transition-colors hover:text-white bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-md w-fit">
+          <Link href="/paket-umrah" className="inline-flex items-center text-sm font-medium hover:underline text-white/90 mb-8 transition-colors hover:text-white bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-md w-fit">
             <ArrowLeft className="mr-2 h-4 w-4" /> Kembali ke Daftar Paket
           </Link>
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
