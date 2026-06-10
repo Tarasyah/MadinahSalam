@@ -29,6 +29,11 @@ const soldOutPackages = [
     imageUrl: '/soldout/paketsoldout4.jpeg',
     alt: 'Paket Umrah Awal Musim yang sudah sold out',
   },
+  {
+    id: 5,
+    imageUrl: '/soldout/paketsoldout5.jpeg',
+    alt: 'Paket Umrah Spesial lainnya yang sudah sold out',
+  },
 ];
 
 const SoldOutSection = () => {
