@@ -26,70 +26,9 @@ const GallerySection = () => {
         autoplay.current
     ]);
     const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
-    const [scale, setScale] = useState<number[]>([]);
-    const [opacity, setOpacity] = useState<number[]>([]);
-
-    const TWEEN_FACTOR = 1.2;
-
-    const tweenOpacity = useCallback((emblaApi: any, eventName: any) => {
-        const engine = emblaApi.internalEngine();
-        const scrollProgress = emblaApi.scrollProgress();
-        const slidesInView = emblaApi.slidesInView();
-
-        const getScrollTween = (scrollProgress: number) => {
-            if (scrollProgress < 0) return 1 + scrollProgress / TWEEN_FACTOR
-            if (scrollProgress > 0) return 1 - scrollProgress / TWEEN_FACTOR
-            return 1
-        }
-        
-        const newOpacity = emblaApi.scrollSnapList().map((scrollSnap: any, index: any) => {
-            let diffToTarget = scrollSnap - scrollProgress;
-
-            if (engine.options.loop && Math.abs(diffToTarget) > 0.5) {
-                const wrap = Math.ceil(Math.abs(diffToTarget) / 1)
-                diffToTarget = diffToTarget < 0 ? diffToTarget + wrap : diffToTarget - wrap
-            }
-
-            if (slidesInView.indexOf(index) === -1) return 0.3
-            return getScrollTween(diffToTarget) * 1;
-        })
-        setOpacity(newOpacity)
-    }, []);
-
-    const tweenScale = useCallback((emblaApi: any, eventName: any) => {
-        const engine = emblaApi.internalEngine();
-        const scrollProgress = emblaApi.scrollProgress();
-
-        const getScrollTween = (scrollProgress: number) => {
-            if (scrollProgress < 0) return 1 + scrollProgress / TWEEN_FACTOR
-            if (scrollProgress > 0) return 1 - scrollProgress / TWEEN_FACTOR
-            return 1
-        }
-
-        const newScale = emblaApi.scrollSnapList().map((scrollSnap: any, index: any) => {
-            let diffToTarget = scrollSnap - scrollProgress;
-
-            if (engine.options.loop && Math.abs(diffToTarget) > 0.5) {
-                const wrap = Math.ceil(Math.abs(diffToTarget) / 1)
-                diffToTarget = diffToTarget < 0 ? diffToTarget + wrap : diffToTarget - wrap
-            }
-            const tweenValue = 1 - Math.abs(diffToTarget) * 0.3
-            return getScrollTween(diffToTarget) * tweenValue
-        })
-        setScale(newScale)
-    }, []);
-
     useEffect(() => {
         if (!emblaApi) return;
-        tweenOpacity(emblaApi, 'reInit');
-        tweenScale(emblaApi, 'reInit');
-        emblaApi.on('scroll', (emblaApi, eventName) => {
-            tweenOpacity(emblaApi, eventName);
-            tweenScale(emblaApi, eventName);
-        });
-        emblaApi.on('reInit', tweenOpacity);
-        emblaApi.on('reInit', tweenScale);
-    }, [emblaApi, tweenOpacity, tweenScale]);
+    }, [emblaApi]);
 
     return (
         <section id="gallery" className="py-16 lg:py-24 bg-secondary">
@@ -103,7 +42,7 @@ const GallerySection = () => {
                         <div className="flex md:-ml-4" style={{ perspective: '1000px' }}>
                             {galleryImagesLocal.map((image, index) => (
                                 <div key={image.id} className="flex-grow-0 flex-shrink-0 basis-5/6 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 pl-4">
-                                     <div className="transition-transform duration-300 ease-out" style={{ transform: `scale(${scale[index] || 0})`, opacity: opacity[index] || 0 }}>
+                                     <div className="transition-transform duration-300 ease-out">
                                         <Card 
                                             onClick={() => router.push('/galeri/upload-progress')}
                                             className="relative aspect-[4/3] overflow-hidden rounded-lg group border-none shadow-lg cursor-pointer"
