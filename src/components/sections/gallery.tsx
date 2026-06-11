@@ -22,7 +22,7 @@ const GallerySection = () => {
       Autoplay({ delay: 3000, stopOnInteraction: false })
     );
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' }, [
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' }, [
         autoplay.current
     ]);
     const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
