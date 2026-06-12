@@ -18,6 +18,7 @@ import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Beranda', icon: Home },
+  { href: '/about', label: 'Tentang Kami', icon: Users },
   { 
     label: 'Paket', 
     icon: Package,
@@ -28,7 +29,6 @@ const navLinks = [
   },
   { href: '/galeri', label: 'Galeri', icon: ImageIcon },
   { href: '/requirements', label: 'Persyaratan', icon: FileText },
-  { href: '/about', label: 'Tentang Kami', icon: Users },
 ];
 
 const whatsappLink = "https://wa.me/6282210004644";
