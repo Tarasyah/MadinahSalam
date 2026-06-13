@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Home, Users, FileText, Package, Phone, Image as ImageIcon } from 'lucide-react';
+import { Menu, Home, Users, FileText, Package, Phone, Image as ImageIcon, MessageSquareQuote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -28,6 +28,7 @@ const navLinks = [
     ]
   },
   { href: '/galeri', label: 'Galeri', icon: ImageIcon },
+  { href: '/testimoni', label: 'Testimoni', icon: MessageSquareQuote },
   { href: '/requirements', label: 'Persyaratan', icon: FileText },
 ];
 
