@@ -14,15 +14,26 @@ export default function GaleriPage() {
   const router = useRouter();
 
   return (
-    <main className="min-h-screen bg-background pt-24 pb-16">
-      <div className="container py-8">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-5xl font-black mb-4 uppercase tracking-tight text-foreground">Galeri Perjalanan</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+    <main className="min-h-screen bg-background pb-16">
+      {/* Hero Section */}
+      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center">
+        <Image
+          src="/background_tabgaleri.jpg"
+          alt="Galeri Hero Image"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 text-center p-4">
+          <h1 className="font-headline text-5xl md:text-6xl font-bold text-white">Galeri Perjalanan</h1>
+          <p className="mt-4 text-xl text-white/90 max-w-2xl mx-auto">
             Kumpulan momen indah kebersamaan jamaah Madinah Salam Wisata selama di Tanah Suci. 
             Semoga menjadi inspirasi dan pengobat rindu Baitullah.
           </p>
         </div>
+      </section>
+
+      <div className="container py-8 mt-8">
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {galleryImages.map((img, idx) => (
