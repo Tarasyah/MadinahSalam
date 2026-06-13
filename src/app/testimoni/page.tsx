@@ -9,7 +9,7 @@ export default function TestimoniPage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center">
         <Image
-          src="/background_tabtestimoni.jpeg"
+          src="/background_tabtestimoni_baru.jpeg"
           alt="Testimoni Hero Image"
           fill
           className="object-cover"
