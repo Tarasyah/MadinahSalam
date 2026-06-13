@@ -8,7 +8,11 @@ import { Star } from 'lucide-react';
 import Autoplay from "embla-carousel-autoplay";
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 
-const TestimonialsSection = () => {
+interface TestimonialsProps {
+  hideTitle?: boolean;
+}
+
+const TestimonialsSection = ({ hideTitle = false }: TestimonialsProps) => {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
@@ -16,12 +20,14 @@ const TestimonialsSection = () => {
   return (
     <section id="testimonials" className="py-16 lg:py-24 bg-secondary">
       <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold">Testimoni Jamaah</h2>
-          <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-            Apa kata mereka yang telah mempercayakan perjalanannya bersama kami.
-          </p>
-        </div>
+        {!hideTitle && (
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-3xl md:text-4xl font-bold">Testimoni Jamaah</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              Apa kata mereka yang telah mempercayakan perjalanannya bersama kami.
+            </p>
+          </div>
+        )}
         
         <Carousel
           plugins={[plugin.current]}
