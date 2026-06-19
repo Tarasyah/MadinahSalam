@@ -42,7 +42,7 @@ export default function Galeri6Juli2025Page() {
           alt="Background Galeri Umrah 6 Juli 2025"
           fill
           priority
-          className="object-cover object-[center_75%]"
+          className="object-cover object-[center_65%]"
         />
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 text-center p-4">
