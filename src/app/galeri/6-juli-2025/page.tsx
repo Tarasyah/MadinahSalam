@@ -11,6 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import Autoplay from 'embla-carousel-autoplay';
 
 export default function Galeri6Juli2025Page() {
@@ -36,7 +37,14 @@ export default function Galeri6Juli2025Page() {
 
       {/* Hero Section untuk Halaman Galeri Detail */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-black/80" />
+        <Image
+          src="/gallery/galeri1.jpg"
+          alt="Background Galeri Umrah 6 Juli 2025"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 text-center p-4">
           <h1 className="font-headline text-3xl md:text-5xl font-bold text-white">Galeri Umrah 6 Juli 2025</h1>
           <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
@@ -61,15 +69,36 @@ export default function Galeri6Juli2025Page() {
             {images.map((img, idx) => (
               <CarouselItem key={idx} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
-                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border shadow-md bg-muted/50 group">
-                    <Image 
-                      src={img.src} 
-                      alt={img.alt} 
-                      fill
-                      unoptimized
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border shadow-md bg-muted/50 group cursor-pointer" onClick={() => plugin.current.stop()}>
+                        <Image 
+                          src={img.src} 
+                          alt={img.alt} 
+                          fill
+                          unoptimized
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                          <span className="text-white font-medium px-4 py-2 bg-black/60 backdrop-blur-sm rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                            Perbesar Foto
+                          </span>
+                        </div>
+                      </div>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-5xl p-2 bg-black/95 border-none shadow-2xl text-white">
+                      <DialogTitle className="sr-only">{img.alt}</DialogTitle>
+                      <div className="relative w-full h-[80vh] sm:h-[85vh]">
+                        <Image 
+                          src={img.src} 
+                          alt={img.alt} 
+                          fill
+                          unoptimized
+                          className="object-contain"
+                        />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </CarouselItem>
             ))}
