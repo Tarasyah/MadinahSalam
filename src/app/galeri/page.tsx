@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const galleryImages = [
-  { src: '/gallery/galeri1.jpg', title: 'Program Umrah 12 Hari Keberangkatan 6 Juli 2025' },
-  { src: '/gallery/galeri2.jpg', title: 'Program Umrah November 12 Hari Keberangkatan 06 November 2025' },
-  { src: '/gallery/galeri3.jpg', title: 'Program Umrah Liburan Akhir Tahun Keberangkatan 15 Desember 2025' },
-  { src: '/gallery/galeri4.jpg', title: 'Program Umrah Syawal 1447 H Keberangkatan 25 Maret 2025' },
+  { src: '/gallery/galeri1.jpg', title: 'Program Umrah 12 Hari Keberangkatan 6 Juli 2025', href: '/galeri/6-juli-2025' },
+  { src: '/gallery/galeri2.jpg', title: 'Program Umrah November 12 Hari Keberangkatan 06 November 2025', href: '/galeri/upload-progress' },
+  { src: '/gallery/galeri3.jpg', title: 'Program Umrah Liburan Akhir Tahun Keberangkatan 15 Desember 2025', href: '/galeri/upload-progress' },
+  { src: '/gallery/galeri4.jpg', title: 'Program Umrah Syawal 1447 H Keberangkatan 25 Maret 2025', href: '/galeri/upload-progress' },
 ];
 
 export default function GaleriPage() {
@@ -39,7 +39,7 @@ export default function GaleriPage() {
           {galleryImages.map((img, idx) => (
             <div 
               key={idx} 
-              onClick={() => router.push('/galeri/upload-progress')}
+              onClick={() => router.push(img.href)}
               className="relative rounded-xl overflow-hidden group cursor-pointer border border-border shadow-sm aspect-video"
             >
               <Image 
