@@ -24,6 +24,15 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PBF9NQBX');
+          `}
+        </Script>
         <meta name="view-transition" content="same-origin" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/logo_lightmode.png" />
@@ -32,6 +41,14 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className={cn('font-body antialiased overflow-x-hidden')}>
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PBF9NQBX"
+            height="0" 
+            width="0" 
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FB4HYX1G52"
           strategy="afterInteractive"
