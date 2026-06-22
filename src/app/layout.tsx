@@ -9,6 +9,7 @@ import Footer from '@/components/footer';
 import { CustomThemeProvider } from '@/components/custom-theme-provider';
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'PT. Madinah Salam Wisata - Your Journey Our Priority',
@@ -31,6 +32,19 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className={cn('font-body antialiased overflow-x-hidden')}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FB4HYX1G52"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-FB4HYX1G52');
+          `}
+        </Script>
         <CustomThemeProvider>
           <Header />
           <main>{children}</main>
