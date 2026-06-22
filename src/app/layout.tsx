@@ -34,6 +34,7 @@ export default function RootLayout({
           `}
         </Script>
         <meta name="view-transition" content="same-origin" />
+        <meta name="google-site-verification" content="Kj18bP29bNQQ9IMKUWNJy2uzjUE1_ARgGr3buVEfaQk" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/logo_lightmode.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
