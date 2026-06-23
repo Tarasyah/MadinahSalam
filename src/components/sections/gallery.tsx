@@ -7,10 +7,10 @@ import { Card } from '@/components/ui/card';
 import { InfiniteSlider } from '../ui/infinite-slider';
 
 const galleryImagesLocal = [
-  { id: 1, imageUrl: '/gallery/galeri1.jpg', title: 'Program Umrah 12 Hari Keberangkatan 6 Juli 2025' },
-  { id: 2, imageUrl: '/gallery/galeri2.jpg', title: 'Program Umrah November 12 Hari Keberangkatan 06 November 2025' },
-  { id: 3, imageUrl: '/gallery/galeri3.jpg', title: 'Program Umrah Liburan Akhir Tahun Keberangkatan 15 Desember 2025' },
-  { id: 4, imageUrl: '/gallery/galeri4.jpg', title: 'Program Umrah Syawal 1447 H Keberangkatan 25 Maret 2025' },
+  { id: 1, imageUrl: '/gallery/galeri1.jpg', title: 'Program Umrah 12 Hari Keberangkatan 6 Juli 2025', link: '/galeri/6-juli-2025' },
+  { id: 2, imageUrl: '/gallery/galeri2.jpg', title: 'Program Umrah November 12 Hari Keberangkatan 06 November 2025', link: '/galeri/upload-progress' },
+  { id: 3, imageUrl: '/gallery/galeri3.jpg', title: 'Program Umrah Liburan Akhir Tahun Keberangkatan 15 Desember 2025', link: '/galeri/upload-progress' },
+  { id: 4, imageUrl: '/gallery/galeri4.jpg', title: 'Program Umrah Syawal 1447 H Keberangkatan 25 Maret 2025', link: '/galeri/upload-progress' },
 ];
 
 const GallerySection = () => {
@@ -29,7 +29,7 @@ const GallerySection = () => {
                             <div key={image.id} className="w-[300px] sm:w-[400px] md:w-[450px] shrink-0">
                                  <div className="transition-transform duration-300 ease-out">
                                     <Card 
-                                        onClick={() => router.push('/galeri/upload-progress')}
+                                        onClick={() => router.push(image.link)}
                                         className="relative aspect-[4/3] overflow-hidden rounded-lg group border-none shadow-lg cursor-pointer"
                                     >
                                         <Image

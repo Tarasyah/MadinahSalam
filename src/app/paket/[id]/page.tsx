@@ -42,7 +42,7 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
           </Link>
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             <div className="max-w-2xl">
-              <h1 className="text-xl sm:text-2xl md:text-3xl font-sans font-black mb-3 uppercase tracking-tight leading-tight">{pkg.name}</h1>
+              <h1 className="text-lg sm:text-xl md:text-2xl font-sans font-black mb-3 uppercase tracking-tight leading-tight">{pkg.name}</h1>
               <div className="flex flex-wrap gap-6 text-xs md:text-sm font-medium text-white/90">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 bg-white/20 rounded-full"><Plane className="h-4 w-4" /></div>
