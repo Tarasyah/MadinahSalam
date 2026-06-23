@@ -23,7 +23,8 @@ export const InfiniteSlider: React.FC<InfiniteSliderProps> = ({
   
   const isDragging = useRef(false);
   const startX = useRef(0);
-  const scrollLeft = useRef(0);
+  const startTranslateX = useRef(0);
+  const currentX = useRef(0);
   const animationRef = useRef<number>();
   
   const animate = useCallback(() => {
@@ -32,21 +33,24 @@ export const InfiniteSlider: React.FC<InfiniteSliderProps> = ({
       return;
     }
     
-    const container = containerRef.current;
     const content = contentRef.current;
     const originalWidth = content.scrollWidth / 2;
     
+    let x = currentX.current;
     if (direction === 'left') {
-      container.scrollLeft += speed;
-      if (container.scrollLeft >= originalWidth) {
-        container.scrollLeft -= originalWidth;
+      x -= speed;
+      if (x <= -originalWidth) {
+        x += originalWidth;
       }
     } else {
-      container.scrollLeft -= speed;
-      if (container.scrollLeft <= 0) {
-        container.scrollLeft += originalWidth;
+      x += speed;
+      if (x >= 0) {
+        x -= originalWidth;
       }
     }
+    
+    currentX.current = x;
+    content.style.transform = `translate3d(${x}px, 0, 0)`;
     
     animationRef.current = requestAnimationFrame(animate);
   }, [direction, speed]);
@@ -60,8 +64,8 @@ export const InfiniteSlider: React.FC<InfiniteSliderProps> = ({
 
   const handlePointerDown = (e: React.PointerEvent) => {
     isDragging.current = true;
-    startX.current = e.pageX - (containerRef.current?.offsetLeft || 0);
-    scrollLeft.current = containerRef.current?.scrollLeft || 0;
+    startX.current = e.pageX;
+    startTranslateX.current = currentX.current;
     if (containerRef.current) {
       containerRef.current.style.cursor = 'grabbing';
       containerRef.current.style.userSelect = 'none';
@@ -87,23 +91,24 @@ export const InfiniteSlider: React.FC<InfiniteSliderProps> = ({
   const handlePointerMove = (e: React.PointerEvent) => {
     if (!isDragging.current || !containerRef.current || !contentRef.current) return;
     e.preventDefault();
-    const x = e.pageX - (containerRef.current.offsetLeft || 0);
-    const walk = (x - startX.current) * 2;
+    const x = e.pageX;
+    const walk = (x - startX.current);
     
     const originalWidth = contentRef.current.scrollWidth / 2;
-    let newScrollLeft = scrollLeft.current - walk;
+    let newX = startTranslateX.current + walk;
     
-    if (newScrollLeft >= originalWidth) {
-      newScrollLeft -= originalWidth;
+    if (newX <= -originalWidth) {
+      newX += originalWidth;
       startX.current = x;
-      scrollLeft.current = newScrollLeft;
-    } else if (newScrollLeft <= 0) {
-      newScrollLeft += originalWidth;
+      startTranslateX.current = newX;
+    } else if (newX >= 0) {
+      newX -= originalWidth;
       startX.current = x;
-      scrollLeft.current = newScrollLeft;
+      startTranslateX.current = newX;
     }
     
-    containerRef.current.scrollLeft = newScrollLeft;
+    currentX.current = newX;
+    contentRef.current.style.transform = `translate3d(${newX}px, 0, 0)`;
   };
 
   return (
@@ -114,17 +119,12 @@ export const InfiniteSlider: React.FC<InfiniteSliderProps> = ({
       onPointerLeave={handlePointerLeave}
       onPointerUp={handlePointerUp}
       onPointerMove={handlePointerMove}
-      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      style={{ touchAction: 'pan-y' }}
     >
-      <style dangerouslySetInnerHTML={{__html: `
-        .infinite-slider-container::-webkit-scrollbar {
-          display: none;
-        }
-      `}} />
       <div 
         ref={contentRef} 
-        className="flex w-max infinite-slider-container"
-        style={{ touchAction: 'pan-y' }}
+        className="flex w-max"
+        style={{ willChange: 'transform' }}
       >
         <div className={cn("flex", itemClassName)}>
           {children}
