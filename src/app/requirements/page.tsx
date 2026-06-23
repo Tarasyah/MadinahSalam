@@ -1,4 +1,10 @@
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Persyaratan Umroh & Haji - Madinah Salam Wisata',
+  description: 'Informasi lengkap dokumen dan persyaratan yang dibutuhkan untuk mendaftar paket umroh dan haji di Madinah Salam Wisata.',
+};
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const RequirementsPage = () => {

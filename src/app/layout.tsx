@@ -12,8 +12,8 @@ import Image from 'next/image';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'PT. Madinah Salam Wisata - Your Journey Our Priority',
-  description: 'Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah, profesional, dan sesuai dengan tuntunan syariat.',
+  title: 'PT. Madinah Salam Wisata - Travel Umroh & Haji Amanah di Jakarta',
+  description: 'Penyelenggara perjalanan ibadah Umrah dan Haji yang amanah, profesional, dan sesuai tuntunan syariat. Dibimbing ustadz berpengalaman, fasilitas lengkap.',
 };
 
 export default function RootLayout({

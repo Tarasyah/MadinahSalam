@@ -2,6 +2,12 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, Target, Flag, MapPin } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Tentang Kami - PT. Madinah Salam Wisata',
+  description: 'Kenali lebih dekat PT. Madinah Salam Wisata, travel umroh dan haji terpercaya berbasis di Jakarta Timur dengan komitmen pelayanan terbaik.',
+};
 
 const AboutPage = () => {
 

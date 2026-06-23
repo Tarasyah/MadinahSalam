@@ -1,4 +1,10 @@
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Itinerary Perjalanan Umroh & Haji - Madinah Salam Wisata',
+  description: 'Lihat rangkaian perjalanan ibadah umroh dan haji, termasuk kunjungan Makkah, Madinah, dan Thaif bersama Madinah Salam Wisata.',
+};
 import ItinerarySection from '@/components/sections/itinerary';
 
 const ItineraryPage = () => {

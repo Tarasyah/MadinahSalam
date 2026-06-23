@@ -1,4 +1,10 @@
 import { Plane } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Paket Haji - Madinah Salam Wisata',
+  description: 'Layanan paket haji amanah dan profesional dari PT. Madinah Salam Wisata, sesuai tuntunan syariat Islam.',
+};
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 

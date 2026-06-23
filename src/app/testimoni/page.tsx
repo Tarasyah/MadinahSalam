@@ -1,4 +1,10 @@
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Testimoni Jamaah - Madinah Salam Wisata',
+  description: 'Baca pengalaman langsung jamaah yang telah mempercayakan perjalanan umroh dan haji mereka bersama Madinah Salam Wisata.',
+};
 import dynamic from 'next/dynamic';
 
 const TestimonialsSection = dynamic(() => import('@/components/sections/testimonials'));
