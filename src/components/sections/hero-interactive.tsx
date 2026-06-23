@@ -61,8 +61,8 @@ const HeroSection = () => {
                         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
                     >
                         <h1 className={cn(
-                            "font-headline font-bold text-white drop-shadow-lg leading-tight",
-                            "text-4xl md:text-5xl lg:text-6xl",
+                            "font-headline font-bold text-white drop-shadow-lg leading-tight whitespace-nowrap",
+                            "text-2xl sm:text-3xl md:text-5xl lg:text-6xl",
                         )}>
                             {activeDestination.title}
                         </h1>
