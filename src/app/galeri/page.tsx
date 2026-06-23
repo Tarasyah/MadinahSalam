@@ -38,12 +38,12 @@ export default function GaleriPage() {
         <div className="relative max-w-7xl mx-auto">
           <InfiniteSlider speed={1.2} itemClassName="gap-6 pr-6">
             {galleryImages.map((img, idx) => (
-              <div 
+              <Link 
                 key={idx} 
-                onClick={() => router.push(img.href)}
-                className="w-[280px] sm:w-[350px] md:w-[400px] shrink-0"
+                href={img.href}
+                className="block w-[280px] sm:w-[350px] md:w-[400px] shrink-0"
               >
-                <div className="relative rounded-xl overflow-hidden group cursor-pointer border border-border shadow-sm aspect-video">
+                <div className="relative rounded-xl overflow-hidden group cursor-pointer border border-border shadow-sm aspect-video h-full">
                   <Image 
                     src={img.src} 
                     alt={img.title} 
@@ -64,7 +64,7 @@ export default function GaleriPage() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </InfiniteSlider>
         </div>

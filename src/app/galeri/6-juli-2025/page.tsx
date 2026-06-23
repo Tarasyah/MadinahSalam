@@ -18,8 +18,11 @@ export default function Galeri6Juli2025Page() {
   return (
     <main className="min-h-screen bg-background pb-16 relative">
       {/* Tombol Kembali */}
-      <div className="absolute top-24 left-4 md:left-12 z-20">
-        <Link href="/galeri" className="inline-flex items-center text-sm font-medium hover:underline text-white transition-colors bg-black/50 px-4 py-2 rounded-full backdrop-blur-md">
+      <div className="absolute top-24 left-4 md:left-12 z-20 flex flex-col gap-2">
+        <Link href="/" className="inline-flex items-center text-sm font-medium hover:underline text-white transition-colors bg-black/50 px-4 py-2 rounded-full backdrop-blur-md w-fit">
+          <ArrowLeft className="mr-2 h-4 w-4" /> Kembali ke Beranda
+        </Link>
+        <Link href="/galeri" className="inline-flex items-center text-sm font-medium hover:underline text-white transition-colors bg-black/50 px-4 py-2 rounded-full backdrop-blur-md w-fit">
           <ArrowLeft className="mr-2 h-4 w-4" /> Kembali ke Galeri
         </Link>
       </div>
