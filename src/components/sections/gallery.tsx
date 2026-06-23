@@ -48,7 +48,7 @@ const GallerySection = () => {
                                         </div>
                                     </Card>
                                  </div>
-                            </div>
+                            </Link>
                         ))}
                     </InfiniteSlider>
                 </div>
