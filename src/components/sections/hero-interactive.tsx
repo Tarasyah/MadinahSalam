@@ -89,11 +89,11 @@ const HeroSection = () => {
             </div>
             
             {/* Floating Collage for Thumbnails */}
-            <div className="absolute top-1/2 -translate-y-1/2 right-4 lg:right-12 xl:right-24 hidden lg:block w-[550px] h-[600px] pointer-events-none z-10">
+            <div className="absolute top-1/2 -translate-y-1/2 right-4 lg:right-12 xl:right-24 hidden lg:block w-[600px] h-[600px] pointer-events-none z-10">
                 
                 {/* Airplane */}
                 <motion.div 
-                  className="absolute top-8 right-0 z-50 w-56 h-36 drop-shadow-2xl"
+                  className="absolute top-24 left-1/4 z-50 w-40 h-24 drop-shadow-2xl"
                   initial={{ x: 150, y: -50, opacity: 0 }}
                   animate={{ x: 0, y: 0, opacity: 1 }}
                   transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
@@ -108,7 +108,7 @@ const HeroSection = () => {
                 {/* Card 1 (Main/Biggest) - Paket Umrah */}
                 <motion.div
                     className={cn(
-                        "absolute top-10 left-1/2 -translate-x-1/2 w-72 h-[26rem] rounded-2xl overflow-hidden border-[6px] border-white shadow-2xl pointer-events-auto cursor-pointer z-40 transition-all",
+                        "absolute top-24 left-1/2 -translate-x-1/2 w-[280px] h-[380px] rounded-2xl overflow-hidden border-[6px] border-white shadow-2xl pointer-events-auto cursor-pointer z-40 transition-all",
                         activeIndex === 3 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
                     )}
                     onClick={() => handleThumbnailClick(3)}
@@ -120,10 +120,10 @@ const HeroSection = () => {
                     <Image src={heroDestinations[3].image.imageUrl} alt={heroDestinations[3].title} fill className="object-cover" />
                 </motion.div>
 
-                {/* Card 2 - Mekkah */}
+                {/* Card 2 - Mekkah (Right background) */}
                 <motion.div
                     className={cn(
-                        "absolute top-20 right-4 w-60 h-44 rounded-2xl overflow-hidden border-[5px] border-white shadow-xl pointer-events-auto cursor-pointer z-20 transition-all",
+                        "absolute top-16 right-0 w-[240px] h-[160px] rounded-2xl overflow-hidden border-[5px] border-white shadow-xl pointer-events-auto cursor-pointer z-20 transition-all",
                         activeIndex === 0 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
                     )}
                     onClick={() => handleThumbnailClick(0)}
@@ -135,10 +135,10 @@ const HeroSection = () => {
                     <Image src={heroDestinations[0].image.imageUrl} alt={heroDestinations[0].title} fill className="object-cover" />
                 </motion.div>
 
-                {/* Card 3 - Madinah */}
+                {/* Card 3 - Madinah (Bottom Left) */}
                 <motion.div
                     className={cn(
-                        "absolute bottom-12 left-4 w-52 h-48 rounded-2xl overflow-hidden border-[5px] border-white shadow-xl pointer-events-auto cursor-pointer z-30 transition-all",
+                        "absolute bottom-16 left-8 w-[200px] h-[200px] rounded-2xl overflow-hidden border-[5px] border-white shadow-xl pointer-events-auto cursor-pointer z-30 transition-all",
                         activeIndex === 1 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
                     )}
                     onClick={() => handleThumbnailClick(1)}
@@ -150,15 +150,15 @@ const HeroSection = () => {
                     <Image src={heroDestinations[1].image.imageUrl} alt={heroDestinations[1].title} fill className="object-cover" />
                 </motion.div>
 
-                {/* Card 4 - Thaif */}
+                {/* Card 4 - Thaif (Bottom Right) */}
                 <motion.div
                     className={cn(
-                        "absolute bottom-4 right-12 w-56 h-48 rounded-2xl overflow-hidden border-[5px] border-white shadow-2xl pointer-events-auto cursor-pointer z-50 transition-all",
+                        "absolute bottom-4 right-16 w-[220px] h-[180px] rounded-2xl overflow-hidden border-[5px] border-white shadow-2xl pointer-events-auto cursor-pointer z-50 transition-all",
                         activeIndex === 2 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
                     )}
                     onClick={() => handleThumbnailClick(2)}
                     initial={{ opacity: 0, y: 50, rotate: 10 }}
-                    animate={{ opacity: 1, y: 0, rotate: 5 }}
+                    animate={{ opacity: 1, y: 0, rotate: -4 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
                     whileHover={{ zIndex: 60, scale: 1.05 }}
                 >
