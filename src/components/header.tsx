@@ -73,7 +73,7 @@ export default function Header() {
           <div
             className={cn(
               'absolute inset-0 -z-10 transition-all duration-300',
-              'dark:bg-background/80 bg-white/80 backdrop-blur-lg lg:rounded-full'
+              'dark:bg-black/40 bg-white/40 backdrop-blur-md border dark:border-white/10 border-white/40 shadow-xl lg:rounded-full rounded-b-2xl'
             )}
           />
 
