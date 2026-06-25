@@ -93,7 +93,7 @@ const HeroSection = () => {
                 
                 {/* Airplane */}
                 <motion.div 
-                  className="absolute top-4 right-0 z-50 w-[320px] h-48 drop-shadow-2xl"
+                  className="absolute top-8 right-0 z-50 w-56 h-36 drop-shadow-2xl"
                   initial={{ x: 150, y: -50, opacity: 0 }}
                   animate={{ x: 0, y: 0, opacity: 1 }}
                   transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
@@ -108,12 +108,12 @@ const HeroSection = () => {
                 {/* Card 1 (Main/Biggest) - Paket Umrah */}
                 <motion.div
                     className={cn(
-                        "absolute top-16 left-8 w-64 h-[22rem] rounded-2xl overflow-hidden border-[6px] border-white shadow-2xl pointer-events-auto cursor-pointer z-40 transition-all",
+                        "absolute top-10 left-1/2 -translate-x-1/2 w-72 h-[26rem] rounded-2xl overflow-hidden border-[6px] border-white shadow-2xl pointer-events-auto cursor-pointer z-40 transition-all",
                         activeIndex === 3 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
                     )}
                     onClick={() => handleThumbnailClick(3)}
-                    initial={{ opacity: 0, x: -50, rotate: -5 }}
-                    animate={{ opacity: 1, x: 0, rotate: -2 }}
+                    initial={{ opacity: 0, y: 50, rotate: -2 }}
+                    animate={{ opacity: 1, y: 0, rotate: 2 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     whileHover={{ zIndex: 60, scale: 1.05 }}
                 >
@@ -123,12 +123,12 @@ const HeroSection = () => {
                 {/* Card 2 - Mekkah */}
                 <motion.div
                     className={cn(
-                        "absolute top-24 right-12 w-56 h-40 rounded-2xl overflow-hidden border-[4px] border-white shadow-xl pointer-events-auto cursor-pointer z-20 transition-all",
+                        "absolute top-20 right-4 w-60 h-44 rounded-2xl overflow-hidden border-[5px] border-white shadow-xl pointer-events-auto cursor-pointer z-20 transition-all",
                         activeIndex === 0 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
                     )}
                     onClick={() => handleThumbnailClick(0)}
                     initial={{ opacity: 0, x: 50, rotate: 10 }}
-                    animate={{ opacity: 1, x: 0, rotate: 6 }}
+                    animate={{ opacity: 1, x: 0, rotate: 8 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                     whileHover={{ zIndex: 60, scale: 1.05 }}
                 >
@@ -138,12 +138,12 @@ const HeroSection = () => {
                 {/* Card 3 - Madinah */}
                 <motion.div
                     className={cn(
-                        "absolute bottom-8 left-0 w-44 h-44 rounded-2xl overflow-hidden border-[4px] border-white shadow-xl pointer-events-auto cursor-pointer z-30 transition-all",
+                        "absolute bottom-12 left-4 w-52 h-48 rounded-2xl overflow-hidden border-[5px] border-white shadow-xl pointer-events-auto cursor-pointer z-30 transition-all",
                         activeIndex === 1 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
                     )}
                     onClick={() => handleThumbnailClick(1)}
-                    initial={{ opacity: 0, y: 50, rotate: -15 }}
-                    animate={{ opacity: 1, y: 0, rotate: -8 }}
+                    initial={{ opacity: 0, x: -50, rotate: -15 }}
+                    animate={{ opacity: 1, x: 0, rotate: -10 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                     whileHover={{ zIndex: 60, scale: 1.05 }}
                 >
@@ -153,12 +153,12 @@ const HeroSection = () => {
                 {/* Card 4 - Thaif */}
                 <motion.div
                     className={cn(
-                        "absolute bottom-16 right-20 w-48 h-48 rounded-2xl overflow-hidden border-[4px] border-white shadow-2xl pointer-events-auto cursor-pointer z-50 transition-all",
+                        "absolute bottom-4 right-12 w-56 h-48 rounded-2xl overflow-hidden border-[5px] border-white shadow-2xl pointer-events-auto cursor-pointer z-50 transition-all",
                         activeIndex === 2 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
                     )}
                     onClick={() => handleThumbnailClick(2)}
                     initial={{ opacity: 0, y: 50, rotate: 10 }}
-                    animate={{ opacity: 1, y: 0, rotate: 12 }}
+                    animate={{ opacity: 1, y: 0, rotate: 5 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
                     whileHover={{ zIndex: 60, scale: 1.05 }}
                 >
