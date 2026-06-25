@@ -22,29 +22,24 @@ export function PromoModal() {
         className="fixed inset-0" 
         onClick={() => setIsOpen(false)}
       />
-      <div className="relative z-50 w-[90%] max-w-md md:max-w-lg lg:max-w-xl animate-in fade-in zoom-in duration-300">
+      <div className="relative z-50 flex max-h-[85vh] max-w-[90vw] md:max-w-md lg:max-w-lg flex-col animate-in fade-in zoom-in duration-300">
         <button 
           onClick={() => setIsOpen(false)}
-          className="absolute -right-3 -top-3 z-10 flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-white text-zinc-900 shadow-lg hover:bg-zinc-100 transition-colors"
+          className="absolute -right-3 -top-3 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-white text-zinc-900 shadow-xl hover:bg-zinc-100 transition-colors border border-gray-200"
         >
           <X className="h-5 w-5" />
           <span className="sr-only">Close</span>
         </button>
-        <div className="relative overflow-hidden rounded-xl bg-white shadow-2xl">
-          {/* Replace with your actual umrah poster image */}
-          <div className="relative aspect-[3/4] w-full bg-zinc-100">
-            <Image 
-              src="/poster-umrah.jpeg" 
-              alt="Promo Umrah Madinah Salam"
-              fill
-              className="object-cover"
-              onError={(e) => {
-                // Fallback text if image doesn't exist yet
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.parentElement!.innerHTML = '<div class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center"><h3 class="text-2xl font-bold text-amber-600 mb-4">PROMO UMRAH</h3><p class="text-zinc-600">Simpan gambar poster-umrah.jpeg di folder public/ untuk menampilkan poster.</p></div>';
-              }}
-            />
-          </div>
+        <div className="relative overflow-hidden rounded-xl bg-white shadow-2xl flex justify-center items-center">
+          <img 
+            src="/poster-umrah.jpeg" 
+            alt="Promo Umrah Madinah Salam"
+            className="w-full h-auto max-h-[85vh] object-contain"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.parentElement!.innerHTML = '<div class="flex flex-col items-center justify-center p-8 text-center w-full min-h-[300px]"><h3 class="text-2xl font-bold text-amber-600 mb-4">PROMO UMRAH</h3><p class="text-zinc-600">Simpan gambar poster-umrah.jpeg di folder public/ untuk menampilkan poster.</p></div>';
+            }}
+          />
         </div>
       </div>
     </div>
