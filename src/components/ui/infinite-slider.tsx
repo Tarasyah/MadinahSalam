@@ -28,7 +28,7 @@ export const InfiniteSlider: React.FC<InfiniteSliderProps> = ({
   const animationRef = useRef<number>();
   
   const animate = useCallback(() => {
-    if (!containerRef.current || !contentRef.current || isDragging.current) {
+    if (!containerRef.current || !contentRef.current || isDragging.current || isPaused.current || isHovered.current) {
       animationRef.current = requestAnimationFrame(animate);
       return;
     }
@@ -54,6 +54,9 @@ export const InfiniteSlider: React.FC<InfiniteSliderProps> = ({
     
     animationRef.current = requestAnimationFrame(animate);
   }, [direction, speed]);
+
+  const isPaused = useRef(false);
+  const isHovered = useRef(false);
 
   useEffect(() => {
     animationRef.current = requestAnimationFrame(animate);
@@ -116,9 +119,12 @@ export const InfiniteSlider: React.FC<InfiniteSliderProps> = ({
       className={cn("overflow-hidden cursor-grab flex w-full", className)}
       ref={containerRef}
       onPointerDown={handlePointerDown}
-      onPointerLeave={handlePointerLeave}
+      onPointerLeave={() => { handlePointerLeave(); isHovered.current = false; }}
       onPointerUp={handlePointerUp}
       onPointerMove={handlePointerMove}
+      onMouseEnter={() => { isHovered.current = true; }}
+      onMouseLeave={() => { isHovered.current = false; }}
+      onClick={() => { isPaused.current = !isPaused.current; }}
       style={{ touchAction: 'pan-y' }}
     >
       <div 

@@ -41,7 +41,9 @@ const TestimonialsSection = ({ hideTitle = false }: TestimonialsProps) => {
                               <Star key={i} className={`w-4 h-4 ${i < testimonial.rating ? 'fill-current' : 'text-gray-300 dark:text-gray-700'}`} />
                             ))}
                         </div>
-                        <p className="text-foreground/90 dark:text-gray-200 italic mb-6 text-sm leading-relaxed whitespace-pre-wrap select-none">&quot;{testimonial.comment}&quot;</p>
+                        <div className="max-h-[140px] overflow-y-auto scrollbar-thin pr-2 mb-6 text-left">
+                          <p className="text-foreground/90 dark:text-gray-200 italic text-sm leading-relaxed whitespace-pre-wrap select-none">&quot;{testimonial.comment}&quot;</p>
+                        </div>
                       </div>
                       <div className="text-center mt-auto">
                         <div className="font-bold text-foreground">{testimonial.name}</div>

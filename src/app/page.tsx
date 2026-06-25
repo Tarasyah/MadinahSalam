@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import HeroSection from '@/components/sections/hero-interactive';
+import { PromoModal } from '@/components/ui/promo-modal';
 
 const PackagesSection = dynamic(() => import('@/components/sections/packages'));
 const GallerySection = dynamic(() => import('@/components/sections/gallery'));
@@ -14,6 +15,7 @@ export default function Home() {
       <SoldOutSection />
       <TestimonialsSection />
       <GallerySection />
+      <PromoModal />
     </div>
   );
 }
