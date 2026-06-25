@@ -93,7 +93,7 @@ const HeroSection = () => {
                 
                 {/* Airplane */}
                 <motion.div 
-                  className="absolute top-[-20px] left-[60px] z-30 w-32 h-20 opacity-95"
+                  className="absolute top-[10px] left-[80px] z-30 w-32 h-20 opacity-95"
                   initial={{ x: -50, y: 50, opacity: 0 }}
                   animate={{ x: 0, y: 0, opacity: 1 }}
                   transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
@@ -108,7 +108,7 @@ const HeroSection = () => {
                 {/* Card 1 (Main/Biggest) - Paket Umrah (Behind the 3 cards) */}
                 <motion.div
                     className={cn(
-                        "absolute top-0 left-[125px] w-[300px] h-[400px] rounded-2xl overflow-hidden border-[6px] border-white shadow-xl pointer-events-auto cursor-pointer z-20",
+                        "absolute top-[30px] left-[145px] w-[260px] h-[360px] rounded-2xl overflow-hidden border-[6px] border-white shadow-xl pointer-events-auto cursor-pointer z-20",
                         activeIndex === 3 ? 'ring-4 ring-primary' : ''
                     )}
                     onClick={() => handleThumbnailClick(3)}
