@@ -3,9 +3,16 @@
 import React, { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export function PromoModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+
+  const handlePosterClick = () => {
+    setIsOpen(false);
+    router.push('/paket/1');
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -30,7 +37,10 @@ export function PromoModal() {
           <X className="h-5 w-5" />
           <span className="sr-only">Close</span>
         </button>
-        <div className="relative overflow-hidden rounded-xl bg-white shadow-2xl flex justify-center items-center">
+        <div 
+          className="relative overflow-hidden rounded-xl bg-white shadow-2xl flex justify-center items-center cursor-pointer transition-transform hover:scale-[1.02]"
+          onClick={handlePosterClick}
+        >
           <img 
             src="/poster-umrah.jpeg" 
             alt="Promo Umrah Madinah Salam"
