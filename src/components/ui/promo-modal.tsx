@@ -34,14 +34,14 @@ export function PromoModal() {
           {/* Replace with your actual umrah poster image */}
           <div className="relative aspect-[3/4] w-full bg-zinc-100">
             <Image 
-              src="/images/poster-umrah.jpg" 
+              src="/poster-umrah.jpeg" 
               alt="Promo Umrah Madinah Salam"
               fill
               className="object-cover"
               onError={(e) => {
                 // Fallback text if image doesn't exist yet
                 e.currentTarget.style.display = 'none';
-                e.currentTarget.parentElement!.innerHTML = '<div class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center"><h3 class="text-2xl font-bold text-amber-600 mb-4">PROMO UMRAH</h3><p class="text-zinc-600">Simpan gambar poster-umrah.jpg di folder public/images/ untuk menampilkan poster.</p></div>';
+                e.currentTarget.parentElement!.innerHTML = '<div class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center"><h3 class="text-2xl font-bold text-amber-600 mb-4">PROMO UMRAH</h3><p class="text-zinc-600">Simpan gambar poster-umrah.jpeg di folder public/ untuk menampilkan poster.</p></div>';
               }}
             />
           </div>
