@@ -89,80 +89,80 @@ const HeroSection = () => {
             </div>
             
             {/* Floating Collage for Thumbnails */}
-            <div className="absolute top-1/2 -translate-y-1/2 right-0 lg:right-12 xl:right-24 hidden lg:block w-[500px] h-[600px] pointer-events-none">
+            <div className="absolute top-1/2 -translate-y-1/2 right-4 lg:right-12 xl:right-24 hidden lg:block w-[450px] h-[550px] pointer-events-none z-10 mt-12">
                 
                 {/* Airplane */}
                 <motion.div 
-                  className="absolute -top-16 -right-12 z-50 w-80 h-48 drop-shadow-2xl"
+                  className="absolute -top-20 right-0 z-50 w-72 h-44 drop-shadow-2xl"
                   initial={{ x: 150, y: -50, opacity: 0 }}
                   animate={{ x: 0, y: 0, opacity: 1 }}
                   transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
                 >
                   <img 
-                    src="/pesawat_saudi_airline.jpg" 
+                    src="/pesawat_saudi_airline.png" 
                     alt="Saudi Airlines" 
-                    className="w-full h-full object-contain [mix-blend-mode:screen] opacity-90 brightness-110" 
+                    className="w-full h-full object-contain drop-shadow-xl" 
                   />
                 </motion.div>
 
-                {/* Card 1 */}
+                {/* Card 1 (Main/Biggest) - Paket Umrah */}
                 <motion.div
                     className={cn(
-                        "absolute top-24 left-4 w-60 h-80 rounded-2xl overflow-hidden border-[6px] border-white shadow-2xl pointer-events-auto cursor-pointer z-30 transition-all",
+                        "absolute top-20 right-4 w-56 h-72 rounded-2xl overflow-hidden border-[4px] border-white shadow-2xl pointer-events-auto cursor-pointer z-30 transition-all",
+                        activeIndex === 3 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
+                    )}
+                    onClick={() => handleThumbnailClick(3)}
+                    initial={{ opacity: 0, x: 50, rotate: 0 }}
+                    animate={{ opacity: 1, x: 0, rotate: -4 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    whileHover={{ zIndex: 60, scale: 1.05 }}
+                >
+                    <Image src={heroDestinations[3].image.imageUrl} alt={heroDestinations[3].title} fill className="object-cover" />
+                </motion.div>
+
+                {/* Card 2 - Mekkah */}
+                <motion.div
+                    className={cn(
+                        "absolute top-8 left-8 w-44 h-52 rounded-2xl overflow-hidden border-[4px] border-white shadow-xl pointer-events-auto cursor-pointer z-20 transition-all",
                         activeIndex === 0 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
                     )}
                     onClick={() => handleThumbnailClick(0)}
                     initial={{ opacity: 0, x: 50, rotate: 0 }}
-                    animate={{ opacity: 1, x: 0, rotate: -6 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    whileHover={{ zIndex: 60 }}
+                    animate={{ opacity: 1, x: 0, rotate: -12 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    whileHover={{ zIndex: 60, scale: 1.05 }}
                 >
                     <Image src={heroDestinations[0].image.imageUrl} alt={heroDestinations[0].title} fill className="object-cover" />
                 </motion.div>
 
-                {/* Card 2 */}
+                {/* Card 3 - Madinah */}
                 <motion.div
                     className={cn(
-                        "absolute top-8 right-8 w-48 h-60 rounded-2xl overflow-hidden border-[5px] border-white shadow-xl pointer-events-auto cursor-pointer z-20 transition-all",
+                        "absolute bottom-20 left-4 w-44 h-44 rounded-2xl overflow-hidden border-[4px] border-white shadow-xl pointer-events-auto cursor-pointer z-40 transition-all",
                         activeIndex === 1 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
                     )}
                     onClick={() => handleThumbnailClick(1)}
-                    initial={{ opacity: 0, x: 50, rotate: 0 }}
-                    animate={{ opacity: 1, x: 0, rotate: 12 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    whileHover={{ zIndex: 60 }}
+                    initial={{ opacity: 0, y: 50, rotate: 0 }}
+                    animate={{ opacity: 1, y: 0, rotate: 6 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    whileHover={{ zIndex: 60, scale: 1.05 }}
                 >
                     <Image src={heroDestinations[1].image.imageUrl} alt={heroDestinations[1].title} fill className="object-cover" />
                 </motion.div>
 
-                {/* Card 3 */}
+                {/* Card 4 - Thaif */}
                 <motion.div
                     className={cn(
-                        "absolute bottom-12 left-16 w-52 h-48 rounded-2xl overflow-hidden border-[5px] border-white shadow-xl pointer-events-auto cursor-pointer z-40 transition-all",
+                        "absolute bottom-8 right-16 w-40 h-48 rounded-2xl overflow-hidden border-[4px] border-white shadow-2xl pointer-events-auto cursor-pointer z-20 transition-all",
                         activeIndex === 2 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
                     )}
                     onClick={() => handleThumbnailClick(2)}
                     initial={{ opacity: 0, y: 50, rotate: 0 }}
-                    animate={{ opacity: 1, y: 0, rotate: 8 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    whileHover={{ zIndex: 60 }}
+                    animate={{ opacity: 1, y: 0, rotate: 15 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    whileHover={{ zIndex: 60, scale: 1.05 }}
                 >
                     <Image src={heroDestinations[2].image.imageUrl} alt={heroDestinations[2].title} fill className="object-cover" />
-                </motion.div>
-
-                {/* Card 4 */}
-                <motion.div
-                    className={cn(
-                        "absolute bottom-4 right-12 w-48 h-56 rounded-2xl overflow-hidden border-[5px] border-white shadow-2xl pointer-events-auto cursor-pointer z-20 transition-all",
-                        activeIndex === 3 ? 'ring-4 ring-primary scale-105' : 'hover:scale-105'
-                    )}
-                    onClick={() => handleThumbnailClick(3)}
-                    initial={{ opacity: 0, y: 50, rotate: 0 }}
-                    animate={{ opacity: 1, y: 0, rotate: -15 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    whileHover={{ zIndex: 60 }}
-                >
-                    <Image src={heroDestinations[3].image.imageUrl} alt={heroDestinations[3].title} fill className="object-cover" />
                 </motion.div>
 
             </div>
