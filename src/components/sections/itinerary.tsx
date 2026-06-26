@@ -30,7 +30,7 @@ const ItineraryItem = ({ item, isLast }: { item: typeof itineraryData[0], isLast
 const ItinerarySection = () => {
 
   return (
-    <section id="itinerary" className="py-16 lg:py-24 bg-secondary overflow-hidden">
+    <section id="itinerary" className="py-8 lg:py-12 bg-secondary overflow-hidden">
       <div className="container max-w-3xl mx-auto">
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="font-headline text-3xl md:text-4xl font-bold">Rangkaian Perjalanan</h2>

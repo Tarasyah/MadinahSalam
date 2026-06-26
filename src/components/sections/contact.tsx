@@ -41,7 +41,7 @@ const ContactSection = () => {
     }
 
     return (
-        <section id="contact" className="relative py-16 lg:py-24">
+        <section id="contact" className="relative py-8 lg:py-12">
              {contactImage && (
                 <Image
                     src={contactImage.imageUrl}

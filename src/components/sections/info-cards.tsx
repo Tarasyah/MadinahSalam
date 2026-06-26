@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const InfoCardsSection = () => {
     return (
-        <section className="py-16 lg:py-24 bg-background">
+        <section className="py-8 lg:py-12 bg-background">
             <div className="container">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8">
                     {infoCards.map((card) => (

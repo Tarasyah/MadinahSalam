@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 const IncludedSection = () => {
   return (
-    <section id="included" className="py-16 lg:py-24 bg-background">
+    <section id="included" className="py-8 lg:py-12 bg-background">
       <div className="container mx-auto">
         <div className="text-center mb-12">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Fasilitas Paket</h2>

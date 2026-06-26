@@ -13,7 +13,7 @@ interface TestimonialsProps {
 
 const TestimonialsSection = ({ hideTitle = false }: TestimonialsProps) => {
   return (
-    <section id="testimonials" className="py-16 lg:py-24 bg-secondary overflow-hidden">
+    <section id="testimonials" className="py-8 lg:py-12 bg-secondary overflow-hidden">
       <div className="container">
         {!hideTitle && (
           <div className="text-center mb-12">
