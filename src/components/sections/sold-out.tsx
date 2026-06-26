@@ -41,7 +41,7 @@ const soldOutPackages = [
 
 const SoldOutSection = () => {
   return (
-    <section id="sold-out" className="py-16 lg:py-24 bg-background overflow-hidden">
+    <section id="sold-out" className="pt-8 pb-16 lg:pt-12 lg:pb-24 bg-background overflow-hidden">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="font-headline text-3xl md:text-4xl font-bold">

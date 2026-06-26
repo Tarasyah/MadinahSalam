@@ -15,7 +15,7 @@ const PackagesSection = () => {
   const whatsappLink = "https://wa.me/6282210004644";
 
   return (
-    <section id="packages" className="py-16 lg:py-24 bg-background">
+    <section id="packages" className="pt-16 pb-8 lg:pt-24 lg:pb-12 bg-background">
       <div className="container">
         <div className="text-center mb-12">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Paket Umrah Unggulan</h2>
@@ -108,7 +108,7 @@ const PackagesSection = () => {
                 </Card>
           ))}
         </div>
-        <div className="text-center mt-12">
+        <div className="text-center mt-8">
             <p className="text-muted-foreground text-sm">* Harga Infant (0-23 bulan): Rp 12.500.000,- (tanpa kursi, kasur, & bagasi).</p>
             <p className="text-muted-foreground text-sm">**Diskon Anak (2-11 tahun): Rp 1.000.000 (maksimal 3 anak per grup).</p>
         </div>
