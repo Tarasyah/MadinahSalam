@@ -23,7 +23,7 @@ const PackagesSection = () => {
         <div className="flex flex-col items-center gap-8 w-full max-w-5xl mx-auto">
           {packages.map((pkg) => (
                 <Card key={pkg.id} className="flex flex-col md:flex-row overflow-hidden bg-card border-border w-full shadow-lg hover:shadow-xl transition-shadow duration-300 group">
-                   <div className="relative w-full md:w-[400px] shrink-0 h-64 md:h-auto overflow-hidden">
+                   <div className="relative w-full md:w-[320px] shrink-0 h-64 md:h-auto overflow-hidden">
                         <Link href={`/paket/${pkg.id}`} className="block relative h-full w-full cursor-pointer">
                             <Image
                             src={pkg.image.imageUrl}
@@ -34,52 +34,52 @@ const PackagesSection = () => {
                             className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                             />
                         </Link>
-                        <div className="absolute top-0 left-0 bg-primary text-primary-foreground px-4 py-2 rounded-br-lg font-bold shadow-md">
+                        <div className="absolute top-0 left-0 bg-primary text-primary-foreground px-3 py-1.5 rounded-br-lg font-bold shadow-md text-sm">
                             {pkg.duration}
                         </div>
                         {pkg.discount && (
-                            <div className="absolute top-0 right-0 bg-destructive text-destructive-foreground px-4 py-2 rounded-bl-lg font-semibold flex items-center gap-2 shadow-md">
-                                <BadgePercent className="h-5 w-5" />
+                            <div className="absolute top-0 right-0 bg-destructive text-destructive-foreground px-3 py-1.5 rounded-bl-lg font-semibold flex items-center gap-1 shadow-md text-xs">
+                                <BadgePercent className="h-4 w-4" />
                                 <span>{pkg.discount}</span>
                             </div>
                         )}
                    </div>
                    
                    <div className="flex flex-col flex-grow">
-                      <CardHeader className="pb-2 pt-6">
-                        <CardTitle className="font-sans font-bold text-2xl md:text-3xl text-primary">{pkg.name}</CardTitle>
-                        <div className="flex flex-wrap items-center text-muted-foreground text-sm gap-4 pt-2">
-                            <div className="flex items-center gap-2">
-                                <Plane className="h-4 w-4" />
+                      <CardHeader className="pb-2 pt-5">
+                        <CardTitle className="font-sans font-bold text-xl md:text-2xl text-primary">{pkg.name}</CardTitle>
+                        <div className="flex flex-wrap items-center text-muted-foreground text-sm gap-4 pt-1">
+                            <div className="flex items-center gap-1.5">
+                                <Plane className="h-3.5 w-3.5" />
                                 <span>{pkg.airline}</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Calendar className="h-4 w-4" />
+                            <div className="flex items-center gap-1.5">
+                                <Calendar className="h-3.5 w-3.5" />
                                 <span>{pkg.departure}</span>
                             </div>
                         </div>
                       </CardHeader>
-                      <CardContent className="flex-grow pb-6">
-                        <p className="font-semibold mb-3">Fasilitas Utama:</p>
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 text-sm">
+                      <CardContent className="flex-grow pb-4 px-6">
+                        <p className="font-semibold mb-2 text-sm">Fasilitas Utama:</p>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-1.5 gap-x-4 text-sm">
                             {pkg.features.map((feature, i) => (
                                 <li key={i} className="flex items-start">
-                                    <Check className="h-4 w-4 text-primary mr-2 shrink-0 mt-0.5"/>
+                                    <Check className="h-4 w-4 text-primary mr-1.5 shrink-0 mt-0.5"/>
                                     <span>{feature}</span>
                                 </li>
                             ))}
                         </ul>
                       </CardContent>
-                      <CardFooter className="bg-muted/30 p-6 flex flex-col lg:flex-row items-center justify-between gap-6 border-t mt-auto">
+                      <CardFooter className="bg-muted/30 p-5 flex flex-col lg:flex-row items-center justify-between gap-5 border-t mt-auto">
                         <div className="flex flex-col w-full lg:w-auto text-center lg:text-left">
-                            <p className="text-sm text-muted-foreground mb-1">Mulai dari (Quad)</p>
-                            <div className="flex items-baseline justify-center lg:justify-start gap-3 whitespace-nowrap">
-                                <p className="text-3xl md:text-4xl font-bold text-primary">{pkg.price}</p>
-                                <p className="text-lg font-medium text-muted-foreground line-through">{pkg.originalPrice}</p>
+                            <p className="text-sm text-muted-foreground mb-0.5">Mulai dari (Quad)</p>
+                            <div className="flex items-baseline justify-center lg:justify-start gap-2 whitespace-nowrap">
+                                <p className="text-2xl md:text-3xl font-bold text-primary">{pkg.price}</p>
+                                <p className="text-base font-medium text-muted-foreground line-through">{pkg.originalPrice}</p>
                             </div>
                         </div>
                         
-                        <div className="flex flex-col items-center lg:items-end w-full lg:w-auto gap-4">
+                        <div className="flex flex-col items-center lg:items-end w-full lg:w-auto gap-3">
                             <TooltipProvider>
                               <Tooltip>
                                 <TooltipTrigger asChild>
@@ -99,7 +99,7 @@ const PackagesSection = () => {
                               </Tooltip>
                             </TooltipProvider>
                             
-                            <Button asChild className="w-full lg:w-auto px-8 py-6 rounded-full shadow-md hover:shadow-lg transition-all text-lg font-semibold">
+                            <Button asChild className="w-full lg:w-auto px-6 py-4 rounded-full shadow-md hover:shadow-lg transition-all font-semibold">
                                 <Link href={`/paket/${pkg.id}`}>Lihat Detail Paket</Link>
                             </Button>
                         </div>
