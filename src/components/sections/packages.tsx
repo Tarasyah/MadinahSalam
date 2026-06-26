@@ -20,86 +20,91 @@ const PackagesSection = () => {
         <div className="text-center mb-12">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Paket Umrah Unggulan</h2>
         </div>
-        <div className="flex justify-center">
+        <div className="flex flex-col items-center gap-8 w-full max-w-5xl mx-auto">
           {packages.map((pkg) => (
-                <Card key={pkg.id} className="flex flex-col overflow-hidden h-full bg-card border-border max-w-lg w-full shadow-lg">
-                   <div className="relative">
-                        <Link href="/paket.jpeg" target="_blank" rel="noopener noreferrer" className="block relative h-60 w-full cursor-pointer">
+                <Card key={pkg.id} className="flex flex-col md:flex-row overflow-hidden bg-card border-border w-full shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                   <div className="relative w-full md:w-[400px] shrink-0 h-64 md:h-auto overflow-hidden">
+                        <Link href={`/paket/${pkg.id}`} className="block relative h-full w-full cursor-pointer">
                             <Image
                             src={pkg.image.imageUrl}
                             alt={pkg.name}
                             data-ai-hint={pkg.image.imageHint}
                             fill
                             unoptimized={pkg.image.imageUrl.endsWith('.jpeg')}
-                            className="object-cover object-top"
+                            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                             />
                         </Link>
-                        <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-2 rounded-bl-lg font-bold">
+                        <div className="absolute top-0 left-0 bg-primary text-primary-foreground px-4 py-2 rounded-br-lg font-bold shadow-md">
                             {pkg.duration}
                         </div>
                         {pkg.discount && (
-                            <div className="absolute top-0 left-0 bg-destructive text-destructive-foreground px-3 py-1.5 rounded-br-lg font-semibold text-sm flex items-center gap-2">
-                                <BadgePercent className="h-4 w-4" />
+                            <div className="absolute top-0 right-0 bg-destructive text-destructive-foreground px-4 py-2 rounded-bl-lg font-semibold flex items-center gap-2 shadow-md">
+                                <BadgePercent className="h-5 w-5" />
                                 <span>{pkg.discount}</span>
                             </div>
                         )}
                    </div>
-                  <CardHeader>
-                    <CardTitle className="font-sans font-bold text-2xl text-primary">{pkg.name}</CardTitle>
-                    <div className="flex items-center text-muted-foreground text-sm space-x-4 pt-2">
-                        <div className="flex items-center gap-2">
-                            <Plane className="h-4 w-4" />
-                            <span>{pkg.airline}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Calendar className="h-4 w-4" />
-                            <span>{pkg.departure}</span>
-                        </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="font-semibold mb-3">Fasilitas Utama:</p>
-                    <ul className="space-y-2 text-sm">
-                        {pkg.features.map((feature, i) => (
-                            <li key={i} className="flex items-center">
-                                <Check className="h-4 w-4 text-primary mr-2"/>
-                                <span>{feature}</span>
-                            </li>
-                        ))}
-                    </ul>
-                  </CardContent>
-                  <CardFooter className="flex flex-col items-center md:items-start bg-muted/50 p-6">
-                    <div className="flex flex-col items-center text-center md:text-left md:flex-row md:justify-between w-full md:items-center gap-4 md:gap-2">
-                        <div>
-                            <p className="text-sm text-muted-foreground">Mulai dari (Quad)</p>
-                            <div className="flex items-baseline justify-center md:justify-start gap-2 whitespace-nowrap">
-                                <p className="text-3xl font-bold text-primary">{pkg.price}</p>
-                                <p className="text-md font-medium text-muted-foreground line-through">{pkg.originalPrice}</p>
+                   
+                   <div className="flex flex-col flex-grow">
+                      <CardHeader className="pb-2 pt-6">
+                        <CardTitle className="font-sans font-bold text-2xl md:text-3xl text-primary">{pkg.name}</CardTitle>
+                        <div className="flex flex-wrap items-center text-muted-foreground text-sm gap-4 pt-2">
+                            <div className="flex items-center gap-2">
+                                <Plane className="h-4 w-4" />
+                                <span>{pkg.airline}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Calendar className="h-4 w-4" />
+                                <span>{pkg.departure}</span>
                             </div>
                         </div>
-                        <TooltipProvider>
-                          <Tooltip>
-                            <TooltipTrigger asChild>
-                              <div className="flex flex-col items-center md:items-end space-y-1 text-center md:text-right">
-                                {pkg.priceDetails.map(detail => (
-                                    <div key={detail.type} className="flex items-center justify-center md:justify-end gap-2 text-sm text-muted-foreground whitespace-nowrap">
-                                      <detail.icon className="h-4 w-4"/>
-                                      <span>{detail.type}: <span className="font-semibold text-foreground">{detail.price}</span></span>
-                                      <span className="text-xs line-through">{detail.originalPrice}</span>
-                                    </div>
-                                ))}
-                              </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p className="text-xs text-muted-foreground">Harga per orang berdasarkan tipe kamar.</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                    </div>
-                    <Button asChild className="w-full mt-4 rounded-full">
-                        <Link href={`/paket/${pkg.id}`}>Lihat Detail</Link>
-                    </Button>
-                  </CardFooter>
+                      </CardHeader>
+                      <CardContent className="flex-grow pb-6">
+                        <p className="font-semibold mb-3">Fasilitas Utama:</p>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 text-sm">
+                            {pkg.features.map((feature, i) => (
+                                <li key={i} className="flex items-start">
+                                    <Check className="h-4 w-4 text-primary mr-2 shrink-0 mt-0.5"/>
+                                    <span>{feature}</span>
+                                </li>
+                            ))}
+                        </ul>
+                      </CardContent>
+                      <CardFooter className="bg-muted/30 p-6 flex flex-col lg:flex-row items-center justify-between gap-6 border-t mt-auto">
+                        <div className="flex flex-col w-full lg:w-auto text-center lg:text-left">
+                            <p className="text-sm text-muted-foreground mb-1">Mulai dari (Quad)</p>
+                            <div className="flex items-baseline justify-center lg:justify-start gap-3 whitespace-nowrap">
+                                <p className="text-3xl md:text-4xl font-bold text-primary">{pkg.price}</p>
+                                <p className="text-lg font-medium text-muted-foreground line-through">{pkg.originalPrice}</p>
+                            </div>
+                        </div>
+                        
+                        <div className="flex flex-col items-center lg:items-end w-full lg:w-auto gap-4">
+                            <TooltipProvider>
+                              <Tooltip>
+                                <TooltipTrigger asChild>
+                                  <div className="flex flex-col space-y-1 text-center lg:text-right w-full">
+                                    {pkg.priceDetails.map(detail => (
+                                        <div key={detail.type} className="flex items-center justify-center lg:justify-end gap-2 text-sm text-muted-foreground">
+                                          <detail.icon className="h-4 w-4"/>
+                                          <span>{detail.type}: <span className="font-semibold text-foreground">{detail.price}</span></span>
+                                          <span className="text-xs line-through">{detail.originalPrice}</span>
+                                        </div>
+                                    ))}
+                                  </div>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                  <p className="text-xs text-muted-foreground">Harga per orang berdasarkan tipe kamar.</p>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                            
+                            <Button asChild className="w-full lg:w-auto px-8 py-6 rounded-full shadow-md hover:shadow-lg transition-all text-lg font-semibold">
+                                <Link href={`/paket/${pkg.id}`}>Lihat Detail Paket</Link>
+                            </Button>
+                        </div>
+                      </CardFooter>
+                   </div>
                 </Card>
           ))}
         </div>
