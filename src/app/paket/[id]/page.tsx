@@ -38,11 +38,11 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
         
         <div className="container relative z-10">
           <div className="flex flex-wrap gap-3 mb-8">
-            <Link href="/paket-umrah" className="inline-flex items-center text-sm font-medium hover:underline text-white/90 transition-colors hover:text-white bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-md w-fit">
-              <ArrowLeft className="mr-2 h-4 w-4" /> Kembali ke Daftar Paket
-            </Link>
             <Link href="/" className="inline-flex items-center justify-center text-sm font-medium hover:underline text-white/90 transition-colors hover:text-white bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-md w-fit" title="Kembali ke Beranda">
               <Home className="h-4 w-4 mr-2" /> Beranda
+            </Link>
+            <Link href="/paket-umrah" className="inline-flex items-center text-sm font-medium hover:underline text-white/90 transition-colors hover:text-white bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-md w-fit">
+              <ArrowLeft className="mr-2 h-4 w-4" /> Kembali ke Daftar Paket
             </Link>
           </div>
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
