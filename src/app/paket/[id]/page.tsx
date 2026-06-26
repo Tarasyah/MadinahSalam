@@ -7,7 +7,7 @@ import { Card } from '@/components/ui/card';
 import { 
   Plane, Calendar, Clock, MapPin, CheckCircle2, 
   XCircle, Download, MessageCircle, Star, Users, ArrowLeft,
-  Info
+  Info, Home
 } from 'lucide-react';
 
 export function generateStaticParams() {
@@ -37,9 +37,14 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
         <div className="absolute inset-0 bg-emerald-950/80 mix-blend-multiply pointer-events-none"></div>
         
         <div className="container relative z-10">
-          <Link href="/paket-umrah" className="inline-flex items-center text-sm font-medium hover:underline text-white/90 mb-8 transition-colors hover:text-white bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-md w-fit">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Kembali ke Daftar Paket
-          </Link>
+          <div className="flex flex-wrap gap-3 mb-8">
+            <Link href="/paket-umrah" className="inline-flex items-center text-sm font-medium hover:underline text-white/90 transition-colors hover:text-white bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-md w-fit">
+              <ArrowLeft className="mr-2 h-4 w-4" /> Kembali ke Daftar Paket
+            </Link>
+            <Link href="/" className="inline-flex items-center justify-center text-sm font-medium hover:underline text-white/90 transition-colors hover:text-white bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-md w-fit" title="Kembali ke Beranda">
+              <Home className="h-4 w-4 mr-2" /> Beranda
+            </Link>
+          </div>
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             <div className="max-w-2xl">
               <h1 className="text-sm sm:text-base md:text-lg lg:text-xl font-sans font-black mb-3 uppercase tracking-tight leading-tight">{pkg.name}</h1>
